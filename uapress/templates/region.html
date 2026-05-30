@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ region }} 문화행사·축제 — {{ site_name }}{% endblock %}
+{% block description %}{{ region }} 지역 문화행사와 축제 정보. 이번 달 {{ region }}에서 열리는 행사를 확인하세요.{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <span class="text-gray-600">{{ region }}</span>
+</nav>
+
+<div class="mb-8">
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">📍 {{ region }} 문화행사</h1>
+  <p class="text-gray-500">{{ region }} 지역에서 열리는 행사 {{ events | length }}개</p>
+</div>
+
+{% if adsense_publisher_id and adsense_unit_banner %}
+<div class="mb-6">
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="{{ adsense_publisher_id }}"
+    data-ad-slot="{{ adsense_unit_banner }}"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  {% for event in events %}
+  <a href="/event/{{ event.id }}/"
+     class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
+    {% if event.thumbnail %}
+    <div class="h-44 overflow-hidden">
+      <img src="{{ event.thumbnail }}" alt="{{ event.title }}"
+           class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy">
+    </div>
+    {% else %}
+    <div class="h-44 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center text-4xl">🎪</div>
+    {% endif %}
+    <div class="p-4">
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded-full">{{ event.category }}</span>
+        {% if event.is_free %}
+        <span class="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded-full font-bold">무료</span>
+        {% endif %}
+      </div>
+      <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
+      <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<div class="mt-12">
+  <h2 class="text-lg font-bold text-gray-700 mb-4">다른 지역 행사 보기</h2>
+  <div class="flex flex-wrap gap-2">
+    {% for r, s in region_slugs.items() %}
+    {% if r != region %}
+    <a href="/region/{{ s }}/" class="bg-white border border-gray-200 text-gray-600 text-sm px-4 py-2 rounded-full hover:border-blue-400 hover:text-blue-600 transition">{{ r }}</a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

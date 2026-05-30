@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ guide.title }} — {{ site_name }}{% endblock %}
+{% block description %}{{ guide.summary or guide.title }}{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <a href="/category/festival/" class="hover:text-blue-500">축제</a> <span>›</span>
+  <span class="text-gray-600">{{ guide.title }}</span>
+</nav>
+
+<article class="max-w-3xl mx-auto">
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{{ guide.title }}</h1>
+
+  {% if guide.thumbnail %}
+  <div class="rounded-2xl overflow-hidden mb-6">
+    <img src="{{ guide.thumbnail }}" alt="{{ guide.title }}" class="w-full object-cover max-h-80">
+  </div>
+  {% endif %}
+
+  {% if guide.summary %}
+  <div class="bg-blue-50 rounded-xl p-5 mb-6">
+    <p class="text-gray-700 leading-relaxed">{{ guide.summary }}</p>
+  </div>
+  {% endif %}
+
+  {% if adsense_publisher_id and adsense_unit_banner %}
+  <div class="mb-6">
+    <ins class="adsbygoogle" style="display:block"
+      data-ad-client="{{ adsense_publisher_id }}"
+      data-ad-slot="{{ adsense_unit_banner }}"
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  {% endif %}
+
+  {% if guide.sections %}
+  {% for section in guide.sections %}
+  <div class="mb-8">
+    <h2 class="text-xl font-bold text-gray-800 mb-3">{{ section.heading }}</h2>
+    <p class="text-gray-700 leading-relaxed">{{ section.content }}</p>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {% if guide.related_events %}
+  <div class="mt-10">
+    <h2 class="text-lg font-bold text-gray-800 mb-4">관련 행사</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {% for event in guide.related_events %}
+      <a href="/event/{{ event.id }}/"
+         class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-4">
+        <h3 class="font-medium text-gray-900 line-clamp-2 mb-1">{{ event.title }}</h3>
+        <p class="text-xs text-gray-400">📍 {{ event.region }} · 📅 {{ event.start_date_fmt }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</article>
+{% endblock %}

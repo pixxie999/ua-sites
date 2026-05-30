@@ -1,0 +1,20 @@
+/* Tailwind 보완용 최소 CSS */
+html { scroll-behavior: smooth; }
+
+/* 검색 하이라이트 */
+.search-highlight { background: #fef08a; border-radius: 2px; }
+
+/* 카드 호버 */
+.event-card { cursor: pointer; }
+
+/* 지역 탭 active 상태 */
+.region-tab.active {
+  background-color: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+/* 모바일 헤더 높이 확보 */
+@media (max-width: 640px) {
+  main { padding-top: 1.5rem; }
+}

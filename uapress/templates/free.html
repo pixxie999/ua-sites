@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}무료 문화행사 — {{ site_name }}{% endblock %}
+{% block description %}전국 무료 문화행사·축제 목록. 돈 안 들이고 즐기는 이번 달 무료 행사를 확인하세요.{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <span class="text-gray-600">무료행사</span>
+</nav>
+
+<div class="mb-8">
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">🎟 무료 문화행사</h1>
+  <p class="text-gray-500">무료로 즐기는 전국 행사 <strong class="text-green-600">{{ events | length }}개</strong></p>
+</div>
+
+{% if adsense_publisher_id and adsense_unit_banner %}
+<div class="mb-6">
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="{{ adsense_publisher_id }}"
+    data-ad-slot="{{ adsense_unit_banner }}"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<!-- 지역 필터 -->
+<div class="mb-6 overflow-x-auto">
+  <div class="flex gap-2 pb-2 min-w-max">
+    <button onclick="filterRegion('all')"
+            class="region-tab active px-4 py-2 rounded-full text-sm font-medium bg-green-600 text-white whitespace-nowrap">
+      전체
+    </button>
+    {% set regions_in_events = events | map(attribute='region') | unique | list %}
+    {% for region in regions_in_events %}
+    <button onclick="filterRegion('{{ region }}')"
+            class="region-tab px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-green-400 whitespace-nowrap">
+      {{ region }}
+    </button>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="events-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  {% for event in events %}
+  <a href="/event/{{ event.id }}/"
+     class="event-card bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border-l-4 border-green-400"
+     data-region="{{ event.region }}">
+    {% if event.thumbnail %}
+    <div class="h-44 overflow-hidden">
+      <img src="{{ event.thumbnail }}" alt="{{ event.title }}"
+           class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy">
+    </div>
+    {% else %}
+    <div class="h-44 bg-gradient-to-br from-green-100 to-teal-100 flex items-center justify-center text-4xl">🎟</div>
+    {% endif %}
+    <div class="p-4">
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded-full">무료입장</span>
+        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded-full">{{ event.category }}</span>
+        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-0.5 rounded-full">📍 {{ event.region }}</span>
+      </div>
+      <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
+      <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+      {% if event.place %}
+      <p class="text-xs text-gray-400 mt-0.5">📌 {{ event.place }}</p>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% if not events %}
+<div class="text-center py-20 text-gray-400">
+  <p class="text-5xl mb-4">🎟</p>
+  <p class="text-lg">현재 등록된 무료 행사가 없습니다.</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% set cat_icons = {"festival": "🎆", "performance": "🎭", "exhibition": "🖼", "experience": "🎨", "sports": "🏃", "culture": "🎵"} %}
+
+{% block title %}{{ category }} 행사 — {{ site_name }}{% endblock %}
+{% block description %}전국 {{ category }} 행사 목록. 이번 달 열리는 {{ category }} 정보를 확인하세요.{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <span class="text-gray-600">{{ category }}</span>
+</nav>
+
+<div class="mb-8">
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+    {{ cat_icons.get(slug, "🎪") }} {{ category }} 행사
+  </h1>
+  <p class="text-gray-500">전국 {{ category }} {{ events | length }}개</p>
+</div>
+
+{% if adsense_publisher_id and adsense_unit_banner %}
+<div class="mb-6">
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="{{ adsense_publisher_id }}"
+    data-ad-slot="{{ adsense_unit_banner }}"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  {% for event in events %}
+  <a href="/event/{{ event.id }}/"
+     class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
+    {% if event.thumbnail %}
+    <div class="h-44 overflow-hidden">
+      <img src="{{ event.thumbnail }}" alt="{{ event.title }}"
+           class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy">
+    </div>
+    {% else %}
+    <div class="h-44 bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-4xl">
+      {{ cat_icons.get(slug, "🎪") }}
+    </div>
+    {% endif %}
+    <div class="p-4">
+      <div class="flex flex-wrap gap-1 mb-2">
+        {% if event.is_free %}
+        <span class="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded-full font-bold">무료</span>
+        {% endif %}
+        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-0.5 rounded-full">📍 {{ event.region }}</span>
+      </div>
+      <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
+      <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<div class="mt-12">
+  <h2 class="text-lg font-bold text-gray-700 mb-4">다른 카테고리 보기</h2>
+  <div class="flex flex-wrap gap-2">
+    {% for c, s in category_slugs.items() %}
+    {% if c != category %}
+    <a href="/category/{{ s }}/"
+       class="bg-white border border-gray-200 text-gray-600 text-sm px-4 py-2 rounded-full hover:border-blue-400 hover:text-blue-600 transition">
+      {{ cat_icons.get(s, "🎪") }} {{ c }}
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

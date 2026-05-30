@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ site_name }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}전국 문화행사·축제 정보. 이번 주 가볼 만한 행사를 찾아보세요.{% endblock %}">
+  <link rel="canonical" href="{{ site_domain }}{{ page_url }}">
+
+  <meta property="og:title" content="{% block og_title %}{{ site_name }}{% endblock %}">
+  <meta property="og:description" content="{% block og_desc %}전국 문화행사·축제 캘린더{% endblock %}">
+  <meta property="og:url" content="{{ site_domain }}{{ page_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ site_domain }}/static/img/og-default.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="{{ site_name }}">
+
+  <meta name="naver-site-verification" content="d9098da3005c33ec5e401f6bb8f34215638f8fc6">
+  <meta name="google-site-verification" content="FLkAJP2PIXUYwJ6e4k01ES5SMguaeHbrG3VhsuyT5BM">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  {% if adsense_publisher_id %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_publisher_id }}"
+    crossorigin="anonymous"></script>
+  {% endif %}
+
+  {% block json_ld %}{% endblock %}
+
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-blue-600">🎪 {{ site_name }}</a>
+      <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+        <a href="/free/" class="hover:text-blue-600">무료행사</a>
+        <a href="/category/festival/" class="hover:text-blue-600">축제</a>
+        <a href="/category/performance/" class="hover:text-blue-600">공연</a>
+        <a href="/category/exhibition/" class="hover:text-blue-600">전시</a>
+        <a href="/category/experience/" class="hover:text-blue-600">체험</a>
+      </nav>
+      <button onclick="document.getElementById('search-modal').classList.remove('hidden')"
+              class="md:hidden text-gray-600 hover:text-blue-600">
+        🔍
+      </button>
+    </div>
+  </header>
+
+  <!-- 검색 모달 -->
+  <div id="search-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-20 px-4">
+    <div class="bg-white rounded-2xl w-full max-w-lg p-4">
+      <div class="flex gap-2 mb-3">
+        <input id="search-input" type="text" placeholder="행사명, 지역, 카테고리 검색..."
+               class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <button onclick="document.getElementById('search-modal').classList.add('hidden')"
+                class="text-gray-400 hover:text-gray-600 px-2">✕</button>
+      </div>
+      <div id="search-results" class="max-h-80 overflow-y-auto space-y-2"></div>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="bg-white border-t mt-16 py-8 text-sm text-gray-500 text-center">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-center flex-wrap gap-4 mb-3 text-xs text-gray-400">
+        {% for region, slug in region_slugs.items() %}
+        <a href="/region/{{ slug }}/" class="hover:text-blue-500">{{ region }}</a>
+        {% endfor %}
+      </div>
+      <p>© {{ now_year }} {{ site_name }} | 행사 정보는 한국관광공사 Tour API 기반이며 변경될 수 있습니다.</p>
+      <p class="mt-1">
+        <a href="/privacy-policy/" class="hover:text-blue-600 mx-2">개인정보처리방침</a>
+        <a href="mailto:contact@uapress.kr" class="hover:text-blue-600 mx-2">문의</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

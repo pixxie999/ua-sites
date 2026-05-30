@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ year }}년 {{ month }}월 문화행사 — {{ site_name }}{% endblock %}
+{% block description %}{{ year }}년 {{ month }}월 전국 문화행사와 축제 일정을 확인하세요.{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <span class="text-gray-600">{{ year }}년 {{ month }}월</span>
+</nav>
+
+<div class="mb-8">
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+    📅 {{ year }}년 {{ month }}월 문화행사
+  </h1>
+  <p class="text-gray-500">{{ events | length }}개 행사</p>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  {% for event in events %}
+  <a href="/event/{{ event.id }}/"
+     class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
+    {% if event.thumbnail %}
+    <div class="h-44 overflow-hidden">
+      <img src="{{ event.thumbnail }}" alt="{{ event.title }}"
+           class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy">
+    </div>
+    {% else %}
+    <div class="h-44 bg-gradient-to-br from-indigo-100 to-pink-100 flex items-center justify-center text-4xl">🎪</div>
+    {% endif %}
+    <div class="p-4">
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded-full">{{ event.category }}</span>
+        {% if event.is_free %}
+        <span class="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded-full font-bold">무료</span>
+        {% endif %}
+        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-0.5 rounded-full">{{ event.region }}</span>
+      </div>
+      <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
+      <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

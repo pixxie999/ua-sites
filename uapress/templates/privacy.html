@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}개인정보처리방침 — {{ site_name }}{% endblock %}
+{% block description %}이번주 행사 개인정보처리방침{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm p-8">
+  <h1 class="text-2xl font-bold mb-6">개인정보처리방침</h1>
+
+  <p class="text-gray-600 mb-4">
+    이번주 행사(uapress.kr, 이하 "사이트")는 개인정보 보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고자 다음과 같은 처리방침을 두고 있습니다.
+  </p>
+
+  <h2 class="text-lg font-bold mt-6 mb-2">1. 수집하는 개인정보</h2>
+  <p class="text-gray-600 mb-4">본 사이트는 별도의 회원가입 없이 이용 가능하며, 개인정보를 직접 수집하지 않습니다.</p>
+
+  <h2 class="text-lg font-bold mt-6 mb-2">2. 쿠키 및 광고</h2>
+  <p class="text-gray-600 mb-4">
+    본 사이트는 Google AdSense를 통해 광고를 게재합니다. Google은 쿠키를 사용하여 맞춤형 광고를 제공할 수 있습니다.
+    Google의 광고 쿠키 사용은 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Google 정책</a>에서 확인하실 수 있습니다.
+  </p>
+
+  <h2 class="text-lg font-bold mt-6 mb-2">3. 외부 링크</h2>
+  <p class="text-gray-600 mb-4">
+    본 사이트에는 외부 사이트(야놀자, 여기어때 등)로의 제휴 링크가 포함될 수 있습니다. 외부 사이트의 개인정보처리방침은 해당 사이트에서 확인하시기 바랍니다.
+  </p>
+
+  <h2 class="text-lg font-bold mt-6 mb-2">4. 문의</h2>
+  <p class="text-gray-600 mb-4">
+    개인정보 관련 문의: <a href="mailto:contact@uapress.kr" class="text-blue-600 hover:underline">contact@uapress.kr</a>
+  </p>
+
+  <p class="text-xs text-gray-400 mt-8">최종 수정일: {{ build_date }}</p>
+</div>
+{% endblock %}

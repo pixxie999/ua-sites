@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}{{ site_name }} — 전국 문화행사·축제 캘린더{% endblock %}
+{% block description %}이번 주 전국 문화행사와 축제를 한눈에! 무료 행사, 지역별 행사, 가족·커플 추천 행사를 찾아보세요.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site_name }}",
+  "url": "{{ site_domain }}",
+  "description": "전국 문화행사·축제 캘린더",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site_domain }}/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- 히어로 섹션 -->
+<div class="text-center mb-10">
+  <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+    🎪 이번 주 가볼 만한 행사
+  </h1>
+  <p class="text-gray-500 text-lg">전국 문화행사·축제를 한눈에 — 무료 행사 포함</p>
+  <div class="flex justify-center gap-4 mt-4 text-sm">
+    <a href="/free/" class="bg-green-500 text-white px-5 py-2 rounded-full font-bold hover:bg-green-600">
+      🎟 무료행사 {{ free_count }}개
+    </a>
+    <button onclick="document.getElementById('search-modal').classList.remove('hidden')"
+            class="bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-bold hover:bg-blue-200">
+      🔍 행사 검색
+    </button>
+  </div>
+</div>
+
+<!-- 주간 큐레이션 -->
+{% if weekly_pick and weekly_pick.picks %}
+<div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 mb-10 text-white">
+  <div class="flex items-center gap-2 mb-1">
+    <span class="text-yellow-300 text-xl">⭐</span>
+    <span class="text-sm font-bold text-blue-100">에디터 픽</span>
+  </div>
+  <h2 class="text-xl font-bold mb-2">{{ weekly_pick.title }}</h2>
+  <p class="text-blue-100 text-sm mb-4">{{ weekly_pick.intro }}</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+    {% for pick in weekly_pick.picks[:3] %}
+    <a href="/event/{{ pick.event_id }}/" class="bg-white/15 hover:bg-white/25 rounded-xl p-3 transition">
+      <span class="text-yellow-300 font-bold text-sm">TOP {{ pick.rank }}</span>
+      <p class="font-semibold mt-1 text-sm">{{ pick.title }}</p>
+      <p class="text-blue-100 text-xs mt-1 line-clamp-2">{{ pick.reason }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- 지역 탭 필터 -->
+<div class="mb-6 overflow-x-auto">
+  <div class="flex gap-2 pb-2 min-w-max" id="region-tabs">
+    <button onclick="filterRegion('all')"
+            class="region-tab active px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white whitespace-nowrap">
+      전체
+    </button>
+    {% for region in region_slugs.keys() %}
+    <button onclick="filterRegion('{{ region }}')"
+            class="region-tab px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-blue-400 whitespace-nowrap">
+      {{ region }}
+    </button>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- 행사 그리드 -->
+<div id="events-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  {% for event in events %}
+  <a href="/event/{{ event.id }}/"
+     class="event-card bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden"
+     data-region="{{ event.region }}">
+    {% if event.thumbnail %}
+    <div class="h-44 overflow-hidden">
+      <img src="{{ event.thumbnail }}" alt="{{ event.title }}"
+           class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy">
+    </div>
+    {% else %}
+    <div class="h-44 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center text-4xl">
+      🎪
+    </div>
+    {% endif %}
+    <div class="p-4">
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded-full">{{ event.category }}</span>
+        {% if event.is_free %}
+        <span class="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded-full font-bold">무료</span>
+        {% endif %}
+        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-0.5 rounded-full">📍 {{ event.region }}</span>
+      </div>
+      <h3 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h3>
+      <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+      {% if event.place %}
+      <p class="text-xs text-gray-400 mt-0.5">📌 {{ event.place }}</p>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% if not events %}
+<div class="text-center py-20 text-gray-400">
+  <p class="text-5xl mb-4">🔍</p>
+  <p class="text-lg">현재 등록된 행사가 없습니다.</p>
+</div>
+{% endif %}
+
+<!-- 카테고리 바로가기 -->
+<div class="mt-12 grid grid-cols-3 md:grid-cols-6 gap-3">
+  {% set cat_icons = {"festival": "🎆", "performance": "🎭", "exhibition": "🖼", "experience": "🎨", "sports": "🏃", "culture": "🎵"} %}
+  {% for category, slug in category_slugs.items() %}
+  <a href="/category/{{ slug }}/"
+     class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition">
+    <p class="text-2xl mb-1">{{ cat_icons.get(slug, "🎪") }}</p>
+    <p class="text-xs font-medium text-gray-700">{{ category }}</p>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
