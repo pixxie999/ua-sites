@@ -16,7 +16,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
+TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService2"
 
 def _get_api_key():
     return os.environ["TOUR_API_KEY"]
