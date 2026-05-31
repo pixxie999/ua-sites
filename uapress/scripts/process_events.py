@@ -140,10 +140,68 @@ def process_events(raw_path: str) -> list:
     return processed
 
 
+def merge_culture(tour_events: list, culture_raw_path: str) -> list:
+    """문화부 데이터를 Tour 데이터에 병합 (중복 제목 제거)"""
+    if not Path(culture_raw_path).exists():
+        print("  문화부 데이터 없음 — 스킵")
+        return tour_events
+
+    culture_events = json.loads(Path(culture_raw_path).read_text())
+    today = datetime.now().strftime("%Y%m%d")
+
+    # 기존 제목 set (중복 방지)
+    existing_titles = {e["title"].strip() for e in tour_events}
+
+    # 기존 AI 캐시 로드
+    existing_path = PROJECT_ROOT / "data/processed/events.json"
+    existing_map = {}
+    if existing_path.exists():
+        try:
+            existing = json.loads(existing_path.read_text())
+            existing_map = {e["id"]: e for e in existing}
+        except Exception:
+            pass
+
+    added = 0
+    for e in culture_events:
+        if e.get("end_date", "") < today:
+            continue
+        if not e.get("title"):
+            continue
+        if e["title"].strip() in existing_titles:
+            continue  # Tour API와 중복
+
+        # 기존 AI 데이터 보존
+        cached = existing_map.get(e["id"], {})
+        e["seo_title"] = cached.get("seo_title", "")
+        e["meta_description"] = cached.get("meta_description", "")
+        e["summary"] = cached.get("summary", "")
+        e["highlight"] = cached.get("highlight", "")
+        e["target_audience"] = cached.get("target_audience", "")
+        e["tips"] = cached.get("tips", [])
+        e["tags"] = cached.get("tags", [])
+
+        tour_events.append(e)
+        existing_titles.add(e["title"].strip())
+        added += 1
+
+    print(f"  문화부 신규 추가: {added}개")
+    return tour_events
+
+
 if __name__ == "__main__":
     import glob
-    files = sorted(glob.glob(str(PROJECT_ROOT / "data/raw/events_*.json")), reverse=True)
-    if not files:
-        print("raw 데이터 없음. fetch_tour.py 먼저 실행하세요.")
+    tour_files = sorted(glob.glob(str(PROJECT_ROOT / "data/raw/events_*.json")), reverse=True)
+    culture_files = sorted(glob.glob(str(PROJECT_ROOT / "data/raw/culture_*.json")), reverse=True)
+
+    if not tour_files:
+        print("Tour raw 데이터 없음. fetch_tour.py 먼저 실행하세요.")
     else:
-        process_events(files[0])
+        events = process_events(tour_files[0])
+        if culture_files:
+            events = merge_culture(events, culture_files[0])
+            # 병합 후 다시 저장
+            out = PROJECT_ROOT / "data/processed"
+            (out / "events.json").write_text(
+                json.dumps(events, ensure_ascii=False, indent=2))
+            print(f"최종: {len(events)}개")

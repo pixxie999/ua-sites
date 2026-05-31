@@ -43,9 +43,21 @@ jobs:
         env:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
 
-      - name: Process events
+      - name: Fetch Culture API data
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        continue-on-error: true
+        run: python uapress/scripts/fetch_culture.py
+        env:
+          CULTURE_API_KEY: ${{ secrets.CULTURE_API_KEY }}
+
+      - name: Process events (Tour API)
         if: ${{ github.event.inputs.mode != 'build_only' }}
         run: python uapress/scripts/process_events.py
+
+      - name: Merge culture data
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        continue-on-error: true
+        run: python uapress/scripts/merge_events.py
 
       - name: Generate AI content (event summaries)
         if: ${{ github.event.inputs.mode != 'build_only' }}
