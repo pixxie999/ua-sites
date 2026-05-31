@@ -126,11 +126,25 @@ def generate_weekly_pick(events: list) -> dict:
     today = datetime.now()
     week_end = today + timedelta(days=7)
 
+    # 이번 주 + 앞으로 2주 내 행사 (후보 부족 시 범위 확장)
     this_week = [
         e for e in events
         if (e["start_date"] <= week_end.strftime("%Y%m%d")
             and e["end_date"] >= today.strftime("%Y%m%d"))
     ]
+
+    if not this_week:
+        # 범위 확장: 30일 내
+        extended_end = today + timedelta(days=30)
+        this_week = [
+            e for e in events
+            if e["end_date"] >= today.strftime("%Y%m%d")
+            and e["start_date"] <= extended_end.strftime("%Y%m%d")
+        ]
+
+    if not this_week:
+        print("주간 큐레이션: 후보 행사 없음 — 스킵")
+        return {}
 
     candidates = sorted(this_week, key=lambda x: x["is_free"], reverse=True)[:30]
 
@@ -139,19 +153,33 @@ def generate_weekly_pick(events: list) -> dict:
         free_tag = "[무료] " if e["is_free"] else ""
         prompt += f"{i}. {free_tag}[{e['region']}] {e['title']} (id: {e['id']}, {e['start_date_fmt']}~{e['end_date_fmt']})\n"
 
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=700,
-        system=WEEKLY_SYSTEM,
-        messages=[{"role": "user", "content": prompt}]
-    )
+    try:
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=700,
+            system=WEEKLY_SYSTEM,
+            messages=[{"role": "user", "content": prompt}]
+        )
 
-    text = resp.content[0].text.strip()
-    if text.startswith("```"):
-        text = text.split("```")[1]
-        if text.startswith("json"):
-            text = text[4:]
-    result = json.loads(text)
+        text = resp.content[0].text.strip()
+        # 코드블록 제거
+        if text.startswith("```"):
+            text = text.split("```")[1]
+            if text.startswith("json"):
+                text = text[4:]
+        text = text.strip()
+
+        if not text:
+            print("주간 큐레이션: 빈 응답 — 스킵")
+            return {}
+
+        result = json.loads(text)
+    except json.JSONDecodeError as e:
+        print(f"주간 큐레이션 JSON 파싱 실패: {e}\n응답: {text[:200]}")
+        return {}
+    except Exception as e:
+        print(f"주간 큐레이션 생성 실패: {e}")
+        return {}
 
     week_str = today.strftime("%Y-W%V")
     out_dir = PROJECT_ROOT / "data/content/weekly_picks"
