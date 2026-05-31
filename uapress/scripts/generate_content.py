@@ -61,6 +61,9 @@ JSON만 출력:
 def build_event_requests(events: list) -> list:
     reqs = []
     for e in events:
+        # 문화부 데이터는 overview가 없어 AI 품질이 낮고 비용만 나감 — 스킵
+        if e.get("source") == "culture":
+            continue
         if e.get("seo_title"):
             continue
 
