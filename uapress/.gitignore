@@ -1,7 +1,5 @@
 .env
 data/raw/
-data/processed/
-data/content/
 dist/
 __pycache__/
 *.pyc

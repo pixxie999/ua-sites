@@ -51,6 +51,18 @@ def is_free(fee: str, title: str) -> bool:
 def process_events(raw_path: str) -> list:
     raw = json.loads(Path(raw_path).read_text())
     today = datetime.now().strftime("%Y%m%d")
+
+    # 기존 AI 데이터 로드 (seo_title 등 보존용)
+    existing_path = PROJECT_ROOT / "data/processed/events.json"
+    existing_map = {}
+    if existing_path.exists():
+        try:
+            existing = json.loads(existing_path.read_text())
+            existing_map = {e["id"]: e for e in existing}
+            print(f"  기존 데이터 로드: {len(existing_map)}개")
+        except Exception:
+            pass
+
     processed = []
 
     for item in raw:
@@ -65,6 +77,9 @@ def process_events(raw_path: str) -> list:
 
         def fmt(d):
             return f"{d[:4]}-{d[4:6]}-{d[6:8]}" if len(d) == 8 else d
+
+        # 기존 AI 데이터 보존 (seo_title 있으면 그대로 유지)
+        existing = existing_map.get(slug, {})
 
         processed.append({
             "id": slug,
@@ -88,13 +103,14 @@ def process_events(raw_path: str) -> list:
             "thumbnail": item.get("thumbnail", ""),
             "homepage": item.get("homepage", ""),
             "tel": item.get("tel", ""),
-            "summary": "",
-            "highlight": "",
-            "target_audience": "",
-            "tips": [],
-            "seo_title": "",
-            "meta_description": "",
-            "tags": [],
+            # AI 생성 필드 — 기존 값 보존, 없으면 빈값
+            "summary": existing.get("summary", ""),
+            "highlight": existing.get("highlight", ""),
+            "target_audience": existing.get("target_audience", ""),
+            "tips": existing.get("tips", []),
+            "seo_title": existing.get("seo_title", ""),
+            "meta_description": existing.get("meta_description", ""),
+            "tags": existing.get("tags", []),
         })
 
     by_region = {}
