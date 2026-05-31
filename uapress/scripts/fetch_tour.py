@@ -26,32 +26,57 @@ AREA_MAP = {
     "39": "제주"
 }
 
-# lDongRegnCd 기반 지역명 매핑 (areacode 없을 때 대체)
-LDONG_MAP = {
-    "11": "서울", "21": "부산", "22": "대구", "23": "인천",
-    "24": "광주", "25": "대전", "26": "울산", "29": "세종",
-    "31": "경기", "32": "강원", "33": "충북", "34": "충남",
-    "35": "전북", "36": "전남", "37": "경북", "38": "경남",
-    "39": "제주"
-}
+# 주소 기반 지역 감지 — 긴 키워드(광역시/특별자치도)를 먼저 검사해야
+# "경기도 광주시"를 "광주광역시"로 오인하지 않음
+ADDRESS_REGION_RULES = [
+    ("서울특별시", "서울"), ("서울", "서울"),
+    ("부산광역시", "부산"), ("부산", "부산"),
+    ("대구광역시", "대구"), ("대구", "대구"),
+    ("인천광역시", "인천"), ("인천", "인천"),
+    ("광주광역시", "광주"),                       # '경기 광주' 보다 먼저
+    ("대전광역시", "대전"), ("대전", "대전"),
+    ("울산광역시", "울산"), ("울산", "울산"),
+    ("세종특별자치시", "세종"), ("세종", "세종"),
+    ("경기도", "경기"), ("경기", "경기"),
+    ("강원특별자치도", "강원"), ("강원도", "강원"), ("강원", "강원"),
+    ("충청북도", "충북"), ("충북", "충북"),
+    ("충청남도", "충남"), ("충남", "충남"),
+    ("전북특별자치도", "전북"), ("전라북도", "전북"), ("전북", "전북"),
+    ("전라남도", "전남"), ("전남", "전남"),
+    ("경상북도", "경북"), ("경북", "경북"),
+    ("경상남도", "경남"), ("경남", "경남"),
+    ("제주특별자치도", "제주"), ("제주도", "제주"), ("제주", "제주"),
+    ("광주", "광주"),  # '경기 광주' 처리 — 경기는 이미 위에서 매핑됨
+]
 
 
 def _get_api_key():
     return os.environ["TOUR_API_KEY"]
 
 
+def detect_region_from_address(addr: str) -> str:
+    """주소 문자열에서 지역명 추출"""
+    if not addr:
+        return "기타"
+    for keyword, region in ADDRESS_REGION_RULES:
+        if keyword in addr:
+            return region
+    return "기타"
+
+
 def resolve_region(item: dict) -> tuple[str, str]:
-    """지역명과 area_code 반환"""
+    """지역명과 area_code 반환.
+    우선순위: areacode(Tour API 코드) → 주소(addr1) 기반 감지
+    lDongRegnCd는 Tour API와 코드 체계가 불일치하여 사용하지 않음.
+    """
     area_code = str(item.get("areacode", "")).strip()
     if area_code and area_code in AREA_MAP:
         return AREA_MAP[area_code], area_code
 
-    # areacode 없으면 lDongRegnCd로 대체
-    ldong = str(item.get("lDongRegnCd", "")).strip()
-    if ldong and ldong in LDONG_MAP:
-        return LDONG_MAP[ldong], ldong
-
-    return "기타", "0"
+    # areacode 없거나 매핑 실패 → 주소로 감지
+    addr = item.get("addr1", "") or ""
+    region = detect_region_from_address(addr)
+    return region, area_code or "0"
 
 
 def fetch_events(start_date: str, end_date: str) -> list:

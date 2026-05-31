@@ -46,7 +46,16 @@ jobs:
       - name: Fetch Culture API data
         if: ${{ github.event.inputs.mode != 'build_only' }}
         continue-on-error: true
-        run: python uapress/scripts/fetch_culture.py
+        run: |
+          # api.kcisa.kr은 해외 IP 차단 — 로컬에서 수집 후 git 커밋된 파일 사용
+          # 커밋된 culture_*.json이 없을 경우에만 API 호출 시도
+          if ls uapress/data/raw/culture_*.json 2>/dev/null | head -1 | grep -q .; then
+            echo "기존 문화부 데이터 파일 사용"
+            ls -la uapress/data/raw/culture_*.json | tail -1
+          else
+            echo "문화부 API 호출 시도"
+            python uapress/scripts/fetch_culture.py
+          fi
         env:
           CULTURE_API_KEY: ${{ secrets.CULTURE_API_KEY }}
 
