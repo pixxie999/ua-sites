@@ -76,7 +76,7 @@ def build_event_requests(events: list) -> list:
             "custom_id": f"event-{e['id']}",
             "params": {
                 "model": MODEL,
-                "max_tokens": 500,
+                "max_tokens": 1024,
                 "system": EVENT_SYSTEM,
                 "messages": [{"role": "user", "content": msg}]
             }
