@@ -76,6 +76,36 @@ def make_slug(title: str, start: str) -> str:
     return f"kc-{h}-{en}" if en else f"kc-{h}"
 
 
+def scrape_fee_from_url(url: str) -> str:
+    """공식 URL 페이지에서 요금 정보 추출 (무료 스크래핑, AI 불필요)"""
+    if not url:
+        return ""
+    try:
+        resp = requests.get(url, timeout=8, headers={"User-Agent": "Mozilla/5.0"})
+        if resp.status_code != 200:
+            return ""
+        # HTML 태그 제거 후 텍스트
+        text = re.sub(r'<[^>]+>', ' ', resp.text)
+        text = re.sub(r'\s+', ' ', text)
+
+        # 요금 관련 키워드 근처 텍스트 추출
+        fee_patterns = [
+            r'(?:관람료|입장료|이용료|참가비|티켓가격|요금)[^\n。]{0,80}',
+            r'(?:무료|유료)\s*[^\n。]{0,60}',
+            r'\d[\d,]+\s*원[^\n。]{0,40}',
+        ]
+        for pattern in fee_patterns:
+            m = re.search(pattern, text)
+            if m:
+                fee = m.group(0).strip()[:100]
+                # 의미 있는 내용인지 확인 (너무 짧거나 숫자만 있는 경우 제외)
+                if len(fee) > 3:
+                    return fee
+    except Exception:
+        pass
+    return ""
+
+
 def strip_html(text: str) -> str:
     """HTML 태그 및 엔티티 제거"""
     if not text:
@@ -120,7 +150,16 @@ def fetch_all_events(start_date: str, end_date: str) -> list:
     all_events = []
     today = datetime.now().strftime("%Y%m%d")
     page = 1
-    idx = 0
+
+    # URL→fee 캐시 (이전 수집 결과 재사용, 중복 스크래핑 방지)
+    fee_cache_path = PROJECT_ROOT / "data/raw/culture_fee_cache.json"
+    fee_cache: dict = {}
+    if fee_cache_path.exists():
+        try:
+            fee_cache = json.loads(fee_cache_path.read_text())
+        except Exception:
+            pass
+    scraped_count = 0
 
     while True:
         items, total_count = fetch_page(start_date, end_date, page)
@@ -145,12 +184,23 @@ def fetch_all_events(start_date: str, end_date: str) -> list:
             category = detect_category(title, site)
 
             charge = (item.findtext("charge") or "").strip()
-            # fee 없음 = 정보 없음(미상), 무료로 가정하지 않음
-            # "무료"가 명시된 경우만 무료, "유료"가 함께 있으면 부분유료로 처리
+            url = (item.findtext("url") or "").strip()
+
+            # charge 없으면 공식 URL에서 스크래핑 시도 (무료, AI 불필요)
+            # 캐시 우선, 신규는 회당 최대 200건만 (타임아웃 방지)
+            if not charge and url:
+                if url in fee_cache:
+                    charge = fee_cache[url]
+                elif scraped_count < 200:
+                    charge = scrape_fee_from_url(url)
+                    fee_cache[url] = charge
+                    scraped_count += 1
+
+            # is_free 판정: 명시적 "무료"만 True, 혼합/미상은 False
             if not charge:
                 is_free = False
             elif "유료" in charge and "무료" in charge:
-                is_free = False   # "무료(일부 유료)" 등 혼합 → 유료로 보수 처리
+                is_free = False
             elif "무료" in charge or charge in ("0", "0원"):
                 is_free = True
             else:
@@ -158,7 +208,6 @@ def fetch_all_events(start_date: str, end_date: str) -> list:
 
             description = strip_html(item.findtext("description") or "")
             thumbnail = (item.findtext("imageObject") or "").strip()
-            url = (item.findtext("url") or "").strip()
             contact = (item.findtext("contactPoint") or "").strip()
 
             def fmt(d):
@@ -211,6 +260,11 @@ def fetch_all_events(start_date: str, end_date: str) -> list:
 
         page += 1
         time.sleep(0.3)
+
+    # fee 캐시 저장 (다음 실행에서 재사용)
+    if scraped_count > 0:
+        fee_cache_path.write_text(json.dumps(fee_cache, ensure_ascii=False))
+        print(f"URL 요금 스크래핑: {scraped_count}건 신규, 캐시 {len(fee_cache)}건 보유")
 
     print(f"\n문화부 총 {len(all_events)}개 수집 완료")
     return all_events

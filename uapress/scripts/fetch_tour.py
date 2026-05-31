@@ -211,10 +211,10 @@ if __name__ == "__main__":
     print(f"수집 기간: {start_str} ~ {end_str}")
     events = fetch_events(start_str, end_str)
 
-    # 상세 정보 추가 (상위 500개)
+    # 상세 정보 추가 (전체 — 124개 수준이므로 제한 불필요)
     if events:
         print("\n상세 정보 수집 중...")
-        for i, event in enumerate(events[:500]):
+        for i, event in enumerate(events):
             detail = fetch_event_detail(event["content_id"])
             intro = fetch_event_intro(event["content_id"])
 
@@ -225,7 +225,7 @@ if __name__ == "__main__":
             event["playtime"] = intro.get("playtime", "")
 
             if i % 50 == 0:
-                print(f"  {i}/{min(500, len(events))}개 처리")
+                print(f"  {i}/{len(events)}개 처리")
             time.sleep(0.2)
 
     (PROJECT_ROOT / "data/raw").mkdir(parents=True, exist_ok=True)
