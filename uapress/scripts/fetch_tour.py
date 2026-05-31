@@ -98,6 +98,7 @@ def fetch_events(start_date: str, end_date: str) -> list:
 
             except Exception as e:
                 print(f"  [{area_name}] 오류: {e}")
+                print(f"  [{area_name}] HTTP상태: {resp.status_code}, 응답앞100자: {resp.text[:100]!r}")
                 break
 
     print(f"\n총 {len(all_events)}개 행사 수집 완료")
