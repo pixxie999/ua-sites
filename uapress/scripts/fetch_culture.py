@@ -1,11 +1,12 @@
 """
-문화체육관광부 문화포털 공연·전시 정보 API
-http://www.culture.go.kr/openapi/rest/publicperformancedisplays
-자동승인 / 일 1,000건 무료
+한국문화정보원 문화예술공연 통합 API (CNV_060)
+https://api.kcisa.kr/openapi/CNV_060/request
+연극·뮤지컬·오페라·음악·콘서트·국악·무용·전시 등
 """
 
 import requests
 import json
+import re
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -17,31 +18,13 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-API_BASE = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays"
+API_URL = "https://api.kcisa.kr/openapi/CNV_060/request"
 
-# 지역명 → area 파라미터
-SIDO_LIST = [
-    "서울", "인천", "대전", "대구", "광주", "부산", "울산", "세종",
-    "경기", "강원", "충북", "충남", "경북", "경남", "전북", "전남", "제주"
-]
-
-# 카테고리 코드
-REALM_CODES = {
-    "A000": "문학",
-    "B000": "미술",
-    "C000": "공예",
-    "D000": "디자인",
-    "E000": "사진",
-    "F000": "서예",
-    "G000": "음악",
-    "H000": "무용",
-    "I000": "연극",
-    "J000": "영화",
-    "K000": "만화",
-    "L000": "게임",
-    "M000": "축제",
-    "N000": "전통",
-    "O000": "기타",
+REALM_TO_CATEGORY = {
+    "연극": "공연", "뮤지컬": "공연", "오페라": "공연",
+    "음악": "공연", "콘서트": "공연", "국악": "공연", "무용": "공연",
+    "전시": "전시", "미술": "전시", "사진": "전시", "조각": "전시",
+    "축제": "축제", "체험": "체험", "교육": "체험",
 }
 
 
@@ -49,141 +32,188 @@ def _get_api_key():
     return os.environ["CULTURE_API_KEY"]
 
 
-def fetch_by_area(start_date: str, end_date: str, sido: str, page: int = 1) -> dict:
-    params = {
-        "serviceKey": _get_api_key(),
-        "cPage": page,
-        "rows": 100,
-        "from": start_date,
-        "to": end_date,
-        "sido": sido,
-        "place": "",
-        "keyword": "",
-        "openRun": "",
-    }
-    try:
-        resp = requests.get(
-            f"{API_BASE}/area",
-            params=params,
-            timeout=30
-        )
-        return resp.json()
-    except Exception as e:
-        print(f"  [{sido}] 오류: {e}")
-        return {}
+def detect_category(realm: str) -> str:
+    for keyword, category in REALM_TO_CATEGORY.items():
+        if keyword in realm:
+            return category
+    return "문화행사"
 
 
-def parse_item(item: dict, region: str) -> dict:
-    """API 응답 아이템 → 표준 포맷 변환"""
-    seq = str(item.get("seq", ""))
-    title = item.get("title", "").strip()
+def parse_date(d: str) -> str:
+    """다양한 날짜 포맷 → YYYYMMDD"""
+    if not d:
+        return ""
+    d = d.strip().replace("-", "").replace(".", "").replace("/", "")
+    return d[:8] if len(d) >= 8 else ""
 
-    # 날짜 변환 (YYYYMMDD → YYYYMMDD 유지)
-    start_date = item.get("startDate", "").replace("-", "").replace(".", "")[:8]
-    end_date = item.get("endDate", "").replace("-", "").replace(".", "")[:8]
 
-    def fmt(d):
-        return f"{d[:4]}-{d[4:6]}-{d[6:8]}" if len(d) == 8 else d
-
-    # 카테고리 매핑
-    realm = item.get("realmName", "")
-    if any(k in realm for k in ["음악", "클래식", "국악", "재즈"]):
-        category = "공연"
-    elif any(k in realm for k in ["연극", "뮤지컬", "무용", "오페라"]):
-        category = "공연"
-    elif any(k in realm for k in ["미술", "전시", "사진", "조각"]):
-        category = "전시"
-    elif any(k in realm for k in ["축제"]):
-        category = "축제"
-    elif any(k in realm for k in ["공예", "체험", "교육"]):
-        category = "체험"
-    else:
-        category = "문화행사"
-
-    # 무료 여부
-    price = item.get("price", "")
-    is_free = "무료" in price or price.strip() in ("", "0", "0원")
-
-    # 슬러그 (culture 소스 prefix로 중복 방지)
-    import re
+def make_slug(seq: str, title: str) -> str:
     en = re.sub(r'[^a-zA-Z0-9\s]', '', title).strip()
     en = re.sub(r'\s+', '-', en).lower()[:35]
-    slug = f"c{seq}-{en}" if en else f"c{seq}"
+    return f"k{seq}-{en}" if en else f"k{seq}"
 
-    return {
-        "id": slug,
-        "content_id": f"c{seq}",
-        "source": "culture",
-        "title": title,
-        "category": category,
-        "region": region,
-        "area_code": "",
-        "address": item.get("place", ""),
-        "lat": float(item.get("gpsY", 0) or 0),
-        "lng": float(item.get("gpsX", 0) or 0),
-        "start_date": start_date,
-        "end_date": end_date,
-        "start_date_fmt": fmt(start_date),
-        "end_date_fmt": fmt(end_date),
-        "place": item.get("place", ""),
-        "fee": price,
-        "is_free": is_free,
-        "organizer": item.get("organization", ""),
-        "overview": item.get("contents1", "")[:500] if item.get("contents1") else "",
-        "thumbnail": item.get("thumbnail", ""),
-        "homepage": item.get("homepage", ""),
-        "tel": item.get("phone", ""),
-        "summary": "",
-        "highlight": "",
-        "target_audience": "",
-        "tips": [],
-        "seo_title": "",
-        "meta_description": "",
-        "tags": [],
+
+def fetch_page(start_date: str, end_date: str, page: int) -> dict:
+    params = {
+        "serviceKey": _get_api_key(),
+        "numOfRows": 100,
+        "pageNo": page,
+        "from": start_date,
+        "to": end_date,
     }
+    try:
+        resp = requests.get(API_URL, params=params, timeout=30)
+        if resp.status_code != 200:
+            print(f"  HTTP {resp.status_code}: {resp.text[:200]!r}")
+            return {}
+        return resp.json()
+    except Exception as e:
+        print(f"  페이지 {page} 오류: {e}")
+        return {}
 
 
 def fetch_all_events(start_date: str, end_date: str) -> list:
     all_events = []
     today = datetime.now().strftime("%Y%m%d")
+    page = 1
 
-    for sido in SIDO_LIST:
-        page = 1
-        while True:
-            data = fetch_by_area(start_date, end_date, sido, page)
-            msg_body = data.get("msgBody", {})
+    while True:
+        data = fetch_page(start_date, end_date, page)
+        if not data:
+            break
 
-            if not msg_body:
-                break
+        # 응답 구조 파악 (API마다 다를 수 있음)
+        body = (data.get("response") or data.get("msgBody") or data)
+        if isinstance(body, dict):
+            items = (
+                body.get("items") or
+                body.get("perforList") or
+                body.get("item") or
+                []
+            )
+            total_count = int(body.get("totalCount", 0) or body.get("numOfRows", 0))
+        else:
+            items = body if isinstance(body, list) else []
+            total_count = len(items)
 
-            total_count = int(msg_body.get("totalCount", 0))
-            perf_list = msg_body.get("perforList", [])
+        if isinstance(items, dict):
+            items = list(items.values())[0] if items else []
+            if isinstance(items, dict):
+                items = [items]
 
-            if not perf_list:
-                break
+        if not items:
+            if page == 1:
+                print(f"  응답 구조: {str(data)[:300]}")
+            break
 
-            if isinstance(perf_list, dict):
-                perf_list = [perf_list]
+        count = 0
+        for item in items:
+            if not isinstance(item, dict):
+                continue
 
-            count = 0
-            for item in perf_list:
-                # 종료된 행사 제외
-                end = item.get("endDate", "").replace("-", "")[:8]
-                if end and end < today:
-                    continue
-                parsed = parse_item(item, sido)
-                if parsed["title"]:
-                    all_events.append(parsed)
-                    count += 1
+            # 날짜 필드 (API마다 키 이름 다름)
+            start = parse_date(
+                item.get("startDate") or item.get("beginDt") or
+                item.get("eventstartdate") or item.get("from") or ""
+            )
+            end = parse_date(
+                item.get("endDate") or item.get("endDt") or
+                item.get("eventenddate") or item.get("to") or ""
+            )
 
-            print(f"  [{sido}] 페이지 {page}: {count}개 (누적 {len(all_events)})")
+            if not start or not end:
+                continue
+            if end < today:
+                continue
 
-            if len(all_events) >= total_count or len(perf_list) < 100:
-                break
-            page += 1
-            time.sleep(0.2)
+            # 제목
+            title = (
+                item.get("title") or item.get("nm") or
+                item.get("prfnm") or ""
+            ).strip()
+            if not title:
+                continue
 
-    print(f"\n문화부 총 {len(all_events)}개 행사 수집 완료")
+            # 지역
+            region = (
+                item.get("area") or item.get("sido") or
+                item.get("signguNm") or "기타"
+            ).strip()
+            if not region or region == "기타":
+                addr = item.get("place") or item.get("fcltynm") or ""
+                for r in ["서울", "부산", "대구", "인천", "광주", "대전", "울산",
+                          "세종", "경기", "강원", "충북", "충남", "전북", "전남",
+                          "경북", "경남", "제주"]:
+                    if r in addr:
+                        region = r
+                        break
+                else:
+                    region = "기타"
+
+            # 카테고리
+            realm = (
+                item.get("realmName") or item.get("genrenm") or
+                item.get("realm") or ""
+            )
+            category = detect_category(realm)
+
+            # 관람료
+            price = (
+                item.get("price") or item.get("pcseguidance") or
+                item.get("fee") or ""
+            )
+            is_free = "무료" in price or price.strip() in ("", "0", "0원")
+
+            # 기타 필드
+            seq = str(item.get("seq") or item.get("mt20id") or item.get("contentid") or "")
+            slug = make_slug(seq, title)
+
+            def fmt(d):
+                return f"{d[:4]}-{d[4:6]}-{d[6:8]}" if len(d) == 8 else d
+
+            all_events.append({
+                "id": slug,
+                "content_id": f"k{seq}",
+                "source": "culture",
+                "title": title,
+                "category": category,
+                "region": region,
+                "area_code": "",
+                "address": item.get("place") or item.get("fcltynm") or "",
+                "lat": float(item.get("gpsY") or item.get("la") or 0),
+                "lng": float(item.get("gpsX") or item.get("lo") or 0),
+                "start_date": start,
+                "end_date": end,
+                "start_date_fmt": fmt(start),
+                "end_date_fmt": fmt(end),
+                "place": item.get("place") or item.get("fcltynm") or "",
+                "fee": price,
+                "is_free": is_free,
+                "organizer": item.get("organization") or item.get("entrpsnm") or "",
+                "overview": (item.get("contents1") or item.get("styurls") or "")[:500],
+                "thumbnail": item.get("thumbnail") or item.get("poster") or "",
+                "homepage": item.get("homepage") or item.get("relates") or "",
+                "tel": item.get("phone") or item.get("telno") or "",
+                "summary": "",
+                "highlight": "",
+                "target_audience": "",
+                "tips": [],
+                "seo_title": "",
+                "meta_description": "",
+                "tags": [],
+            })
+            count += 1
+
+        print(f"  페이지 {page}: {count}개 (누적 {len(all_events)})")
+
+        if total_count and len(all_events) >= total_count:
+            break
+        if len(items) < 100:
+            break
+        page += 1
+        time.sleep(0.3)
+
+    print(f"\n문화부 총 {len(all_events)}개 수집 완료")
     return all_events
 
 
