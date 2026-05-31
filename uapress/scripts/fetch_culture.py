@@ -152,7 +152,7 @@ def fetch_all_events(start_date: str, end_date: str) -> list:
     page = 1
 
     # URL→fee 캐시 (이전 수집 결과 재사용, 중복 스크래핑 방지)
-    fee_cache_path = PROJECT_ROOT / "data/raw/culture_fee_cache.json"
+    fee_cache_path = PROJECT_ROOT / "data/raw/fee_cache.json"
     fee_cache: dict = {}
     if fee_cache_path.exists():
         try:
