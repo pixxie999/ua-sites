@@ -59,18 +59,18 @@
 </div>
 {% endif %}
 
-<!-- 지역 탭 필터 -->
+<!-- 지역 탭 — 클릭 시 해당 지역 페이지로 이동 (전체 행사 포함) -->
 <div class="mb-6 overflow-x-auto">
-  <div class="flex gap-2 pb-2 min-w-max" id="region-tabs">
-    <button onclick="filterRegion('all')"
-            class="region-tab active px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white whitespace-nowrap">
+  <div class="flex gap-2 pb-2 min-w-max">
+    <a href="/"
+       class="px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white whitespace-nowrap">
       전체
-    </button>
-    {% for region in region_slugs.keys() %}
-    <button onclick="filterRegion('{{ region }}')"
-            class="region-tab px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-blue-400 whitespace-nowrap">
+    </a>
+    {% for region, slug in region_slugs.items() %}
+    <a href="/region/{{ slug }}/"
+       class="px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-blue-400 hover:text-blue-600 whitespace-nowrap">
       {{ region }}
-    </button>
+    </a>
     {% endfor %}
   </div>
 </div>

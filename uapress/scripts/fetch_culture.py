@@ -145,7 +145,16 @@ def fetch_all_events(start_date: str, end_date: str) -> list:
             category = detect_category(title, site)
 
             charge = (item.findtext("charge") or "").strip()
-            is_free = (not charge) or "무료" in charge or charge in ("0", "0원")
+            # fee 없음 = 정보 없음(미상), 무료로 가정하지 않음
+            # "무료"가 명시된 경우만 무료, "유료"가 함께 있으면 부분유료로 처리
+            if not charge:
+                is_free = False
+            elif "유료" in charge and "무료" in charge:
+                is_free = False   # "무료(일부 유료)" 등 혼합 → 유료로 보수 처리
+            elif "무료" in charge or charge in ("0", "0원"):
+                is_free = True
+            else:
+                is_free = False
 
             description = strip_html(item.findtext("description") or "")
             thumbnail = (item.findtext("imageObject") or "").strip()

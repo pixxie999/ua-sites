@@ -103,7 +103,13 @@ def build_all():
 
     # 1. 메인
     tmpl = env.get_template("index.html")
-    this_week_events = sorted(active, key=lambda x: x["start_date"])[:60]
+    # Tour API(썸네일·상세정보 있음) 우선, 이후 문화부 보완 — 최대 120개
+    tour_active = [e for e in active if e.get("source") != "culture"]
+    culture_active = [e for e in active if e.get("source") == "culture"]
+    this_week_events = (
+        sorted(tour_active, key=lambda x: x["start_date"])[:80]
+        + sorted(culture_active, key=lambda x: x["start_date"])[:40]
+    )
     write(DIST / "index.html", tmpl.render(
         events=this_week_events,
         free_count=len(free_events),

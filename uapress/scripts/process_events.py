@@ -38,14 +38,16 @@ def detect_category(title: str, overview: str) -> str:
 def is_free(fee: str, title: str) -> bool:
     if not fee:
         return False
-    free_keywords = ["무료", "free", "0원", "없음"]
-    paid_keywords = ["유료", "원", "₩"]
-    fee_lower = fee.lower()
-    if any(kw in fee_lower for kw in free_keywords):
+    # "무료"와 "유료"가 함께 있으면 부분유료 → 유료로 처리
+    has_free = "무료" in fee or "free" in fee.lower() or fee.strip() in ("0", "0원", "없음")
+    has_paid = "유료" in fee or ("원" in fee and any(c.isdigit() for c in fee) and fee.strip() != "0원") or "₩" in fee
+    if has_free and has_paid:
+        return False   # "무료(일부 유료)", "유료(장애인 무료)" 등
+    if has_free:
         return True
-    if any(kw in fee for kw in paid_keywords):
+    if has_paid:
         return False
-    return "무료" in title
+    return False
 
 
 def process_events(raw_path: str) -> list:
