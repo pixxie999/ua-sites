@@ -1,0 +1,81 @@
+name: Build & Deploy uapress.kr
+
+on:
+  schedule:
+    - cron: '0 19 * * 1,4'   # 화·금 오전 4시 KST (데이터 갱신)
+    - cron: '0 19 * * 0'     # 일 오전 4시 KST (주간 큐레이션)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '실행 모드 (full / build_only / weekly)'
+        required: true
+        default: 'full'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-uapress-${{ hashFiles('uapress/requirements.txt') }}
+
+      - name: Install Python dependencies
+        run: pip install -r uapress/requirements.txt
+
+      - name: Fetch Tour API data
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        run: python uapress/scripts/fetch_tour.py
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+
+      - name: Process events
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        run: python uapress/scripts/process_events.py
+
+      - name: Generate AI content (event summaries)
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        run: python uapress/scripts/generate_content.py events
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Generate weekly pick
+        if: >
+          github.event.inputs.mode == 'weekly' ||
+          github.event.inputs.mode == 'full' ||
+          github.event.schedule == '0 19 * * 0'
+        run: python uapress/scripts/generate_content.py weekly
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Build search index
+        run: python uapress/scripts/build_search_index.py
+
+      - name: Build static site
+        run: python uapress/scripts/build_site.py
+        env:
+          SITE_DOMAIN: https://uapress.kr
+          SITE_NAME: 이번주 행사
+          ADSENSE_PUBLISHER_ID: ${{ secrets.ADSENSE_PUBLISHER_ID }}
+          ADSENSE_UNIT_BANNER: ${{ secrets.ADSENSE_UNIT_BANNER }}
+          ADSENSE_UNIT_RECTANGLE: ${{ secrets.ADSENSE_UNIT_RECTANGLE }}
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler pages deploy uapress/dist --project-name=uapress
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

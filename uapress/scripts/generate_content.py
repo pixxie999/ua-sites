@@ -9,11 +9,15 @@ import anthropic
 import json
 import time
 import os
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-load_dotenv()
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 MODEL = "claude-haiku-4-5-20251001"
 
 
@@ -150,7 +154,7 @@ def generate_weekly_pick(events: list) -> dict:
     result = json.loads(text)
 
     week_str = today.strftime("%Y-W%V")
-    out_dir = Path("data/content/weekly_picks")
+    out_dir = PROJECT_ROOT / "data/content/weekly_picks"
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / f"{week_str}.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2))
@@ -162,7 +166,7 @@ def generate_weekly_pick(events: list) -> dict:
 if __name__ == "__main__":
     import sys
 
-    events_path = Path("data/processed/events.json")
+    events_path = PROJECT_ROOT / "data/processed/events.json"
     if not events_path.exists():
         print("process_events.py 먼저 실행하세요.")
         sys.exit(1)

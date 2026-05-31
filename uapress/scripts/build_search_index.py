@@ -4,9 +4,12 @@ import json
 from pathlib import Path
 from datetime import datetime
 
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+
 
 def build_index():
-    events = json.loads(Path("data/processed/events.json").read_text())
+    events = json.loads((PROJECT_ROOT / "data/processed/events.json").read_text())
     today = datetime.now().strftime("%Y%m%d")
 
     index = []
@@ -33,8 +36,8 @@ def build_index():
         "events": index
     }
 
-    Path("dist").mkdir(exist_ok=True)
-    Path("dist/search-index.json").write_text(
+    (PROJECT_ROOT / "dist").mkdir(exist_ok=True)
+    (PROJECT_ROOT / "dist/search-index.json").write_text(
         json.dumps(out, ensure_ascii=False, separators=(",", ":")))
 
     print(f"검색 인덱스 생성: {len(index)}개")

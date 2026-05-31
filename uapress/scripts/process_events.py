@@ -7,6 +7,9 @@ import re
 from pathlib import Path
 from datetime import datetime
 
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+
 
 def make_slug(content_id: str, title: str) -> str:
     en = re.sub(r'[^a-zA-Z0-9\s]', '', title).strip()
@@ -104,7 +107,7 @@ def process_events(raw_path: str) -> list:
         m = e["start_date"][:6]
         by_month.setdefault(m, []).append(e)
 
-    out = Path("data/processed")
+    out = PROJECT_ROOT / "data/processed"
     out.mkdir(parents=True, exist_ok=True)
 
     (out / "events.json").write_text(
@@ -123,7 +126,7 @@ def process_events(raw_path: str) -> list:
 
 if __name__ == "__main__":
     import glob
-    files = sorted(glob.glob("data/raw/events_*.json"), reverse=True)
+    files = sorted(glob.glob(str(PROJECT_ROOT / "data/raw/events_*.json")), reverse=True)
     if not files:
         print("raw 데이터 없음. fetch_tour.py 먼저 실행하세요.")
     else:

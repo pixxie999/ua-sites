@@ -11,7 +11,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
 
@@ -183,7 +186,7 @@ if __name__ == "__main__":
             print(f"  {i}/{min(500, len(events))}개 처리")
         time.sleep(0.2)
 
-    Path("data/raw").mkdir(parents=True, exist_ok=True)
-    out = Path(f"data/raw/events_{start_str}.json")
+    (PROJECT_ROOT / "data/raw").mkdir(parents=True, exist_ok=True)
+    out = PROJECT_ROOT / f"data/raw/events_{start_str}.json"
     out.write_text(json.dumps(events, ensure_ascii=False, indent=2))
     print(f"\n저장 완료: {out} ({len(events)}개)")
