@@ -208,6 +208,13 @@ def build_all():
         f"User-agent: *\nAllow: /\nSitemap: {SITE_DOMAIN}/sitemap.xml\n"
     )
 
+    # 11. ads.txt (Google AdSense 필수)
+    if ADSENSE_PUBLISHER_ID:
+        (DIST / "ads.txt").write_text(
+            f"google.com, {ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n"
+        )
+        print(f"  ads.txt: {ADSENSE_PUBLISHER_ID}")
+
     # 11. 개인정보처리방침
     tmpl = env.get_template("privacy.html")
     write(DIST / "privacy-policy" / "index.html", tmpl.render(page_url="/privacy-policy/"))
