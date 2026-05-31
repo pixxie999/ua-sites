@@ -16,6 +16,17 @@
   <meta property="og:site_name" content="{{ site_name }}">
 
   <meta name="naver-site-verification" content="d9098da3005c33ec5e401f6bb8f34215638f8fc6">
+
+  {% if ga_measurement_id %}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_measurement_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ ga_measurement_id }}');
+  </script>
+  {% endif %}
   <meta name="google-site-verification" content="FLkAJP2PIXUYwJ6e4k01ES5SMguaeHbrG3VhsuyT5BM">
 
   <script src="https://cdn.tailwindcss.com"></script>

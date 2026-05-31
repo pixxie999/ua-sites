@@ -22,6 +22,7 @@ SITE_NAME = os.getenv("SITE_NAME", "이번주 행사")
 ADSENSE_PUBLISHER_ID = os.getenv("ADSENSE_PUBLISHER_ID", "")
 ADSENSE_UNIT_BANNER = os.getenv("ADSENSE_UNIT_BANNER", "")
 ADSENSE_UNIT_RECTANGLE = os.getenv("ADSENSE_UNIT_RECTANGLE", "")
+GA_MEASUREMENT_ID = os.getenv("GA_MEASUREMENT_ID", "")
 
 DIST = PROJECT_ROOT / "dist"
 BUILD_DATE = datetime.now().strftime("%Y-%m-%d")
@@ -70,6 +71,7 @@ def setup_env():
         "adsense_publisher_id": ADSENSE_PUBLISHER_ID,
         "adsense_unit_banner": ADSENSE_UNIT_BANNER,
         "adsense_unit_rectangle": ADSENSE_UNIT_RECTANGLE,
+        "ga_measurement_id": GA_MEASUREMENT_ID,
         "region_slugs": REGION_SLUGS,
         "category_slugs": CATEGORY_SLUGS,
         "now_year": datetime.now().year,

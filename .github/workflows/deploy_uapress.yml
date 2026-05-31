@@ -84,6 +84,7 @@ jobs:
           ADSENSE_PUBLISHER_ID: ${{ secrets.ADSENSE_PUBLISHER_ID }}
           ADSENSE_UNIT_BANNER: ${{ secrets.ADSENSE_UNIT_BANNER }}
           ADSENSE_UNIT_RECTANGLE: ${{ secrets.ADSENSE_UNIT_RECTANGLE }}
+          GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy uapress/dist --project-name=uapress
