@@ -54,13 +54,26 @@ def load_data():
     archive_path = base / "events_archive.json"
     archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
 
+    # 주간 큐레이션 — 최신순 전체 로드
     weekly_files = sorted(
         (PROJECT_ROOT / "data" / "content" / "weekly_picks").glob("*.json"),
         reverse=True
     )
     weekly_pick = json.loads(weekly_files[0].read_text()) if weekly_files else {}
 
-    return events, by_region, by_month, free_events, archive, weekly_pick
+    # 전체 주간 큐레이션 목록 (아카이브용) — {week, pick} 리스트
+    weekly_list = []
+    for wf in weekly_files:
+        week_str = wf.stem  # "2026-W23"
+        try:
+            weekly_list.append({
+                "week": week_str,
+                "pick": json.loads(wf.read_text()),
+            })
+        except Exception:
+            pass
+
+    return events, by_region, by_month, free_events, archive, weekly_pick, weekly_list
 
 
 def setup_env():
@@ -105,7 +118,7 @@ def build_all():
         for f in root_files.iterdir():
             shutil.copy(str(f), str(DIST / f.name))
 
-    events, by_region, by_month, free_events, archive, weekly_pick = load_data()
+    events, by_region, by_month, free_events, archive, weekly_pick, weekly_list = load_data()
     env = setup_env()
 
     today = datetime.now().strftime("%Y%m%d")
@@ -216,17 +229,26 @@ def build_all():
     ))
     print(f"  무료 행사: {len(free_events)}개")
 
-    # 7. 주간 큐레이션
-    if weekly_pick:
-        tmpl = env.get_template("weekly_pick.html")
-        week_str = datetime.now().strftime("%Y-W%V")
+    # 7. 주간 큐레이션 — 개별 페이지 (전체) + 목록 페이지
+    tmpl_pick = env.get_template("weekly_pick.html")
+    for item in weekly_list:
+        week_str = item["week"]
         path = DIST / "weekly" / week_str / "index.html"
-        write(path, tmpl.render(
-            pick=weekly_pick,
+        write(path, tmpl_pick.render(
+            pick=item["pick"],
             week=week_str,
             page_url=f"/weekly/{week_str}/"
         ))
-        print(f"  주간 큐레이션: {week_str}")
+    if weekly_list:
+        print(f"  주간 큐레이션: {len(weekly_list)}개")
+
+    # 7-1. 주간 큐레이션 목록 (모아보기)
+    tmpl_archive = env.get_template("weekly_archive.html")
+    write(DIST / "weekly" / "index.html", tmpl_archive.render(
+        weekly_list=weekly_list,
+        page_url="/weekly/"
+    ))
+    print(f"  주간 큐레이션 모아보기: {len(weekly_list)}개")
 
     # 8. 검색 인덱스
     idx_src = Path("dist/search-index.json")
@@ -268,6 +290,7 @@ def build_sitemap(events: list, archive: list = None):
     urls = [
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/free/", "priority": "0.9", "changefreq": "daily"},
+        {"loc": "/weekly/", "priority": "0.9", "changefreq": "weekly"},
     ]
 
     for region_slug in REGION_SLUGS.values():

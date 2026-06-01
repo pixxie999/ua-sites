@@ -6,7 +6,8 @@
 {% block content %}
 <nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
   <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
-  <span class="text-gray-600">주간 큐레이션</span>
+  <a href="/weekly/" class="hover:text-blue-500">주간 큐레이션</a> <span>›</span>
+  <span class="text-gray-600">{{ week }}</span>
 </nav>
 
 <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-white">

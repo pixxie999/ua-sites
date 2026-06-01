@@ -48,7 +48,7 @@
   <h2 class="text-xl font-bold mb-2">{{ weekly_pick.title }}</h2>
   <p class="text-blue-100 text-sm mb-4">{{ weekly_pick.intro }}</p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-    {% for pick in weekly_pick.picks[:3] %}
+    {% for pick in weekly_pick.picks[:5] %}
     <a href="/event/{{ pick.event_id }}/" class="bg-white/15 hover:bg-white/25 rounded-xl p-3 transition">
       <span class="text-yellow-300 font-bold text-sm">TOP {{ pick.rank }}</span>
       <p class="font-semibold mt-1 text-sm">{{ pick.title }}</p>
