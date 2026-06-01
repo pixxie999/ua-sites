@@ -156,6 +156,45 @@
 </div>
 {% endif %}
 
+<!-- 지도 & 교통 -->
+<div class="bg-white rounded-xl p-5 shadow-sm mb-6">
+  <h2 class="font-bold text-lg mb-3">🗺️ 위치 & 교통</h2>
+  {% set map_query = event.place or event.address or event.title %}
+  <p class="text-sm text-gray-500 mb-3">📍 {{ event.address or event.place or event.region }}</p>
+  <div class="grid grid-cols-2 gap-2 mb-3">
+    <a href="https://map.kakao.com/?q={{ map_query | urlencode }}"
+       target="_blank" rel="noopener"
+       class="flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-sm py-2.5 rounded-xl transition">
+      <span>🗺️</span> 카카오맵
+    </a>
+    <a href="https://map.naver.com/v5/search/{{ map_query | urlencode }}"
+       target="_blank" rel="noopener"
+       class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm py-2.5 rounded-xl transition">
+      <span>📍</span> 네이버지도
+    </a>
+  </div>
+  {% if event.region not in ["서울", "인천", "경기"] %}
+  <p class="text-xs text-gray-400 mb-2 font-medium">🚌 교통편 예매</p>
+  <div class="grid grid-cols-3 gap-2">
+    <a href="https://www.letskorail.com/ebizprd/EbizPrdTicketpr21100W.do?hidKndCd=01&hidFrStinCd=&hidToStinCd=&hidEtcReserveFlg=Y&txtGoStop={{ event.region }}"
+       target="_blank" rel="noopener sponsored"
+       class="text-center bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 rounded-lg transition">
+      🚂 KTX
+    </a>
+    <a href="https://www.kobus.co.kr/main.do"
+       target="_blank" rel="noopener sponsored"
+       class="text-center bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2 rounded-lg transition">
+      🚌 고속버스
+    </a>
+    <a href="https://www.bustago.or.kr/newweb/kr/main/main.do"
+       target="_blank" rel="noopener sponsored"
+       class="text-center bg-teal-500 hover:bg-teal-600 text-white text-xs font-bold py-2 rounded-lg transition">
+      🚌 시외버스
+    </a>
+  </div>
+  {% endif %}
+</div>
+
 <!-- 숙박 CPA -->
 <div class="bg-gray-800 text-white rounded-xl p-5 mb-6">
   <h2 class="font-bold mb-1">🏨 근처 숙박 예약</h2>
@@ -236,6 +275,42 @@
   <p class="text-xs text-gray-400 mt-3 text-right">출처: 네이버 카페</p>
 </div>
 {% endif %}
+
+<!-- 공유하기 -->
+<div class="bg-white rounded-xl p-5 shadow-sm mb-6">
+  <h2 class="font-bold text-lg mb-3">📤 이 행사 공유하기</h2>
+  <div class="flex gap-2">
+    <button onclick="shareEvent()"
+            class="flex-1 flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-sm py-2.5 rounded-xl transition">
+      <span>💬</span> 공유하기
+    </button>
+    <button onclick="copyUrl()"
+            id="copy-btn"
+            class="flex-1 flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm py-2.5 rounded-xl transition">
+      <span>🔗</span> URL 복사
+    </button>
+  </div>
+</div>
+<script>
+function shareEvent() {
+  if (navigator.share) {
+    navigator.share({
+      title: '{{ (event.seo_title or event.title) | replace("'", "\\'") }}',
+      text: '{{ (event.meta_description or event.title) | replace("'", "\\'") }}',
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    copyUrl();
+  }
+}
+function copyUrl() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.innerHTML = '<span>✅</span> 복사됨';
+    setTimeout(() => { btn.innerHTML = '<span>🔗</span> URL 복사'; }, 2000);
+  });
+}
+</script>
 
 <!-- 뒤로가기 -->
 <div class="text-center mt-8">
