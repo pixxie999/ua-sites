@@ -52,9 +52,20 @@
 </div>
 {% endif %}
 
+<!-- 종료 행사 알림 -->
+{% if is_ended %}
+<div class="bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 mb-5 flex items-center gap-2 text-gray-500 text-sm">
+  <span>📅</span>
+  <span>이 행사는 <strong>{{ event.end_date_fmt }}</strong>에 종료되었습니다. 아래 정보는 참고용입니다.</span>
+</div>
+{% endif %}
+
 <!-- 제목·뱃지 -->
 <div class="mb-6">
   <div class="flex flex-wrap gap-2 mb-3">
+    {% if is_ended %}
+    <span class="bg-gray-200 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">종료</span>
+    {% endif %}
     <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">{{ event.category }}</span>
     {% if event.is_free %}
     <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">🎟 무료입장</span>

@@ -65,11 +65,19 @@ def process_events(raw_path: str) -> list:
         except Exception:
             pass
 
+    # 아카이브 로드 (과거 행사 누적)
+    archive_path = PROJECT_ROOT / "data/processed/events_archive.json"
+    archive_map = {}
+    if archive_path.exists():
+        try:
+            archive = json.loads(archive_path.read_text())
+            archive_map = {e["id"]: e for e in archive}
+        except Exception:
+            pass
+
     processed = []
 
     for item in raw:
-        if item.get("end_date", "") < today:
-            continue
         if not item.get("title"):
             continue
 
@@ -115,31 +123,50 @@ def process_events(raw_path: str) -> list:
             "tags": existing.get("tags", []),
         })
 
+    # 활성 / 종료 분리
+    active = [e for e in processed if e["end_date"] >= today]
+    ended = [e for e in processed if e["end_date"] < today]
+
+    # 아카이브 업데이트: 기존 + 새로 종료된 행사 병합 (AI 캐시 보존)
+    for e in ended:
+        eid = e["id"]
+        if eid not in archive_map:
+            archive_map[eid] = e
+        else:
+            # AI 필드는 기존 아카이브 값 우선 보존
+            for field in ("seo_title", "meta_description", "summary", "highlight",
+                          "target_audience", "tips", "tags"):
+                if archive_map[eid].get(field):
+                    e[field] = archive_map[eid][field]
+            archive_map[eid] = e
+
     by_region = {}
     by_month = {}
-
-    for e in processed:
-        r = e["region"]
-        by_region.setdefault(r, []).append(e)
-
-        m = e["start_date"][:6]
-        by_month.setdefault(m, []).append(e)
+    for e in active:
+        by_region.setdefault(e["region"], []).append(e)
+        by_month.setdefault(e["start_date"][:6], []).append(e)
 
     out = PROJECT_ROOT / "data/processed"
     out.mkdir(parents=True, exist_ok=True)
 
+    # 활성 행사만 events.json (AI 생성·빌드 대상)
     (out / "events.json").write_text(
-        json.dumps(processed, ensure_ascii=False, indent=2))
+        json.dumps(active, ensure_ascii=False, indent=2))
     (out / "events_by_region.json").write_text(
         json.dumps(by_region, ensure_ascii=False, indent=2))
     (out / "events_by_month.json").write_text(
         json.dumps(by_month, ensure_ascii=False, indent=2))
     (out / "free_events.json").write_text(
-        json.dumps([e for e in processed if e["is_free"]],
-                   ensure_ascii=False, indent=2))
+        json.dumps([e for e in active if e["is_free"]], ensure_ascii=False, indent=2))
 
-    print(f"정제 완료: {len(processed)}개 (무료: {sum(1 for e in processed if e['is_free'])}개)")
-    return processed
+    # 아카이브 저장 (누적)
+    archive_list = sorted(archive_map.values(), key=lambda x: x["end_date"], reverse=True)
+    (out / "events_archive.json").write_text(
+        json.dumps(archive_list, ensure_ascii=False, indent=2))
+
+    print(f"정제 완료: 활성 {len(active)}개 (무료: {sum(1 for e in active if e['is_free'])}개), "
+          f"아카이브 {len(archive_list)}개")
+    return active
 
 
 if __name__ == "__main__":

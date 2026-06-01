@@ -50,13 +50,17 @@ def load_data():
     by_month = json.loads((base / "events_by_month.json").read_text())
     free_events = json.loads((base / "free_events.json").read_text())
 
+    # 아카이브 (종료된 행사 — 상세 페이지용)
+    archive_path = base / "events_archive.json"
+    archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
+
     weekly_files = sorted(
         (PROJECT_ROOT / "data" / "content" / "weekly_picks").glob("*.json"),
         reverse=True
     )
     weekly_pick = json.loads(weekly_files[0].read_text()) if weekly_files else {}
 
-    return events, by_region, by_month, free_events, weekly_pick
+    return events, by_region, by_month, free_events, archive, weekly_pick
 
 
 def setup_env():
@@ -101,11 +105,11 @@ def build_all():
         for f in root_files.iterdir():
             shutil.copy(str(f), str(DIST / f.name))
 
-    events, by_region, by_month, free_events, weekly_pick = load_data()
+    events, by_region, by_month, free_events, archive, weekly_pick = load_data()
     env = setup_env()
 
     today = datetime.now().strftime("%Y%m%d")
-    active = [e for e in events if e["end_date"] >= today]
+    active = events  # process_events.py에서 이미 활성만 필터됨
 
     # 카페 후기 건수 사전 로드 (카드 뱃지용)
     reviews_dir = PROJECT_ROOT / "data/content/cafe_reviews"
@@ -132,11 +136,12 @@ def build_all():
     ))
     print("  메인 생성")
 
-    # 2. 행사 상세
+    # 2. 행사 상세 (활성 + 아카이브 모두 빌드 — SEO 유지)
     tmpl = env.get_template("event.html")
     reviews_dir = PROJECT_ROOT / "data/content/cafe_reviews"
-    for e in active:
-        # 카페 후기 로드 (있으면)
+    all_events_for_detail = active + archive
+
+    for e in all_events_for_detail:
         review_path = reviews_dir / f"{e['id']}.json"
         cafe_reviews = []
         if review_path.exists():
@@ -145,9 +150,15 @@ def build_all():
                 cafe_reviews = cafe_data.get("reviews", [])
             except Exception:
                 pass
+        is_ended = e["end_date"] < today
         path = DIST / "event" / e["id"] / "index.html"
-        write(path, tmpl.render(event=e, cafe_reviews=cafe_reviews, page_url=f"/event/{e['id']}/"))
-    print(f"  행사 상세: {len(active)}개")
+        write(path, tmpl.render(
+            event=e,
+            cafe_reviews=cafe_reviews,
+            is_ended=is_ended,
+            page_url=f"/event/{e['id']}/"
+        ))
+    print(f"  행사 상세: 활성 {len(active)}개 + 아카이브 {len(archive)}개")
 
     # 3. 지역별
     tmpl = env.get_template("region.html")
@@ -229,7 +240,7 @@ def build_all():
         build_search_index.build_index()
 
     # 9. sitemap.xml
-    build_sitemap(active)
+    build_sitemap(active, archive)
 
     # 10. robots.txt
     (DIST / "robots.txt").write_text(
@@ -253,7 +264,7 @@ def build_all():
     print(f"\n빌드 완료: {total}개 HTML 페이지")
 
 
-def build_sitemap(events: list):
+def build_sitemap(events: list, archive: list = None):
     urls = [
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/free/", "priority": "0.9", "changefreq": "daily"},
@@ -265,8 +276,13 @@ def build_sitemap(events: list):
     for category_slug in CATEGORY_SLUGS.values():
         urls.append({"loc": f"/category/{category_slug}/", "priority": "0.8", "changefreq": "weekly"})
 
+    # 활성 행사
     for e in events:
         urls.append({"loc": f"/event/{e['id']}/", "priority": "0.7", "changefreq": "weekly"})
+
+    # 아카이브 행사 — 낮은 priority, 변경 없음
+    for e in (archive or []):
+        urls.append({"loc": f"/event/{e['id']}/", "priority": "0.4", "changefreq": "monthly"})
 
     sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     sitemap_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
