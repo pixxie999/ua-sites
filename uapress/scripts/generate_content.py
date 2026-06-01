@@ -39,22 +39,20 @@ EVENT_SYSTEM = """문화행사 큐레이션 전문가입니다. 주어진 행사
 }"""
 
 WEEKLY_SYSTEM = """주말 나들이 전문 에디터입니다. 이번 주 추천 행사 TOP 5를 선정하세요.
-JSON만 출력:
+JSON만 출력 (마크다운 없이):
 {
-  "title": "이번 주 가볼 만한 행사 TOP 5 (날짜 포함)",
-  "intro": "이번 주 행사 트렌드 요약 200자",
+  "title": "이번 주 가볼 만한 행사 TOP 5 (날짜)",
+  "intro": "트렌드 요약 100자 이내",
   "picks": [
     {
       "rank": 1,
       "event_id": "행사 id",
       "title": "행사명",
-      "reason": "추천 이유 100자",
-      "must_see": "꼭 봐야 할 포인트 80자",
-      "tip": "실용 방문 팁 80자"
+      "reason": "추천 이유 50자 이내",
+      "tip": "방문 팁 50자 이내"
     }
   ],
-  "hidden_gem": "덜 알려진 추천 행사 소개 200자",
-  "next_week_preview": "다음 주 주목 행사 100자"
+  "hidden_gem": "숨은 추천 행사 100자 이내"
 }"""
 
 
@@ -159,7 +157,7 @@ def generate_weekly_pick(events: list) -> dict:
     try:
         resp = client.messages.create(
             model=MODEL,
-            max_tokens=2000,  # 700→2000: JSON 중간 잘림 방지
+            max_tokens=3000,  # 충분한 여유 확보
             system=WEEKLY_SYSTEM,
             messages=[{"role": "user", "content": prompt}]
         )
