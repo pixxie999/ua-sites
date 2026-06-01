@@ -95,6 +95,12 @@ def build_all():
     if static.exists():
         shutil.copytree(str(static), str(DIST / "static"))
 
+    # 루트 배치 파일 (인증 파일 등) — static/root/ → dist/ 루트로 복사
+    root_files = PROJECT_ROOT / "static" / "root"
+    if root_files.exists():
+        for f in root_files.iterdir():
+            shutil.copy(str(f), str(DIST / f.name))
+
     events, by_region, by_month, free_events, weekly_pick = load_data()
     env = setup_env()
 
