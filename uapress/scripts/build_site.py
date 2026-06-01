@@ -215,11 +215,13 @@ def build_all():
     )
 
     # 11. ads.txt (Google AdSense 필수)
+    # ADSENSE_PUBLISHER_ID는 ca-pub-XXX 형식 — ads.txt는 pub-XXX 형식 필요
     if ADSENSE_PUBLISHER_ID:
+        pub_id = ADSENSE_PUBLISHER_ID.replace("ca-", "", 1)
         (DIST / "ads.txt").write_text(
-            f"google.com, {ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n"
+            f"google.com, {pub_id}, DIRECT, f08c47fec0942fa0\n"
         )
-        print(f"  ads.txt: {ADSENSE_PUBLISHER_ID}")
+        print(f"  ads.txt: {pub_id}")
 
     # 11. 개인정보처리방침
     tmpl = env.get_template("privacy.html")
