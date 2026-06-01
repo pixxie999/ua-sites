@@ -1,6 +1,7 @@
 .env
 data/raw/events_*.json
-data/raw/culture_*.json.bak
+data/raw/culture_*.json
+data/raw/fee_cache.json
 dist/
 __pycache__/
 *.pyc

@@ -195,6 +195,37 @@
 </div>
 {% endif %}
 
+<!-- 네이버 카페 후기 -->
+{% if cafe_reviews %}
+<div class="bg-white rounded-xl p-5 shadow-sm mb-6">
+  <h2 class="font-bold text-lg mb-4">💬 네이버 카페 후기</h2>
+  <ul class="space-y-3">
+    {% for r in cafe_reviews %}
+    <li class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+      <a href="{{ r.link }}" target="_blank" rel="noopener"
+         class="block group">
+        <p class="text-sm font-medium text-gray-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
+          {{ r.title }}
+        </p>
+        {% if r.description %}
+        <p class="text-xs text-gray-500 mt-1 line-clamp-2">{{ r.description }}</p>
+        {% endif %}
+        <div class="flex items-center gap-2 mt-1">
+          {% if r.cafe_name %}
+          <span class="text-xs text-blue-400">{{ r.cafe_name }}</span>
+          {% endif %}
+          {% if r.date %}
+          <span class="text-xs text-gray-300">{{ r.date[:4] }}.{{ r.date[4:6] }}.{{ r.date[6:] }}</span>
+          {% endif %}
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="text-xs text-gray-400 mt-3 text-right">출처: 네이버 카페</p>
+</div>
+{% endif %}
+
 <!-- 뒤로가기 -->
 <div class="text-center mt-8">
   <a href="/" class="text-gray-400 hover:text-blue-500 text-sm">← 전체 행사 목록으로</a>
