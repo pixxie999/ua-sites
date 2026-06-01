@@ -42,6 +42,9 @@
         {% if event.is_free %}
         <span class="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded-full font-bold">무료</span>
         {% endif %}
+        {% if review_counts and review_counts.get(event.id) %}
+        <span class="bg-orange-50 text-orange-500 text-xs px-2 py-0.5 rounded-full">💬 후기 {{ review_counts.get(event.id) }}건</span>
+        {% endif %}
       </div>
       <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
       <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>

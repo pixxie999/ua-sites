@@ -159,27 +159,49 @@ def generate_weekly_pick(events: list) -> dict:
     try:
         resp = client.messages.create(
             model=MODEL,
-            max_tokens=700,
+            max_tokens=2000,  # 700→2000: JSON 중간 잘림 방지
             system=WEEKLY_SYSTEM,
             messages=[{"role": "user", "content": prompt}]
         )
 
         text = resp.content[0].text.strip()
         # 코드블록 제거
-        if text.startswith("```"):
-            text = text.split("```")[1]
-            if text.startswith("json"):
-                text = text[4:]
+        if "```" in text:
+            parts = text.split("```")
+            for part in parts:
+                if part.startswith("json"):
+                    text = part[4:].strip()
+                    break
+                elif part.strip().startswith("{"):
+                    text = part.strip()
+                    break
         text = text.strip()
 
         if not text:
             print("주간 큐레이션: 빈 응답 — 스킵")
             return {}
 
-        result = json.loads(text)
-    except json.JSONDecodeError as e:
-        print(f"주간 큐레이션 JSON 파싱 실패: {e}\n응답: {text[:200]}")
-        return {}
+        # JSON 파싱 — 잘린 경우 중괄호 균형 맞춰 복구 시도
+        try:
+            result = json.loads(text)
+        except json.JSONDecodeError:
+            # 불완전한 JSON → 마지막 완전한 중괄호 위치까지 자르기
+            depth = 0
+            last_complete = 0
+            for idx, ch in enumerate(text):
+                if ch == '{':
+                    depth += 1
+                elif ch == '}':
+                    depth -= 1
+                    if depth == 0:
+                        last_complete = idx + 1
+            truncated = text[:last_complete] if last_complete else ""
+            if not truncated:
+                print(f"주간 큐레이션 JSON 복구 실패\n응답: {text[:300]}")
+                return {}
+            result = json.loads(truncated)
+            print("주간 큐레이션 JSON 부분 복구 성공")
+
     except Exception as e:
         print(f"주간 큐레이션 생성 실패: {e}")
         return {}

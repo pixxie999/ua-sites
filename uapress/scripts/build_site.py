@@ -107,6 +107,19 @@ def build_all():
     today = datetime.now().strftime("%Y%m%d")
     active = [e for e in events if e["end_date"] >= today]
 
+    # 카페 후기 건수 사전 로드 (카드 뱃지용)
+    reviews_dir = PROJECT_ROOT / "data/content/cafe_reviews"
+    review_counts = {}  # event_id → 후기 건수
+    if reviews_dir.exists():
+        for rp in reviews_dir.glob("*.json"):
+            try:
+                data = json.loads(rp.read_text())
+                cnt = len(data.get("reviews", []))
+                if cnt > 0:
+                    review_counts[rp.stem] = cnt
+            except Exception:
+                pass
+
     # 1. 메인
     tmpl = env.get_template("index.html")
     this_week_events = sorted(active, key=lambda x: x["start_date"])[:120]
@@ -114,6 +127,7 @@ def build_all():
         events=this_week_events,
         free_count=len(free_events),
         weekly_pick=weekly_pick,
+        review_counts=review_counts,
         page_url="/"
     ))
     print("  메인 생성")
@@ -145,6 +159,7 @@ def build_all():
         write(path, tmpl.render(
             region=region, slug=slug,
             events=region_events,
+            review_counts=review_counts,
             page_url=f"/region/{slug}/"
         ))
     print(f"  지역별: {len(REGION_SLUGS)}개")
@@ -161,6 +176,7 @@ def build_all():
         write(path, tmpl.render(
             year=year, month=month,
             events=active_month,
+            review_counts=review_counts,
             page_url=f"/{year}/{month}/"
         ))
     print(f"  월별: {len(by_month)}개")
@@ -175,6 +191,7 @@ def build_all():
         write(path, tmpl.render(
             category=category, slug=slug,
             events=cat_events,
+            review_counts=review_counts,
             page_url=f"/category/{slug}/"
         ))
     print(f"  카테고리: {len(CATEGORY_SLUGS)}개")
@@ -183,6 +200,7 @@ def build_all():
     tmpl = env.get_template("free.html")
     write(DIST / "free" / "index.html", tmpl.render(
         events=free_events,
+        review_counts=review_counts,
         page_url="/free/"
     ))
     print(f"  무료 행사: {len(free_events)}개")
