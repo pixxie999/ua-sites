@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}{{ season_name }} 축제·행사 추천 {{ year }} — {{ site_name }}{% endblock %}
+{% block description %}{{ year }} {{ season_name }} 전국 축제와 문화행사 추천. {{ season_months }} 동안 열리는 행사를 한눈에 확인하세요.{% endblock %}
+{% block og_title %}{{ year }} {{ season_name }} 행사 추천 — {{ site_name }}{% endblock %}
+{% block og_desc %}{{ year }} {{ season_name }} 전국 축제·행사 모음. 무료 행사 포함.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ year }} {{ season_name }} 축제·행사 추천",
+  "description": "{{ year }} {{ season_name }} 전국 문화행사·축제 모음",
+  "url": "{{ site_domain }}{{ page_url }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <span class="text-gray-600">{{ season_name }} 특집</span>
+</nav>
+
+<!-- 히어로 -->
+<div class="rounded-2xl p-8 mb-8 text-white text-center"
+     style="background: linear-gradient(135deg, {{ season_color_from }}, {{ season_color_to }});">
+  <div class="text-5xl mb-3">{{ season_emoji }}</div>
+  <h1 class="text-2xl md:text-3xl font-bold mb-2">{{ year }} {{ season_name }} 행사 추천</h1>
+  <p class="text-white/80">{{ season_months }} · 전국 {{ events | length }}개 행사</p>
+  <div class="flex justify-center gap-3 mt-4 text-sm">
+    <span class="bg-white/20 px-4 py-1.5 rounded-full">무료 {{ free_count }}개</span>
+    <span class="bg-white/20 px-4 py-1.5 rounded-full">{{ region_count }}개 지역</span>
+  </div>
+</div>
+
+<!-- 시즌 설명 -->
+<div class="bg-white rounded-xl p-5 shadow-sm mb-8">
+  <p class="text-gray-700 leading-relaxed">{{ season_desc }}</p>
+</div>
+
+<!-- 카테고리 필터 -->
+<div class="flex flex-wrap gap-2 mb-6">
+  <span class="text-sm font-medium text-gray-500 self-center">카테고리:</span>
+  {% for cat, cnt in category_counts.items() %}
+  <a href="/category/{{ category_slugs.get(cat, 'culture') }}/"
+     class="bg-white border border-gray-200 text-gray-600 text-sm px-3 py-1 rounded-full hover:border-blue-400 hover:text-blue-600 transition">
+    {{ cat }} {{ cnt }}
+  </a>
+  {% endfor %}
+</div>
+
+<!-- 행사 그리드 -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+  {% for event in events %}
+  <a href="/event/{{ event.id }}/"
+     class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
+    {% if event.thumbnail %}
+    <div class="h-44 overflow-hidden">
+      <img src="{{ event.thumbnail }}" alt="{{ event.title }}"
+           class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy">
+    </div>
+    {% else %}
+    <div class="h-44 flex items-center justify-center text-5xl"
+         style="background: linear-gradient(135deg, {{ season_color_from }}22, {{ season_color_to }}22);">
+      {{ season_emoji }}
+    </div>
+    {% endif %}
+    <div class="p-4">
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded-full">{{ event.category }}</span>
+        {% if event.is_free %}
+        <span class="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded-full font-bold">무료</span>
+        {% endif %}
+        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-0.5 rounded-full">📍 {{ event.region }}</span>
+        {% if review_counts and review_counts.get(event.id) %}
+        <span class="bg-orange-50 text-orange-500 text-xs px-2 py-0.5 rounded-full">💬 후기 {{ review_counts.get(event.id) }}건</span>
+        {% endif %}
+      </div>
+      <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
+      <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+      {% if event.place %}
+      <p class="text-xs text-gray-400 mt-0.5">📌 {{ event.place }}</p>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% if adsense_publisher_id and adsense_unit_banner %}
+<div class="mb-8">
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="{{ adsense_publisher_id }}"
+    data-ad-slot="{{ adsense_unit_banner }}"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<!-- 다른 시즌 -->
+<div class="bg-white rounded-xl p-5 shadow-sm">
+  <h2 class="font-bold text-gray-700 mb-3">다른 시즌 보기</h2>
+  <div class="flex flex-wrap gap-2">
+    {% for s in all_seasons %}
+    {% if s.slug != season_slug %}
+    <a href="/season/{{ s.slug }}/"
+       class="flex items-center gap-1 bg-gray-50 hover:bg-gray-100 text-gray-700 text-sm px-4 py-2 rounded-full transition">
+      {{ s.emoji }} {{ s.name }}
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -31,6 +31,60 @@
   {% if event.thumbnail %},"image": "{{ event.thumbnail }}"{% endif %}
 }
 </script>
+
+<!-- FAQ 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ event.title }} 입장료(관람료)가 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{% if event.is_free %}무료 행사입니다. 별도의 입장료 없이 참여할 수 있습니다.{% elif event.fee %}{{ event.fee }}{% else %}관람료 정보는 공식 홈페이지를 통해 확인해 주세요.{% endif %}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ event.title }} 행사 장소가 어디인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{% if event.address %}{{ event.address }}{% if event.place %} ({{ event.place }}){% endif %}{% elif event.place %}{{ event.place }}{% else %}{{ event.region }} 지역에서 진행됩니다.{% endif %}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ event.title }} 행사 기간은 언제인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ event.start_date_fmt }}부터 {{ event.end_date_fmt }}까지 진행됩니다."
+      }
+    }
+    {% if event.tel %},
+    {
+      "@type": "Question",
+      "name": "{{ event.title }} 문의처가 어디인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ event.tel }}로 문의하시거나{% if event.organizer %} {{ event.organizer }}에{% endif %} 연락하시면 됩니다."
+      }
+    }
+    {% endif %}
+    {% if event.target_audience %},
+    {
+      "@type": "Question",
+      "name": "{{ event.title }}은 누가 가면 좋은가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ event.target_audience }}에게 추천합니다.{% if event.target_reason %} {{ event.target_reason }}{% endif %}"
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>
 {% endblock %}
 
 {% block content %}

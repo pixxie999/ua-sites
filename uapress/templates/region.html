@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}{{ region }} 문화행사·축제 — {{ site_name }}{% endblock %}
-{% block description %}{{ region }} 지역 문화행사와 축제 정보. 이번 달 {{ region }}에서 열리는 행사를 확인하세요.{% endblock %}
+{% block title %}{{ region }} 문화행사·축제 {{ now_year }} — {{ site_name }}{% endblock %}
+{% block description %}{{ region }} 문화행사·축제 정보. {{ now_year }}년 {{ region }}에서 열리는 행사 {{ events | length }}개를 한눈에 확인하세요. 무료 행사 포함.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ region }} 문화행사·축제",
+  "description": "{{ region }} 지역 문화행사와 축제 정보",
+  "url": "{{ site_domain }}{{ page_url }}"
+}
+</script>
+{% endblock %}
 
 {% block content %}
 <nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
@@ -9,10 +21,47 @@
   <span class="text-gray-600">{{ region }}</span>
 </nav>
 
-<div class="mb-8">
-  <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">📍 {{ region }} 문화행사</h1>
-  <p class="text-gray-500">{{ region }} 지역에서 열리는 행사 {{ events | length }}개</p>
+<!-- 히어로 -->
+<div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl p-7 mb-8 text-white">
+  <div class="flex items-start justify-between">
+    <div>
+      <p class="text-blue-200 text-sm mb-1">📍 지역 행사</p>
+      <h1 class="text-2xl md:text-3xl font-bold mb-2">{{ region }} 문화행사 · 축제</h1>
+      <p class="text-blue-100 text-sm">{{ now_year }}년 총 {{ events | length }}개 행사 · 무료 {{ free_count }}개</p>
+    </div>
+    <div class="text-5xl opacity-30 hidden md:block">{{ region_info.emoji }}</div>
+  </div>
+  <!-- 지역 특성 요약 -->
+  <div class="flex flex-wrap gap-2 mt-4">
+    {% for tag in region_info.tags %}
+    <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full">{{ tag }}</span>
+    {% endfor %}
+  </div>
 </div>
+
+<!-- 지역 소개 -->
+<div class="bg-white rounded-xl p-5 shadow-sm mb-6">
+  <h2 class="font-bold text-lg mb-2">{{ region }} 여행 & 행사 정보</h2>
+  <p class="text-gray-600 text-sm leading-relaxed">{{ region_info.desc }}</p>
+  {% if region_info.tips %}
+  <div class="mt-3 flex flex-wrap gap-2">
+    {% for tip in region_info.tips %}
+    <span class="bg-blue-50 text-blue-600 text-xs px-3 py-1 rounded-full">{{ tip }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+<!-- 날씨 정보 -->
+{% if weather %}
+<div class="bg-sky-50 border border-sky-200 rounded-xl px-5 py-4 mb-6 flex items-center gap-4">
+  <div class="text-3xl">{{ weather.icon }}</div>
+  <div>
+    <p class="text-sm font-bold text-sky-800">이번 주말 {{ region }} 날씨</p>
+    <p class="text-sky-600 text-sm">{{ weather.summary }}</p>
+  </div>
+</div>
+{% endif %}
 
 {% if adsense_publisher_id and adsense_unit_banner %}
 <div class="mb-6">
@@ -24,7 +73,8 @@
 </div>
 {% endif %}
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- 행사 그리드 -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
   {% for event in events %}
   <a href="/event/{{ event.id }}/"
      class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
@@ -48,17 +98,67 @@
       </div>
       <h2 class="font-bold text-gray-900 line-clamp-2 mb-2 leading-snug">{{ event.title }}</h2>
       <p class="text-xs text-gray-400">📅 {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+      {% if event.place %}
+      <p class="text-xs text-gray-400 mt-0.5">📌 {{ event.place }}</p>
+      {% endif %}
     </div>
   </a>
   {% endfor %}
 </div>
 
-<div class="mt-12">
-  <h2 class="text-lg font-bold text-gray-700 mb-4">다른 지역 행사 보기</h2>
+<!-- 숙박 & 교통 허브 -->
+<div class="bg-gray-800 text-white rounded-2xl p-6 mb-8">
+  <h2 class="font-bold text-lg mb-4">🏨 {{ region }} 여행 준비</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <a href="https://www.yanolja.com/search?keyword={{ region }}&ref=uapress"
+       target="_blank" rel="noopener sponsored"
+       class="bg-pink-500 hover:bg-pink-600 text-white text-center py-3 rounded-xl text-sm font-bold transition">
+      🛏️ 야놀자
+    </a>
+    <a href="https://www.yeogi.com/search?q={{ region }}&ref=uapress"
+       target="_blank" rel="noopener sponsored"
+       class="bg-blue-500 hover:bg-blue-600 text-white text-center py-3 rounded-xl text-sm font-bold transition">
+      🛏️ 여기어때
+    </a>
+    <a href="https://map.kakao.com/?q={{ region }}+맛집"
+       target="_blank" rel="noopener"
+       class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 text-center py-3 rounded-xl text-sm font-bold transition">
+      🍽️ 맛집 찾기
+    </a>
+    <a href="https://map.kakao.com/?q={{ region }}+주차장"
+       target="_blank" rel="noopener"
+       class="bg-green-500 hover:bg-green-600 text-white text-center py-3 rounded-xl text-sm font-bold transition">
+      🚗 주차장
+    </a>
+  </div>
+  {% if region not in ["서울", "인천", "경기"] %}
+  <div class="grid grid-cols-3 gap-3 mt-3">
+    <a href="https://www.letskorail.com"
+       target="_blank" rel="noopener sponsored"
+       class="bg-white/10 hover:bg-white/20 text-white text-center py-2.5 rounded-xl text-sm font-bold transition">
+      🚂 KTX
+    </a>
+    <a href="https://www.kobus.co.kr"
+       target="_blank" rel="noopener sponsored"
+       class="bg-white/10 hover:bg-white/20 text-white text-center py-2.5 rounded-xl text-sm font-bold transition">
+      🚌 고속버스
+    </a>
+    <a href="https://www.bustago.or.kr"
+       target="_blank" rel="noopener sponsored"
+       class="bg-white/10 hover:bg-white/20 text-white text-center py-2.5 rounded-xl text-sm font-bold transition">
+      🚌 시외버스
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+<!-- 다른 지역 -->
+<div class="bg-white rounded-xl p-5 shadow-sm">
+  <h2 class="font-bold text-gray-700 mb-3">다른 지역 행사 보기</h2>
   <div class="flex flex-wrap gap-2">
     {% for r, s in region_slugs.items() %}
     {% if r != region %}
-    <a href="/region/{{ s }}/" class="bg-white border border-gray-200 text-gray-600 text-sm px-4 py-2 rounded-full hover:border-blue-400 hover:text-blue-600 transition">{{ r }}</a>
+    <a href="/region/{{ s }}/" class="bg-gray-50 hover:bg-blue-50 text-gray-600 hover:text-blue-600 text-sm px-4 py-2 rounded-full transition">{{ r }}</a>
     {% endif %}
     {% endfor %}
   </div>

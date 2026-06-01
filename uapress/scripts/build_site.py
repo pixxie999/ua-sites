@@ -42,6 +42,55 @@ CATEGORY_SLUGS = {
     "스포츠": "sports", "문화행사": "culture"
 }
 
+# 시즌 정의
+SEASONS = [
+    {
+        "slug": "spring", "name": "봄", "emoji": "🌸",
+        "months": [3, 4, 5], "months_str": "3~5월",
+        "color_from": "#f9a8d4", "color_to": "#86efac",
+        "desc": "봄꽃이 피어나는 3~5월은 전국 축제 시즌의 시작입니다. 벚꽃 축제, 봄나들이 행사, 야외 공연 등 다양한 행사가 열립니다. 따뜻한 날씨에 가족·연인과 함께하기 좋은 시기입니다.",
+    },
+    {
+        "slug": "summer", "name": "여름", "emoji": "🌊",
+        "months": [6, 7, 8], "months_str": "6~8월",
+        "color_from": "#38bdf8", "color_to": "#4ade80",
+        "desc": "무더운 여름 6~8월에는 물 축제, 해변 행사, 야외 음악 페스티벌이 풍성합니다. 시원한 물놀이 행사와 야간 축제를 즐기기 좋은 계절입니다.",
+    },
+    {
+        "slug": "autumn", "name": "가을", "emoji": "🍂",
+        "months": [9, 10, 11], "months_str": "9~11월",
+        "color_from": "#fb923c", "color_to": "#facc15",
+        "desc": "단풍이 물드는 9~11월은 한 해 중 가장 많은 축제가 열리는 시즌입니다. 지역 특산물 축제, 단풍 나들이, 문화 공연 등 볼거리가 가득합니다.",
+    },
+    {
+        "slug": "winter", "name": "겨울", "emoji": "❄️",
+        "months": [12, 1, 2], "months_str": "12~2월",
+        "color_from": "#818cf8", "color_to": "#67e8f9",
+        "desc": "눈꽃 축제와 빙판 행사가 열리는 12~2월 겨울 시즌입니다. 크리스마스 마켓, 겨울 빛 축제, 설 관련 문화 행사 등 실내외 다양한 프로그램을 즐길 수 있습니다.",
+    },
+]
+
+# 지역별 소개 정보
+REGION_INFO = {
+    "서울": {"emoji": "🏙️", "tags": ["도심 축제", "무료 행사 多", "대중교통 편리"], "desc": "대한민국 수도 서울은 연중 다양한 문화행사가 열리는 문화 중심지입니다. 한강 공원 행사, 광화문 광장 축제, 각 구별 지역 축제까지 볼거리가 풍부합니다.", "tips": ["대중교통 이용 권장", "주말 무료 행사 多", "한강 나들이 병행"]},
+    "경기": {"emoji": "🌿", "tags": ["수도권 접근성", "넓은 야외 공간", "가족 행사 多"], "desc": "서울과 인접한 경기도는 접근성이 좋고 넓은 야외 공간을 활용한 대형 축제가 많습니다. 수원, 고양, 성남 등 각 도시마다 특색 있는 행사가 열립니다.", "tips": ["서울서 1시간 이내", "주차 비교적 편리", "가족 나들이 최적"]},
+    "부산": {"emoji": "🌊", "tags": ["해변 축제", "불꽃 축제", "야경 명소"], "desc": "제2의 도시 부산은 해운대·광안리 해변을 무대로 한 축제와 공연이 유명합니다. 부산국제영화제, 광안리 불꽃 축제 등 전국적인 행사도 다수 개최됩니다.", "tips": ["해변 행사 봄~가을 집중", "KTX 2시간 30분", "숙박 미리 예약 필수"]},
+    "제주": {"emoji": "🌺", "tags": ["자연 축제", "유채꽃", "한라산"], "desc": "사계절 아름다운 자연을 배경으로 제주만의 독특한 축제가 열립니다. 봄 유채꽃 축제, 여름 바다 행사, 가을 억새, 겨울 동백 축제까지 연중 볼거리가 있습니다.", "tips": ["항공권 미리 예매", "렌터카 필수", "날씨 변화 잦음"]},
+    "강원": {"emoji": "🏔️", "tags": ["눈꽃 축제", "산악 행사", "청정 자연"], "desc": "설악산과 동해를 품은 강원도는 사계절 자연 축제의 고장입니다. 겨울 빙어 축제, 봄 산나물 축제, 여름 바다 축제, 가을 단풍 행사 등 자연과 함께하는 행사가 많습니다.", "tips": ["고속버스·KTX 이용", "계절별 특산 축제 확인", "산악 행사 복장 준비"]},
+    "전북": {"emoji": "🥁", "tags": ["전통 문화", "판소리·가야금", "한옥마을"], "desc": "전주 한옥마을로 유명한 전북은 우리 전통문화를 잇는 행사가 많습니다. 전주비빔밥 축제, 전주국제영화제, 무주 반딧불 축제 등 다양한 문화 행사가 열립니다.", "tips": ["전주 한옥마을 연계", "전통 음식 체험", "KTX 전주역 이용"]},
+    "전남": {"emoji": "🌻", "tags": ["꽃 축제", "해남", "순천만"], "desc": "순천만과 보성 녹차밭 등 아름다운 자연을 배경으로 한 축제가 많습니다. 함평 나비 축제, 영광 모시 축제, 해남 땅끝 행사 등 지역 특색이 담긴 행사를 즐길 수 있습니다.", "tips": ["순천만 국가정원 연계", "해산물 먹거리 풍부", "광주에서 1시간"]},
+    "경북": {"emoji": "🏯", "tags": ["역사 문화", "유교 문화", "안동"], "desc": "안동 하회마을, 경주 등 유네스코 유산을 배경으로 한 역사·문화 행사가 풍성합니다. 안동 국제탈춤 축제, 경주 벚꽃 축제, 청도 소싸움 축제가 대표적입니다.", "tips": ["경주·안동 연계 여행", "유적지 관람 병행", "KTX 신경주역"]},
+    "경남": {"emoji": "⚓", "tags": ["진해 벚꽃", "남해 섬 축제", "통영"], "desc": "진해 군항제(벚꽃 축제), 통영 한산대첩 축제, 남해 보물섬 축제 등 경남만의 특색 있는 행사가 많습니다. 해안을 따라 아름다운 경치와 함께 축제를 즐길 수 있습니다.", "tips": ["진해 3월 벚꽃 필수", "통영 케이블카 연계", "거제도 당일치기"]},
+    "충남": {"emoji": "🌾", "tags": ["머드 축제", "백제 문화", "보령"], "desc": "보령 머드 축제로 유명한 충남은 백제 역사문화와 서해안 갯벌 체험 행사가 풍부합니다. 부여 백제 문화제, 아산 봄꽃 축제, 태안 튤립 축제가 대표적입니다.", "tips": ["보령 머드 축제 7~8월", "서해안 드라이브 병행", "KTX 천안아산역"]},
+    "충북": {"emoji": "🌿", "tags": ["청주 직지", "속리산", "단양 관광"], "desc": "청주 직지 축제, 단양 소백산 철쭉 축제, 제천 국제음악영화제 등 내륙 도시의 다채로운 행사가 열립니다. 속리산, 월악산 등 국립공원 연계 행사도 많습니다.", "tips": ["단양 관광지 연계", "내륙 교통 확인", "자연 체험 행사 多"]},
+    "대구": {"emoji": "🎭", "tags": ["컬러풀 대구", "치맥 페스티벌", "섬유 박물관"], "desc": "대구 치맥 페스티벌, 대구 국제 뮤지컬 축제(DIMF), 컬러풀 대구 축제 등 개성 넘치는 행사로 유명합니다. 팔공산 단풍, 앞산 야경과 함께 즐길 수 있는 행사도 많습니다.", "tips": ["KTX 동대구역", "치맥 축제 여름 필수", "도심 행사 많음"]},
+    "광주": {"emoji": "🎨", "tags": ["미디어아트", "빛 축제", "5.18 문화"], "desc": "아시아 문화의 도시 광주는 광주 비엔날레, 광주 빛 축제, 추억의 충장 축제 등 예술·문화 행사가 풍성합니다. KTX로 서울에서 90분이면 도착합니다.", "tips": ["KTX 광주송정역", "국립아시아문화전당", "빛 축제 겨울 필수"]},
+    "대전": {"emoji": "🔬", "tags": ["사이언스 페스티벌", "한밭 문화제", "엑스포"], "desc": "과학 도시 대전은 대전 사이언스 페스티벌, 한밭 문화제, 대동 하늘공원 행사 등 과학·문화가 어우러진 독특한 축제를 즐길 수 있습니다.", "tips": ["KTX 대전역·서대전역", "엑스포 과학공원", "계룡산 등산 병행"]},
+    "인천": {"emoji": "✈️", "tags": ["인천 차이나타운", "강화도", "송도 행사"], "desc": "차이나타운 문화 축제, 강화 고인돌 문화제, 송도 국제도시 행사 등 다양한 행사가 열립니다. 서울과 가까워 당일치기 여행으로도 좋습니다.", "tips": ["수도권 전철 이용", "강화도 연계 여행", "인천공항 입국 연계"]},
+    "울산": {"emoji": "🐳", "desc": "고래 도시 울산은 장생포 고래 축제, 울산 옹기 축제, 울산 마두희 축제 등 지역 특색이 담긴 행사가 많습니다. 태화강 국가정원의 봄꽃과 가을 억새 행사도 인기입니다.", "tags": ["고래 축제", "태화강 정원", "산업 관광"], "tips": ["KTX 울산역", "태화강 산책 병행", "부산에서 40분"]},
+    "세종": {"emoji": "🏛️", "tags": ["행정 도시", "호수공원", "새로운 축제"], "desc": "신도시 세종은 세종 호수공원 축제, 세종 문화 예술제 등 새로운 도시만의 신선한 행사가 열립니다. 깔끔한 도시 환경과 함께 가족 나들이를 즐기기 좋습니다.", "tips": ["KTX 오송역 이용", "호수공원 산책", "대전·청주 연계"]},
+}
+
 
 def load_data():
     base = PROJECT_ROOT / "data" / "processed"
@@ -122,7 +171,19 @@ def build_all():
     env = setup_env()
 
     today = datetime.now().strftime("%Y%m%d")
+    today_dt = datetime.now()
     active = events  # process_events.py에서 이미 활성만 필터됨
+
+    # 날씨 데이터 로드
+    weather_dir = PROJECT_ROOT / "data/content/weather"
+    weather_all = {}
+    if weather_dir.exists():
+        all_path = weather_dir / "all.json"
+        if all_path.exists():
+            try:
+                weather_all = json.loads(all_path.read_text())
+            except Exception:
+                pass
 
     # 카페 후기 건수 사전 로드 (카드 뱃지용)
     reviews_dir = PROJECT_ROOT / "data/content/cafe_reviews"
@@ -173,16 +234,23 @@ def build_all():
         ))
     print(f"  행사 상세: 활성 {len(active)}개 + 아카이브 {len(archive)}개")
 
-    # 3. 지역별
+    # 3. 지역별 (허브 페이지)
     tmpl = env.get_template("region.html")
     for region, slug in REGION_SLUGS.items():
         region_events = [e for e in active if e["region"] == region]
         if not region_events:
             continue
+        free_cnt = sum(1 for e in region_events if e["is_free"])
+        region_info = REGION_INFO.get(region, {
+            "emoji": "📍", "tags": [], "desc": f"{region} 지역 문화행사·축제 정보입니다.", "tips": []
+        })
         path = DIST / "region" / slug / "index.html"
         write(path, tmpl.render(
             region=region, slug=slug,
             events=region_events,
+            free_count=free_cnt,
+            region_info=region_info,
+            weather=weather_all.get(region),
             review_counts=review_counts,
             page_url=f"/region/{slug}/"
         ))
@@ -228,6 +296,40 @@ def build_all():
         page_url="/free/"
     ))
     print(f"  무료 행사: {len(free_events)}개")
+
+    # 6-1. 시즌 특집 페이지
+    tmpl = env.get_template("season.html")
+    current_month = today_dt.month
+    for season in SEASONS:
+        season_events = [e for e in active if int(e["start_date"][4:6]) in season["months"]
+                         or int(e["end_date"][4:6]) in season["months"]]
+        if not season_events:
+            continue
+        # 카테고리별 건수
+        cat_counts = {}
+        for e in season_events:
+            cat_counts[e["category"]] = cat_counts.get(e["category"], 0) + 1
+        cat_counts = dict(sorted(cat_counts.items(), key=lambda x: x[1], reverse=True))
+
+        path = DIST / "season" / season["slug"] / "index.html"
+        write(path, tmpl.render(
+            season_slug=season["slug"],
+            season_name=season["name"],
+            season_emoji=season["emoji"],
+            season_months=season["months_str"],
+            season_color_from=season["color_from"],
+            season_color_to=season["color_to"],
+            season_desc=season["desc"],
+            year=today_dt.year,
+            events=season_events,
+            free_count=sum(1 for e in season_events if e["is_free"]),
+            region_count=len(set(e["region"] for e in season_events)),
+            category_counts=cat_counts,
+            review_counts=review_counts,
+            all_seasons=SEASONS,
+            page_url=f"/season/{season['slug']}/"
+        ))
+    print(f"  시즌 특집: {len(SEASONS)}개")
 
     # 7. 주간 큐레이션 — 개별 페이지 (전체) + 목록 페이지
     tmpl_pick = env.get_template("weekly_pick.html")
@@ -295,6 +397,9 @@ def build_sitemap(events: list, archive: list = None):
 
     for region_slug in REGION_SLUGS.values():
         urls.append({"loc": f"/region/{region_slug}/", "priority": "0.8", "changefreq": "weekly"})
+
+    for season in SEASONS:
+        urls.append({"loc": f"/season/{season['slug']}/", "priority": "0.8", "changefreq": "weekly"})
 
     for category_slug in CATEGORY_SLUGS.values():
         urls.append({"loc": f"/category/{category_slug}/", "priority": "0.8", "changefreq": "weekly"})
