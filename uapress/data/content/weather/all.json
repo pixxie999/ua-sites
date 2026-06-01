@@ -1,0 +1,172 @@
+{
+  "서울": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:27.269238",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "서울"
+  },
+  "인천": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:31.416250",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "인천"
+  },
+  "대전": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:36.582994",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "대전"
+  },
+  "대구": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:39.272649",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "대구"
+  },
+  "광주": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:43.755528",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "광주"
+  },
+  "부산": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:46.491776",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "부산"
+  },
+  "울산": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:49.229619",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "울산"
+  },
+  "세종": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:51.862209",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "세종"
+  },
+  "경기": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:54.669740",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "경기"
+  },
+  "강원": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:57.041117",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "강원"
+  },
+  "충북": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:47:59.921336",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "충북"
+  },
+  "충남": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:48:02.885058",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "충남"
+  },
+  "경북": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:48:05.209071",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "경북"
+  },
+  "경남": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:48:07.978765",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "경남"
+  },
+  "전북": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:48:12.025159",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "전북"
+  },
+  "전남": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:48:14.319582",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "전남"
+  },
+  "제주": {
+    "icon": "☀️",
+    "condition": "맑음",
+    "avg_temp": null,
+    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+    "updated_at": "2026-06-01T07:48:16.611833",
+    "saturday": "20260606",
+    "sunday": "20260607",
+    "region": "제주"
+  }
+}
