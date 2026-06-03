@@ -119,8 +119,35 @@
 </div>
 {% endif %}
 
+<!-- 시즌 특집 바로가기 -->
+<div class="mt-12 mb-4">
+  <h2 class="text-lg font-bold text-gray-700 mb-3">🌸 시즌 특집</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <a href="/season/spring/" class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-xl p-4 text-center hover:shadow-md transition">
+      <p class="text-2xl mb-1">🌸</p>
+      <p class="text-sm font-bold text-pink-700">봄 행사</p>
+      <p class="text-xs text-pink-500">3~5월</p>
+    </a>
+    <a href="/season/summer/" class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-4 text-center hover:shadow-md transition">
+      <p class="text-2xl mb-1">☀️</p>
+      <p class="text-sm font-bold text-blue-700">여름 행사</p>
+      <p class="text-xs text-blue-500">6~8월</p>
+    </a>
+    <a href="/season/autumn/" class="bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl p-4 text-center hover:shadow-md transition">
+      <p class="text-2xl mb-1">🍂</p>
+      <p class="text-sm font-bold text-orange-700">가을 행사</p>
+      <p class="text-xs text-orange-500">9~11월</p>
+    </a>
+    <a href="/season/winter/" class="bg-gradient-to-br from-indigo-100 to-blue-100 rounded-xl p-4 text-center hover:shadow-md transition">
+      <p class="text-2xl mb-1">❄️</p>
+      <p class="text-sm font-bold text-indigo-700">겨울 행사</p>
+      <p class="text-xs text-indigo-500">12~2월</p>
+    </a>
+  </div>
+</div>
+
 <!-- 카테고리 바로가기 -->
-<div class="mt-12 grid grid-cols-3 md:grid-cols-6 gap-3">
+<div class="mt-6 grid grid-cols-3 md:grid-cols-6 gap-3">
   {% set cat_icons = {"festival": "🎆", "performance": "🎭", "exhibition": "🖼", "experience": "🎨", "sports": "🏃", "culture": "🎵"} %}
   {% for category, slug in category_slugs.items() %}
   <a href="/category/{{ slug }}/"
