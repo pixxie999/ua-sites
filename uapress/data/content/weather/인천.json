@@ -1,9 +1,9 @@
 {
-  "icon": "☀️",
-  "condition": "맑음",
-  "avg_temp": null,
-  "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-  "updated_at": "2026-06-01T22:03:57.575939",
+  "icon": "☁️",
+  "condition": "흐림",
+  "avg_temp": 25,
+  "summary": "이번 주말 흐림 · 25°C — 야외 행사 나들이 최적! 🎉",
+  "updated_at": "2026-06-04T21:02:04.982477",
   "saturday": "20260606",
   "sunday": "20260607",
   "region": "인천"

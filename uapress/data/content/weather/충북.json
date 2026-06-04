@@ -1,9 +1,9 @@
 {
   "icon": "☀️",
   "condition": "맑음",
-  "avg_temp": null,
-  "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-  "updated_at": "2026-06-01T22:04:24.693514",
+  "avg_temp": 24,
+  "summary": "이번 주말 맑음 · 24°C — 야외 행사 나들이 최적! 🎉",
+  "updated_at": "2026-06-04T21:02:39.928292",
   "saturday": "20260606",
   "sunday": "20260607",
   "region": "충북"
