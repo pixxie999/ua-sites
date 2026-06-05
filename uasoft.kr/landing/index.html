@@ -1,226 +1,583 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>인스타그램 피드 위젯 | uasoft</title>
-  <meta name="description" content="카페24 쇼핑몰에 인스타그램 최신 게시물을 자동으로 노출하세요. 설치 5분, 월 9,900원부터." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .gradient-text {
-      background: linear-gradient(135deg, #E1306C, #F77737, #FCAF45);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .plan-popular {
-      box-shadow: 0 0 0 2px #E1306C;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>uasoft - 카페24 앱 솔루션</title>
+<meta name="description" content="카페24 쇼핑몰을 위한 스마트 앱 솔루션. 인스타그램 피드, 리뷰 위젯 등 다양한 앱을 제공합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #fafaf8;
+    --gray-50: #f5f5f3;
+    --gray-100: #e8e8e4;
+    --gray-400: #9a9a94;
+    --gray-600: #5a5a56;
+    --accent: #1a472a;
+    --accent-light: #2d7a48;
+    --accent-pale: #eaf3de;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent-light); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--gray-600);
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--gray-100) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+    z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-pale);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--mono);
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent-light);
+    position: relative;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--gray-100);
+    color: var(--gray-600);
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gray-400); color: var(--black); }
+
+  .hero-stats {
+    position: absolute; bottom: 4rem; right: 3rem;
+    display: flex; gap: 3rem;
+    z-index: 1;
+  }
+  .stat { text-align: right; }
+  .stat-num {
+    display: block;
+    font-family: var(--mono);
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: -0.03em;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 6rem 3rem;
+    background: var(--white);
+  }
+  .section-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: 1.5rem;
+  }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gray-400);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--black);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5px;
+    background: var(--gray-100);
+    border: 1.5px solid var(--gray-100);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover { background: var(--gray-50); }
+  .service-card.active:hover { background: var(--accent-pale); }
+
+  .card-number {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gray-400);
+    letter-spacing: 0.05em;
+  }
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .card-icon.green { background: var(--accent-pale); }
+  .card-icon.gray { background: var(--gray-50); border: 1px solid var(--gray-100); }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--black);
+  }
+  .card-title-en {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gray-400);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .card-desc {
+    font-size: 13.5px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .card-footer {
+    margin-top: auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .card-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .status-live {
+    background: var(--accent-pale);
+    color: var(--accent);
+  }
+  .status-soon {
+    background: var(--gray-50);
+    color: var(--gray-400);
+    border: 1px solid var(--gray-100);
+  }
+  .card-arrow {
+    font-size: 16px;
+    color: var(--gray-400);
+    transition: transform 0.2s, color 0.2s;
+  }
+  .service-card:hover .card-arrow { transform: translate(3px, -3px); color: var(--black); }
+
+  /* PLAN PREVIEW */
+  .plans {
+    padding: 6rem 3rem;
+    background: var(--gray-50);
+  }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-100);
+    margin-top: 3rem;
+    max-width: 860px;
+  }
+  .plan-cell {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+  }
+  .plan-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 0.75rem;
+  }
+  .plan-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    margin-bottom: 0.25rem;
+  }
+  .plan-price span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray-400);
+  }
+  .plan-features {
+    margin-top: 1.25rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .plan-features li {
+    font-size: 13px;
+    color: var(--gray-600);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .plan-features li::before {
+    content: '';
+    width: 4px; height: 4px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .plan-cell.featured { background: var(--black); }
+  .plan-cell.featured .plan-name { color: rgba(255,255,255,0.4); }
+  .plan-cell.featured .plan-price { color: var(--white); }
+  .plan-cell.featured .plan-price span { color: rgba(255,255,255,0.4); }
+  .plan-cell.featured .plan-features li { color: rgba(255,255,255,0.7); }
+  .plan-cell.featured .plan-features li::before { background: #5eca8a; }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem;
+    border-top: 1px solid var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--accent-light); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--black); }
+  .footer-copy {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-family: var(--mono);
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* ANIMATE */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 1.5rem 8rem; }
+    .hero-stats { bottom: 2rem; right: 1.5rem; gap: 1.5rem; }
+    .services, .plans { padding: 4rem 1.5rem; }
+    .plans-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body>
 
-  <!-- 헤더 -->
-  <header class="border-b border-gray-100 px-6 py-4 flex items-center justify-between max-w-5xl mx-auto">
-    <div class="font-bold text-xl tracking-tight">
-      <span class="gradient-text">uasoft</span>
-      <span class="text-gray-400 font-normal text-sm ml-2">인스타그램 피드</span>
+<nav>
+  <a href="/" class="nav-logo">ua<span>soft</span></a>
+  <div class="nav-links">
+    <a href="#services">서비스</a>
+    <a href="#plans">요금제</a>
+    <a href="/instafeeds/">인스타피드</a>
+    <a href="mailto:contact@uasoft.kr">문의</a>
+    <a href="/instafeeds/" class="nav-cta">무료 시작</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      카페24 공식 앱스토어 등록 서비스
     </div>
-    <a href="https://store.cafe24.com" target="_blank" rel="noopener"
-       class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
-      무료로 시작하기
+    <h1>카페24 쇼핑몰을<br>위한 <em>스마트 앱</em></h1>
+    <p>설치 5분, 매출은 그 이상.<br>인스타그램 피드부터 다양한 위젯까지, 쇼핑몰 성장에 필요한 앱을 제공합니다.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">서비스 둘러보기 →</a>
+      <a href="/instafeeds/" class="btn-secondary">인스타피드 시작하기</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">3개</span>
+      <span class="stat-label">플랜 선택</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5분</span>
+      <span class="stat-label">설치 소요</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-label">// services</span>
+    <h2 class="section-title">앱 서비스</h2>
+  </div>
+
+  <div class="services-grid">
+    <a href="/instafeeds/" class="service-card active">
+      <span class="card-number">01</span>
+      <div class="card-icon green">📸</div>
+      <div>
+        <div class="card-title">인스타그램 피드</div>
+        <div class="card-title-en">Instagram Feed Widget</div>
+      </div>
+      <p class="card-desc">인스타그램 최신 게시물을 쇼핑몰에 자동 노출. 브랜드 신뢰도를 높이고 체류 시간을 늘려보세요.</p>
+      <div class="card-footer">
+        <span class="card-status status-live">서비스 중</span>
+        <span class="card-arrow">↗</span>
+      </div>
     </a>
-  </header>
 
-  <!-- 히어로 -->
-  <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
-    <p class="text-sm font-medium text-pink-500 mb-3">카페24 공식 앱</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-      인스타그램 피드를<br/>
-      <span class="gradient-text">쇼핑몰에 5분 만에</span>
-    </h1>
-    <p class="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
-      설치하면 끝. 인스타그램 최신 게시물이 쇼핑몰에 자동으로 노출됩니다.<br/>
-      매일 자동 갱신, 별도 로그인 없이 계정명만 입력하세요.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="https://store.cafe24.com" target="_blank" rel="noopener"
-         class="bg-gradient-to-r from-pink-500 to-orange-400 text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition text-lg">
-        카페24 앱스토어에서 설치
-      </a>
-      <a href="#plans"
-         class="border border-gray-200 text-gray-700 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transition text-lg">
-        요금제 보기
-      </a>
-    </div>
-  </section>
-
-  <!-- 미리보기 -->
-  <section class="bg-gray-50 py-16 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-center text-2xl font-bold mb-10">이런 모습으로 노출돼요</h2>
-      <!-- 그리드 목업 -->
-      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-        <p class="text-xs text-gray-400 mb-4 font-medium uppercase tracking-wider">미리보기 — 그리드 레이아웃</p>
-        <div class="grid grid-cols-3 gap-2">
-          <!-- 목업 이미지 카드 (9개) -->
-          <div class="aspect-square bg-gradient-to-br from-pink-100 to-orange-100 rounded-lg flex items-center justify-center text-3xl">📸</div>
-          <div class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center text-3xl">🛍️</div>
-          <div class="aspect-square bg-gradient-to-br from-orange-100 to-yellow-100 rounded-lg flex items-center justify-center text-3xl">✨</div>
-          <div class="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center text-3xl">👗</div>
-          <div class="aspect-square bg-gradient-to-br from-green-100 to-blue-100 rounded-lg flex items-center justify-center text-3xl">🌿</div>
-          <div class="aspect-square bg-gradient-to-br from-pink-100 to-red-100 rounded-lg flex items-center justify-center text-3xl">💄</div>
-          <div class="aspect-square bg-gradient-to-br from-yellow-100 to-green-100 rounded-lg flex items-center justify-center text-3xl">🎀</div>
-          <div class="aspect-square bg-gradient-to-br from-indigo-100 to-blue-100 rounded-lg flex items-center justify-center text-3xl">👟</div>
-          <div class="aspect-square bg-gradient-to-br from-red-100 to-orange-100 rounded-lg flex items-center justify-center text-3xl">🌸</div>
-        </div>
-        <p class="text-center text-xs text-gray-300 mt-4">📸 Instagram Feed by uasoft</p>
+    <div class="service-card">
+      <span class="card-number">02</span>
+      <div class="card-icon gray">⭐</div>
+      <div>
+        <div class="card-title">리뷰 위젯</div>
+        <div class="card-title-en">Review Widget</div>
+      </div>
+      <p class="card-desc">구매 후기를 다양한 레이아웃으로 노출. 신뢰도 높은 리뷰로 전환율을 극대화합니다.</p>
+      <div class="card-footer">
+        <span class="card-status status-soon">준비 중</span>
+        <span class="card-arrow">↗</span>
       </div>
     </div>
-  </section>
 
-  <!-- 특징 3가지 -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-center text-2xl font-bold mb-12">왜 uasoft 인스타 피드인가요?</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <div class="text-4xl mb-4">⚡</div>
-        <h3 class="font-bold text-lg mb-2">5분 설치</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">카페24 앱스토어에서 설치 후<br/>인스타그램 계정명만 입력하면 끝.</p>
+    <div class="service-card">
+      <span class="card-number">03</span>
+      <div class="card-icon gray">🔔</div>
+      <div>
+        <div class="card-title">팝업 빌더</div>
+        <div class="card-title-en">Popup Builder</div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl mb-4">🔄</div>
-        <h3 class="font-bold text-lg mb-2">매일 자동 갱신</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">새 게시물이 올라오면 자동으로 반영.<br/>프리미엄은 6시간마다 업데이트.</p>
-      </div>
-      <div class="text-center">
-        <div class="text-4xl mb-4">🎨</div>
-        <h3 class="font-bold text-lg mb-2">다양한 레이아웃</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">그리드, 슬라이더, 갤러리 중<br/>쇼핑몰 분위기에 맞게 선택하세요.</p>
+      <p class="card-desc">이벤트, 공지, 할인 쿠폰을 스마트 팝업으로 전달. 다양한 트리거와 타겟팅을 지원합니다.</p>
+      <div class="card-footer">
+        <span class="card-status status-soon">준비 중</span>
+        <span class="card-arrow">↗</span>
       </div>
     </div>
-  </section>
 
-  <!-- 요금제 -->
-  <section id="plans" class="bg-gray-50 py-20 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-center text-2xl font-bold mb-3">요금제</h2>
-      <p class="text-center text-gray-500 text-sm mb-12">무료로 시작하고, 필요할 때 업그레이드하세요.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- 무료 -->
-        <div class="bg-white rounded-2xl p-8 border border-gray-200">
-          <p class="text-sm font-semibold text-gray-400 mb-1">FREE</p>
-          <p class="text-3xl font-bold mb-1">0원</p>
-          <p class="text-gray-400 text-sm mb-6">/월</p>
-          <ul class="space-y-3 text-sm text-gray-600 mb-8">
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 게시물 4개 노출</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 주 1회 갱신</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 그리드 레이아웃</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300">✗</span> 워터마크 제거 불가</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300">✗</span> 다중 계정</li>
-          </ul>
-          <a href="https://store.cafe24.com" target="_blank" rel="noopener"
-             class="block text-center border border-gray-300 text-gray-700 py-3 rounded-xl hover:bg-gray-50 transition font-medium text-sm">
-            무료 설치
-          </a>
-        </div>
-
-        <!-- 베이직 (인기) -->
-        <div class="bg-white rounded-2xl p-8 plan-popular relative">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full">인기</span>
-          <p class="text-sm font-semibold text-pink-500 mb-1">BASIC</p>
-          <p class="text-3xl font-bold mb-1">9,900원</p>
-          <p class="text-gray-400 text-sm mb-6">/월</p>
-          <ul class="space-y-3 text-sm text-gray-600 mb-8">
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 게시물 12개 노출</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 매일 자동 갱신</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 모든 레이아웃</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 워터마크 제거</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300">✗</span> 다중 계정</li>
-          </ul>
-          <a href="https://store.cafe24.com" target="_blank" rel="noopener"
-             class="block text-center bg-gradient-to-r from-pink-500 to-orange-400 text-white py-3 rounded-xl hover:opacity-90 transition font-medium text-sm">
-            베이직 시작
-          </a>
-        </div>
-
-        <!-- 프리미엄 -->
-        <div class="bg-white rounded-2xl p-8 border border-gray-200">
-          <p class="text-sm font-semibold text-gray-400 mb-1">PREMIUM</p>
-          <p class="text-3xl font-bold mb-1">29,900원</p>
-          <p class="text-gray-400 text-sm mb-6">/월</p>
-          <ul class="space-y-3 text-sm text-gray-600 mb-8">
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 게시물 무제한 노출</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 6시간마다 갱신</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 모든 레이아웃</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 워터마크 제거</li>
-            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> 다중 계정 최대 3개</li>
-          </ul>
-          <a href="https://store.cafe24.com" target="_blank" rel="noopener"
-             class="block text-center border border-gray-300 text-gray-700 py-3 rounded-xl hover:bg-gray-50 transition font-medium text-sm">
-            프리미엄 시작
-          </a>
-        </div>
-
+    <div class="service-card">
+      <span class="card-number">04</span>
+      <div class="card-icon gray">📊</div>
+      <div>
+        <div class="card-title">방문자 분석</div>
+        <div class="card-title-en">Visitor Analytics</div>
+      </div>
+      <p class="card-desc">쇼핑몰 방문자 행동 패턴 분석. 어떤 상품을 오래 보는지, 어디서 이탈하는지 파악하세요.</p>
+      <div class="card-footer">
+        <span class="card-status status-soon">준비 중</span>
+        <span class="card-arrow">↗</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="max-w-3xl mx-auto px-6 py-20">
-    <h2 class="text-center text-2xl font-bold mb-10">자주 묻는 질문</h2>
-    <div class="space-y-4">
-      <details class="border border-gray-200 rounded-xl p-5 cursor-pointer group">
-        <summary class="font-medium flex justify-between items-center list-none">
-          인스타그램 로그인이 필요한가요?
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <p class="mt-3 text-gray-500 text-sm leading-relaxed">아니요. 인스타그램 공개 계정이라면 계정명(@아이디)만 입력하면 됩니다. 비공개 계정은 지원되지 않습니다.</p>
-      </details>
-      <details class="border border-gray-200 rounded-xl p-5 cursor-pointer group">
-        <summary class="font-medium flex justify-between items-center list-none">
-          카페24 외 다른 플랫폼도 지원하나요?
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <p class="mt-3 text-gray-500 text-sm leading-relaxed">현재는 카페24 전용입니다. 다른 플랫폼 지원은 추후 검토 예정입니다.</p>
-      </details>
-      <details class="border border-gray-200 rounded-xl p-5 cursor-pointer group">
-        <summary class="font-medium flex justify-between items-center list-none">
-          무료 플랜에서 유료로 업그레이드하면 바로 적용되나요?
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <p class="mt-3 text-gray-500 text-sm leading-relaxed">네, 업그레이드 즉시 플랜이 적용됩니다. 다음 갱신 사이클부터 새로운 주기로 피드가 업데이트됩니다.</p>
-      </details>
-      <details class="border border-gray-200 rounded-xl p-5 cursor-pointer group">
-        <summary class="font-medium flex justify-between items-center list-none">
-          환불 정책은 어떻게 되나요?
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <p class="mt-3 text-gray-500 text-sm leading-relaxed">카페24 앱스토어 표준 환불 정책을 따릅니다. 결제 후 7일 이내 미사용 시 전액 환불이 가능합니다.</p>
-      </details>
+<section class="plans" id="plans">
+  <div class="section-header">
+    <span class="section-label">// pricing</span>
+    <h2 class="section-title">인스타피드 요금제</h2>
+  </div>
+
+  <div class="plans-grid">
+    <div class="plan-cell">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">0원 <span>/ 월</span></div>
+      <ul class="plan-features">
+        <li>게시물 4개 노출</li>
+        <li>주 1회 자동 갱신</li>
+        <li>워터마크 포함</li>
+        <li>그리드 레이아웃</li>
+      </ul>
     </div>
-  </section>
+    <div class="plan-cell featured">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price">9,900원 <span>/ 월</span></div>
+      <ul class="plan-features">
+        <li>게시물 12개 노출</li>
+        <li>매일 1회 자동 갱신</li>
+        <li>워터마크 제거</li>
+        <li>레이아웃 선택</li>
+      </ul>
+    </div>
+    <div class="plan-cell">
+      <div class="plan-name">Premium</div>
+      <div class="plan-price">29,900원 <span>/ 월</span></div>
+      <ul class="plan-features">
+        <li>게시물 무제한</li>
+        <li>6시간마다 갱신</li>
+        <li>다중 계정 3개</li>
+        <li>고급 UI 제공</li>
+      </ul>
+    </div>
+  </div>
 
-  <!-- CTA 하단 -->
-  <section class="bg-gray-900 text-white py-16 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-3">지금 바로 시작하세요</h2>
-    <p class="text-gray-400 mb-8 text-sm">설치 5분. 신용카드 없이 무료로 체험.</p>
-    <a href="https://store.cafe24.com" target="_blank" rel="noopener"
-       class="inline-block bg-gradient-to-r from-pink-500 to-orange-400 text-white px-10 py-4 rounded-xl font-semibold hover:opacity-90 transition text-lg">
-      카페24 앱스토어에서 무료 설치
-    </a>
-  </section>
+  <div style="margin-top: 2rem;">
+    <a href="/instafeeds/" class="btn-primary">인스타피드 무료로 시작하기 →</a>
+  </div>
+</section>
 
-  <!-- 푸터 -->
-  <footer class="border-t border-gray-100 px-6 py-8 text-center text-xs text-gray-400">
-    <p class="mb-2">
-      <a href="/privacy.html" class="hover:text-gray-600 mr-4">개인정보처리방침</a>
-      <a href="/terms.html" class="hover:text-gray-600 mr-4">이용약관</a>
-      <a href="mailto:contact@uasoft.kr" class="hover:text-gray-600">문의하기</a>
-    </p>
-    <p>© 2026 uasoft. All rights reserved.</p>
-  </footer>
+<footer>
+  <a href="/" class="footer-logo">ua<span>soft</span></a>
+  <div class="footer-links">
+    <a href="/instafeeds/">인스타피드</a>
+    <a href="/privacy.html">개인정보처리방침</a>
+    <a href="/terms.html">이용약관</a>
+    <a href="mailto:contact@uasoft.kr">문의</a>
+  </div>
+  <div class="footer-copy">© 2026 uasoft. All rights reserved. | 카페24 앱스토어 파트너</div>
+</footer>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
