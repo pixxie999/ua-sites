@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DVQGSYHNC8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DVQGSYHNC8');
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -49,12 +57,15 @@
   .nav-logo {
     font-family: var(--mono);
     font-size: 17px;
-    font-weight: 500;
-    color: var(--black);
+    font-weight: 700;
     text-decoration: none;
     letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #E1306C, #F77737, #FCAF45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .nav-logo span { color: var(--accent-light); }
+  .nav-logo span { color: inherit; }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a {
     text-decoration: none;
@@ -374,11 +385,14 @@
   .footer-logo {
     font-family: var(--mono);
     font-size: 15px;
-    font-weight: 500;
-    color: var(--black);
+    font-weight: 700;
     text-decoration: none;
+    background: linear-gradient(135deg, #E1306C, #F77737, #FCAF45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .footer-logo span { color: var(--accent-light); }
+  .footer-logo span { color: inherit; }
   .footer-links { display: flex; gap: 1.5rem; }
   .footer-links a {
     font-size: 13px;
@@ -417,7 +431,7 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">ua<span>soft</span></a>
+  <a href="/" class="nav-logo">uasoft</a>
   <div class="nav-links">
     <a href="#services">서비스</a>
     <a href="#plans">요금제</a>
@@ -563,7 +577,7 @@
 </section>
 
 <footer>
-  <a href="/" class="footer-logo">ua<span>soft</span></a>
+  <a href="/" class="footer-logo">uasoft</a>
   <div class="footer-links">
     <a href="/instafeeds/">인스타피드</a>
     <a href="/privacy.html">개인정보처리방침</a>

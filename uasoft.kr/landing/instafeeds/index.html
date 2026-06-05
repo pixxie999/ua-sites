@@ -6,6 +6,14 @@
   <title>인스타그램 피드 위젯 | uasoft</title>
   <meta name="description" content="카페24 쇼핑몰에 인스타그램 최신 게시물을 자동으로 노출하세요. 설치 5분, 월 9,900원부터." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVQGSYHNC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DVQGSYHNC8');
+  </script>
   <style>
     .gradient-text {
       background: linear-gradient(135deg, #E1306C, #F77737, #FCAF45);
@@ -22,10 +30,10 @@
 
   <!-- 헤더 -->
   <header class="border-b border-gray-100 px-6 py-4 flex items-center justify-between max-w-5xl mx-auto">
-    <div class="font-bold text-xl tracking-tight">
+    <a href="/" class="font-bold text-xl tracking-tight no-underline" style="text-decoration:none">
       <span class="gradient-text">uasoft</span>
       <span class="text-gray-400 font-normal text-sm ml-2">인스타그램 피드</span>
-    </div>
+    </a>
     <a href="https://store.cafe24.com" target="_blank" rel="noopener"
        class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
       무료로 시작하기
