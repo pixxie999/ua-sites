@@ -1,0 +1,29 @@
+name: Deploy uasoft.kr Landing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'uasoft.kr/landing/**'
+      - 'uasoft.kr/wrangler.toml'
+      - '.github/workflows/deploy_uasoft.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-landing:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    defaults:
+      run:
+        working-directory: uasoft.kr
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler pages deploy landing --project-name=uasoft-landing
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
