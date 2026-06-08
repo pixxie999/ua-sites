@@ -1,5 +1,35 @@
-.DS_Store
+# ============================================================
+# ⛔ ua-sites 레포 커밋 규칙
+# 이 레포에서 git add / commit 허용 폴더:
+#   - uapress/   (deploy_uapress.yml 배포)
+#   - uasoft.kr/ (deploy_uasoft.yml 배포)
+#   - .github/   (워크플로우)
+#   - CLAUDE.md  (레포 가이드)
+#
+# 배포 워크플로우 없는 폴더는 절대 커밋 금지.
+# 새 사이트 추가 시: 워크플로우 먼저 작성 → 그 다음 폴더 커밋.
+# ============================================================
+
+# 배포 워크플로우 없는 사이트 폴더 — 추가되어도 git 추적 금지
+brainplayzone/
+kschoolfood/
+qualpass/
+todaymarket/
+bizgrant/
+lawsummary/
+beachsafe/
+files/
+tmp/
+uasoft.kr/tmp/
+
+# 임시/작업 파일
 *.zip
+CLAUDE_phase1.md
+
+# 시스템
+.DS_Store
 __pycache__/
 *.pyc
 .venv/
+*.egg-info/
+node_modules/

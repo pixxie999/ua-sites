@@ -1,5 +1,55 @@
 # CLAUDE.md — ua-sites 레포 전체 가이드
 
+---
+
+## ⛔ 절대 금지 — git 커밋 규칙
+
+> **이 규칙은 Claude Code가 반드시 따라야 하는 최우선 규칙입니다.**
+
+### ua-sites 레포에서 커밋 허용 폴더 (화이트리스트)
+
+| 폴더 | 배포 워크플로우 | 허용 |
+|------|----------------|------|
+| `uapress/` | `deploy_uapress.yml` | ✅ |
+| `uasoft.kr/` | `deploy_uasoft.yml` | ✅ |
+| `.github/` | 워크플로우 파일 | ✅ |
+| `CLAUDE.md` | 레포 가이드 | ✅ |
+| `.gitignore` | git 설정 | ✅ |
+
+### 절대 커밋 금지 폴더
+
+```
+brainplayzone/   ← 별도 프로젝트, 이 레포와 무관
+kschoolfood/     ← 별도 프로젝트, 이 레포와 무관
+qualpass/        ← 워크플로우 없음 (추후 추가 시까지 금지)
+todaymarket/     ← 워크플로우 없음 (추후 추가 시까지 금지)
+bizgrant/        ← 워크플로우 없음
+lawsummary/      ← 워크플로우 없음
+beachsafe/       ← 워크플로우 없음
+files/           ← 임시 작업 파일
+tmp/             ← 임시 파일
+uasoft.kr/tmp/  ← 임시 파일
+```
+
+### 새 사이트 추가 시 순서
+
+```
+1. .github/workflows/deploy_{사이트명}.yml 작성 (워크플로우 먼저)
+2. 해당 사이트 폴더를 .gitignore에서 제거
+3. 그 다음 사이트 폴더 커밋
+```
+
+> ⚠️ **`git add .` 또는 `git add -A` 절대 사용 금지**
+> 반드시 파일/폴더를 명시적으로 지정해서 add:
+> ```bash
+> git add uapress/scripts/build_site.py   # ✅ 명시적 경로
+> git add uapress/templates/              # ✅ 허용 폴더
+> git add -A                              # ❌ 절대 금지
+> git add .                               # ❌ 절대 금지
+> ```
+
+---
+
 ## 레포 개요
 
 **레포명:** `ua-sites`
