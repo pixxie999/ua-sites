@@ -94,7 +94,7 @@ jobs:
         run: python uapress/scripts/build_site.py
         env:
           SITE_DOMAIN: https://uapress.kr
-          SITE_NAME: 이번주 행사
+          SITE_NAME: 전국축제정보
           ADSENSE_PUBLISHER_ID: ${{ secrets.ADSENSE_PUBLISHER_ID }}
           ADSENSE_UNIT_BANNER: ${{ secrets.ADSENSE_UNIT_BANNER }}
           ADSENSE_UNIT_RECTANGLE: ${{ secrets.ADSENSE_UNIT_RECTANGLE }}

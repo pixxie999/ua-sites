@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 load_dotenv(PROJECT_ROOT / ".env")
 
 SITE_DOMAIN = os.getenv("SITE_DOMAIN", "https://uapress.kr")
-SITE_NAME = os.getenv("SITE_NAME", "이번주 행사")
+SITE_NAME = os.getenv("SITE_NAME", "전국축제정보")
 ADSENSE_PUBLISHER_ID = os.getenv("ADSENSE_PUBLISHER_ID", "")
 ADSENSE_UNIT_BANNER = os.getenv("ADSENSE_UNIT_BANNER", "")
 ADSENSE_UNIT_RECTANGLE = os.getenv("ADSENSE_UNIT_RECTANGLE", "")

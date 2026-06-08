@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>uasoft - 카페24 앱 솔루션</title>
+<meta name="description" content="카페24 쇼핑몰을 위한 스마트 앱 솔루션. 인스타그램 피드, 리뷰 위젯 등 다양한 앱을 제공합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #fafaf8;
+    --gray-50: #f5f5f3;
+    --gray-100: #e8e8e4;
+    --gray-400: #9a9a94;
+    --gray-600: #5a5a56;
+    --accent: #1a472a;
+    --accent-light: #2d7a48;
+    --accent-pale: #eaf3de;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent-light); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--gray-600);
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--gray-100) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+    z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-pale);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--mono);
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent-light);
+    position: relative;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--gray-100);
+    color: var(--gray-600);
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gray-400); color: var(--black); }
+
+  .hero-stats {
+    position: absolute; bottom: 4rem; right: 3rem;
+    display: flex; gap: 3rem;
+    z-index: 1;
+  }
+  .stat { text-align: right; }
+  .stat-num {
+    display: block;
+    font-family: var(--mono);
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: -0.03em;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 6rem 3rem;
+    background: var(--white);
+  }
+  .section-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: 1.5rem;
+  }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gray-400);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--black);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5px;
+    background: var(--gray-100);
+    border: 1.5px solid var(--gray-100);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover { background: var(--gray-50); }
+  .service-card.active:hover { background: var(--accent-pale); }
+
+  .card-number {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gray-400);
+    letter-spacing: 0.05em;
+  }
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .card-icon.green { background: var(--accent-pale); }
+  .card-icon.gray { background: var(--gray-50); border: 1px solid var(--gray-100); }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--black);
+  }
+  .card-title-en {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gray-400);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .card-desc {
+    font-size: 13.5px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .card-footer {
+    margin-top: auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .card-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .status-live {
+    background: var(--accent-pale);
+    color: var(--accent);
+  }
+  .status-soon {
+    background: var(--gray-50);
+    color: var(--gray-400);
+    border: 1px solid var(--gray-100);
+  }
+  .card-arrow {
+    font-size: 16px;
+    color: var(--gray-400);
+    transition: transform 0.2s, color 0.2s;
+  }
+  .service-card:hover .card-arrow { transform: translate(3px, -3px); color: var(--black); }
+
+  /* PLAN PREVIEW */
+  .plans {
+    padding: 6rem 3rem;
+    background: var(--gray-50);
+  }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-100);
+    margin-top: 3rem;
+    max-width: 860px;
+  }
+  .plan-cell {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+  }
+  .plan-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 0.75rem;
+  }
+  .plan-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    margin-bottom: 0.25rem;
+  }
+  .plan-price span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray-400);
+  }
+  .plan-features {
+    margin-top: 1.25rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .plan-features li {
+    font-size: 13px;
+    color: var(--gray-600);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .plan-features li::before {
+    content: '';
+    width: 4px; height: 4px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .plan-cell.featured { background: var(--black); }
+  .plan-cell.featured .plan-name { color: rgba(255,255,255,0.4); }
+  .plan-cell.featured .plan-price { color: var(--white); }
+  .plan-cell.featured .plan-price span { color: rgba(255,255,255,0.4); }
+  .plan-cell.featured .plan-features li { color: rgba(255,255,255,0.7); }
+  .plan-cell.featured .plan-features li::before { background: #5eca8a; }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem;
+    border-top: 1px solid var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--accent-light); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--black); }
+  .footer-copy {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-family: var(--mono);
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* ANIMATE */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 1.5rem 8rem; }
+    .hero-stats { bottom: 2rem; right: 1.5rem; gap: 1.5rem; }
+    .services, .plans { padding: 4rem 1.5rem; }
+    .plans-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">ua<span>soft</span></a>
+  <div class="nav-links">
+    <a href="#services">서비스</a>
+    <a href="#plans">요금제</a>
+    <a href="/instafeeds">인스타피드</a>
+    <a href="mailto:hello@uasoft.kr">문의</a>
+    <a href="/instafeeds" class="nav-cta">무료 시작</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      카페24 공식 앱스토어 등록 서비스
+    </div>
+    <h1>카페24 쇼핑몰을<br>위한 <em>스마트 앱</em></h1>
+    <p>설치 5분, 매출은 그 이상.<br>인스타그램 피드부터 다양한 위젯까지, 쇼핑몰 성장에 필요한 앱을 제공합니다.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">서비스 둘러보기 →</a>
+      <a href="/instafeeds" class="btn-secondary">인스타피드 시작하기</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">3개</span>
+      <span class="stat-label">플랜 선택</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5분</span>
+      <span class="stat-label">설치 소요</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-label">// services</span>
+    <h2 class="section-title">앱 서비스</h2>
+  </div>
+
+  <div class="services-grid">
+    <a href="/instafeeds" class="service-card active">
+      <span class="card-number">01</span>
+      <div class="card-icon green">📸</div>
+      <div>
+        <div class="card-title">인스타그램 피드</div>
+        <div class="card-title-en">Instagram Feed Widget</div>
+      </div>
+      <p class="card-desc">인스타그램 최신 게시물을 쇼핑몰에 자동 노출. 브랜드 신뢰도를 높이고 체류 시간을 늘려보세요.</p>
+      <div class="card-footer">
+        <span class="card-status status-live">서비스 중</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <div class="service-card">
+      <span class="card-number">02</span>
+      <div class="card-icon gray">⭐</div>
+      <div>
+        <div class="card-title">리뷰 위젯</div>
+        <div class="card-title-en">Review Widget</div>
+      </div>
+      <p class="card-desc">구매 후기를 다양한 레이아웃으로 노출. 신뢰도 높은 리뷰로 전환율을 극대화합니다.</p>
+      <div class="card-footer">
+        <span class="card-status status-soon">준비 중</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="card-number">03</span>
+      <div class="card-icon gray">🔔</div>
+      <div>
+        <div class="card-title">팝업 빌더</div>
+        <div class="card-title-en">Popup Builder</div>
+      </div>
+      <p class="card-desc">이벤트, 공지, 할인 쿠폰을 스마트 팝업으로 전달. 다양한 트리거와 타겟팅을 지원합니다.</p>
+      <div class="card-footer">
+        <span class="card-status status-soon">준비 중</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="card-number">04</span>
+      <div class="card-icon gray">📊</div>
+      <div>
+        <div class="card-title">방문자 분석</div>
+        <div class="card-title-en">Visitor Analytics</div>
+      </div>
+      <p class="card-desc">쇼핑몰 방문자 행동 패턴 분석. 어떤 상품을 오래 보는지, 어디서 이탈하는지 파악하세요.</p>
+      <div class="card-footer">
+        <span class="card-status status-soon">준비 중</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plans" id="plans">
+  <div class="section-header">
+    <span class="section-label">// pricing</span>
+    <h2 class="section-title">인스타피드 요금제</h2>
+  </div>
+
+  <div class="plans-grid">
+    <div class="plan-cell">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">0원 <span>/ 월</span></div>
+      <ul class="plan-features">
+        <li>게시물 4개 노출</li>
+        <li>주 1회 자동 갱신</li>
+        <li>워터마크 포함</li>
+        <li>그리드 레이아웃</li>
+      </ul>
+    </div>
+    <div class="plan-cell featured">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price">9,900원 <span>/ 월</span></div>
+      <ul class="plan-features">
+        <li>게시물 12개 노출</li>
+        <li>매일 1회 자동 갱신</li>
+        <li>워터마크 제거</li>
+        <li>레이아웃 선택</li>
+      </ul>
+    </div>
+    <div class="plan-cell">
+      <div class="plan-name">Premium</div>
+      <div class="plan-price">29,900원 <span>/ 월</span></div>
+      <ul class="plan-features">
+        <li>게시물 무제한</li>
+        <li>6시간마다 갱신</li>
+        <li>다중 계정 3개</li>
+        <li>고급 UI 제공</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <a href="/instafeeds" class="btn-primary">인스타피드 무료로 시작하기 →</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="footer-logo">ua<span>soft</span></a>
+  <div class="footer-links">
+    <a href="/instafeeds">인스타피드</a>
+    <a href="/privacy">개인정보처리방침</a>
+    <a href="/terms">이용약관</a>
+    <a href="mailto:hello@uasoft.kr">문의</a>
+  </div>
+  <div class="footer-copy">© 2025 uasoft. All rights reserved. | 카페24 앱스토어 파트너</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
