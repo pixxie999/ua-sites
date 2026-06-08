@@ -92,6 +92,17 @@ REGION_INFO = {
 }
 
 
+def load_attractions() -> dict:
+    """지역별 관광지 데이터 로드"""
+    path = PROJECT_ROOT / "data" / "raw" / "attractions.json"
+    if path.exists():
+        try:
+            return json.loads(path.read_text())
+        except Exception:
+            pass
+    return {}
+
+
 def load_data():
     base = PROJECT_ROOT / "data" / "processed"
     events = json.loads((base / "events.json").read_text())
@@ -168,6 +179,7 @@ def build_all():
             shutil.copy(str(f), str(DIST / f.name))
 
     events, by_region, by_month, free_events, archive, weekly_pick, weekly_list = load_data()
+    attractions_all = load_attractions()
     env = setup_env()
 
     today = datetime.now().strftime("%Y%m%d")
@@ -225,11 +237,14 @@ def build_all():
             except Exception:
                 pass
         is_ended = e["end_date"] < today
+        nearby = attractions_all.get(e.get("region", ""), [])
         path = DIST / "event" / e["id"] / "index.html"
         write(path, tmpl.render(
             event=e,
             cafe_reviews=cafe_reviews,
             is_ended=is_ended,
+            nearby_attractions=nearby,
+            reviewed_date=BUILD_DATE,
             page_url=f"/event/{e['id']}/"
         ))
     print(f"  행사 상세: 활성 {len(active)}개 + 아카이브 {len(archive)}개")
@@ -362,6 +377,13 @@ def build_all():
     ))
     print(f"  지나간 행사 아카이브: {len(archive)}개")
 
+    # 7-3. About 페이지
+    tmpl_about = env.get_template("about.html")
+    write(DIST / "about" / "index.html", tmpl_about.render(
+        page_url="/about/"
+    ))
+    print("  About 페이지 생성")
+
     # 8. 검색 인덱스
     idx_src = Path("dist/search-index.json")
     idx_dst = DIST / "search-index.json"
@@ -404,6 +426,7 @@ def build_sitemap(events: list, archive: list = None):
         {"loc": "/free/", "priority": "0.9", "changefreq": "daily"},
         {"loc": "/weekly/", "priority": "0.9", "changefreq": "weekly"},
         {"loc": "/past/", "priority": "0.7", "changefreq": "weekly"},
+        {"loc": "/about/", "priority": "0.6", "changefreq": "monthly"},
     ]
 
     for region_slug in REGION_SLUGS.values():

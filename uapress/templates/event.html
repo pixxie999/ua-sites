@@ -330,6 +330,36 @@
 </div>
 {% endif %}
 
+<!-- 인근 관광지 -->
+{% if nearby_attractions %}
+<div class="bg-white rounded-xl p-5 shadow-sm mb-6">
+  <h2 class="font-bold text-lg mb-4">🗺️ {{ event.region }} 인근 관광지</h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    {% for spot in nearby_attractions %}
+    <a href="https://map.kakao.com/?q={{ spot.title }}" target="_blank" rel="noopener"
+       class="rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition group">
+      {% if spot.thumbnail %}
+      <div class="h-24 overflow-hidden">
+        <img src="{{ spot.thumbnail }}" alt="{{ spot.title }}"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+      </div>
+      {% else %}
+      <div class="h-24 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center text-2xl">🗺️</div>
+      {% endif %}
+      <div class="p-2">
+        <p class="text-xs font-medium text-gray-700 line-clamp-2 leading-snug">{{ spot.title }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- 검수일 표시 -->
+<div class="text-right text-xs text-gray-400 mb-6">
+  ✅ 편집팀 검수: {{ reviewed_date }} | 정보 출처: 한국관광공사 Tour API
+</div>
+
 <!-- 공유하기 -->
 <div class="bg-white rounded-xl p-5 shadow-sm mb-6">
   <h2 class="font-bold text-lg mb-3">📤 이 행사 공유하기</h2>

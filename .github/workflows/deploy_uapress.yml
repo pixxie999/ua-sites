@@ -47,6 +47,17 @@ jobs:
         if: ${{ github.event.inputs.mode != 'build_only' }}
         run: python uapress/scripts/process_events.py
 
+      - name: Fetch nearby attractions (Tour API)
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        continue-on-error: true
+        run: python -c "
+import sys; sys.path.insert(0, 'uapress/scripts')
+from fetch_tour import fetch_all_attractions
+fetch_all_attractions()
+"
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+
       - name: Fetch Naver Cafe reviews
         if: ${{ github.event.inputs.mode != 'build_only' }}
         continue-on-error: true

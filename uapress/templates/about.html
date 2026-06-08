@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}서비스 소개 및 운영 정책 — {{ site_name }}{% endblock %}
+{% block description %}전국축제정보(uapress.kr) 서비스 소개, 운영자 정보, AI 콘텐츠 정책을 안내합니다.{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <span class="text-gray-600">서비스 소개</span>
+</nav>
+
+<!-- 히어로 -->
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 mb-8 text-white text-center">
+  <div class="text-5xl mb-3">🎪</div>
+  <h1 class="text-2xl md:text-3xl font-bold mb-2">{{ site_name }}</h1>
+  <p class="text-blue-100">전국 문화행사·축제 정보를 한눈에</p>
+</div>
+
+<!-- 서비스 소개 -->
+<div class="bg-white rounded-xl p-6 shadow-sm mb-6">
+  <h2 class="font-bold text-xl mb-4">📌 서비스 소개</h2>
+  <p class="text-gray-700 leading-relaxed mb-3">
+    <strong>전국축제정보(uapress.kr)</strong>는 전국의 문화행사·축제 정보를 한눈에 확인할 수 있는 정보 서비스입니다.
+    한국관광공사 Tour API 공공데이터를 기반으로 매주 최신 행사 정보를 업데이트합니다.
+  </p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+    <div class="bg-blue-50 rounded-xl p-4 text-center">
+      <p class="text-2xl mb-1">🗓</p>
+      <p class="text-xs font-bold text-blue-700">매주 업데이트</p>
+      <p class="text-xs text-blue-500">화·금 자동 갱신</p>
+    </div>
+    <div class="bg-green-50 rounded-xl p-4 text-center">
+      <p class="text-2xl mb-1">🎟</p>
+      <p class="text-xs font-bold text-green-700">무료 행사 특화</p>
+      <p class="text-xs text-green-500">무료 행사 모음</p>
+    </div>
+    <div class="bg-purple-50 rounded-xl p-4 text-center">
+      <p class="text-2xl mb-1">📍</p>
+      <p class="text-xs font-bold text-purple-700">전국 17개 지역</p>
+      <p class="text-xs text-purple-500">지역별 행사 안내</p>
+    </div>
+    <div class="bg-orange-50 rounded-xl p-4 text-center">
+      <p class="text-2xl mb-1">⭐</p>
+      <p class="text-xs font-bold text-orange-700">에디터픽</p>
+      <p class="text-xs text-orange-500">매주 TOP 5 선정</p>
+    </div>
+  </div>
+</div>
+
+<!-- 운영자 정보 -->
+<div class="bg-white rounded-xl p-6 shadow-sm mb-6">
+  <h2 class="font-bold text-xl mb-4">🏢 운영자 정보</h2>
+  <table class="w-full text-sm">
+    <tbody class="divide-y divide-gray-100">
+      <tr class="py-3">
+        <td class="py-3 text-gray-500 w-28">운영 단체</td>
+        <td class="py-3 font-medium text-gray-800">우아패밀리</td>
+      </tr>
+      <tr>
+        <td class="py-3 text-gray-500">서비스명</td>
+        <td class="py-3 font-medium text-gray-800">전국축제정보 (uapress.kr)</td>
+      </tr>
+      <tr>
+        <td class="py-3 text-gray-500">문의 이메일</td>
+        <td class="py-3"><a href="mailto:contact@uapress.kr" class="text-blue-600 hover:underline">contact@uapress.kr</a></td>
+      </tr>
+      <tr>
+        <td class="py-3 text-gray-500">데이터 출처</td>
+        <td class="py-3 text-gray-800">한국관광공사 Tour API (공공데이터포털)</td>
+      </tr>
+      <tr>
+        <td class="py-3 text-gray-500">업데이트 주기</td>
+        <td class="py-3 text-gray-800">매주 화요일·금요일 자동 갱신</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- AI 콘텐츠 정책 -->
+<div class="bg-white rounded-xl p-6 shadow-sm mb-6">
+  <h2 class="font-bold text-xl mb-4">🤖 AI 콘텐츠 정책</h2>
+  <p class="text-gray-700 leading-relaxed mb-4">
+    전국축제정보는 행사 요약·추천 글 작성에 AI(Claude by Anthropic)를 보조 도구로 활용합니다.
+    AI가 생성한 초안은 편집팀이 검토·수정 후 게재합니다.
+  </p>
+  <div class="space-y-3">
+    <div class="flex gap-3 items-start">
+      <span class="text-green-500 mt-0.5">✅</span>
+      <p class="text-sm text-gray-700"><strong>1차 데이터 기반:</strong> 모든 행사 정보는 한국관광공사 공식 API에서 수집한 데이터를 기반으로 합니다.</p>
+    </div>
+    <div class="flex gap-3 items-start">
+      <span class="text-green-500 mt-0.5">✅</span>
+      <p class="text-sm text-gray-700"><strong>편집팀 검수:</strong> AI가 생성한 요약·추천 글은 편집팀이 사실 관계를 확인하고 검수합니다.</p>
+    </div>
+    <div class="flex gap-3 items-start">
+      <span class="text-green-500 mt-0.5">✅</span>
+      <p class="text-sm text-gray-700"><strong>투명한 공개:</strong> AI 사용 여부를 숨기지 않으며, 각 페이지 하단에 검수일을 표기합니다.</p>
+    </div>
+    <div class="flex gap-3 items-start">
+      <span class="text-red-400 mt-0.5">⚠️</span>
+      <p class="text-sm text-gray-700"><strong>정보 변경 주의:</strong> 행사 정보는 주최 측 사정에 따라 변경될 수 있습니다. 방문 전 반드시 공식 홈페이지에서 확인하세요.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 데이터 출처 -->
+<div class="bg-gray-50 rounded-xl p-6 mb-6">
+  <h2 class="font-bold text-xl mb-4">📊 데이터 출처</h2>
+  <div class="space-y-2 text-sm text-gray-700">
+    <div class="flex items-center gap-2">
+      <span class="text-blue-500">•</span>
+      <span><strong>행사 정보:</strong> 한국관광공사 Tour API (공공데이터포털 제공)</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-blue-500">•</span>
+      <span><strong>관광지 정보:</strong> 한국관광공사 Tour API (관광지 데이터)</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-blue-500">•</span>
+      <span><strong>날씨 정보:</strong> 기상청 단기예보 API (공공데이터포털 제공)</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-blue-500">•</span>
+      <span><strong>후기 정보:</strong> 네이버 카페 검색 API</span>
+    </div>
+  </div>
+  <p class="text-xs text-gray-400 mt-4">
+    본 서비스는 공공데이터포털(data.go.kr)의 공공 API를 활용하며, 데이터의 정확성은 원출처 기관에 따릅니다.
+  </p>
+</div>
+
+<!-- 링크 -->
+<div class="flex flex-wrap gap-3 justify-center mt-6">
+  <a href="/privacy-policy/" class="text-sm text-gray-500 hover:text-blue-600 underline">개인정보처리방침</a>
+  <span class="text-gray-300">|</span>
+  <a href="mailto:contact@uapress.kr" class="text-sm text-gray-500 hover:text-blue-600 underline">문의하기</a>
+  <span class="text-gray-300">|</span>
+  <a href="/" class="text-sm text-gray-500 hover:text-blue-600 underline">홈으로</a>
+</div>
+{% endblock %}
