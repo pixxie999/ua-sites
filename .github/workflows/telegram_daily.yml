@@ -1,0 +1,42 @@
+name: Daily Telegram — 오늘의 추천 축제
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 매일 오전 8시 KST (UTC+9 = UTC 23시)
+  workflow_dispatch:         # 수동 테스트용
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-uapress-${{ hashFiles('uapress/requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r uapress/requirements.txt
+
+      - name: Fetch latest events (캐시된 데이터 사용)
+        run: |
+          # data/processed/events.json 이 레포에 없으므로
+          # Tour API에서 직접 가져옴
+          python uapress/scripts/fetch_tour.py
+          python uapress/scripts/process_events.py
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+
+      - name: Send daily recommendation to Telegram
+        run: python uapress/scripts/send_telegram_daily.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
