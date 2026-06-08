@@ -352,6 +352,16 @@ def build_all():
     ))
     print(f"  주간 큐레이션 모아보기: {len(weekly_list)}개")
 
+    # 7-2. 지나간 행사 아카이브 목록 페이지
+    tmpl_past = env.get_template("past.html")
+    past_regions = sorted(set(e["region"] for e in archive)) if archive else []
+    write(DIST / "past" / "index.html", tmpl_past.render(
+        archive=archive,
+        regions=past_regions,
+        page_url="/past/"
+    ))
+    print(f"  지나간 행사 아카이브: {len(archive)}개")
+
     # 8. 검색 인덱스
     idx_src = Path("dist/search-index.json")
     idx_dst = DIST / "search-index.json"
@@ -393,6 +403,7 @@ def build_sitemap(events: list, archive: list = None):
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/free/", "priority": "0.9", "changefreq": "daily"},
         {"loc": "/weekly/", "priority": "0.9", "changefreq": "weekly"},
+        {"loc": "/past/", "priority": "0.7", "changefreq": "weekly"},
     ]
 
     for region_slug in REGION_SLUGS.values():
