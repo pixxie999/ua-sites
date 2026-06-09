@@ -144,6 +144,8 @@ def setup_env():
         "region_slugs": REGION_SLUGS,
         "category_slugs": CATEGORY_SLUGS,
         "now_year": datetime.now().year,
+        "max": max,
+        "min": min,
     })
     return env
 
