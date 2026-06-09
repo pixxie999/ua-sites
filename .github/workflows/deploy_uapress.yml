@@ -48,7 +48,6 @@ jobs:
         run: python uapress/scripts/process_events.py
 
       - name: Fetch nearby attractions (Tour API)
-        if: ${{ github.event.inputs.mode != 'build_only' }}
         continue-on-error: true
         run: python uapress/scripts/fetch_attractions.py
         env:
