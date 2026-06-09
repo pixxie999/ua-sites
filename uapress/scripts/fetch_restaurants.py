@@ -23,7 +23,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService2"
+TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
 KAKAO_API_URL = "https://dapi.kakao.com/v2/local/search/category.json"
 RESTAURANTS_DIR = PROJECT_ROOT / "data" / "restaurants"
 EVENTS_PATH = PROJECT_ROOT / "data" / "processed" / "events.json"
@@ -63,7 +63,7 @@ def fetch_tour_restaurants(lat: float, lng: float, radius: int = 3000) -> list:
         "arrange": "S",
     }
     try:
-        resp = requests.get(f"{TOUR_API_BASE}/locationBasedList2", params=params, timeout=15)
+        resp = requests.get(f"{TOUR_API_BASE}/locationBasedList1", params=params, timeout=15)
         data = resp.json()
         raw = data.get("response", {}).get("body", {}).get("items", {})
         if not raw or not isinstance(raw, dict):
