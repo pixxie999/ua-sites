@@ -212,21 +212,22 @@ def generate_content(event: dict, theme: dict) -> dict:
 # 관광사진 API 검색
 # ─────────────────────────────────────────
 
-def search_photos(event: dict, limit: int = 5) -> list[str]:
-    """한국관광공사 관광사진 API로 행사 관련 사진 URL 목록 반환"""
+def fetch_event_images(content_id: str, limit: int = 5) -> list[str]:
+    """Tour API detailImage로 행사 이미지 여러 장 수집"""
     api_key = os.environ.get("TOUR_API_KEY")
-    if not api_key:
+    if not api_key or not content_id:
         return []
-
-    def _fetch(keyword: str, rows: int) -> list:
+    try:
         resp = requests.get(
-            "https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1",
+            "https://apis.data.go.kr/B551011/KorService2/detailImage2",
             params={
                 "serviceKey": api_key,
                 "_type": "json",
-                "keyword": keyword,
-                "numOfRows": rows,
-                "pageNo": 1,
+                "contentId": content_id,
+                "imageYN": "Y",
+                "subImageYN": "Y",
+                "MobileOS": "ETC",
+                "MobileApp": "uapress",
             },
             timeout=15,
         )
@@ -239,27 +240,44 @@ def search_photos(event: dict, limit: int = 5) -> list[str]:
             items = [items]
         urls = []
         for item in items:
-            url = item.get("webImageUrl") or item.get("originimgurl")
-            if url:
+            url = item.get("originimgurl") or item.get("smallimageurl")
+            if url and url not in urls:
                 urls.append(url)
-        return urls
-
-    title_word = event.get("title", "").split()[0] if event.get("title") else ""
-    region = event.get("region", "")
-
-    try:
-        # 1차: 지역명 + 행사 첫 단어
-        urls = _fetch(f"{region} {title_word}".strip(), limit)
-        # 부족하면 지역명만으로 보충
-        if len(urls) < limit:
-            extra = _fetch(region, limit)
-            for u in extra:
-                if u not in urls:
-                    urls.append(u)
         return urls[:limit]
     except Exception as e:
-        print(f"  관광사진 검색 실패: {e}")
+        print(f"  detailImage 조회 실패: {e}")
         return []
+
+
+def collect_photos(event: dict, all_events: list, limit: int = 5) -> list[str]:
+    """행사 이미지 최대 limit장 수집 (detailImage → 썸네일 → 같은 지역 행사 썸네일)"""
+    urls = []
+
+    # 1. detailImage API로 행사 자체 이미지
+    content_id = event.get("content_id", "")
+    if content_id:
+        urls = fetch_event_images(content_id, limit)
+        print(f"  detailImage: {len(urls)}장")
+
+    # 2. 행사 썸네일 보충
+    thumb = event.get("thumbnail")
+    if thumb and thumb not in urls:
+        urls.append(thumb)
+
+    # 3. 같은 지역 다른 행사 썸네일로 채우기
+    if len(urls) < limit:
+        region = event.get("region", "")
+        for e in all_events:
+            if len(urls) >= limit:
+                break
+            if e.get("id") == event.get("id"):
+                continue
+            if e.get("region") == region and e.get("thumbnail"):
+                t = e["thumbnail"]
+                if t not in urls:
+                    urls.append(t)
+
+    return urls[:limit]
 
 
 # ─────────────────────────────────────────
@@ -376,18 +394,13 @@ def main():
     print("Claude API로 콘텐츠 생성 중...")
     content = generate_content(event, theme)
 
-    # 관광사진 검색 (최대 5장)
-    print("관광사진 검색 중...")
-    photo_urls = search_photos(event, limit=5)
-    # 사진 부족하면 행사 썸네일로 보충
-    if event.get("thumbnail") and event["thumbnail"] not in photo_urls:
-        photo_urls.append(event["thumbnail"])
-    photo_urls = photo_urls[:5]
-
+    # 이미지 수집 (최대 5장)
+    print("이미지 수집 중...")
+    photo_urls = collect_photos(event, events, limit=5)
     if photo_urls:
-        print(f"  사진 {len(photo_urls)}장 확보")
+        print(f"  이미지 {len(photo_urls)}장 확보")
     else:
-        print("  사진 없음 — 텍스트만 전송")
+        print("  이미지 없음 — 텍스트만 전송")
 
     print("텔레그램 전송 중...")
     msg = format_message(event, content, theme)
