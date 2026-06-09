@@ -209,6 +209,65 @@ def generate_content(event: dict, theme: dict) -> dict:
 
 
 # ─────────────────────────────────────────
+# 관광사진 API 검색
+# ─────────────────────────────────────────
+
+def search_photo(event: dict) -> str | None:
+    """한국관광공사 관광사진 API로 행사 관련 사진 URL 반환"""
+    api_key = os.environ.get("TOUR_API_KEY")
+    if not api_key:
+        return None
+
+    # 검색 키워드: 지역명 + 제목 첫 단어 (짧게)
+    title_word = event.get("title", "").split()[0] if event.get("title") else ""
+    region = event.get("region", "")
+    keyword = f"{region} {title_word}".strip()
+
+    try:
+        resp = requests.get(
+            "https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1",
+            params={
+                "serviceKey": api_key,
+                "_type": "json",
+                "keyword": keyword,
+                "numOfRows": 5,
+                "pageNo": 1,
+            },
+            timeout=15,
+        )
+        data = resp.json()
+        raw_items = data.get("response", {}).get("body", {}).get("items", {})
+        if not raw_items or not isinstance(raw_items, dict):
+            # 지역명만으로 재시도
+            resp2 = requests.get(
+                "https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1",
+                params={
+                    "serviceKey": api_key,
+                    "_type": "json",
+                    "keyword": region,
+                    "numOfRows": 5,
+                    "pageNo": 1,
+                },
+                timeout=15,
+            )
+            data = resp2.json()
+            raw_items = data.get("response", {}).get("body", {}).get("items", {})
+        if not raw_items or not isinstance(raw_items, dict):
+            return None
+        items = raw_items.get("item", [])
+        if isinstance(items, dict):
+            items = [items]
+        if not items:
+            return None
+        # 웹용 이미지 URL 반환
+        photo = items[0]
+        return photo.get("webImageUrl") or photo.get("originimgurl") or None
+    except Exception as e:
+        print(f"  관광사진 검색 실패: {e}")
+        return None
+
+
+# ─────────────────────────────────────────
 # 텔레그램 전송
 # ─────────────────────────────────────────
 
@@ -222,6 +281,22 @@ def send_telegram(text: str):
         "text": text,
         "parse_mode": "HTML",
         "disable_web_page_preview": False,
+    }, timeout=30)
+    resp.raise_for_status()
+    return resp.json()
+
+
+def send_telegram_photo(photo_url: str, caption: str):
+    """이미지 + 짧은 캡션 전송 (caption 최대 1024자)"""
+    token = os.environ["TELEGRAM_BOT_TOKEN"]
+    chat_id = os.environ["TELEGRAM_CHAT_ID"]
+
+    url = f"https://api.telegram.org/bot{token}/sendPhoto"
+    resp = requests.post(url, json={
+        "chat_id": chat_id,
+        "photo": photo_url,
+        "caption": caption[:1024],
+        "parse_mode": "HTML",
     }, timeout=30)
     resp.raise_for_status()
     return resp.json()
@@ -288,10 +363,34 @@ def main():
     print("Claude API로 콘텐츠 생성 중...")
     content = generate_content(event, theme)
 
+    # 관광사진 검색
+    print("관광사진 검색 중...")
+    photo_url = search_photo(event)
+    # 사진 없으면 행사 썸네일로 fallback
+    if not photo_url:
+        photo_url = event.get("thumbnail")
+    if photo_url:
+        print(f"  사진 URL: {photo_url[:60]}...")
+    else:
+        print("  사진 없음 — 텍스트만 전송")
+
     print("텔레그램 전송 중...")
     msg = format_message(event, content, theme)
-    send_telegram(msg)
 
+    if photo_url:
+        # 이미지 먼저 (짧은 캡션)
+        free_tag = " 🆓무료" if event.get("is_free") else ""
+        short_caption = (
+            f"{theme['emoji']} <b>{event['title']}</b>{free_tag}\n"
+            f"📍 {event['region']}  🗓 {event['start_date_fmt']} ~ {event['end_date_fmt']}\n"
+            f"💰 {event.get('fee') or ('무료' if event.get('is_free') else '유료')}"
+        )
+        try:
+            send_telegram_photo(photo_url, short_caption)
+        except Exception as e:
+            print(f"  사진 전송 실패 ({e}) — 텍스트만 전송")
+
+    send_telegram(msg)
     print("전송 완료!")
     print(f"  후킹 멘트: {len(content.get('hooks', []))}개")
     print(f"  이미지 프롬프트: {len(content.get('image_prompts', []))}개")
