@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}{{ year }}년 {{ month_name }} 축제·행사 캘린더 — {{ site_name }}{% endblock %}
+{% block description %}{{ year }}년 {{ month_name }} 전국 문화행사·축제 캘린더. 날짜별 행사 일정을 한눈에 확인하세요.{% endblock %}
+
+{% block content %}
+<nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+  <a href="/" class="hover:text-blue-500">홈</a> <span>›</span>
+  <a href="/calendar/" class="hover:text-blue-500">캘린더</a> <span>›</span>
+  <span class="text-gray-600">{{ year }}년 {{ month_name }}</span>
+</nav>
+
+<!-- 월 네비게이션 -->
+<div class="flex items-center justify-between mb-6">
+  <a href="/calendar/{{ prev_month }}/"
+     class="flex items-center gap-1 px-4 py-2 bg-white rounded-xl shadow-sm text-sm font-medium text-gray-600 hover:text-blue-600 hover:shadow-md transition">
+    ← {{ prev_label }}
+  </a>
+  <div class="text-center">
+    <h1 class="text-xl md:text-2xl font-bold text-gray-800">{{ year }}년 {{ month_name }}</h1>
+    <p class="text-xs text-gray-400 mt-0.5">행사 {{ total_events }}개</p>
+  </div>
+  <a href="/calendar/{{ next_month }}/"
+     class="flex items-center gap-1 px-4 py-2 bg-white rounded-xl shadow-sm text-sm font-medium text-gray-600 hover:text-blue-600 hover:shadow-md transition">
+    {{ next_label }} →
+  </a>
+</div>
+
+<!-- 범례 -->
+<div class="flex flex-wrap gap-3 mb-4 text-xs">
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span> 시작일</span>
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-400 inline-block"></span> 종료일</span>
+  <span class="flex items-center gap-1 ml-2 text-gray-400">카테고리 색상:</span>
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-orange-400 inline-block"></span> 축제</span>
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-purple-400 inline-block"></span> 공연</span>
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-blue-400 inline-block"></span> 전시</span>
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-green-400 inline-block"></span> 체험</span>
+  <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-gray-400 inline-block"></span> 기타</span>
+</div>
+
+<!-- 캘린더 그리드 -->
+<div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+  <!-- 요일 헤더 -->
+  <div class="grid grid-cols-7 bg-gray-50 border-b">
+    {% for day in ['월','화','수','목','금','토','일'] %}
+    <div class="py-2 text-center text-xs font-bold
+      {% if loop.index == 7 %}text-red-400{% elif loop.index == 6 %}text-blue-400{% else %}text-gray-500{% endif %}">
+      {{ day }}
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- 날짜 셀 -->
+  <div class="grid grid-cols-7 divide-x divide-y divide-gray-100">
+    {# 첫 주 빈 셀 (월요일=0 기준) #}
+    {% for _ in range(first_weekday) %}
+    <div class="min-h-[80px] md:min-h-[100px] bg-gray-50/50 p-1"></div>
+    {% endfor %}
+
+    {% for day in range(1, days_in_month + 1) %}
+    {% set cell = day_events.get(day, {}) %}
+    {% set start_list = cell.get('start', []) %}
+    {% set end_list = cell.get('end', []) %}
+    {% set total_cell = start_list|length + end_list|length %}
+    {% set col_idx = (first_weekday + day - 1) % 7 %}
+
+    <div class="min-h-[80px] md:min-h-[100px] p-1 relative
+      {% if day == today_day %}bg-blue-50{% endif %}">
+
+      <!-- 날짜 숫자 -->
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-xs font-bold
+          {% if col_idx == 6 %}text-red-400
+          {% elif col_idx == 5 %}text-blue-400
+          {% elif day == today_day %}text-blue-600
+          {% else %}text-gray-700{% endif %}
+          {% if day == today_day %} w-5 h-5 bg-blue-600 text-white rounded-full flex items-center justify-center text-[10px]{% endif %}">
+          {{ day }}
+        </span>
+        {% if total_cell > 3 %}
+        <span class="text-[9px] text-gray-400">+{{ total_cell }}개</span>
+        {% endif %}
+      </div>
+
+      <!-- 시작 행사 바 -->
+      {% for e in start_list[:3] %}
+      <a href="/event/{{ e.id }}/"
+         class="block w-full mb-0.5 px-1 py-0.5 rounded text-[9px] md:text-[10px] leading-tight truncate text-white font-medium
+         {{ cat_colors.get(e.category, 'bg-gray-400') }} hover:opacity-80 transition"
+         title="{{ e.title }} (시작)">
+        <span class="mr-0.5">🟢</span><span class="hidden md:inline">{{ e.title[:14] }}</span><span class="md:hidden">{{ e.title[:8] }}</span>
+      </a>
+      {% endfor %}
+
+      <!-- 종료 행사 바 -->
+      {% for e in end_list[:max(0, 3 - start_list|length)] %}
+      <a href="/event/{{ e.id }}/"
+         class="block w-full mb-0.5 px-1 py-0.5 rounded text-[9px] md:text-[10px] leading-tight truncate text-white font-medium opacity-75
+         {{ cat_colors.get(e.category, 'bg-gray-400') }} hover:opacity-90 transition"
+         title="{{ e.title }} (종료)">
+        <span class="mr-0.5">🔴</span><span class="hidden md:inline">{{ e.title[:14] }}</span><span class="md:hidden">{{ e.title[:8] }}</span>
+      </a>
+      {% endfor %}
+
+      <!-- 더 있으면 전체 목록 링크 -->
+      {% if total_cell > 3 %}
+      <a href="/calendar/{{ year }}/{{ '%02d'|format(month_int) }}/{{ '%02d'|format(day) }}/"
+         class="block text-[9px] text-blue-500 hover:underline text-center">
+        전체보기
+      </a>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    {# 마지막 주 빈 셀 #}
+    {% set last_col = (first_weekday + days_in_month - 1) % 7 %}
+    {% if last_col < 6 %}
+    {% for _ in range(6 - last_col) %}
+    <div class="min-h-[80px] md:min-h-[100px] bg-gray-50/50 p-1"></div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+<!-- 이번 달 행사 전체 목록 (SEO용) -->
+<div class="mt-8">
+  <h2 class="text-lg font-bold mb-4">📋 {{ year }}년 {{ month_name }} 전체 행사 목록 ({{ total_events }}개)</h2>
+  <div class="space-y-2">
+    {% for e in month_all_events %}
+    <a href="/event/{{ e.id }}/"
+       class="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm hover:shadow-md transition group">
+      <div class="w-12 text-center flex-shrink-0">
+        <div class="text-sm font-bold text-gray-700">{{ e.start_date[6:8] }}일</div>
+        <div class="text-[10px] text-gray-400">~{{ e.end_date[6:8] }}일</div>
+      </div>
+      {% if e.thumbnail %}
+      <img src="{{ e.thumbnail }}" alt="{{ e.title }}"
+           class="w-14 h-14 object-cover rounded-lg flex-shrink-0" loading="lazy">
+      {% else %}
+      <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🎪</div>
+      {% endif %}
+      <div class="min-w-0 flex-1">
+        <p class="font-medium text-gray-800 text-sm truncate group-hover:text-blue-600">{{ e.title }}</p>
+        <p class="text-xs text-gray-500 mt-0.5">📍 {{ e.region }} {{ e.place or '' }}</p>
+        <div class="flex gap-1 mt-1 flex-wrap">
+          <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-gray-100 text-gray-500">{{ e.category }}</span>
+          {% if e.is_free %}<span class="text-[10px] px-1.5 py-0.5 rounded-full bg-green-100 text-green-600">무료</span>{% endif %}
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- 월 빠른이동 -->
+<div class="mt-8 bg-white rounded-xl p-4 shadow-sm">
+  <h3 class="text-sm font-bold text-gray-600 mb-3">📅 월별 캘린더</h3>
+  <div class="flex flex-wrap gap-2">
+    {% for m in month_links %}
+    <a href="/calendar/{{ m.url }}/"
+       class="px-3 py-1.5 rounded-lg text-xs font-medium transition
+       {% if m.url == year + '/' + '%02d'|format(month_int) %}bg-blue-600 text-white{% else %}bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600{% endif %}">
+      {{ m.label }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

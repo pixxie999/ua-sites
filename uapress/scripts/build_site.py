@@ -6,8 +6,9 @@ import json
 import shutil
 import os
 import sys
+import calendar as cal_module
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, date
 from jinja2 import Environment, FileSystemLoader
 
 # scripts/ 디렉터리에서 실행될 때 프로젝트 루트를 기준으로 경로 잡기
@@ -381,6 +382,9 @@ def build_all():
     ))
     print("  About 페이지 생성")
 
+    # 7-4. 캘린더
+    calendar_months = build_calendars(active, env, today_dt)
+
     # 8. 검색 인덱스
     idx_src = Path("dist/search-index.json")
     idx_dst = DIST / "search-index.json"
@@ -417,14 +421,141 @@ def build_all():
     print(f"\n빌드 완료: {total}개 HTML 페이지")
 
 
+CAT_COLORS = {
+    "축제":   "bg-orange-400",
+    "공연":   "bg-purple-400",
+    "전시":   "bg-blue-400",
+    "체험":   "bg-green-400",
+    "스포츠": "bg-red-400",
+    "문화행사": "bg-gray-400",
+}
+
+MONTH_KR = ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+
+
+def build_calendars(active: list, env, today_dt: datetime):
+    """월별 캘린더 페이지 생성"""
+    tmpl = env.get_template("calendar.html")
+
+    # 행사가 있는 월 수집 (시작월 기준)
+    months = sorted(set(e["start_date"][:6] for e in active))
+    # 종료월도 포함 (시작은 이전 달이지만 이번 달에 끝나는 행사)
+    months = sorted(set(
+        months + [e["end_date"][:6] for e in active]
+    ))
+
+    built = []
+    for ym in months:
+        year_int = int(ym[:4])
+        month_int = int(ym[4:6])
+
+        # 해당 월에 시작하거나 종료하는 행사
+        month_events = [
+            e for e in active
+            if e["start_date"][:6] == ym or e["end_date"][:6] == ym
+        ]
+        if not month_events:
+            continue
+
+        # day_events: {day: {'start': [...], 'end': [...]}}
+        day_events = {}
+        for e in month_events:
+            # 시작일
+            if e["start_date"][:6] == ym:
+                d = int(e["start_date"][6:8])
+                day_events.setdefault(d, {"start": [], "end": []})["start"].append(e)
+            # 종료일
+            if e["end_date"][:6] == ym:
+                d = int(e["end_date"][6:8])
+                day_events.setdefault(d, {"start": [], "end": []})["end"].append(e)
+
+        # 해당 월 전체 행사 목록 (시작일순)
+        month_all = sorted(month_events, key=lambda x: x["start_date"])
+
+        # 캘린더 계산 (월요일=0 시작)
+        first_weekday = cal_module.monthrange(year_int, month_int)[0]  # 0=월, 6=일
+        days_in_month = cal_module.monthrange(year_int, month_int)[1]
+
+        # 이전/다음 달
+        if month_int == 1:
+            prev_y, prev_m = year_int - 1, 12
+        else:
+            prev_y, prev_m = year_int, month_int - 1
+        if month_int == 12:
+            next_y, next_m = year_int + 1, 1
+        else:
+            next_y, next_m = year_int, month_int + 1
+
+        prev_month = f"{prev_y}/{prev_m:02d}"
+        next_month = f"{next_y}/{next_m:02d}"
+        prev_label = f"{prev_y}년 {MONTH_KR[prev_m-1]}"
+        next_label = f"{next_y}년 {MONTH_KR[next_m-1]}"
+
+        # 오늘 날짜 (같은 월이면 표시)
+        today_day = today_dt.day if (today_dt.year == year_int and today_dt.month == month_int) else None
+
+        # 월 빠른이동 링크 (현재 월 ±3개월)
+        month_links = []
+        for delta in range(-2, 4):
+            m2 = month_int + delta
+            y2 = year_int
+            while m2 < 1:
+                m2 += 12; y2 -= 1
+            while m2 > 12:
+                m2 -= 12; y2 += 1
+            if any(e["start_date"][:6] == f"{y2}{m2:02d}" for e in active):
+                month_links.append({"url": f"{y2}/{m2:02d}", "label": f"{MONTH_KR[m2-1]}"})
+
+        path = DIST / "calendar" / str(year_int) / f"{month_int:02d}" / "index.html"
+        write(path, tmpl.render(
+            year=str(year_int),
+            month_int=month_int,
+            month_name=MONTH_KR[month_int - 1],
+            first_weekday=first_weekday,
+            days_in_month=days_in_month,
+            day_events=day_events,
+            month_all_events=month_all,
+            total_events=len(set(e["id"] for e in month_events)),
+            today_day=today_day,
+            prev_month=prev_month,
+            next_month=next_month,
+            prev_label=prev_label,
+            next_label=next_label,
+            month_links=month_links,
+            cat_colors=CAT_COLORS,
+            page_url=f"/calendar/{year_int}/{month_int:02d}/"
+        ))
+        built.append(ym)
+
+    # /calendar/ 인덱스 → 현재 달로 리다이렉트(meta refresh)
+    current_ym = today_dt.strftime("%Y/%m")
+    index_html = f"""<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0;url=/calendar/{current_ym}/">
+<title>캘린더 — {SITE_NAME}</title>
+</head><body>
+<a href="/calendar/{current_ym}/">캘린더로 이동</a>
+</body></html>"""
+    write(DIST / "calendar" / "index.html", index_html)
+
+    print(f"  캘린더: {len(built)}개 월")
+    return built
+
+
 def build_sitemap(events: list, archive: list = None):
     urls = [
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/free/", "priority": "0.9", "changefreq": "daily"},
+        {"loc": "/calendar/", "priority": "0.9", "changefreq": "daily"},
         {"loc": "/weekly/", "priority": "0.9", "changefreq": "weekly"},
         {"loc": "/past/", "priority": "0.7", "changefreq": "weekly"},
         {"loc": "/about/", "priority": "0.6", "changefreq": "monthly"},
     ]
+
+    # 캘린더 월별 URL
+    cal_months = sorted(set(e["start_date"][:6] for e in events))
+    for ym in cal_months:
+        urls.append({"loc": f"/calendar/{ym[:4]}/{ym[4:6]}/", "priority": "0.8", "changefreq": "daily"})
 
     for region_slug in REGION_SLUGS.values():
         urls.append({"loc": f"/region/{region_slug}/", "priority": "0.8", "changefreq": "weekly"})
