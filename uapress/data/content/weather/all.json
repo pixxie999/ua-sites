@@ -4,7 +4,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:10.817610",
+    "updated_at": "2026-06-09T05:55:58.451992",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "서울"
@@ -14,7 +14,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:15.184778",
+    "updated_at": "2026-06-09T05:56:00.931239",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "인천"
@@ -24,7 +24,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:17.951189",
+    "updated_at": "2026-06-09T05:56:04.173239",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "대전"
@@ -34,27 +34,17 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:25.161289",
+    "updated_at": "2026-06-09T05:56:07.095795",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "대구"
-  },
-  "광주": {
-    "icon": "☀️",
-    "condition": "맑음",
-    "avg_temp": null,
-    "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:28.731033",
-    "saturday": "20260613",
-    "sunday": "20260614",
-    "region": "광주"
   },
   "부산": {
     "icon": "☀️",
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:32.687305",
+    "updated_at": "2026-06-09T05:56:10.019193",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "부산"
@@ -64,7 +54,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:36.545514",
+    "updated_at": "2026-06-09T05:56:12.802442",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "울산"
@@ -74,7 +64,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:41.238036",
+    "updated_at": "2026-06-09T05:56:14.894632",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "세종"
@@ -84,7 +74,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:45.939663",
+    "updated_at": "2026-06-09T05:56:17.583373",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "경기"
@@ -94,7 +84,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:49.922194",
+    "updated_at": "2026-06-09T05:56:21.501575",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "강원"
@@ -104,7 +94,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:50:55.681648",
+    "updated_at": "2026-06-09T05:56:25.101913",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "충북"
@@ -114,7 +104,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:51:00.154764",
+    "updated_at": "2026-06-09T05:56:27.628016",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "충남"
@@ -124,7 +114,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:51:04.590012",
+    "updated_at": "2026-06-09T05:56:30.136325",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "경북"
@@ -134,7 +124,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:51:07.730560",
+    "updated_at": "2026-06-09T05:56:32.607927",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "경남"
@@ -144,7 +134,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:51:13.325045",
+    "updated_at": "2026-06-09T05:56:36.579253",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "전북"
@@ -154,7 +144,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:51:16.095840",
+    "updated_at": "2026-06-09T05:56:41.088771",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "전남"
@@ -164,7 +154,7 @@
     "condition": "맑음",
     "avg_temp": null,
     "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-    "updated_at": "2026-06-09T04:51:20.177015",
+    "updated_at": "2026-06-09T05:56:44.468712",
     "saturday": "20260613",
     "sunday": "20260614",
     "region": "제주"
