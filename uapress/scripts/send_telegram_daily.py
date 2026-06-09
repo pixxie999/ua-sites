@@ -212,25 +212,20 @@ def generate_content(event: dict, theme: dict) -> dict:
 # 관광사진 API 검색
 # ─────────────────────────────────────────
 
-def search_photo(event: dict) -> str | None:
-    """한국관광공사 관광사진 API로 행사 관련 사진 URL 반환"""
+def search_photos(event: dict, limit: int = 5) -> list[str]:
+    """한국관광공사 관광사진 API로 행사 관련 사진 URL 목록 반환"""
     api_key = os.environ.get("TOUR_API_KEY")
     if not api_key:
-        return None
+        return []
 
-    # 검색 키워드: 지역명 + 제목 첫 단어 (짧게)
-    title_word = event.get("title", "").split()[0] if event.get("title") else ""
-    region = event.get("region", "")
-    keyword = f"{region} {title_word}".strip()
-
-    try:
+    def _fetch(keyword: str, rows: int) -> list:
         resp = requests.get(
             "https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1",
             params={
                 "serviceKey": api_key,
                 "_type": "json",
                 "keyword": keyword,
-                "numOfRows": 5,
+                "numOfRows": rows,
                 "pageNo": 1,
             },
             timeout=15,
@@ -238,33 +233,33 @@ def search_photo(event: dict) -> str | None:
         data = resp.json()
         raw_items = data.get("response", {}).get("body", {}).get("items", {})
         if not raw_items or not isinstance(raw_items, dict):
-            # 지역명만으로 재시도
-            resp2 = requests.get(
-                "https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1",
-                params={
-                    "serviceKey": api_key,
-                    "_type": "json",
-                    "keyword": region,
-                    "numOfRows": 5,
-                    "pageNo": 1,
-                },
-                timeout=15,
-            )
-            data = resp2.json()
-            raw_items = data.get("response", {}).get("body", {}).get("items", {})
-        if not raw_items or not isinstance(raw_items, dict):
-            return None
+            return []
         items = raw_items.get("item", [])
         if isinstance(items, dict):
             items = [items]
-        if not items:
-            return None
-        # 웹용 이미지 URL 반환
-        photo = items[0]
-        return photo.get("webImageUrl") or photo.get("originimgurl") or None
+        urls = []
+        for item in items:
+            url = item.get("webImageUrl") or item.get("originimgurl")
+            if url:
+                urls.append(url)
+        return urls
+
+    title_word = event.get("title", "").split()[0] if event.get("title") else ""
+    region = event.get("region", "")
+
+    try:
+        # 1차: 지역명 + 행사 첫 단어
+        urls = _fetch(f"{region} {title_word}".strip(), limit)
+        # 부족하면 지역명만으로 보충
+        if len(urls) < limit:
+            extra = _fetch(region, limit)
+            for u in extra:
+                if u not in urls:
+                    urls.append(u)
+        return urls[:limit]
     except Exception as e:
         print(f"  관광사진 검색 실패: {e}")
-        return None
+        return []
 
 
 # ─────────────────────────────────────────
@@ -286,18 +281,36 @@ def send_telegram(text: str):
     return resp.json()
 
 
-def send_telegram_photo(photo_url: str, caption: str):
-    """이미지 + 짧은 캡션 전송 (caption 최대 1024자)"""
+def send_telegram_photos(photo_urls: list[str], caption: str):
+    """사진 여러 장을 앨범(MediaGroup)으로 전송 — 첫 장에만 캡션"""
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     chat_id = os.environ["TELEGRAM_CHAT_ID"]
 
-    url = f"https://api.telegram.org/bot{token}/sendPhoto"
-    resp = requests.post(url, json={
-        "chat_id": chat_id,
-        "photo": photo_url,
-        "caption": caption[:1024],
-        "parse_mode": "HTML",
-    }, timeout=30)
+    if len(photo_urls) == 1:
+        # 1장이면 sendPhoto
+        resp = requests.post(
+            f"https://api.telegram.org/bot{token}/sendPhoto",
+            json={"chat_id": chat_id, "photo": photo_urls[0],
+                  "caption": caption[:1024], "parse_mode": "HTML"},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        return resp.json()
+
+    # 여러 장: sendMediaGroup (캡션은 첫 장에만)
+    media = []
+    for i, url in enumerate(photo_urls):
+        item = {"type": "photo", "media": url}
+        if i == 0:
+            item["caption"] = caption[:1024]
+            item["parse_mode"] = "HTML"
+        media.append(item)
+
+    resp = requests.post(
+        f"https://api.telegram.org/bot{token}/sendMediaGroup",
+        json={"chat_id": chat_id, "media": media},
+        timeout=30,
+    )
     resp.raise_for_status()
     return resp.json()
 
@@ -363,22 +376,23 @@ def main():
     print("Claude API로 콘텐츠 생성 중...")
     content = generate_content(event, theme)
 
-    # 관광사진 검색
+    # 관광사진 검색 (최대 5장)
     print("관광사진 검색 중...")
-    photo_url = search_photo(event)
-    # 사진 없으면 행사 썸네일로 fallback
-    if not photo_url:
-        photo_url = event.get("thumbnail")
-    if photo_url:
-        print(f"  사진 URL: {photo_url[:60]}...")
+    photo_urls = search_photos(event, limit=5)
+    # 사진 부족하면 행사 썸네일로 보충
+    if event.get("thumbnail") and event["thumbnail"] not in photo_urls:
+        photo_urls.append(event["thumbnail"])
+    photo_urls = photo_urls[:5]
+
+    if photo_urls:
+        print(f"  사진 {len(photo_urls)}장 확보")
     else:
         print("  사진 없음 — 텍스트만 전송")
 
     print("텔레그램 전송 중...")
     msg = format_message(event, content, theme)
 
-    if photo_url:
-        # 이미지 먼저 (짧은 캡션)
+    if photo_urls:
         free_tag = " 🆓무료" if event.get("is_free") else ""
         short_caption = (
             f"{theme['emoji']} <b>{event['title']}</b>{free_tag}\n"
@@ -386,7 +400,7 @@ def main():
             f"💰 {event.get('fee') or ('무료' if event.get('is_free') else '유료')}"
         )
         try:
-            send_telegram_photo(photo_url, short_caption)
+            send_telegram_photos(photo_urls, short_caption)
         except Exception as e:
             print(f"  사진 전송 실패 ({e}) — 텍스트만 전송")
 
