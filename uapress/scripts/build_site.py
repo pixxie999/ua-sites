@@ -92,15 +92,6 @@ REGION_INFO = {
 }
 
 
-def load_attractions() -> dict:
-    """지역별 관광지 데이터 로드"""
-    path = PROJECT_ROOT / "data" / "raw" / "attractions.json"
-    if path.exists():
-        try:
-            return json.loads(path.read_text())
-        except Exception:
-            pass
-    return {}
 
 
 def load_data():
@@ -179,8 +170,12 @@ def build_all():
             shutil.copy(str(f), str(DIST / f.name))
 
     events, by_region, by_month, free_events, archive, weekly_pick, weekly_list = load_data()
-    attractions_all = load_attractions()
     env = setup_env()
+
+    # 지역별 행사 사전 (nearby_events 용)
+    region_events_map = {}
+    for e in events:
+        region_events_map.setdefault(e["region"], []).append(e)
 
     today = datetime.now().strftime("%Y%m%d")
     today_dt = datetime.now()
@@ -237,13 +232,15 @@ def build_all():
             except Exception:
                 pass
         is_ended = e["end_date"] < today
-        nearby = attractions_all.get(e.get("region", ""), [])
+        # 같은 지역 다른 행사 (자기 자신 제외, 최대 6개)
+        same_region = [x for x in region_events_map.get(e.get("region", ""), [])
+                       if x["id"] != e["id"]][:6]
         path = DIST / "event" / e["id"] / "index.html"
         write(path, tmpl.render(
             event=e,
             cafe_reviews=cafe_reviews,
             is_ended=is_ended,
-            nearby_attractions=nearby,
+            nearby_events=same_region,
             reviewed_date=BUILD_DATE,
             page_url=f"/event/{e['id']}/"
         ))

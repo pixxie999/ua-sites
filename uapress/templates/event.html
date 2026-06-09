@@ -330,24 +330,25 @@
 </div>
 {% endif %}
 
-<!-- 인근 관광지 -->
-{% if nearby_attractions %}
+<!-- 같은 지역 다른 행사 -->
+{% if nearby_events %}
 <div class="bg-white rounded-xl p-5 shadow-sm mb-6">
-  <h2 class="font-bold text-lg mb-4">🗺️ {{ event.region }} 인근 관광지</h2>
+  <h2 class="font-bold text-lg mb-4">📍 {{ event.region }} 다른 행사</h2>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-    {% for spot in nearby_attractions %}
-    <a href="https://map.kakao.com/?q={{ spot.title }}" target="_blank" rel="noopener"
+    {% for e in nearby_events %}
+    <a href="/event/{{ e.id }}/"
        class="rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition group">
-      {% if spot.thumbnail %}
+      {% if e.thumbnail %}
       <div class="h-24 overflow-hidden">
-        <img src="{{ spot.thumbnail }}" alt="{{ spot.title }}"
+        <img src="{{ e.thumbnail }}" alt="{{ e.title }}"
              class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
       </div>
       {% else %}
-      <div class="h-24 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center text-2xl">🗺️</div>
+      <div class="h-24 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center text-2xl">🎪</div>
       {% endif %}
       <div class="p-2">
-        <p class="text-xs font-medium text-gray-700 line-clamp-2 leading-snug">{{ spot.title }}</p>
+        <p class="text-xs font-medium text-gray-700 line-clamp-2 leading-snug">{{ e.title }}</p>
+        <p class="text-xs text-gray-400 mt-1">{{ e.start_date_fmt }}</p>
       </div>
     </a>
     {% endfor %}

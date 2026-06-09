@@ -201,68 +201,6 @@ def fetch_event_intro(content_id: str) -> dict:
         return {}
 
 
-def fetch_nearby_attractions(area_code: str, region_name: str, limit: int = 6) -> list:
-    """지역별 관광지 수집 (contentTypeId=12: 관광지)"""
-    params = {
-        "serviceKey": _get_api_key(),
-        "numOfRows": 20,
-        "pageNo": 1,
-        "MobileOS": "ETC",
-        "MobileApp": "uapress",
-        "_type": "json",
-        "listYN": "Y",
-        "arrange": "A",        # 제목순 (Q=조회순은 로그인 필요)
-        "contentTypeId": "12", # 관광지
-        "areaCode": area_code,
-    }
-    try:
-        # TarRlteTarService1/areaBasedList1 사용 (지역기반 연관 관광지)
-        resp = requests.get(
-            "https://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1",
-            params=params, timeout=15
-        )
-        data = resp.json()
-        # 첫 번째 지역만 응답 구조 디버그 출력
-        if area_code == "1":
-            body = data.get("response", {}).get("body", {})
-            total = body.get("totalCount", 0)
-            print(f"  [디버그 서울] totalCount={total}, HTTP={resp.status_code}")
-        raw_items = (data.get("response", {}).get("body", {}).get("items", {}))
-        # 결과 없을 때 items가 "" (빈 문자열)로 오는 경우 방어
-        if not raw_items or not isinstance(raw_items, dict):
-            return []
-        items = raw_items.get("item", [])
-        if isinstance(items, dict):
-            items = [items]
-        result = []
-        for item in items[:limit]:
-            result.append({
-                "title": item.get("title", "").strip(),
-                "address": item.get("addr1", ""),
-                "thumbnail": item.get("firstimage", "") or item.get("firstimage2", ""),
-                "content_id": str(item.get("contentid", "")),
-                "region": region_name,
-            })
-        return result
-    except Exception as e:
-        print(f"  관광지 수집 오류 ({region_name}): {e}")
-        return []
-
-
-def fetch_all_attractions():
-    """17개 지역 관광지 수집 후 저장"""
-    out_dir = PROJECT_ROOT / "data/raw"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    all_attractions = {}
-    for area_code, region_name in AREA_MAP.items():
-        spots = fetch_nearby_attractions(area_code, region_name)
-        all_attractions[region_name] = spots
-        print(f"  {region_name}: {len(spots)}개")
-        time.sleep(0.3)
-    out = out_dir / "attractions.json"
-    out.write_text(json.dumps(all_attractions, ensure_ascii=False, indent=2))
-    print(f"관광지 저장 완료: {out}")
-    return all_attractions
 
 
 if __name__ == "__main__":
