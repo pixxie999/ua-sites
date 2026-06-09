@@ -61,6 +61,15 @@ jobs:
         env:
           KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
 
+      - name: Fetch nearby restaurants (TourAPI + Kakao + Claude)
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        continue-on-error: true
+        run: python uapress/scripts/fetch_restaurants.py --limit 30
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
       - name: Generate AI content (event summaries)
         if: ${{ github.event.inputs.mode != 'build_only' }}
         run: python uapress/scripts/generate_content.py events
@@ -82,7 +91,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add uapress/data/processed/ uapress/data/content/ uapress/data/content/cafe_reviews/ || true
+          git add uapress/data/processed/ uapress/data/content/ uapress/data/content/cafe_reviews/ uapress/data/restaurants/ || true
           git diff --staged --quiet || git commit -m "chore: AI 콘텐츠 캐시 업데이트 [skip ci]"
           git pull --rebase origin main
           git push

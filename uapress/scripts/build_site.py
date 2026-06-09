@@ -180,6 +180,19 @@ def build_all():
     for e in events:
         region_events_map.setdefault(e["region"], []).append(e)
 
+    # 맛집 데이터 로드
+    restaurants_dir = PROJECT_ROOT / "data" / "restaurants"
+    restaurants_all = {}  # event_id → {curation_note, restaurants}
+    if restaurants_dir.exists():
+        for rp in restaurants_dir.glob("*.json"):
+            try:
+                data = json.loads(rp.read_text())
+                if data.get("restaurants"):
+                    restaurants_all[rp.stem] = data
+            except Exception:
+                pass
+    print(f"  맛집 데이터: {len(restaurants_all)}개 행사")
+
     today = datetime.now().strftime("%Y%m%d")
     today_dt = datetime.now()
     active = events  # process_events.py에서 이미 활성만 필터됨
@@ -238,12 +251,16 @@ def build_all():
         # 같은 지역 다른 행사 (자기 자신 제외, 최대 6개)
         same_region = [x for x in region_events_map.get(e.get("region", ""), [])
                        if x["id"] != e["id"]][:6]
+        # 맛집 데이터
+        rest_data = restaurants_all.get(e["id"], {})
         path = DIST / "event" / e["id"] / "index.html"
         write(path, tmpl.render(
             event=e,
             cafe_reviews=cafe_reviews,
             is_ended=is_ended,
             nearby_events=same_region,
+            nearby_restaurants=rest_data.get("restaurants", []),
+            restaurant_curation_note=rest_data.get("curation_note", ""),
             reviewed_date=BUILD_DATE,
             page_url=f"/event/{e['id']}/"
         ))

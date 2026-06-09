@@ -356,6 +356,57 @@
 </div>
 {% endif %}
 
+<!-- 인근 맛집 -->
+{% if nearby_restaurants %}
+<div class="bg-white rounded-xl p-5 shadow-sm mb-6">
+  <h2 class="font-bold text-lg mb-1">🍽️ 축제 가는 길에 들러볼 인근 맛집</h2>
+  {% if restaurant_curation_note %}
+  <p class="text-sm text-gray-500 mb-4">{{ restaurant_curation_note }}</p>
+  {% else %}
+  <p class="text-sm text-gray-500 mb-4">{{ event.region }} 주변 맛집을 모았습니다.</p>
+  {% endif %}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    {% for r in nearby_restaurants %}
+    <a href="{{ r.kakao_map_url }}" target="_blank" rel="noopener noreferrer"
+       class="flex gap-3 rounded-xl border border-gray-100 p-3 hover:shadow-md transition group">
+      <!-- 이미지 or 이모지 플레이스홀더 -->
+      {% if r.image_url %}
+      <img src="{{ r.image_url }}" alt="{{ r.name }}"
+           class="w-16 h-16 object-cover rounded-lg flex-shrink-0" loading="lazy">
+      {% else %}
+      <div class="w-16 h-16 bg-gradient-to-br from-orange-100 to-red-100 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">🍜</div>
+      {% endif %}
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <p class="font-medium text-gray-800 text-sm group-hover:text-blue-600 truncate">{{ r.name }}</p>
+          <span class="text-[10px] bg-orange-100 text-orange-600 px-1.5 py-0.5 rounded-full flex-shrink-0">{{ r.category }}</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-0.5">
+          🚶 {{ r.distance_minutes }}분
+          {% if r.best_time and r.best_time != '언제든' %}
+          · ⏰ {{ r.best_time }}
+          {% endif %}
+        </p>
+        {% if r.recommendation %}
+        <p class="text-xs text-gray-600 mt-1 line-clamp-2">{{ r.recommendation }}</p>
+        {% endif %}
+        {% if r.phone %}
+        <p class="text-xs text-gray-400 mt-0.5">📞 {{ r.phone }}</p>
+        {% endif %}
+      </div>
+      <span class="text-gray-300 group-hover:text-blue-400 text-lg self-center flex-shrink-0">→</span>
+    </a>
+    {% endfor %}
+  </div>
+  <!-- 출처 표기 (카카오 필수) -->
+  <div class="mt-3 pt-3 border-t border-gray-100 text-[10px] text-gray-400 flex items-center gap-1">
+    <span>📊 자료 출처: 한국관광공사 TourAPI · © Kakao</span>
+    <span class="mx-1">|</span>
+    <span>※ 영업 정보는 변경될 수 있으니 방문 전 확인하세요</span>
+  </div>
+</div>
+{% endif %}
+
 <!-- 검수일 표시 -->
 <div class="text-right text-xs text-gray-400 mb-6">
   ✅ 편집팀 검수: {{ reviewed_date }} | 정보 출처: 한국관광공사 Tour API
