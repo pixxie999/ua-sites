@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}행사 목록 — uapress 어드민{% endblock %}
+{% block content %}
+
+<div class="flex items-center justify-between mb-4">
+  <h1 class="text-xl font-bold">행사 목록</h1>
+  <div class="text-sm text-gray-500">
+    전체 {{ total }}개 · 좌표 있음 {{ has_coord }}개 · 맛집 등록 {{ has_rest }}개
+  </div>
+</div>
+
+<!-- 검색/필터 -->
+<form method="get" class="flex gap-2 mb-4">
+  <input type="text" name="q" value="{{ q }}" placeholder="행사명 또는 지역 검색"
+         class="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+  <label class="flex items-center gap-1 text-sm text-gray-600 bg-white border rounded-lg px-3 py-2 cursor-pointer">
+    <input type="checkbox" name="no_rest" value="1" {% if filter_no_rest %}checked{% endif %}
+           onchange="this.form.submit()">
+    맛집 미등록만
+  </label>
+  <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">검색</button>
+</form>
+
+<!-- 행사 테이블 -->
+<div class="bg-white rounded-xl shadow overflow-hidden">
+  <table class="w-full text-sm">
+    <thead class="bg-gray-50 text-gray-600">
+      <tr>
+        <th class="px-4 py-3 text-left">행사명</th>
+        <th class="px-4 py-3 text-left">지역</th>
+        <th class="px-4 py-3 text-left">기간</th>
+        <th class="px-4 py-3 text-center">좌표</th>
+        <th class="px-4 py-3 text-center">맛집</th>
+        <th class="px-4 py-3 text-center">관리</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      {% for e in events %}
+      <tr class="hover:bg-gray-50 {% if not e.has_coord %}opacity-40{% endif %}">
+        <td class="px-4 py-3">
+          <div class="font-medium line-clamp-1 max-w-xs">{{ e.title }}</div>
+        </td>
+        <td class="px-4 py-3 text-gray-500">{{ e.region }}</td>
+        <td class="px-4 py-3 text-gray-500 whitespace-nowrap">
+          {{ e.start_date_fmt }} ~ {{ e.end_date_fmt }}
+        </td>
+        <td class="px-4 py-3 text-center">
+          {% if e.has_coord %}
+            <span class="text-green-600">✓</span>
+          {% else %}
+            <span class="text-gray-300">—</span>
+          {% endif %}
+        </td>
+        <td class="px-4 py-3 text-center">
+          {% if e.has_restaurants %}
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full font-medium">등록됨</span>
+          {% else %}
+            <span class="text-gray-300 text-xs">없음</span>
+          {% endif %}
+        </td>
+        <td class="px-4 py-3 text-center whitespace-nowrap">
+          {% if e.has_restaurants %}
+            <a href="/restaurants/{{ e.id }}"
+               class="text-xs text-blue-600 hover:underline mr-2">보기</a>
+          {% endif %}
+          <a href="/fetch/{{ e.id }}"
+             class="text-xs {% if e.has_coord %}text-orange-600 hover:underline{% else %}text-gray-300 pointer-events-none{% endif %}">
+            {% if e.has_restaurants %}재수집{% else %}수집{% endif %}
+          </a>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="6" class="px-4 py-8 text-center text-gray-400">행사가 없습니다.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

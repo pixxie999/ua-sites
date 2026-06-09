@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}맛집 관리 — {{ event.title if event else '' }}{% endblock %}
+{% block content %}
+
+<div class="flex items-center gap-2 mb-4 text-sm text-gray-500">
+  <a href="/" class="hover:text-blue-600">목록</a> › {{ event.title if event else event_id }}
+</div>
+
+<div class="flex items-center justify-between mb-4">
+  <h1 class="text-xl font-bold">{{ event.title if event else event_id }}</h1>
+  <div class="flex gap-2">
+    <a href="/fetch/{{ event.id if event else event_id }}"
+       class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm font-bold">
+      재수집
+    </a>
+    <form method="post" action="/restaurants/{{ event.id if event else event_id }}/delete"
+          onsubmit="return confirm('맛집 데이터를 모두 삭제할까요?')">
+      <button type="submit" class="border border-red-300 text-red-500 hover:bg-red-50 px-4 py-2 rounded text-sm">
+        삭제
+      </button>
+    </form>
+  </div>
+</div>
+
+{% if meta.curation_note %}
+<div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-4 text-sm text-amber-800">
+  💬 {{ meta.curation_note }}
+</div>
+{% endif %}
+
+{% if not restaurants %}
+<div class="bg-white rounded-xl shadow p-8 text-center text-gray-400">
+  <p class="mb-3">등록된 맛집이 없습니다.</p>
+  <a href="/fetch/{{ event.id if event else event_id }}"
+     class="text-blue-600 hover:underline text-sm">맛집 수집하기 →</a>
+</div>
+{% else %}
+<div class="bg-white rounded-xl shadow divide-y">
+  {% for r in restaurants %}
+  <div class="flex items-start gap-4 px-5 py-4 {% if r.is_excluded %}opacity-40{% endif %}">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="font-medium">{{ r.name }}</span>
+        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded">{{ r.category }}</span>
+        <span class="text-xs text-gray-400">도보 {{ [1, (r.distance_meters / 80)|round|int]|max }}분</span>
+        {% if r.best_time and r.best_time != '언제든' %}
+        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded">{{ r.best_time }}</span>
+        {% endif %}
+        <a href="{{ r.kakao_map_url }}" target="_blank" class="text-xs text-blue-500 hover:underline">지도</a>
+      </div>
+      <p class="text-xs text-gray-500 mt-0.5">{{ r.address }}</p>
+      {% if r.recommendation %}
+      <p class="text-xs text-blue-700 mt-1">✨ {{ r.recommendation }}</p>
+      {% endif %}
+    </div>
+    <form method="post" action="/restaurants/{{ event.id if event else event_id }}/toggle/{{ r.id }}">
+      <button type="submit"
+              class="text-xs px-3 py-1 rounded border {% if r.is_excluded %}border-green-400 text-green-600 hover:bg-green-50{% else %}border-gray-300 text-gray-500 hover:bg-gray-50{% endif %}">
+        {{ '표시' if r.is_excluded else '숨김' }}
+      </button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+<p class="text-xs text-gray-400 mt-2 text-right">
+  총 {{ restaurants|length }}개 · 노출 {{ restaurants|selectattr('is_excluded', 'equalto', 0)|list|length }}개
+</p>
+{% endif %}
+{% endblock %}

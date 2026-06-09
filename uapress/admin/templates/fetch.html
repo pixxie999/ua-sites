@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block title %}맛집 수집 — {{ event.title }}{% endblock %}
+{% block content %}
+
+<div class="flex items-center gap-2 mb-4 text-sm text-gray-500">
+  <a href="/" class="hover:text-blue-600">목록</a> › {{ event.title }}
+</div>
+
+<h1 class="text-xl font-bold mb-1">{{ event.title }}</h1>
+<p class="text-sm text-gray-500 mb-6">{{ event.region }} · {{ event.start_date_fmt }} ~ {{ event.end_date_fmt }}</p>
+
+<!-- 좌표 설정 -->
+<div class="bg-white rounded-xl shadow p-5 mb-6">
+  <h2 class="font-bold mb-3">📍 좌표 설정</h2>
+  <form method="post" class="flex flex-wrap gap-3 items-end">
+    <div>
+      <label class="block text-xs text-gray-500 mb-1">위도 (lat)</label>
+      <input type="number" step="0.000001" name="lat" value="{{ lat or event.lat }}"
+             class="border rounded px-3 py-2 text-sm w-36 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div>
+      <label class="block text-xs text-gray-500 mb-1">경도 (lng)</label>
+      <input type="number" step="0.000001" name="lng" value="{{ lng or event.lng }}"
+             class="border rounded px-3 py-2 text-sm w-36 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div class="flex-1 min-w-48">
+      <label class="block text-xs text-gray-500 mb-1">큐레이션 메모</label>
+      <input type="text" name="curation_note" value="{{ meta.curation_note or '' }}" placeholder="선택사항"
+             class="border rounded px-3 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <button type="submit" name="action" value="save_meta"
+            class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm">저장</button>
+    <button type="submit" name="action" value="search"
+            class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded text-sm font-bold">
+      🍽️ 맛집 검색
+    </button>
+  </form>
+  <p class="text-xs text-gray-400 mt-2">
+    원본 주소: {{ event.address or '없음' }}
+    {% if event.lat and event.lng %}/ 원본 좌표: {{ event.lat }}, {{ event.lng }}{% endif %}
+  </p>
+</div>
+
+<!-- 검색 결과 -->
+{% if restaurants is not none %}
+<div class="bg-white rounded-xl shadow p-5">
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="font-bold">검색 결과 (후보 {{ candidates|length }}개 → 추천 {{ restaurants|length }}개)</h2>
+  </div>
+
+  {% if not restaurants %}
+  <p class="text-gray-400 text-sm py-4 text-center">검색 결과가 없습니다. 좌표를 확인하거나 반경을 넓혀보세요.</p>
+  {% else %}
+
+  <form method="post" id="save-form">
+    <input type="hidden" name="action" value="save_restaurants">
+    <input type="hidden" name="curation_note" value="{{ curation_note }}">
+    <input type="hidden" name="candidates_json" value="{{ candidates | tojson }}">
+    <input type="hidden" name="recommendations_json" id="recommendations_json" value="{}">
+    <input type="hidden" name="best_times_json" id="best_times_json" value="{}">
+
+    {% if curation_note %}
+    <div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-4 text-sm text-amber-800">
+      💬 {{ curation_note }}
+    </div>
+    {% endif %}
+
+    <div class="space-y-3 mb-4">
+      {% for r in restaurants %}
+      <label class="flex items-start gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50
+                    has-[:checked]:border-blue-400 has-[:checked]:bg-blue-50">
+        <input type="checkbox" name="selected_ids" value="{{ r.id }}" checked
+               class="mt-1 w-4 h-4 accent-blue-600 flex-shrink-0">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-medium">{{ r.name }}</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded">{{ r.category }}</span>
+            <span class="text-xs text-gray-400">도보 {{ [1, (r.distance_meters / 80)|round|int]|max }}분 ({{ r.distance_meters }}m)</span>
+            <a href="{{ r.kakao_map_url }}" target="_blank"
+               class="text-xs text-blue-500 hover:underline">지도</a>
+          </div>
+          <p class="text-xs text-gray-500 mt-0.5">{{ r.address }}</p>
+          {% if r.recommendation %}
+          <p class="text-xs text-blue-700 mt-1">✨ {{ r.recommendation }}</p>
+          {% endif %}
+          <div class="flex gap-2 mt-1 items-center">
+            <span class="text-xs text-gray-400">방문 타이밍:</span>
+            <select name="best_time_{{ r.id }}"
+                    class="text-xs border rounded px-1 py-0.5 text-gray-600">
+              <option value="언제든" {% if r.best_time == '언제든' %}selected{% endif %}>언제든</option>
+              <option value="축제 전 점심" {% if r.best_time == '축제 전 점심' %}selected{% endif %}>축제 전 점심</option>
+              <option value="축제 후 저녁" {% if r.best_time == '축제 후 저녁' %}selected{% endif %}>축제 후 저녁</option>
+            </select>
+          </div>
+        </div>
+      </label>
+      {% endfor %}
+    </div>
+
+    <!-- 추가 후보 (Claude 미선정) -->
+    {% set selected_ids = restaurants | map(attribute='id') | list %}
+    {% set extra = candidates | selectattr('id', 'not in', selected_ids) | list %}
+    {% if extra %}
+    <details class="mb-4">
+      <summary class="text-sm text-gray-500 cursor-pointer hover:text-gray-700 mb-2">
+        기타 후보 {{ extra|length }}개 더 보기
+      </summary>
+      <div class="space-y-2 mt-2">
+        {% for r in extra %}
+        <label class="flex items-start gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50
+                      has-[:checked]:border-blue-400 has-[:checked]:bg-blue-50">
+          <input type="checkbox" name="selected_ids" value="{{ r.id }}"
+                 class="mt-1 w-4 h-4 accent-blue-600 flex-shrink-0">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-medium">{{ r.name }}</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded">{{ r.category }}</span>
+              <span class="text-xs text-gray-400">{{ r.distance_meters }}m</span>
+              <a href="{{ r.kakao_map_url }}" target="_blank" class="text-xs text-blue-500 hover:underline">지도</a>
+            </div>
+            <p class="text-xs text-gray-500 mt-0.5">{{ r.address }}</p>
+          </div>
+        </label>
+        {% endfor %}
+      </div>
+    </details>
+    {% endif %}
+
+    <div class="flex gap-3">
+      <button type="submit" onclick="collectFormData()"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-bold text-sm">
+        ✓ 선택 항목 D1에 저장
+      </button>
+      <a href="/restaurants/{{ event.id }}" class="border px-4 py-2 rounded text-sm text-gray-600 hover:bg-gray-50">
+        저장된 맛집 보기
+      </a>
+    </div>
+  </form>
+  {% endif %}
+</div>
+{% endif %}
+
+<script>
+function collectFormData() {
+  const recs = {}, times = {};
+  document.querySelectorAll('[name^="best_time_"]').forEach(el => {
+    const id = el.name.replace('best_time_', '');
+    times[id] = el.value;
+  });
+  document.getElementById('recommendations_json').value = JSON.stringify(recs);
+  document.getElementById('best_times_json').value = JSON.stringify(times);
+}
+</script>
+{% endblock %}

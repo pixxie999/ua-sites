@@ -10,6 +10,7 @@ import calendar as cal_module
 from pathlib import Path
 from datetime import datetime, date
 from jinja2 import Environment, FileSystemLoader
+import requests
 
 # scripts/ 디렉터리에서 실행될 때 프로젝트 루트를 기준으로 경로 잡기
 SCRIPT_DIR = Path(__file__).parent
@@ -17,6 +18,54 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 from dotenv import load_dotenv
 load_dotenv(PROJECT_ROOT / ".env")
+
+
+def _load_restaurants_from_d1() -> dict:
+    """D1에서 맛집 데이터 읽기 — event_id → {curation_note, restaurants:[]}"""
+    account_id = os.environ.get("CF_ACCOUNT_ID") or os.environ.get("CLOUDFLARE_ACCOUNT_ID")
+    api_token  = os.environ.get("CF_API_TOKEN") or os.environ.get("CLOUDFLARE_API_TOKEN")
+    db_id      = os.environ.get("D1_DATABASE_ID", "e1c8f2d7-3cae-41cd-aa5b-3cfe08efe650")
+    if not account_id or not api_token:
+        return {}
+    url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/d1/database/{db_id}/query"
+    headers = {"Authorization": f"Bearer {api_token}", "Content-Type": "application/json"}
+    try:
+        # 맛집 목록
+        r = requests.post(url, headers=headers, timeout=30, json={
+            "sql": "SELECT * FROM restaurants WHERE is_excluded = 0 ORDER BY event_id, distance_meters"
+        })
+        r.raise_for_status()
+        rows = r.json()["result"][0].get("results", [])
+        # curation_note
+        r2 = requests.post(url, headers=headers, timeout=15, json={
+            "sql": "SELECT event_id, curation_note FROM events_meta WHERE curation_note IS NOT NULL AND curation_note != ''"
+        })
+        r2.raise_for_status()
+        notes = {row["event_id"]: row["curation_note"] for row in r2.json()["result"][0].get("results", [])}
+
+        result: dict = {}
+        for row in rows:
+            eid = row["event_id"]
+            if eid not in result:
+                result[eid] = {"curation_note": notes.get(eid, ""), "restaurants": []}
+            result[eid]["restaurants"].append({
+                "name": row["name"],
+                "category": row["category"],
+                "address": row["address"],
+                "lat": row["lat"],
+                "lng": row["lng"],
+                "phone": row.get("phone", ""),
+                "distance_meters": row["distance_meters"],
+                "distance_minutes": max(1, round(row["distance_meters"] / 80)),
+                "recommendation": row.get("recommendation", ""),
+                "best_time": row.get("best_time", "언제든"),
+                "kakao_map_url": row.get("kakao_map_url", ""),
+                "source": row.get("source", "kakao"),
+            })
+        return result
+    except Exception as e:
+        print(f"  D1 맛집 로드 실패 (파일 fallback 사용): {e}")
+        return {}
 
 SITE_DOMAIN = os.getenv("SITE_DOMAIN", "https://uapress.kr")
 SITE_NAME = os.getenv("SITE_NAME", "전국축제정보")
@@ -180,17 +229,18 @@ def build_all():
     for e in events:
         region_events_map.setdefault(e["region"], []).append(e)
 
-    # 맛집 데이터 로드
-    restaurants_dir = PROJECT_ROOT / "data" / "restaurants"
-    restaurants_all = {}  # event_id → {curation_note, restaurants}
-    if restaurants_dir.exists():
-        for rp in restaurants_dir.glob("*.json"):
-            try:
-                data = json.loads(rp.read_text())
-                if data.get("restaurants"):
-                    restaurants_all[rp.stem] = data
-            except Exception:
-                pass
+    # 맛집 데이터 로드 (D1 우선, 파일 fallback)
+    restaurants_all = _load_restaurants_from_d1()
+    if not restaurants_all:
+        restaurants_dir = PROJECT_ROOT / "data" / "restaurants"
+        if restaurants_dir.exists():
+            for rp in restaurants_dir.glob("*.json"):
+                try:
+                    data = json.loads(rp.read_text())
+                    if data.get("restaurants"):
+                        restaurants_all[rp.stem] = data
+                except Exception:
+                    pass
     print(f"  맛집 데이터: {len(restaurants_all)}개 행사")
 
     today = datetime.now().strftime("%Y%m%d")
