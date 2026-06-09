@@ -216,7 +216,11 @@ def fetch_nearby_attractions(area_code: str, region_name: str, limit: int = 6) -
         "areaCode": area_code,
     }
     try:
-        resp = requests.get(f"{TOUR_API_BASE}/areaBasedList2", params=params, timeout=15)
+        # KorService1/areaBasedList1 사용 (KorService2/areaBasedList2는 totalCount=0 반환)
+        resp = requests.get(
+            "https://apis.data.go.kr/B551011/KorService1/areaBasedList1",
+            params=params, timeout=15
+        )
         data = resp.json()
         # 첫 번째 지역만 응답 구조 디버그 출력
         if area_code == "1":
