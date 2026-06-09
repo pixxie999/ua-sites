@@ -216,9 +216,9 @@ def fetch_nearby_attractions(area_code: str, region_name: str, limit: int = 6) -
         "areaCode": area_code,
     }
     try:
-        # KorService1/areaBasedList1 사용 (KorService2/areaBasedList2는 totalCount=0 반환)
+        # TarRlteTarService1/areaBasedList1 사용 (지역기반 연관 관광지)
         resp = requests.get(
-            "https://apis.data.go.kr/B551011/KorService1/areaBasedList1",
+            "https://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1",
             params=params, timeout=15
         )
         data = resp.json()
