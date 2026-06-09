@@ -211,15 +211,23 @@ def fetch_nearby_attractions(area_code: str, region_name: str, limit: int = 6) -
         "MobileApp": "uapress",
         "_type": "json",
         "listYN": "Y",
-        "arrange": "Q",        # 조회순
+        "arrange": "A",        # 제목순 (Q=조회순은 로그인 필요)
         "contentTypeId": "12", # 관광지
         "areaCode": area_code,
     }
     try:
         resp = requests.get(f"{TOUR_API_BASE}/areaBasedList2", params=params, timeout=15)
         data = resp.json()
-        items = (data.get("response", {}).get("body", {})
-                     .get("items", {}).get("item", []))
+        # 첫 번째 지역만 응답 구조 디버그 출력
+        if area_code == "1":
+            body = data.get("response", {}).get("body", {})
+            total = body.get("totalCount", 0)
+            print(f"  [디버그 서울] totalCount={total}, HTTP={resp.status_code}")
+        raw_items = (data.get("response", {}).get("body", {}).get("items", {}))
+        # 결과 없을 때 items가 "" (빈 문자열)로 오는 경우 방어
+        if not raw_items or not isinstance(raw_items, dict):
+            return []
+        items = raw_items.get("item", [])
         if isinstance(items, dict):
             items = [items]
         result = []
