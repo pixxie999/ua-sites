@@ -24,7 +24,8 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 load_dotenv(PROJECT_ROOT / ".env")
 
 TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
-KAKAO_API_URL = "https://dapi.kakao.com/v2/local/search/category.json"
+KAKAO_CATEGORY_URL = "https://dapi.kakao.com/v2/local/search/category.json"
+KAKAO_KEYWORD_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
 RESTAURANTS_DIR = PROJECT_ROOT / "data" / "restaurants"
 EVENTS_PATH = PROJECT_ROOT / "data" / "processed" / "events.json"
 
@@ -99,44 +100,92 @@ def fetch_tour_restaurants(lat: float, lng: float, radius: int = 3000) -> list:
 # 카카오 로컬 API 음식점 수집
 # ─────────────────────────────────────────
 
-def fetch_kakao_restaurants(lat: float, lng: float, radius: int = 3000) -> list:
+def _parse_kakao_items(documents: list, lat: float = 0, lng: float = 0) -> list:
+    """카카오 API 응답 documents → 표준 dict 변환"""
+    import math
+    result = []
+    for item in documents:
+        name = item.get("place_name", "").strip()
+        if not name:
+            continue
+        cat_parts = item.get("category_name", "음식점").split(" > ")
+        category = cat_parts[-1] if len(cat_parts) > 1 else cat_parts[0]
+        item_lat = float(item.get("y", 0))
+        item_lng = float(item.get("x", 0))
+        # 카카오 keyword API는 distance 필드가 없는 경우가 있으므로 직접 계산
+        dist = int(item.get("distance", 0) or 0)
+        if dist == 0 and lat and lng and item_lat and item_lng:
+            # 간이 거리 계산 (m)
+            dy = (item_lat - lat) * 111000
+            dx = (item_lng - lng) * 111000 * math.cos(math.radians(lat))
+            dist = int(math.sqrt(dx**2 + dy**2))
+        result.append({
+            "id": f"kakao_{item.get('id', '')}",
+            "source": "kakao",
+            "name": name,
+            "address": item.get("road_address_name") or item.get("address_name", ""),
+            "lat": item_lat,
+            "lng": item_lng,
+            "category": category,
+            "phone": item.get("phone", ""),
+            "image_url": "",
+            "distance_meters": dist,
+            "kakao_map_url": item.get("place_url", f"https://map.kakao.com/?q={name}"),
+        })
+    return result
+
+
+def _extract_area_keyword(address: str, region: str) -> str:
+    """주소에서 시/군/구 단위 추출 — 카카오 키워드 검색용"""
+    import re
+    # "경상남도 함안군 가야읍 ..." → "함안군"
+    m = re.search(r'([가-힣]+[시군구])', address)
+    if m:
+        return m.group(1)
+    return region  # 없으면 지역명(도 단위) 사용
+
+
+def fetch_kakao_restaurants(lat: float, lng: float, radius: int = 3000,
+                            address: str = "", region: str = "") -> list:
     headers = {"Authorization": f"KakaoAK {_get_kakao_key()}"}
-    params = {
-        "category_group_code": "FD6",
-        "x": str(lng),
-        "y": str(lat),
-        "radius": radius,
-        "sort": "distance",
-        "size": 15,
-    }
+
+    # 1차: 좌표 기반 category 검색
+    cat_result = []
     try:
-        resp = requests.get(KAKAO_API_URL, headers=headers, params=params, timeout=15)
-        data = resp.json()
-        result = []
-        for item in data.get("documents", []):
-            name = item.get("place_name", "").strip()
-            if not name:
-                continue
-            # 카테고리: "음식점 > 한식 > 국밥" → "국밥"
-            cat_parts = item.get("category_name", "음식점").split(" > ")
-            category = cat_parts[-1] if len(cat_parts) > 1 else cat_parts[0]
-            result.append({
-                "id": f"kakao_{item.get('id', '')}",
-                "source": "kakao",
-                "name": name,
-                "address": item.get("road_address_name") or item.get("address_name", ""),
-                "lat": float(item.get("y", 0)),
-                "lng": float(item.get("x", 0)),
-                "category": category,
-                "phone": item.get("phone", ""),
-                "image_url": "",
-                "distance_meters": int(item.get("distance", 0) or 0),
-                "kakao_map_url": item.get("place_url", f"https://map.kakao.com/?q={name}"),
-            })
-        return result
+        params = {
+            "category_group_code": "FD6",
+            "x": str(lng), "y": str(lat),
+            "radius": radius, "sort": "distance", "size": 15,
+        }
+        resp = requests.get(KAKAO_CATEGORY_URL, headers=headers, params=params, timeout=15)
+        cat_result = _parse_kakao_items(resp.json().get("documents", []), lat, lng)
     except Exception as e:
-        print(f"    카카오 오류: {e}")
-        return []
+        print(f"    카카오 category 오류: {e}")
+
+    # 2차: 주소 기반 keyword 검색 (1차 결과 부족 시 보완)
+    kw_result = []
+    if len(cat_result) < 5:
+        try:
+            area = _extract_area_keyword(address, region)
+            kw_params = {
+                "query": f"{area} 음식점",
+                "category_group_code": "FD6",
+                "x": str(lng), "y": str(lat),
+                "radius": max(radius, 5000),
+                "sort": "distance", "size": 15,
+            }
+            resp2 = requests.get(KAKAO_KEYWORD_URL, headers=headers, params=kw_params, timeout=15)
+            kw_result = _parse_kakao_items(resp2.json().get("documents", []), lat, lng)
+            if kw_result:
+                print(f"    카카오 keyword 보완: {len(kw_result)}개 ({area} 음식점)")
+        except Exception as e:
+            print(f"    카카오 keyword 오류: {e}")
+
+    # 중복 제거 후 합산
+    merged = list(cat_result)
+    cat_ids = {r["id"] for r in cat_result}
+    merged += [r for r in kw_result if r["id"] not in cat_ids]
+    return merged
 
 
 # ─────────────────────────────────────────
@@ -256,15 +305,18 @@ def process_event(event: dict) -> bool:
 
     print(f"  [{event['region']}] {event['title']}")
 
+    address = event.get("address", "")
+    region = event.get("region", "")
+
     # 음식점 수집
     tour = fetch_tour_restaurants(lat, lng)
-    kakao = fetch_kakao_restaurants(lat, lng)
+    kakao = fetch_kakao_restaurants(lat, lng, address=address, region=region)
     candidates = deduplicate(tour, kakao)
 
     # 부족하면 반경 5km 재시도
     if len(candidates) < 3:
         tour2 = fetch_tour_restaurants(lat, lng, radius=5000)
-        kakao2 = fetch_kakao_restaurants(lat, lng, radius=5000)
+        kakao2 = fetch_kakao_restaurants(lat, lng, radius=5000, address=address, region=region)
         candidates = deduplicate(tour2, kakao2)
 
     if len(candidates) < 3:
