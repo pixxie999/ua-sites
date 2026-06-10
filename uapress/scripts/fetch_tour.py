@@ -218,21 +218,27 @@ def fetch_event_images(content_id: str, limit: int = 10) -> list:
     try:
         resp = requests.get(f"{TOUR_API_BASE}/detailImage2", params=params, timeout=15)
         data = resp.json()
-        raw = data.get("response", {}).get("body", {}).get("items", {})
-        if not raw or not isinstance(raw, dict):
+        body = data.get("response", {}).get("body", {})
+        raw = body.get("items", {})
+        # 이미지 없는 행사는 items가 빈 문자열로 옴
+        if not raw or raw == "" or not isinstance(raw, dict):
             return []
         items = raw.get("item", [])
         if isinstance(items, dict):
             items = [items]
-        return [
+        if not items:
+            return []
+        result = [
             {
                 "origin": item.get("originimgurl", ""),
-                "small": item.get("smallimageurl", ""),
+                "small": item.get("smallimageurl", "") or item.get("originimgurl", ""),
             }
             for item in items
             if item.get("originimgurl")
         ][:limit]
-    except Exception:
+        return result
+    except Exception as e:
+        print(f"  [이미지 수집 오류] contentId={content_id}: {e}")
         return []
 
 
@@ -252,6 +258,8 @@ if __name__ == "__main__":
     if events:
         print("\n상세 정보 수집 중...")
         for i, event in enumerate(events):
+            if i == 0:
+                print(f"  [디버그] content_id={event['content_id']} 이미지 테스트...")
             detail = fetch_event_detail(event["content_id"])
             intro = fetch_event_intro(event["content_id"])
 
