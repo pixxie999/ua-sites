@@ -87,17 +87,28 @@
         <input type="checkbox" name="selected_ids" value="{{ r.id }}" checked
                class="mt-1 w-4 h-4 accent-blue-600 flex-shrink-0">
         <div class="flex-1 min-w-0">
+        <div class="flex gap-3 flex-1 min-w-0">
+          {% if r.thumbnail %}
+          <img src="{{ r.thumbnail }}" alt="{{ r.name }}" class="w-16 h-16 rounded object-cover flex-shrink-0">
+          {% endif %}
+          <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 flex-wrap">
             <span class="font-medium">{{ r.name }}</span>
             <span class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded">{{ r.category }}</span>
             <span class="text-xs text-gray-400">도보 {{ [1, (r.distance_meters / 80)|round|int]|max }}분 ({{ r.distance_meters }}m)</span>
             <a href="{{ r.kakao_map_url }}" target="_blank"
                class="text-xs text-blue-500 hover:underline">지도</a>
+            {% if r.pet_info %}
+            <span class="bg-green-50 text-green-700 text-xs px-2 py-0.5 rounded">🐾 반려동물</span>
+            {% endif %}
           </div>
           <a href="https://map.kakao.com/?q={{ r.address | urlencode }}" target="_blank"
              class="text-xs text-gray-500 hover:text-blue-500 mt-0.5 block">{{ r.address }}</a>
           {% if r.recommendation %}
           <p class="text-xs text-blue-700 mt-1">✨ {{ r.recommendation }}</p>
+          {% endif %}
+          {% if r.pet_info %}
+          <p class="text-xs text-green-600 mt-0.5">🐾 {{ r.pet_info.pet_info or r.pet_info.pet_facility or '반려동물 동반 가능' }}</p>
           {% endif %}
           <div class="flex gap-2 mt-1 items-center">
             <span class="text-xs text-gray-400">방문 타이밍:</span>
@@ -107,6 +118,7 @@
               <option value="축제 전 점심" {% if r.best_time == '축제 전 점심' %}selected{% endif %}>축제 전 점심</option>
               <option value="축제 후 저녁" {% if r.best_time == '축제 후 저녁' %}selected{% endif %}>축제 후 저녁</option>
             </select>
+          </div>
           </div>
         </div>
       </label>

@@ -42,6 +42,9 @@
 <div class="bg-white rounded-xl shadow divide-y">
   {% for r in restaurants %}
   <div class="flex items-start gap-4 px-5 py-4 {% if r.is_excluded %}opacity-40{% endif %}">
+    {% if r.thumbnail %}
+    <img src="{{ r.thumbnail }}" alt="{{ r.name }}" class="w-14 h-14 rounded object-cover flex-shrink-0">
+    {% endif %}
     <div class="flex-1 min-w-0">
       <div class="flex items-center gap-2 flex-wrap">
         <span class="font-medium">{{ r.name }}</span>
@@ -49,6 +52,9 @@
         <span class="text-xs text-gray-400">도보 {{ [1, (r.distance_meters / 80)|round|int]|max }}분</span>
         {% if r.best_time and r.best_time != '언제든' %}
         <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded">{{ r.best_time }}</span>
+        {% endif %}
+        {% if r.pet_info %}
+        <span class="bg-green-50 text-green-700 text-xs px-2 py-0.5 rounded">🐾 반려동물</span>
         {% endif %}
         <a href="{{ r.kakao_map_url }}" target="_blank" class="text-xs text-blue-500 hover:underline">지도</a>
       </div>

@@ -159,23 +159,96 @@ def _normalize_name(name: str) -> str:
     return re.sub(r'[^가-힣a-zA-Z0-9]', '', name).lower()
 
 
-def search_tour_restaurants(area_code: str, sigungu_code: str,
-                            lat: float = 0, lng: float = 0) -> list:
-    """TourAPI areaBasedList — 시도/시군구 코드 기반 음식점"""
-    if not area_code:
-        return []
-    params = {
+TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
+
+
+def _tour_params(**extra) -> dict:
+    base = {
         "serviceKey": os.environ.get("TOUR_API_KEY", ""),
         "MobileOS": "ETC", "MobileApp": "uapress", "_type": "json",
-        "contentTypeId": "39", "areaCode": area_code,
-        "numOfRows": "30", "pageNo": "1", "arrange": "Q",
     }
+    base.update(extra)
+    return base
+
+
+def fetch_tour_images(content_id: str, limit: int = 5) -> list:
+    """detailImage2 — 음식점 이미지 목록"""
+    if not os.environ.get("TOUR_API_KEY"):
+        return []
+    try:
+        r = requests.get(f"{TOUR_API_BASE}/detailImage2",
+                         params=_tour_params(contentId=content_id,
+                                             imageYN="Y", subImageYN="Y",
+                                             numOfRows=str(limit)),
+                         timeout=10)
+        items = (r.json().get("response", {}).get("body", {})
+                 .get("items", {}).get("item", []))
+        if isinstance(items, dict):
+            items = [items]
+        return [{"origin": it.get("originimgurl", ""),
+                 "small": it.get("smallimageurl", "")}
+                for it in items if it.get("originimgurl")]
+    except Exception:
+        return []
+
+
+def fetch_tour_pet_info(content_id: str) -> dict:
+    """detailPetTour2 — 반려동물 동반 여행 정보"""
+    if not os.environ.get("TOUR_API_KEY"):
+        return {}
+    try:
+        r = requests.get(f"{TOUR_API_BASE}/detailPetTour2",
+                         params=_tour_params(contentId=content_id),
+                         timeout=10)
+        items = (r.json().get("response", {}).get("body", {})
+                 .get("items", {}).get("item", []))
+        if isinstance(items, dict):
+            items = [items]
+        if not items:
+            return {}
+        it = items[0]
+        return {
+            "pet_allowed": it.get("acmpyTypeCd", ""),
+            "pet_info": it.get("relaAcdntRiskMtr", "") or it.get("acmpyPsblCpam", ""),
+            "pet_facility": it.get("relaPosesFclty", ""),
+            "pet_extra": it.get("etcAcmpyInfo", ""),
+        }
+    except Exception:
+        return {}
+
+
+def enrich_tour_restaurants(restaurants: list) -> list:
+    """TourAPI 음식점에 이미지 + 반려동물 정보 추가"""
+    for r in restaurants:
+        if r.get("source") != "tourapi":
+            continue
+        cid = r["id"].replace("tour_", "")
+        if not cid:
+            continue
+        imgs = fetch_tour_images(cid, limit=3)
+        if imgs:
+            r["thumbnail"] = imgs[0]["origin"]
+            r["images"] = imgs
+        pet = fetch_tour_pet_info(cid)
+        if pet.get("pet_info") or pet.get("pet_facility"):
+            r["pet_info"] = pet
+        time.sleep(0.15)
+    return restaurants
+
+
+def search_tour_restaurants(area_code: str, sigungu_code: str,
+                            lat: float = 0, lng: float = 0) -> list:
+    """TourAPI areaBasedList2 — 시도/시군구 코드 기반 음식점"""
+    if not area_code:
+        return []
+    params = _tour_params(contentTypeId="39", areaCode=area_code,
+                          numOfRows="30", pageNo="1", arrange="Q")
     if sigungu_code:
         params["sigunguCode"] = sigungu_code
     if not params["serviceKey"]:
         return []
     try:
-        r = requests.get("https://apis.data.go.kr/B551011/KorService1/areaBasedList1",
+        r = requests.get(f"{TOUR_API_BASE}/areaBasedList2",
                          params=params, timeout=15)
         data = r.json()
         raw = data.get("response", {}).get("body", {}).get("items", {})
@@ -405,6 +478,7 @@ def fetch_restaurants(event_id):
                 candidates = search_restaurants(
                     area_code, sigungu_code, lat, lng,
                     address=search_address, region=event.get("region", ""))
+                candidates = enrich_tour_restaurants(candidates)
                 curation = curate(event, candidates) if candidates else None
                 curation_note = curation.get("curation_note", "") if curation else ""
                 c_map = {c["id"]: c for c in candidates}
@@ -445,20 +519,28 @@ def fetch_restaurants(event_id):
                 if not c:
                     continue
                 row_id = f"{event_id}_{cid}"
+                thumb = c.get("thumbnail", "")
+                imgs_json = json.dumps(c.get("images", []), ensure_ascii=False) if c.get("images") else ""
+                pet_json = json.dumps(c.get("pet_info", {}), ensure_ascii=False) if c.get("pet_info") else ""
                 d1("""INSERT INTO restaurants
                        (id, event_id, name, category, address, lat, lng, phone,
-                        distance_meters, recommendation, best_time, kakao_map_url, source, is_excluded, created_at)
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)
+                        distance_meters, recommendation, best_time, kakao_map_url,
+                        source, thumbnail, images, pet_info, is_excluded, created_at)
+                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)
                       ON CONFLICT(id) DO UPDATE SET
                         recommendation=excluded.recommendation,
                         best_time=excluded.best_time,
+                        thumbnail=excluded.thumbnail,
+                        images=excluded.images,
+                        pet_info=excluded.pet_info,
                         is_excluded=0""",
                    [row_id, event_id, c["name"], c["category"], c["address"],
                     c["lat"], c["lng"], c.get("phone", ""),
                     c["distance_meters"],
                     recommendations.get(cid, c.get("recommendation", "")),
                     best_times.get(cid, c.get("best_time", "언제든")),
-                    c.get("kakao_map_url", ""), c["source"], now])
+                    c.get("kakao_map_url", ""), c["source"],
+                    thumb, imgs_json, pet_json, now])
 
             # curation_note 저장
             if curation_note:

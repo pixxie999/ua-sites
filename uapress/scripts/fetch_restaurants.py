@@ -51,7 +51,7 @@ def _get_anthropic_client():
 
 def fetch_tour_restaurants(area_code: str, sigungu_code: str,
                            lat: float = 0, lng: float = 0) -> list:
-    """시도코드 + 시군구코드 기반 음식점 조회 (areaBasedList1)"""
+    """시도코드 + 시군구코드 기반 음식점 조회 (areaBasedList2)"""
     if not area_code:
         return []
     params = {
@@ -68,7 +68,7 @@ def fetch_tour_restaurants(area_code: str, sigungu_code: str,
     if sigungu_code:
         params["sigunguCode"] = sigungu_code
     try:
-        resp = requests.get(f"{TOUR_API_BASE}/areaBasedList1", params=params, timeout=15)
+        resp = requests.get(f"{TOUR_API_BASE}/areaBasedList2", params=params, timeout=15)
         data = resp.json()
         raw = data.get("response", {}).get("body", {}).get("items", {})
         if not raw or not isinstance(raw, dict):
