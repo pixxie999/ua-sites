@@ -212,7 +212,7 @@ def fetch_event_images(content_id: str, limit: int = 10) -> list:
         "MobileApp": "uapress",
         "_type": "json",
         "imageYN": "Y",
-        "subImageYN": "Y",
+
         "numOfRows": str(limit),
     }
     try:

@@ -178,7 +178,7 @@ def fetch_tour_images(content_id: str, limit: int = 5) -> list:
     try:
         r = requests.get(f"{TOUR_API_BASE}/detailImage2",
                          params=_tour_params(contentId=content_id,
-                                             imageYN="Y", subImageYN="Y",
+                                             imageYN="Y",
                                              numOfRows=str(limit)),
                          timeout=10)
         items = (r.json().get("response", {}).get("body", {})
@@ -575,7 +575,7 @@ TOUR_API_ENDPOINTS = {
     },
     "detailImage2": {
         "label": "이미지 목록",
-        "params": lambda cid, e: {"contentId": cid, "imageYN": "Y", "subImageYN": "Y", "numOfRows": "10"},
+        "params": lambda cid, e: {"contentId": cid, "imageYN": "Y", "numOfRows": "10"},
     },
     "detailPetTour2": {
         "label": "반려동물 동반 정보",
