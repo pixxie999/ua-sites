@@ -261,6 +261,16 @@ if __name__ == "__main__":
             event["organizer"] = intro.get("sponsor1", "")
             event["playtime"] = intro.get("playtime", "")
 
+            # detailCommon2에서 시군구코드/시도코드 보강
+            if not event.get("sigungu_code") or not event.get("area_code") or event["area_code"] == "0":
+                ac = str(detail.get("areacode", "")).strip()
+                sc = str(detail.get("sigungucode", "")).strip()
+                if ac:
+                    event["area_code"] = ac
+                    event["region"] = AREA_MAP.get(ac, event["region"])
+                if sc:
+                    event["sigungu_code"] = sc
+
             # 이미지 수집
             images = fetch_event_images(event["content_id"])
             event["images"] = images
