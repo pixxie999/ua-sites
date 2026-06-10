@@ -292,31 +292,36 @@ def fetch_restaurants(event_id):
         flash("행사를 찾을 수 없습니다.")
         return redirect(url_for("index"))
 
-    # events_meta에서 좌표 override 확인
+    # events_meta에서 좌표/주소 override 확인
     meta_rows = d1_rows("SELECT * FROM events_meta WHERE event_id = ?", [event_id])
     meta = meta_rows[0] if meta_rows else {}
     lat = float(meta.get("lat_override") or event.get("lat", 0) or 0)
     lng = float(meta.get("lng_override") or event.get("lng", 0) or 0)
+    search_address = meta.get("address_override") or event.get("address", "")
 
     if request.method == "POST":
         action = request.form.get("action")
 
-        # 좌표 저장
+        # 좌표/주소 저장
         if action == "save_meta":
-            new_lat = float(request.form.get("lat", lat))
-            new_lng = float(request.form.get("lng", lng))
+            new_lat = float(request.form.get("lat") or lat or 0)
+            new_lng = float(request.form.get("lng") or lng or 0)
+            new_addr = request.form.get("address_override", "").strip()
             note = request.form.get("curation_note", "")
             now = datetime.now(KST).isoformat()
-            d1("""INSERT INTO events_meta (event_id, lat_override, lng_override, curation_note, updated_at)
-                  VALUES (?, ?, ?, ?, ?)
+            d1("""INSERT INTO events_meta
+                    (event_id, lat_override, lng_override, address_override, curation_note, updated_at)
+                  VALUES (?, ?, ?, ?, ?, ?)
                   ON CONFLICT(event_id) DO UPDATE SET
                     lat_override=excluded.lat_override,
                     lng_override=excluded.lng_override,
+                    address_override=excluded.address_override,
                     curation_note=excluded.curation_note,
                     updated_at=excluded.updated_at""",
-               [event_id, new_lat, new_lng, note, now])
-            flash("좌표 저장 완료")
+               [event_id, new_lat or None, new_lng or None, new_addr or None, note, now])
+            flash("저장 완료")
             lat, lng = new_lat, new_lng
+            search_address = new_addr or event.get("address", "")
 
         # 맛집 검색
         elif action == "search":
@@ -324,7 +329,7 @@ def fetch_restaurants(event_id):
                 flash("좌표를 먼저 입력하세요.")
             else:
                 candidates = search_kakao(lat, lng,
-                                          address=event.get("address", ""),
+                                          address=search_address,
                                           region=event.get("region", ""))
                 curation = curate(event, candidates) if candidates else None
                 curation_note = curation.get("curation_note", "") if curation else ""
@@ -344,6 +349,7 @@ def fetch_restaurants(event_id):
                     restaurants = sorted(candidates, key=lambda x: x["distance_meters"])[:5]
 
                 return render_template("fetch.html", event=event, lat=lat, lng=lng,
+                                       search_address=search_address,
                                        restaurants=restaurants, candidates=candidates,
                                        curation_note=curation_note, meta=meta)
 
@@ -393,6 +399,7 @@ def fetch_restaurants(event_id):
             return redirect(url_for("restaurants_view", event_id=event_id))
 
     return render_template("fetch.html", event=event, lat=lat, lng=lng,
+                           search_address=search_address,
                            restaurants=None, candidates=None, meta=meta)
 
 
