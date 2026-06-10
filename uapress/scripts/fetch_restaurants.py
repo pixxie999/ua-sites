@@ -23,7 +23,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
+TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService2"
 KAKAO_CATEGORY_URL = "https://dapi.kakao.com/v2/local/search/category.json"
 KAKAO_KEYWORD_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
 RESTAURANTS_DIR = PROJECT_ROOT / "data" / "restaurants"

@@ -159,7 +159,7 @@ def _normalize_name(name: str) -> str:
     return re.sub(r'[^가-힣a-zA-Z0-9]', '', name).lower()
 
 
-TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService1"
+TOUR_API_BASE = "https://apis.data.go.kr/B551011/KorService2"
 
 
 def _tour_params(**extra) -> dict:
@@ -613,7 +613,7 @@ def event_detail(event_id):
             "numOfRows": "100", "pageNo": "1",
         }
         base_params.update(ep["params"](cid, event))
-        api_url = f"https://apis.data.go.kr/B551011/KorService1/{endpoint}"
+        api_url = f"https://apis.data.go.kr/B551011/KorService2/{endpoint}"
         try:
             r = requests.get(api_url, params=base_params, timeout=15)
             api_result = json.dumps(r.json(), ensure_ascii=False, indent=2)
