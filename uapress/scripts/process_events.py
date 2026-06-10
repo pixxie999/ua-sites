@@ -114,7 +114,10 @@ def process_events(raw_path: str) -> list:
             "thumbnail": item.get("thumbnail", ""),
             "homepage": item.get("homepage", ""),
             "tel": item.get("tel", ""),
-            "images": item.get("images", existing.get("images", [])),
+            "images": item.get("images") or existing.get("images") or (
+                [{"origin": item["thumbnail"], "small": item.get("thumbnail_small", item["thumbnail"])}]
+                if item.get("thumbnail") else []
+            ),
             # AI 생성 필드 — 기존 값 보존, 없으면 빈값
             "seo_slug": existing.get("seo_slug", ""),
             "summary": existing.get("summary", ""),

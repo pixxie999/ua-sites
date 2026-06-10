@@ -276,7 +276,8 @@ if __name__ == "__main__":
             event["images"] = images
 
             if i % 50 == 0:
-                print(f"  {i}/{len(events)}개 처리")
+                img_count = sum(1 for e in events[:i+1] if e.get("images"))
+                print(f"  {i}/{len(events)}개 처리 (이미지 있음: {img_count}개)")
             time.sleep(0.2)
 
     (PROJECT_ROOT / "data/raw").mkdir(parents=True, exist_ok=True)
