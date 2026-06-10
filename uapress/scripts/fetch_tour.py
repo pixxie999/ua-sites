@@ -126,6 +126,7 @@ def fetch_events(start_date: str, end_date: str) -> list:
                     "title": item.get("title", "").strip(),
                     "region": region,
                     "area_code": area_code,
+                    "sigungu_code": str(item.get("sigungucode", "")).strip(),
                     "address": item.get("addr1", ""),
                     "lat": float(item.get("mapy", 0) or 0),
                     "lng": float(item.get("mapx", 0) or 0),
@@ -139,6 +140,7 @@ def fetch_events(start_date: str, end_date: str) -> list:
                     "overview": "",
                     "fee": "",
                     "organizer": "",
+                    "images": [],
                 })
 
             print(f"  페이지 {page}: {len(item_list)}개 (누적 {len(all_events)}/{total_count})")
@@ -201,6 +203,39 @@ def fetch_event_intro(content_id: str) -> dict:
         return {}
 
 
+def fetch_event_images(content_id: str, limit: int = 10) -> list:
+    """detailImage2 — 행사 이미지 목록 수집"""
+    params = {
+        "serviceKey": _get_api_key(),
+        "contentId": content_id,
+        "MobileOS": "ETC",
+        "MobileApp": "uapress",
+        "_type": "json",
+        "imageYN": "Y",
+        "subImageYN": "Y",
+        "numOfRows": str(limit),
+    }
+    try:
+        resp = requests.get(f"{TOUR_API_BASE}/detailImage2", params=params, timeout=15)
+        data = resp.json()
+        raw = data.get("response", {}).get("body", {}).get("items", {})
+        if not raw or not isinstance(raw, dict):
+            return []
+        items = raw.get("item", [])
+        if isinstance(items, dict):
+            items = [items]
+        return [
+            {
+                "origin": item.get("originimgurl", ""),
+                "small": item.get("smallimageurl", ""),
+            }
+            for item in items
+            if item.get("originimgurl")
+        ][:limit]
+    except Exception:
+        return []
+
+
 
 
 if __name__ == "__main__":
@@ -225,6 +260,10 @@ if __name__ == "__main__":
             event["fee"] = intro.get("usetimefestival", "")
             event["organizer"] = intro.get("sponsor1", "")
             event["playtime"] = intro.get("playtime", "")
+
+            # 이미지 수집
+            images = fetch_event_images(event["content_id"])
+            event["images"] = images
 
             if i % 50 == 0:
                 print(f"  {i}/{len(events)}개 처리")

@@ -155,6 +155,78 @@ def _extract_area(address, region):
     return m.group(1) if m else region
 
 
+def _normalize_name(name: str) -> str:
+    return re.sub(r'[^가-힣a-zA-Z0-9]', '', name).lower()
+
+
+def search_tour_restaurants(area_code: str, sigungu_code: str,
+                            lat: float = 0, lng: float = 0) -> list:
+    """TourAPI areaBasedList — 시도/시군구 코드 기반 음식점"""
+    if not area_code:
+        return []
+    params = {
+        "serviceKey": os.environ.get("TOUR_API_KEY", ""),
+        "MobileOS": "ETC", "MobileApp": "uapress", "_type": "json",
+        "contentTypeId": "39", "areaCode": area_code,
+        "numOfRows": "30", "pageNo": "1", "arrange": "Q",
+    }
+    if sigungu_code:
+        params["sigunguCode"] = sigungu_code
+    if not params["serviceKey"]:
+        return []
+    try:
+        r = requests.get("https://apis.data.go.kr/B551011/KorService1/areaBasedList1",
+                         params=params, timeout=15)
+        data = r.json()
+        raw = data.get("response", {}).get("body", {}).get("items", {})
+        if not raw or not isinstance(raw, dict):
+            return []
+        items = raw.get("item", [])
+        if isinstance(items, dict):
+            items = [items]
+        result = []
+        for item in items:
+            name = item.get("title", "").strip()
+            if not name:
+                continue
+            ilat = float(item.get("mapy", 0) or 0)
+            ilng = float(item.get("mapx", 0) or 0)
+            dist = 0
+            if lat and lng and ilat and ilng:
+                dy = (ilat - lat) * 111000
+                dx = (ilng - lng) * 111000 * math.cos(math.radians(lat))
+                dist = int(math.sqrt(dx**2 + dy**2))
+            result.append({
+                "id": f"tour_{item.get('contentid', '')}",
+                "source": "tourapi", "name": name,
+                "address": item.get("addr1", ""),
+                "lat": ilat, "lng": ilng,
+                "category": item.get("cat3", "") or "음식점",
+                "phone": item.get("tel", ""), "distance_meters": dist,
+                "kakao_map_url": f"https://map.kakao.com/?q={name}",
+            })
+        return result
+    except Exception:
+        return []
+
+
+def search_restaurants(area_code, sigungu_code, lat, lng,
+                       address="", region="", radius=3000):
+    """TourAPI + 카카오 통합 검색"""
+    tour = search_tour_restaurants(area_code, sigungu_code, lat, lng)
+    kakao = search_kakao(lat, lng, address=address, region=region, radius=radius)
+    # 중복 제거 (이름 기준)
+    merged = list(tour)
+    tour_names = {_normalize_name(r["name"]) for r in tour}
+    merged += [r for r in kakao if _normalize_name(r["name"]) not in tour_names]
+    # 부족하면 시도 전체로 재시도
+    if len(merged) < 5 and sigungu_code:
+        tour2 = search_tour_restaurants(area_code, "", lat, lng)
+        existing_names = {_normalize_name(r["name"]) for r in merged}
+        merged += [r for r in tour2 if _normalize_name(r["name"]) not in existing_names]
+    return sorted(merged, key=lambda x: x["distance_meters"])
+
+
 def search_kakao(lat, lng, address="", region="", radius=3000):
     headers = _kakao_headers()
 
@@ -328,9 +400,11 @@ def fetch_restaurants(event_id):
             if not lat or not lng:
                 flash("좌표를 먼저 입력하세요.")
             else:
-                candidates = search_kakao(lat, lng,
-                                          address=search_address,
-                                          region=event.get("region", ""))
+                area_code = event.get("area_code", "")
+                sigungu_code = event.get("sigungu_code", "")
+                candidates = search_restaurants(
+                    area_code, sigungu_code, lat, lng,
+                    address=search_address, region=event.get("region", ""))
                 curation = curate(event, candidates) if candidates else None
                 curation_note = curation.get("curation_note", "") if curation else ""
                 c_map = {c["id"]: c for c in candidates}

@@ -98,6 +98,7 @@ def process_events(raw_path: str) -> list:
             "category": category,
             "region": item["region"],
             "area_code": item["area_code"],
+            "sigungu_code": item.get("sigungu_code", ""),
             "address": item["address"],
             "lat": item["lat"],
             "lng": item["lng"],
@@ -113,6 +114,7 @@ def process_events(raw_path: str) -> list:
             "thumbnail": item.get("thumbnail", ""),
             "homepage": item.get("homepage", ""),
             "tel": item.get("tel", ""),
+            "images": item.get("images", existing.get("images", [])),
             # AI 생성 필드 — 기존 값 보존, 없으면 빈값
             "summary": existing.get("summary", ""),
             "highlight": existing.get("highlight", ""),

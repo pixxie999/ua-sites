@@ -99,8 +99,26 @@
   <span class="text-gray-600 truncate max-w-xs">{{ event.title }}</span>
 </nav>
 
-<!-- 썸네일 -->
-{% if event.thumbnail %}
+<!-- 이미지 갤러리 -->
+{% if event.images and event.images|length > 1 %}
+<div class="mb-6">
+  <div class="rounded-2xl overflow-hidden max-h-80">
+    <img id="main-img" src="{{ event.images[0].origin or event.thumbnail }}" alt="{{ event.title }}"
+         class="w-full object-cover cursor-pointer" onclick="openFullscreen(this.src)">
+  </div>
+  <div class="flex gap-2 mt-2 overflow-x-auto pb-1">
+    {% if event.thumbnail %}
+    <img src="{{ event.thumbnail }}" alt="대표" onclick="document.getElementById('main-img').src=this.src"
+         class="w-20 h-16 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-400 flex-shrink-0">
+    {% endif %}
+    {% for img in event.images %}
+    <img src="{{ img.small or img.origin }}" alt="{{ event.title }} {{ loop.index }}"
+         onclick="document.getElementById('main-img').src='{{ img.origin }}'"
+         class="w-20 h-16 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-400 flex-shrink-0">
+    {% endfor %}
+  </div>
+</div>
+{% elif event.thumbnail %}
 <div class="rounded-2xl overflow-hidden mb-6 max-h-80">
   <img src="{{ event.thumbnail }}" alt="{{ event.title }}" class="w-full object-cover">
 </div>

@@ -49,22 +49,26 @@ def _get_anthropic_client():
 # TourAPI 음식점 수집
 # ─────────────────────────────────────────
 
-def fetch_tour_restaurants(lat: float, lng: float, radius: int = 3000) -> list:
+def fetch_tour_restaurants(area_code: str, sigungu_code: str,
+                           lat: float = 0, lng: float = 0) -> list:
+    """시도코드 + 시군구코드 기반 음식점 조회 (areaBasedList1)"""
+    if not area_code:
+        return []
     params = {
         "serviceKey": _get_tour_key(),
         "MobileOS": "ETC",
         "MobileApp": "uapress",
         "_type": "json",
-        "mapX": str(lng),
-        "mapY": str(lat),
-        "radius": str(radius),
         "contentTypeId": "39",
+        "areaCode": area_code,
         "numOfRows": "30",
         "pageNo": "1",
-        "arrange": "S",
+        "arrange": "Q",
     }
+    if sigungu_code:
+        params["sigunguCode"] = sigungu_code
     try:
-        resp = requests.get(f"{TOUR_API_BASE}/locationBasedList1", params=params, timeout=15)
+        resp = requests.get(f"{TOUR_API_BASE}/areaBasedList1", params=params, timeout=15)
         data = resp.json()
         raw = data.get("response", {}).get("body", {}).get("items", {})
         if not raw or not isinstance(raw, dict):
@@ -77,17 +81,25 @@ def fetch_tour_restaurants(lat: float, lng: float, radius: int = 3000) -> list:
             name = item.get("title", "").strip()
             if not name:
                 continue
+            ilat = float(item.get("mapy", 0) or 0)
+            ilng = float(item.get("mapx", 0) or 0)
+            dist = 0
+            if lat and lng and ilat and ilng:
+                import math
+                dy = (ilat - lat) * 111000
+                dx = (ilng - lng) * 111000 * math.cos(math.radians(lat))
+                dist = int(math.sqrt(dx**2 + dy**2))
             result.append({
                 "id": f"tour_{item.get('contentid', '')}",
                 "source": "tourapi",
                 "name": name,
                 "address": item.get("addr1", ""),
-                "lat": float(item.get("mapy", 0) or 0),
-                "lng": float(item.get("mapx", 0) or 0),
+                "lat": ilat,
+                "lng": ilng,
                 "category": item.get("cat3", "") or item.get("cat2", "") or "음식점",
                 "phone": item.get("tel", ""),
                 "image_url": item.get("firstimage", "") or item.get("firstimage2", ""),
-                "distance_meters": int(float(item.get("dist", 0) or 0)),
+                "distance_meters": dist,
                 "kakao_map_url": f"https://map.kakao.com/?q={name}",
             })
         return result
@@ -307,15 +319,17 @@ def process_event(event: dict) -> bool:
 
     address = event.get("address", "")
     region = event.get("region", "")
+    area_code = event.get("area_code", "")
+    sigungu_code = event.get("sigungu_code", "")
 
-    # 음식점 수집
-    tour = fetch_tour_restaurants(lat, lng)
+    # 음식점 수집: 시도/시군구 코드 기반 TourAPI + 카카오
+    tour = fetch_tour_restaurants(area_code, sigungu_code, lat, lng)
     kakao = fetch_kakao_restaurants(lat, lng, address=address, region=region)
     candidates = deduplicate(tour, kakao)
 
-    # 부족하면 반경 5km 재시도
+    # 부족하면 시군구 코드 없이 시도 전체 + 카카오 반경 5km
     if len(candidates) < 3:
-        tour2 = fetch_tour_restaurants(lat, lng, radius=5000)
+        tour2 = fetch_tour_restaurants(area_code, "", lat, lng)
         kakao2 = fetch_kakao_restaurants(lat, lng, radius=5000, address=address, region=region)
         candidates = deduplicate(tour2, kakao2)
 
