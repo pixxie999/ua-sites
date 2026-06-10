@@ -354,7 +354,7 @@
   <h2 class="font-bold text-lg mb-4">📍 {{ event.region }} 다른 행사</h2>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
     {% for e in nearby_events %}
-    <a href="/event/{{ e.id }}/"
+    <a href="/event/{{ e.seo_slug or e.id }}/"
        class="rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition group">
       {% if e.thumbnail %}
       <div class="h-24 overflow-hidden">

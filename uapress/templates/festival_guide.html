@@ -49,7 +49,7 @@
     <h2 class="text-lg font-bold text-gray-800 mb-4">관련 행사</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {% for event in guide.related_events %}
-      <a href="/event/{{ event.id }}/"
+      <a href="/event/{{ event.seo_slug or event.id }}/"
          class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-4">
         <h3 class="font-medium text-gray-900 line-clamp-2 mb-1">{{ event.title }}</h3>
         <p class="text-xs text-gray-400">📍 {{ event.region }} · 📅 {{ event.start_date_fmt }}</p>

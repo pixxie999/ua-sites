@@ -27,7 +27,7 @@ def build_index():
             "start_date_fmt": e.get("start_date_fmt", ""),
             "place": e.get("place", ""),
             "tags": e.get("tags", []),
-            "url": f"/event/{e['id']}/"
+            "url": f"/event/{e.get('seo_slug') or e['id']}/"
         })
 
     out = {

@@ -54,7 +54,7 @@
 <!-- 행사 그리드 -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
   {% for event in events %}
-  <a href="/event/{{ event.id }}/"
+  <a href="/event/{{ event.seo_slug or event.id }}/"
      class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
     {% if event.thumbnail %}
     <div class="h-44 overflow-hidden">

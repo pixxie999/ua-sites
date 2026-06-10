@@ -9,6 +9,10 @@
 <div class="flex items-center justify-between mb-4">
   <h1 class="text-xl font-bold">{{ event.title if event else event_id }}</h1>
   <div class="flex gap-2">
+    <a href="https://uapress.kr/event/{{ event.seo_slug or event.id if event else event_id }}/" target="_blank"
+       class="border border-blue-400 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm">
+      🔗 사이트 보기
+    </a>
     <a href="/fetch/{{ event.id if event else event_id }}"
        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm font-bold">
       재수집

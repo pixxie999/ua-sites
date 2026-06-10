@@ -116,6 +116,7 @@ def process_events(raw_path: str) -> list:
             "tel": item.get("tel", ""),
             "images": item.get("images", existing.get("images", [])),
             # AI 생성 필드 — 기존 값 보존, 없으면 빈값
+            "seo_slug": existing.get("seo_slug", ""),
             "summary": existing.get("summary", ""),
             "highlight": existing.get("highlight", ""),
             "target_audience": existing.get("target_audience", ""),
@@ -136,7 +137,7 @@ def process_events(raw_path: str) -> list:
             archive_map[eid] = e
         else:
             # AI 필드는 기존 아카이브 값 우선 보존
-            for field in ("seo_title", "meta_description", "summary", "highlight",
+            for field in ("seo_slug", "seo_title", "meta_description", "summary", "highlight",
                           "target_audience", "tips", "tags"):
                 if archive_map[eid].get(field):
                     e[field] = archive_map[eid][field]

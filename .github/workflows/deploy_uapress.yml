@@ -76,6 +76,13 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
+      - name: Generate SEO slugs
+        if: ${{ github.event.inputs.mode != 'build_only' }}
+        continue-on-error: true
+        run: python uapress/scripts/generate_content.py slugs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
       - name: Generate weekly pick
         if: >
           github.event.inputs.mode == 'weekly' ||

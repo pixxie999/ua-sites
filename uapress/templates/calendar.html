@@ -84,7 +84,7 @@
 
       <!-- 시작 행사 바 -->
       {% for e in start_list[:3] %}
-      <a href="/event/{{ e.id }}/"
+      <a href="/event/{{ e.seo_slug or e.id }}/"
          class="block w-full mb-0.5 px-1 py-0.5 rounded text-[9px] md:text-[10px] leading-tight truncate text-white font-medium
          {{ cat_colors.get(e.category, 'bg-gray-400') }} hover:opacity-80 transition"
          title="{{ e.title }} (시작)">
@@ -94,7 +94,7 @@
 
       <!-- 종료 행사 바 -->
       {% for e in end_list[:max(0, 3 - start_list|length)] %}
-      <a href="/event/{{ e.id }}/"
+      <a href="/event/{{ e.seo_slug or e.id }}/"
          class="block w-full mb-0.5 px-1 py-0.5 rounded text-[9px] md:text-[10px] leading-tight truncate text-white font-medium opacity-75
          {{ cat_colors.get(e.category, 'bg-gray-400') }} hover:opacity-90 transition"
          title="{{ e.title }} (종료)">
@@ -127,7 +127,7 @@
   <h2 class="text-lg font-bold mb-4">📋 {{ year }}년 {{ month_name }} 전체 행사 목록 ({{ total_events }}개)</h2>
   <div class="space-y-2">
     {% for e in month_all_events %}
-    <a href="/event/{{ e.id }}/"
+    <a href="/event/{{ e.seo_slug or e.id }}/"
        class="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm hover:shadow-md transition group">
       <div class="w-12 text-center flex-shrink-0">
         <div class="text-sm font-bold text-gray-700">{{ e.start_date[6:8] }}일</div>

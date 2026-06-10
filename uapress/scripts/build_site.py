@@ -288,6 +288,8 @@ def build_all():
     reviews_dir = PROJECT_ROOT / "data/content/cafe_reviews"
     all_events_for_detail = active + archive
 
+    REDIRECT_TMPL = '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url={url}"><link rel="canonical" href="{domain}{url}"></head><body></body></html>'
+
     for e in all_events_for_detail:
         review_path = reviews_dir / f"{e['id']}.json"
         cafe_reviews = []
@@ -298,12 +300,15 @@ def build_all():
             except Exception:
                 pass
         is_ended = e["end_date"] < today
-        # 같은 지역 다른 행사 (자기 자신 제외, 최대 6개)
         same_region = [x for x in region_events_map.get(e.get("region", ""), [])
                        if x["id"] != e["id"]][:6]
-        # 맛집 데이터
         rest_data = restaurants_all.get(e["id"], {})
-        path = DIST / "event" / e["id"] / "index.html"
+
+        # URL: seo_slug 우선, 없으면 기존 id
+        url_slug = e.get("seo_slug") or e["id"]
+        e["url_slug"] = url_slug
+
+        path = DIST / "event" / url_slug / "index.html"
         write(path, tmpl.render(
             event=e,
             cafe_reviews=cafe_reviews,
@@ -312,8 +317,15 @@ def build_all():
             nearby_restaurants=rest_data.get("restaurants", []),
             restaurant_curation_note=rest_data.get("curation_note", ""),
             reviewed_date=BUILD_DATE,
-            page_url=f"/event/{e['id']}/"
+            page_url=f"/event/{url_slug}/"
         ))
+
+        # 기존 ID URL → 새 슬러그로 리다이렉트 (SEO 이전)
+        if url_slug != e["id"]:
+            redirect_path = DIST / "event" / e["id"] / "index.html"
+            new_url = f"/event/{url_slug}/"
+            write(redirect_path, REDIRECT_TMPL.format(url=new_url, domain=SITE_DOMAIN))
+
     print(f"  행사 상세: 활성 {len(active)}개 + 아카이브 {len(archive)}개")
 
     # 3. 지역별 (허브 페이지)
@@ -635,13 +647,15 @@ def build_sitemap(events: list, archive: list = None):
     for category_slug in CATEGORY_SLUGS.values():
         urls.append({"loc": f"/category/{category_slug}/", "priority": "0.8", "changefreq": "weekly"})
 
-    # 활성 행사
+    # 활성 행사 (seo_slug 우선)
     for e in events:
-        urls.append({"loc": f"/event/{e['id']}/", "priority": "0.7", "changefreq": "weekly"})
+        slug = e.get("url_slug") or e.get("seo_slug") or e["id"]
+        urls.append({"loc": f"/event/{slug}/", "priority": "0.7", "changefreq": "weekly"})
 
-    # 아카이브 행사 — 낮은 priority, 변경 없음
+    # 아카이브 행사
     for e in (archive or []):
-        urls.append({"loc": f"/event/{e['id']}/", "priority": "0.4", "changefreq": "monthly"})
+        slug = e.get("url_slug") or e.get("seo_slug") or e["id"]
+        urls.append({"loc": f"/event/{slug}/", "priority": "0.4", "changefreq": "monthly"})
 
     sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     sitemap_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')

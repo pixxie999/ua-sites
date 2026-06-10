@@ -29,6 +29,7 @@ EVENT_SYSTEM = """문화행사 큐레이션 전문가입니다. 주어진 행사
 반드시 JSON만 출력 (마크다운 코드블록 없이):
 {
   "seo_title": "SEO 제목 60자 이내 (지역명+행사명+특징 키워드 포함)",
+  "seo_slug": "영문 URL 슬러그 (지역+행사명 로마자 변환, 소문자, 하이픈 구분, 30자 이내, 예: gyeongsan-cafe-festival)",
   "meta_description": "메타 설명 155자 이내 (언제·어디서·무엇을·왜 가야 하는지)",
   "summary": "행사 핵심 요약 3줄 (각 줄 60자 이내, \\n 구분)",
   "highlight": "이 행사만의 특별한 포인트 100자",
@@ -37,6 +38,17 @@ EVENT_SYSTEM = """문화행사 큐레이션 전문가입니다. 주어진 행사
   "tips": ["방문 팁 1", "방문 팁 2", "방문 팁 3"],
   "tags": ["태그1", "태그2", "태그3", "태그4", "태그5"]
 }"""
+
+SLUG_SYSTEM = """한국어 행사명을 영문 URL 슬러그로 변환하는 전문가입니다.
+규칙:
+- 지역명 + 행사 핵심 이름을 로마자(romaja)로 변환
+- 소문자, 하이픈(-) 구분, 30자 이내
+- 불필요한 단어(제n회, 2026, 축제/festival 중복) 최소화
+- 예: "경산카페축제" → "gyeongsan-cafe-festival"
+- 예: "대구치맥페스티벌" → "daegu-chimaek-festival"
+- 예: "남해 마늘한우축제" → "namhae-garlic-hanwoo-festival"
+
+JSON만 출력: {"seo_slug": "영문-슬러그"}"""
 
 WEEKLY_SYSTEM = """주말 나들이 전문 에디터입니다. 이번 주 추천 행사 TOP 5를 선정하세요.
 JSON만 출력 (마크다운 없이):
@@ -214,6 +226,65 @@ def generate_weekly_pick(events: list) -> dict:
     return result
 
 
+def build_slug_requests(events: list) -> list:
+    """seo_slug가 없는 행사만 슬러그 생성 배치"""
+    reqs = []
+    for e in events:
+        if e.get("seo_slug"):
+            continue
+        reqs.append({
+            "custom_id": f"slug-{e['id']}",
+            "params": {
+                "model": MODEL,
+                "max_tokens": 100,
+                "system": SLUG_SYSTEM,
+                "messages": [{"role": "user", "content": f"{e['region']} {e['title']}"}]
+            }
+        })
+    return reqs
+
+
+def run_slug_batch(events: list) -> dict:
+    client = _get_client()
+    reqs = build_slug_requests(events)
+    if not reqs:
+        print("모든 행사 seo_slug 이미 존재")
+        return {}
+
+    print(f"슬러그 Batch 제출: {len(reqs)}개")
+    batch = client.beta.messages.batches.create(requests=reqs)
+    batch_id = batch.id
+    print(f"Batch ID: {batch_id}")
+
+    while True:
+        b = client.beta.messages.batches.retrieve(batch_id)
+        if b.processing_status == "ended":
+            break
+        print(f"  처리 중... (완료: {b.request_counts.succeeded})")
+        time.sleep(60)
+
+    results = {}
+    for r in client.beta.messages.batches.results(batch_id):
+        if r.result.type == "succeeded":
+            try:
+                text = r.result.message.content[0].text.strip()
+                if "```" in text:
+                    parts = text.split("```")
+                    for part in parts:
+                        if part.startswith("json"):
+                            text = part[4:].strip()
+                            break
+                data = json.loads(text)
+                slug = data.get("seo_slug", "")
+                if slug:
+                    results[r.custom_id] = slug
+            except Exception as ex:
+                print(f"  슬러그 파싱 실패 {r.custom_id}: {ex}")
+
+    print(f"슬러그 Batch 완료: {len(results)}개 성공")
+    return results
+
+
 if __name__ == "__main__":
     import sys
 
@@ -237,6 +308,18 @@ if __name__ == "__main__":
         events = list(id_map.values())
         events_path.write_text(json.dumps(events, ensure_ascii=False, indent=2))
         print("행사 AI 콘텐츠 병합 완료")
+
+    if mode in ("all", "slugs"):
+        slug_results = run_slug_batch(events)
+        if slug_results:
+            id_map = {e["id"]: e for e in events}
+            for custom_id, slug in slug_results.items():
+                event_id = custom_id.replace("slug-", "", 1)
+                if event_id in id_map:
+                    id_map[event_id]["seo_slug"] = slug
+            events = list(id_map.values())
+            events_path.write_text(json.dumps(events, ensure_ascii=False, indent=2))
+            print("슬러그 병합 완료")
 
     if mode in ("all", "weekly"):
         generate_weekly_pick(events)
