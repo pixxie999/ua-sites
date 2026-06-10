@@ -61,6 +61,8 @@
         <td class="px-4 py-3 text-center whitespace-nowrap">
           <a href="https://uapress.kr/event/{{ e.seo_slug or e.id }}/" target="_blank"
              class="text-xs text-gray-400 hover:text-blue-500 mr-2" title="사이트에서 보기">🔗</a>
+          <a href="/event/{{ e.id }}"
+             class="text-xs text-purple-600 hover:underline mr-2" title="API 확인">API</a>
           {% if e.has_restaurants %}
             <a href="/restaurants/{{ e.id }}"
                class="text-xs text-blue-600 hover:underline mr-2">보기</a>

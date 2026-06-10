@@ -559,6 +559,80 @@ def fetch_restaurants(event_id):
                            restaurants=None, candidates=None, meta=meta)
 
 
+TOUR_API_ENDPOINTS = {
+    "searchFestival2": {
+        "label": "축제 목록 조회",
+        "params": lambda cid, e: {"eventStartDate": e.get("start_date",""), "eventEndDate": e.get("end_date","")},
+    },
+    "detailCommon2": {
+        "label": "공통 상세 정보",
+        "params": lambda cid, e: {"contentId": cid, "contentTypeId": "15",
+                                   "defaultYN": "Y", "overviewYN": "Y", "addrinfoYN": "Y"},
+    },
+    "detailIntro2": {
+        "label": "소개 정보 (관람료·공연시간)",
+        "params": lambda cid, e: {"contentId": cid, "contentTypeId": "15"},
+    },
+    "detailImage2": {
+        "label": "이미지 목록",
+        "params": lambda cid, e: {"contentId": cid, "imageYN": "Y", "subImageYN": "Y", "numOfRows": "10"},
+    },
+    "detailPetTour2": {
+        "label": "반려동물 동반 정보",
+        "params": lambda cid, e: {"contentId": cid},
+    },
+    "areaBasedList2": {
+        "label": "지역 기반 목록 (음식점)",
+        "params": lambda cid, e: {"areaCode": e.get("area_code",""), "sigunguCode": e.get("sigungu_code",""),
+                                   "contentTypeId": "39", "numOfRows": "20", "arrange": "Q"},
+    },
+}
+
+
+@app.route("/event/<event_id>")
+@login_required
+def event_detail(event_id):
+    events = get_events()
+    event = next((e for e in events if e["id"] == event_id), None)
+    if not event:
+        flash("행사를 찾을 수 없습니다.")
+        return redirect(url_for("index"))
+
+    # 선택된 엔드포인트 호출
+    endpoint = request.args.get("endpoint", "")
+    api_result = None
+    api_error = None
+    api_url = None
+
+    if endpoint and endpoint in TOUR_API_ENDPOINTS:
+        ep = TOUR_API_ENDPOINTS[endpoint]
+        cid = event.get("content_id", "")
+        base_params = {
+            "serviceKey": os.environ.get("TOUR_API_KEY", ""),
+            "MobileOS": "ETC", "MobileApp": "uapress", "_type": "json",
+            "numOfRows": "100", "pageNo": "1",
+        }
+        base_params.update(ep["params"](cid, event))
+        api_url = f"https://apis.data.go.kr/B551011/KorService1/{endpoint}"
+        try:
+            r = requests.get(api_url, params=base_params, timeout=15)
+            api_result = json.dumps(r.json(), ensure_ascii=False, indent=2)
+        except Exception as e:
+            api_error = str(e)
+
+    endpoints_list = [
+        {"key": k, "label": v["label"]} for k, v in TOUR_API_ENDPOINTS.items()
+    ]
+
+    return render_template("event_detail.html",
+                           event=event,
+                           endpoints=endpoints_list,
+                           selected_endpoint=endpoint,
+                           api_url=api_url,
+                           api_result=api_result,
+                           api_error=api_error)
+
+
 @app.route("/restaurants/<event_id>")
 @login_required
 def restaurants_view(event_id):
