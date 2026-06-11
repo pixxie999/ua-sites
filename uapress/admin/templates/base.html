@@ -16,7 +16,15 @@
       <a href="/" class="font-bold text-lg">🎪 uapress 어드민</a>
       <a href="/curations/" class="text-sm text-blue-200 hover:text-white">큐레이션</a>
     </div>
-    <a href="/logout" class="text-sm text-blue-200 hover:text-white">로그아웃</a>
+    <div class="flex items-center gap-4">
+      <form method="post" action="/deploy"
+            onsubmit="return confirm('빌드+배포를 시작할까요? (약 3~5분 소요)')">
+        <button class="text-sm bg-green-500 hover:bg-green-400 text-white px-3 py-1 rounded font-medium">
+          🚀 빠른 배포
+        </button>
+      </form>
+      <a href="/logout" class="text-sm text-blue-200 hover:text-white">로그아웃</a>
+    </div>
   </header>
   {% endif %}
 

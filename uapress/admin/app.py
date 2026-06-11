@@ -787,21 +787,25 @@ def generate_card_image(title: str, events: list, intro: str = "") -> bytes:
 
 
 def send_telegram(title: str, intro: str, events: list, url: str, image_bytes: bytes | None = None) -> bool:
-    """텔레그램 채널/그룹 발행"""
+    """텔레그램 채널/그룹 발행 (HTML parse_mode)"""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
     if not token or not chat_id:
         app.logger.warning("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 미설정")
         return False
 
-    lines = [f"🎪 *{title}*\n"]
+    def esc(s: str) -> str:
+        """HTML 특수문자 이스케이프"""
+        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+    lines = [f"🎪 <b>{esc(title)}</b>\n"]
     if intro:
-        lines.append(f"{intro[:200]}\n")
+        lines.append(f"{esc(intro[:200])}\n")
     for i, ev in enumerate(events[:5], 1):
-        region = f"[{ev.get('region','')}] " if ev.get('region') else ""
-        ev_title = ev.get('title', '')
+        region = f"[{esc(ev.get('region',''))}] " if ev.get('region') else ""
+        ev_title = esc(ev.get('title', ''))
         date_str = f" ({ev.get('start_date_fmt','')[:10]}~{ev.get('end_date_fmt','')[5:10]})"
-        lines.append(f"{i}\\. {region}{ev_title}{date_str}")
+        lines.append(f"{i}. {region}{ev_title}{date_str}")
     lines.append(f"\n👉 {url}")
     text = "\n".join(lines)
 
@@ -810,14 +814,14 @@ def send_telegram(title: str, intro: str, events: list, url: str, image_bytes: b
             import io
             resp = requests.post(
                 f"https://api.telegram.org/bot{token}/sendPhoto",
-                data={"chat_id": chat_id, "caption": text, "parse_mode": "MarkdownV2"},
+                data={"chat_id": chat_id, "caption": text, "parse_mode": "HTML"},
                 files={"photo": ("card.png", io.BytesIO(image_bytes), "image/png")},
                 timeout=20,
             )
         else:
             resp = requests.post(
                 f"https://api.telegram.org/bot{token}/sendMessage",
-                json={"chat_id": chat_id, "text": text, "parse_mode": "MarkdownV2"},
+                json={"chat_id": chat_id, "text": text, "parse_mode": "HTML"},
                 timeout=10,
             )
         resp.raise_for_status()
@@ -1012,6 +1016,18 @@ def curation_publish(curation_id):
         msg_parts.append("배포 트리거 ✓")
     flash(" · ".join(msg_parts))
     return redirect(url_for("curation_list"))
+
+
+@app.route("/deploy", methods=["POST"])
+@login_required
+def deploy():
+    """build_only 모드로 빠른 배포 트리거"""
+    ok = trigger_github_deploy()
+    if ok:
+        flash("배포 트리거 완료 — GitHub Actions에서 빌드 중 (약 3~5분 소요)")
+    else:
+        flash("배포 트리거 실패 — GITHUB_TOKEN 환경변수 확인")
+    return redirect(request.referrer or url_for("index"))
 
 
 @app.route("/curations/<curation_id>/unpublish", methods=["POST"])
