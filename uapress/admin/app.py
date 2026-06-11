@@ -910,10 +910,9 @@ def curation_edit(curation_id):
             existing = d1_rows("SELECT COUNT(*) as cnt FROM curation_events WHERE curation_id=? AND event_id=?",
                                [curation_id, event_id])
             if existing and existing[0]["cnt"] == 0:
-                order_num = len(d1_rows("SELECT id FROM curation_events WHERE curation_id=?", [curation_id]))
-                ce_id = _make_curation_id()
-                d1("INSERT INTO curation_events (id, curation_id, event_id, order_num, note) VALUES (?,?,?,?,?)",
-                   [ce_id, curation_id, event_id, order_num, note])
+                order_num = len(d1_rows("SELECT curation_id FROM curation_events WHERE curation_id=?", [curation_id]))
+                d1("INSERT INTO curation_events (curation_id, event_id, order_num, note) VALUES (?,?,?,?)",
+                   [curation_id, event_id, order_num, note])
             return redirect(url_for("curation_edit", curation_id=curation_id))
 
         elif action == "remove_event":
@@ -945,7 +944,7 @@ def curation_edit(curation_id):
     for r in ce_rows:
         ev = event_map.get(r["event_id"])
         if ev:
-            selected_events.append({**ev, "note": r.get("note", ""), "ce_id": r.get("id")})
+            selected_events.append({**ev, "note": r.get("note", ""), "ce_id": r.get("event_id")})
 
     # 검색 필터
     q = request.args.get("q", "").strip()
