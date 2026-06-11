@@ -847,17 +847,15 @@ def trigger_github_deploy() -> bool:
 @app.route("/debug/schema")
 @login_required
 def debug_schema():
-    """D1 테이블 스키마 확인용"""
-    try:
-        tables = d1_rows("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")
-        result = {}
-        for t in tables:
-            tname = t["name"]
-            cols = d1_rows(f"PRAGMA table_info('{tname}')")
-            result[tname] = [c["name"] for c in cols]
-        return {"tables": result}
-    except Exception as e:
-        return {"error": str(e)}, 500
+    """D1 테이블 존재 여부 + 컬럼 확인"""
+    result = {}
+    for tname in ["curations", "curation_events", "restaurants", "events_meta"]:
+        try:
+            rows = d1_rows(f"SELECT * FROM {tname} LIMIT 1")
+            result[tname] = {"exists": True, "sample_keys": list(rows[0].keys()) if rows else []}
+        except Exception as e:
+            result[tname] = {"exists": False, "error": str(e)[:200]}
+    return result
 
 
 @app.route("/curations/")
