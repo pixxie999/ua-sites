@@ -865,7 +865,7 @@ def curation_new():
                VALUES (?, ?, ?, '', 'draft', ?)""",
            [cid, slug, title, now])
         return redirect(url_for("curation_edit", curation_id=cid))
-    return render_template("curation_edit.html", curation=None, events=[], all_events=[])
+    return render_template("curation_edit.html", curation=None, selected_events=[], all_events=[], q="")
 
 
 @app.route("/curations/<curation_id>/edit", methods=["GET", "POST"])
