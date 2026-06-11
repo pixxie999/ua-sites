@@ -498,36 +498,33 @@ def build_all():
 
     # 7-2-1. 에디토리얼 큐레이션
     curations = _load_curations_from_d1()
-    if curations:
-        event_map = {e["id"]: e for e in active + archive}
-        # 각 큐레이션에 행사 객체 주입
-        for c in curations:
-            c["events"] = [event_map[eid] for eid in c.get("event_ids", []) if eid in event_map]
+    event_map = {e["id"]: e for e in active + archive}
+    # 각 큐레이션에 행사 객체 주입
+    for c in curations:
+        c["events"] = [event_map[eid] for eid in c.get("event_ids", []) if eid in event_map]
 
-        # 큐레이션 인덱스
-        tmpl_ci = env.get_template("curation_index.html")
-        write(DIST / "curation" / "index.html", tmpl_ci.render(
-            curations=curations,
-            page_url="/curation/"
+    # 큐레이션 인덱스 — 발행된 큐레이션 없어도 항상 생성
+    tmpl_ci = env.get_template("curation_index.html")
+    write(DIST / "curation" / "index.html", tmpl_ci.render(
+        curations=curations,
+        page_url="/curation/"
+    ))
+    # 큐레이션 상세
+    tmpl_cd = env.get_template("curation_detail.html")
+    for c in curations:
+        if not c.get("slug"):
+            continue
+        rest_data = {}
+        for ev in c["events"]:
+            rd = restaurants_all.get(ev["id"], {})
+            if rd.get("restaurants"):
+                rest_data[ev["id"]] = rd
+        write(DIST / "curation" / c["slug"] / "index.html", tmpl_cd.render(
+            curation=c,
+            restaurants_all=rest_data,
+            page_url=f"/curation/{c['slug']}/"
         ))
-        # 큐레이션 상세
-        tmpl_cd = env.get_template("curation_detail.html")
-        for c in curations:
-            if not c.get("slug"):
-                continue
-            rest_data = {}
-            for ev in c["events"]:
-                rd = restaurants_all.get(ev["id"], {})
-                if rd.get("restaurants"):
-                    rest_data[ev["id"]] = rd
-            write(DIST / "curation" / c["slug"] / "index.html", tmpl_cd.render(
-                curation=c,
-                restaurants_all=rest_data,
-                page_url=f"/curation/{c['slug']}/"
-            ))
-        print(f"  큐레이션: {len(curations)}개")
-    else:
-        curations = []
+    print(f"  큐레이션: {len(curations)}개")
 
     # 7-3. About 페이지
     tmpl_about = env.get_template("about.html")

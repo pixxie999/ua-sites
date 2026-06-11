@@ -687,10 +687,11 @@ def _make_curation_id() -> str:
 
 
 def _slugify(text: str) -> str:
-    """제목에서 URL 슬러그 생성"""
-    slug = re.sub(r'[^a-zA-Z0-9가-힣\s-]', '', text).strip()
-    slug = re.sub(r'\s+', '-', slug)
-    return slug[:60] or "curation"
+    """제목에서 영문 URL 슬러그 생성 (한글 제거)"""
+    slug = re.sub(r'[^a-zA-Z0-9\s-]', '', text).strip()
+    slug = re.sub(r'\s+', '-', slug).lower()
+    slug = re.sub(r'-+', '-', slug).strip('-')
+    return slug[:40] or ""
 
 
 def _get_font(size: int = 36):
@@ -874,7 +875,8 @@ def curation_new():
             flash("제목을 입력하세요.")
             return redirect(url_for("curation_new"))
         cid = _make_curation_id()
-        slug = _slugify(title) + "-" + cid[:6]
+        en_part = _slugify(title)
+        slug = f"{en_part}-{cid[:8]}" if en_part else cid[:8]
         now = datetime.now(KST).isoformat()
         d1("""INSERT INTO curations (id, slug, title, intro, status, created_at)
                VALUES (?, ?, ?, '', 'draft', ?)""",
