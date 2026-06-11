@@ -20,6 +20,44 @@ from dotenv import load_dotenv
 load_dotenv(PROJECT_ROOT / ".env")
 
 
+def _load_curations_from_d1() -> list:
+    """D1에서 발행된 큐레이션 + 행사 목록 읽기"""
+    account_id = os.environ.get("CF_ACCOUNT_ID") or os.environ.get("CLOUDFLARE_ACCOUNT_ID")
+    api_token  = os.environ.get("CF_API_TOKEN") or os.environ.get("CLOUDFLARE_API_TOKEN")
+    db_id      = os.environ.get("D1_DATABASE_ID", "e1c8f2d7-3cae-41cd-aa5b-3cfe08efe650")
+    if not account_id or not api_token:
+        return []
+    url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/d1/database/{db_id}/query"
+    headers = {"Authorization": f"Bearer {api_token}", "Content-Type": "application/json"}
+    try:
+        r = requests.post(url, headers=headers, timeout=15, json={
+            "sql": "SELECT * FROM curations WHERE status='published' ORDER BY published_at DESC"
+        })
+        r.raise_for_status()
+        curations = r.json()["result"][0].get("results", [])
+        if not curations:
+            return []
+        # 큐레이션별 행사 ID 조회 (한 번에)
+        curation_ids = [c["id"] for c in curations]
+        placeholders = ",".join("?" * len(curation_ids))
+        r2 = requests.post(url, headers=headers, timeout=15, json={
+            "sql": f"SELECT * FROM curation_events WHERE curation_id IN ({placeholders}) ORDER BY curation_id, order_num",
+            "params": curation_ids,
+        })
+        r2.raise_for_status()
+        ce_rows = r2.json()["result"][0].get("results", [])
+        # curation_id → [event_id, ...]
+        ce_map: dict = {}
+        for row in ce_rows:
+            ce_map.setdefault(row["curation_id"], []).append(row["event_id"])
+        for c in curations:
+            c["event_ids"] = ce_map.get(c["id"], [])
+        return curations
+    except Exception as e:
+        print(f"  D1 큐레이션 로드 실패: {e}")
+        return []
+
+
 def _load_restaurants_from_d1() -> dict:
     """D1에서 맛집 데이터 읽기 — event_id → {curation_note, restaurants:[]}"""
     account_id = os.environ.get("CF_ACCOUNT_ID") or os.environ.get("CLOUDFLARE_ACCOUNT_ID")
@@ -458,6 +496,39 @@ def build_all():
     ))
     print(f"  지나간 행사 아카이브: {len(archive)}개")
 
+    # 7-2-1. 에디토리얼 큐레이션
+    curations = _load_curations_from_d1()
+    if curations:
+        event_map = {e["id"]: e for e in active + archive}
+        # 각 큐레이션에 행사 객체 주입
+        for c in curations:
+            c["events"] = [event_map[eid] for eid in c.get("event_ids", []) if eid in event_map]
+
+        # 큐레이션 인덱스
+        tmpl_ci = env.get_template("curation_index.html")
+        write(DIST / "curation" / "index.html", tmpl_ci.render(
+            curations=curations,
+            page_url="/curation/"
+        ))
+        # 큐레이션 상세
+        tmpl_cd = env.get_template("curation_detail.html")
+        for c in curations:
+            if not c.get("slug"):
+                continue
+            rest_data = {}
+            for ev in c["events"]:
+                rd = restaurants_all.get(ev["id"], {})
+                if rd.get("restaurants"):
+                    rest_data[ev["id"]] = rd
+            write(DIST / "curation" / c["slug"] / "index.html", tmpl_cd.render(
+                curation=c,
+                restaurants_all=rest_data,
+                page_url=f"/curation/{c['slug']}/"
+            ))
+        print(f"  큐레이션: {len(curations)}개")
+    else:
+        curations = []
+
     # 7-3. About 페이지
     tmpl_about = env.get_template("about.html")
     write(DIST / "about" / "index.html", tmpl_about.render(
@@ -480,7 +551,7 @@ def build_all():
         build_search_index.build_index()
 
     # 9. sitemap.xml
-    build_sitemap(active, archive)
+    build_sitemap(active, archive, curations)
 
     # 10. robots.txt
     (DIST / "robots.txt").write_text(
@@ -625,12 +696,13 @@ def build_calendars(active: list, env, today_dt: datetime):
     return built
 
 
-def build_sitemap(events: list, archive: list = None):
+def build_sitemap(events: list, archive: list = None, curations: list = None):
     urls = [
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/free/", "priority": "0.9", "changefreq": "daily"},
         {"loc": "/calendar/", "priority": "0.9", "changefreq": "daily"},
         {"loc": "/weekly/", "priority": "0.9", "changefreq": "weekly"},
+        {"loc": "/curation/", "priority": "0.9", "changefreq": "weekly"},
         {"loc": "/past/", "priority": "0.7", "changefreq": "weekly"},
         {"loc": "/about/", "priority": "0.6", "changefreq": "monthly"},
     ]
@@ -658,6 +730,11 @@ def build_sitemap(events: list, archive: list = None):
     for e in (archive or []):
         slug = e.get("url_slug") or e.get("seo_slug") or e["id"]
         urls.append({"loc": f"/event/{slug}/", "priority": "0.4", "changefreq": "monthly"})
+
+    # 에디토리얼 큐레이션
+    for c in (curations or []):
+        if c.get("slug"):
+            urls.append({"loc": f"/curation/{c['slug']}/", "priority": "0.8", "changefreq": "weekly"})
 
     sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     sitemap_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')

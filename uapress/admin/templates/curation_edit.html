@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %}큐레이션 편집 — uapress 어드민{% endblock %}
+{% block content %}
+
+{% if not curation %}
+<!-- 새 큐레이션 생성 -->
+<div class="max-w-lg mx-auto">
+  <div class="flex items-center gap-2 mb-6 text-sm text-gray-500">
+    <a href="/curations/" class="hover:text-blue-600">큐레이션</a> › <span>새로 만들기</span>
+  </div>
+  <div class="bg-white rounded-xl shadow p-6">
+    <h1 class="text-xl font-bold mb-4">새 큐레이션</h1>
+    <form method="post">
+      <label class="block text-sm font-medium text-gray-700 mb-1">제목</label>
+      <input type="text" name="title" required autofocus
+             placeholder="예: 이번 주말 가족과 함께할 무료 축제 5선"
+             class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-2 rounded-lg text-sm hover:bg-blue-700 font-medium">
+        만들기 →
+      </button>
+    </form>
+  </div>
+</div>
+
+{% else %}
+<!-- 편집 -->
+<div class="flex items-center gap-2 mb-4 text-sm text-gray-500">
+  <a href="/curations/" class="hover:text-blue-600">큐레이션</a> › <span>편집</span>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+  <!-- 왼쪽: 메타 + 선택된 행사 -->
+  <div class="space-y-4">
+
+    <!-- 제목 / 소개 -->
+    <div class="bg-white rounded-xl shadow p-5">
+      <h2 class="font-bold text-gray-700 mb-3">기본 정보</h2>
+      <form method="post">
+        <input type="hidden" name="action" value="save_meta">
+        <label class="block text-xs text-gray-500 mb-1">제목</label>
+        <input type="text" name="title" value="{{ curation.title }}" required
+               class="w-full border rounded-lg px-3 py-2 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <label class="block text-xs text-gray-500 mb-1">소개 (Telegram 메시지에 포함)</label>
+        <textarea name="intro" rows="3"
+                  placeholder="이번 큐레이션 소개 한두 줄..."
+                  class="w-full border rounded-lg px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400">{{ curation.intro or '' }}</textarea>
+        <button type="submit"
+                class="mt-3 bg-blue-600 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-blue-700">
+          저장
+        </button>
+      </form>
+    </div>
+
+    <!-- 선택된 행사 목록 -->
+    <div class="bg-white rounded-xl shadow p-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-bold text-gray-700">선택된 행사
+          <span class="text-sm font-normal text-gray-400 ml-1">({{ selected_events|length }}개)</span>
+        </h2>
+      </div>
+
+      {% if selected_events %}
+      <ul id="sortable-list" class="space-y-2">
+        {% for ev in selected_events %}
+        <li class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200"
+            data-id="{{ ev.id }}">
+          <span class="text-gray-400 cursor-grab mt-1 select-none">⠿</span>
+          <div class="flex-1 min-w-0">
+            <div class="font-medium text-sm leading-tight">{{ ev.title }}</div>
+            <div class="text-xs text-gray-400 mt-0.5">
+              {{ ev.region }} · {{ ev.start_date_fmt[:10] }}~{{ ev.end_date_fmt[5:10] }}
+            </div>
+          </div>
+          <form method="post" class="flex-shrink-0">
+            <input type="hidden" name="action" value="remove_event">
+            <input type="hidden" name="event_id" value="{{ ev.id }}">
+            <button class="text-red-400 hover:text-red-600 text-lg leading-none">×</button>
+          </form>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- 순서 저장 버튼 -->
+      <button onclick="saveOrder()"
+              class="mt-3 w-full border border-gray-300 text-gray-600 hover:bg-gray-50 py-1.5 rounded-lg text-sm">
+        순서 저장
+      </button>
+      {% else %}
+      <p class="text-center text-gray-400 text-sm py-6">오른쪽에서 행사를 추가하세요.</p>
+      {% endif %}
+    </div>
+
+    <!-- 발행 -->
+    <div class="bg-white rounded-xl shadow p-5">
+      <h2 class="font-bold text-gray-700 mb-3">발행</h2>
+      <div class="text-sm text-gray-500 mb-3 space-y-1">
+        <div>상태: <span class="font-medium {% if curation.status == 'published' %}text-green-600{% else %}text-gray-600{% endif %}">
+          {{ '발행됨' if curation.status == 'published' else '초안' }}</span></div>
+        {% if curation.published_at %}
+        <div class="text-xs text-gray-400">발행일: {{ curation.published_at[:16] }}</div>
+        {% endif %}
+      </div>
+      <form method="post" action="/curations/{{ curation.id }}/publish">
+        <button {% if not selected_events %}disabled{% endif %}
+                class="w-full py-2 rounded-lg text-sm font-bold
+                       {% if selected_events %}bg-green-600 text-white hover:bg-green-700{% else %}bg-gray-200 text-gray-400 cursor-not-allowed{% endif %}">
+          🚀 발행 + 텔레그램 전송 + 배포
+        </button>
+      </form>
+      {% if not selected_events %}
+        <p class="text-xs text-gray-400 mt-2 text-center">행사를 1개 이상 추가해야 발행 가능합니다.</p>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <!-- 오른쪽: 행사 검색 + 추가 -->
+  <div class="bg-white rounded-xl shadow p-5">
+    <h2 class="font-bold text-gray-700 mb-3">행사 추가</h2>
+
+    <form method="get" class="flex gap-2 mb-4">
+      <input type="text" name="q" value="{{ q }}" placeholder="행사명 또는 지역 검색"
+             class="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <button type="submit"
+              class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">검색</button>
+    </form>
+
+    <div class="space-y-2 max-h-[600px] overflow-y-auto pr-1">
+      {% for ev in all_events %}
+      <div class="flex items-start gap-3 p-3 border border-gray-100 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-colors">
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium leading-tight">{{ ev.title }}</div>
+          <div class="text-xs text-gray-400 mt-0.5">
+            {{ ev.region }} · {{ ev.start_date_fmt[:10] }}~{{ ev.end_date_fmt[5:10] }}
+            {% if ev.is_free %}<span class="text-green-600 ml-1">무료</span>{% endif %}
+          </div>
+        </div>
+        <form method="post" class="flex-shrink-0">
+          <input type="hidden" name="action" value="add_event">
+          <input type="hidden" name="event_id" value="{{ ev.id }}">
+          <button class="bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1 rounded text-xs font-medium">
+            + 추가
+          </button>
+        </form>
+      </div>
+      {% else %}
+      <p class="text-center text-gray-400 text-sm py-8">
+        {% if q %}검색 결과가 없습니다.{% else %}행사 데이터를 불러오는 중...{% endif %}
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+<script>
+// 드래그 앤 드롭 순서 변경 (간단 구현)
+let dragging = null;
+
+document.querySelectorAll('#sortable-list li').forEach(li => {
+  li.draggable = true;
+  li.addEventListener('dragstart', () => { dragging = li; li.classList.add('opacity-50'); });
+  li.addEventListener('dragend', () => { dragging = null; li.classList.remove('opacity-50'); });
+  li.addEventListener('dragover', e => {
+    e.preventDefault();
+    const rect = li.getBoundingClientRect();
+    const mid = rect.top + rect.height / 2;
+    if (e.clientY < mid) li.parentNode.insertBefore(dragging, li);
+    else li.parentNode.insertBefore(dragging, li.nextSibling);
+  });
+});
+
+function saveOrder() {
+  const ids = [...document.querySelectorAll('#sortable-list li')].map(li => li.dataset.id);
+  const form = document.createElement('form');
+  form.method = 'post';
+  form.innerHTML = `
+    <input name="action" value="reorder">
+    <input name="order_json" value='${JSON.stringify(ids)}'>
+  `;
+  document.body.appendChild(form);
+  form.submit();
+}
+</script>
+{% endif %}
+
+{% endblock %}

@@ -676,5 +676,343 @@ def delete_restaurants(event_id):
     return redirect(url_for("fetch_restaurants", event_id=event_id))
 
 
+# ─────────────────────────────────────────
+# 큐레이션
+# ─────────────────────────────────────────
+
+def _make_curation_id() -> str:
+    import uuid
+    return uuid.uuid4().hex[:12]
+
+
+def _slugify(text: str) -> str:
+    """제목에서 URL 슬러그 생성"""
+    slug = re.sub(r'[^a-zA-Z0-9가-힣\s-]', '', text).strip()
+    slug = re.sub(r'\s+', '-', slug)
+    return slug[:60] or "curation"
+
+
+def _get_font(size: int = 36):
+    """한국어 폰트 로드 (없으면 기본 폰트)"""
+    from PIL import ImageFont
+    font_path = Path("/tmp/NotoSansKR-Bold.ttf")
+    if not font_path.exists():
+        try:
+            url = ("https://github.com/googlefonts/noto-fonts/raw/main/"
+                   "hinted/ttf/NotoSansKR/NotoSansKR-Bold.ttf")
+            r = requests.get(url, timeout=20)
+            font_path.write_bytes(r.content)
+        except Exception:
+            return ImageFont.load_default()
+    try:
+        return ImageFont.truetype(str(font_path), size)
+    except Exception:
+        return ImageFont.load_default()
+
+
+def generate_card_image(title: str, events: list, intro: str = "") -> bytes:
+    """카드뉴스 이미지 생성 (1080×1080)"""
+    from PIL import Image, ImageDraw
+
+    W, H = 1080, 1080
+    img = Image.new("RGB", (W, H), "#1e3a5f")
+    draw = ImageDraw.Draw(img)
+
+    # 그라디언트 효과 (세로줄)
+    for y in range(H):
+        ratio = y / H
+        r = int(30 + ratio * 20)
+        g = int(58 + ratio * 10)
+        b = int(95 + ratio * 40)
+        draw.line([(0, y), (W, y)], fill=(r, g, b))
+
+    # 브랜딩 영역 상단
+    draw.rectangle([0, 0, W, 90], fill="#0f2340")
+    font_brand = _get_font(32)
+    draw.text((40, 28), "🎪 이번주 행사 | uapress.kr", font=font_brand, fill="#93c5fd")
+
+    # 제목
+    font_title = _get_font(56)
+    # 긴 제목 줄바꿈 처리
+    words = list(title)
+    lines, cur = [], ""
+    for ch in title:
+        if len(cur) >= 16:
+            lines.append(cur)
+            cur = ch
+        else:
+            cur += ch
+    if cur:
+        lines.append(cur)
+    title_lines = lines[:3]
+
+    y_title = 130
+    for line in title_lines:
+        draw.text((60, y_title), line, font=font_title, fill="white")
+        y_title += 70
+
+    # 구분선
+    draw.rectangle([60, y_title + 10, W - 60, y_title + 13], fill="#3b82f6")
+    y_cur = y_title + 40
+
+    # 행사 목록
+    font_ev = _get_font(38)
+    font_small = _get_font(28)
+    markers = ["① ", "② ", "③ ", "④ ", "⑤ "]
+    for i, ev in enumerate(events[:5]):
+        marker = markers[i] if i < len(markers) else f"{i+1}. "
+        region = f"[{ev.get('region', '')}] " if ev.get('region') else ""
+        ev_title = ev.get('title', '')
+        # 제목이 너무 길면 자름
+        display = region + ev_title
+        if len(display) > 20:
+            display = display[:19] + "…"
+        draw.text((60, y_cur), marker + display, font=font_ev, fill="#e2e8f0")
+        # 날짜
+        dates = f"{ev.get('start_date_fmt','')[:10]}"
+        draw.text((80, y_cur + 46), dates, font=font_small, fill="#94a3b8")
+        y_cur += 105
+
+    # 하단 바
+    draw.rectangle([0, H - 80, W, H], fill="#0f2340")
+    font_url = _get_font(30)
+    draw.text((40, H - 56), "👉 uapress.kr 에서 자세히 보기", font=font_url, fill="#60a5fa")
+
+    import io
+    buf = io.BytesIO()
+    img.save(buf, format="PNG", optimize=True)
+    return buf.getvalue()
+
+
+def send_telegram(title: str, intro: str, events: list, url: str, image_bytes: bytes | None = None) -> bool:
+    """텔레그램 채널/그룹 발행"""
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
+    if not token or not chat_id:
+        app.logger.warning("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 미설정")
+        return False
+
+    lines = [f"🎪 *{title}*\n"]
+    if intro:
+        lines.append(f"{intro[:200]}\n")
+    for i, ev in enumerate(events[:5], 1):
+        region = f"[{ev.get('region','')}] " if ev.get('region') else ""
+        ev_title = ev.get('title', '')
+        date_str = f" ({ev.get('start_date_fmt','')[:10]}~{ev.get('end_date_fmt','')[5:10]})"
+        lines.append(f"{i}\\. {region}{ev_title}{date_str}")
+    lines.append(f"\n👉 {url}")
+    text = "\n".join(lines)
+
+    try:
+        if image_bytes:
+            import io
+            resp = requests.post(
+                f"https://api.telegram.org/bot{token}/sendPhoto",
+                data={"chat_id": chat_id, "caption": text, "parse_mode": "MarkdownV2"},
+                files={"photo": ("card.png", io.BytesIO(image_bytes), "image/png")},
+                timeout=20,
+            )
+        else:
+            resp = requests.post(
+                f"https://api.telegram.org/bot{token}/sendMessage",
+                json={"chat_id": chat_id, "text": text, "parse_mode": "MarkdownV2"},
+                timeout=10,
+            )
+        resp.raise_for_status()
+        return True
+    except Exception as e:
+        app.logger.error(f"텔레그램 발송 실패: {e}")
+        return False
+
+
+def trigger_github_deploy() -> bool:
+    """GitHub Actions deploy_uapress.yml 워크플로우 트리거"""
+    token = os.environ.get("GITHUB_TOKEN", "")
+    if not token:
+        return False
+    try:
+        resp = requests.post(
+            "https://api.github.com/repos/pixxie999/ua-sites/actions/workflows/deploy_uapress.yml/dispatches",
+            headers={"Authorization": f"token {token}", "Accept": "application/vnd.github+json"},
+            json={"ref": "main", "inputs": {"mode": "build_only"}},
+            timeout=10,
+        )
+        return resp.status_code == 204
+    except Exception as e:
+        app.logger.error(f"GitHub 트리거 실패: {e}")
+        return False
+
+
+@app.route("/curations/")
+@login_required
+def curation_list():
+    curations = d1_rows("SELECT * FROM curations ORDER BY created_at DESC")
+    return render_template("curations.html", curations=curations)
+
+
+@app.route("/curations/new", methods=["GET", "POST"])
+@login_required
+def curation_new():
+    if request.method == "POST":
+        title = request.form.get("title", "").strip()
+        if not title:
+            flash("제목을 입력하세요.")
+            return redirect(url_for("curation_new"))
+        cid = _make_curation_id()
+        slug = _slugify(title) + "-" + cid[:6]
+        now = datetime.now(KST).isoformat()
+        d1("""INSERT INTO curations (id, slug, title, intro, status, created_at)
+               VALUES (?, ?, ?, '', 'draft', ?)""",
+           [cid, slug, title, now])
+        return redirect(url_for("curation_edit", curation_id=cid))
+    return render_template("curation_edit.html", curation=None, events=[], all_events=[])
+
+
+@app.route("/curations/<curation_id>/edit", methods=["GET", "POST"])
+@login_required
+def curation_edit(curation_id):
+    rows = d1_rows("SELECT * FROM curations WHERE id = ?", [curation_id])
+    if not rows:
+        flash("큐레이션을 찾을 수 없습니다.")
+        return redirect(url_for("curation_list"))
+    curation = rows[0]
+
+    if request.method == "POST":
+        action = request.form.get("action")
+
+        if action == "save_meta":
+            title = request.form.get("title", "").strip()
+            intro = request.form.get("intro", "").strip()
+            now = datetime.now(KST).isoformat()
+            d1("UPDATE curations SET title=?, intro=?, updated_at=? WHERE id=?",
+               [title, intro, now, curation_id])
+            flash("저장 완료")
+            return redirect(url_for("curation_edit", curation_id=curation_id))
+
+        elif action == "add_event":
+            event_id = request.form.get("event_id", "")
+            note = request.form.get("note", "")
+            existing = d1_rows("SELECT COUNT(*) as cnt FROM curation_events WHERE curation_id=? AND event_id=?",
+                               [curation_id, event_id])
+            if existing and existing[0]["cnt"] == 0:
+                order_num = len(d1_rows("SELECT id FROM curation_events WHERE curation_id=?", [curation_id]))
+                d1("INSERT INTO curation_events (curation_id, event_id, order_num, note) VALUES (?,?,?,?)",
+                   [curation_id, event_id, order_num, note])
+            return redirect(url_for("curation_edit", curation_id=curation_id))
+
+        elif action == "remove_event":
+            event_id = request.form.get("event_id", "")
+            d1("DELETE FROM curation_events WHERE curation_id=? AND event_id=?",
+               [curation_id, event_id])
+            return redirect(url_for("curation_edit", curation_id=curation_id))
+
+        elif action == "reorder":
+            order_json = request.form.get("order_json", "[]")
+            try:
+                ordered_ids = json.loads(order_json)
+                for i, eid in enumerate(ordered_ids):
+                    d1("UPDATE curation_events SET order_num=? WHERE curation_id=? AND event_id=?",
+                       [i, curation_id, eid])
+            except Exception:
+                pass
+            return redirect(url_for("curation_edit", curation_id=curation_id))
+
+    # 큐레이션에 포함된 행사
+    ce_rows = d1_rows(
+        "SELECT * FROM curation_events WHERE curation_id=? ORDER BY order_num",
+        [curation_id]
+    )
+    all_events_raw = get_events()
+    event_map = {e["id"]: e for e in all_events_raw}
+    selected_ids = {r["event_id"] for r in ce_rows}
+    selected_events = []
+    for r in ce_rows:
+        ev = event_map.get(r["event_id"])
+        if ev:
+            selected_events.append({**ev, "note": r.get("note", ""), "ce_id": r.get("id")})
+
+    # 검색 필터
+    q = request.args.get("q", "").strip()
+    filtered = [e for e in all_events_raw if e["id"] not in selected_ids]
+    if q:
+        filtered = [e for e in filtered if q in e["title"] or q in e.get("region", "")]
+    else:
+        filtered = filtered[:30]
+
+    return render_template("curation_edit.html",
+                           curation=curation,
+                           selected_events=selected_events,
+                           all_events=filtered,
+                           q=q)
+
+
+@app.route("/curations/<curation_id>/publish", methods=["POST"])
+@login_required
+def curation_publish(curation_id):
+    rows = d1_rows("SELECT * FROM curations WHERE id = ?", [curation_id])
+    if not rows:
+        flash("큐레이션을 찾을 수 없습니다.")
+        return redirect(url_for("curation_list"))
+    curation = rows[0]
+
+    ce_rows = d1_rows(
+        "SELECT * FROM curation_events WHERE curation_id=? ORDER BY order_num",
+        [curation_id]
+    )
+    all_events_raw = get_events()
+    event_map = {e["id"]: e for e in all_events_raw}
+    events = [event_map[r["event_id"]] for r in ce_rows if r["event_id"] in event_map]
+
+    if not events:
+        flash("행사를 먼저 추가하세요.")
+        return redirect(url_for("curation_edit", curation_id=curation_id))
+
+    # 카드뉴스 이미지 생성
+    image_bytes = None
+    try:
+        image_bytes = generate_card_image(curation["title"], events, curation.get("intro", ""))
+    except Exception as e:
+        app.logger.error(f"카드뉴스 생성 실패: {e}")
+
+    # 텔레그램 발행
+    url = f"https://uapress.kr/curation/{curation['slug']}/"
+    tg_ok = send_telegram(curation["title"], curation.get("intro", ""), events, url, image_bytes)
+
+    # D1 status 업데이트
+    now = datetime.now(KST).isoformat()
+    d1("UPDATE curations SET status='published', published_at=? WHERE id=?",
+       [now, curation_id])
+
+    # GitHub Actions 배포 트리거
+    deploy_ok = trigger_github_deploy()
+
+    msg_parts = ["발행 완료"]
+    if tg_ok:
+        msg_parts.append("텔레그램 전송 ✓")
+    else:
+        msg_parts.append("텔레그램 전송 실패 (환경변수 확인)")
+    if deploy_ok:
+        msg_parts.append("배포 트리거 ✓")
+    flash(" · ".join(msg_parts))
+    return redirect(url_for("curation_list"))
+
+
+@app.route("/curations/<curation_id>/unpublish", methods=["POST"])
+@login_required
+def curation_unpublish(curation_id):
+    d1("UPDATE curations SET status='draft', published_at=NULL WHERE id=?", [curation_id])
+    flash("발행 취소 (초안으로 변경)")
+    return redirect(url_for("curation_list"))
+
+
+@app.route("/curations/<curation_id>/delete", methods=["POST"])
+@login_required
+def curation_delete(curation_id):
+    d1("DELETE FROM curation_events WHERE curation_id=?", [curation_id])
+    d1("DELETE FROM curations WHERE id=?", [curation_id])
+    flash("삭제 완료")
+    return redirect(url_for("curation_list"))
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
