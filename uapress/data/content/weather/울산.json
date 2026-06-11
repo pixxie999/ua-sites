@@ -1,9 +1,9 @@
 {
-  "icon": "☀️",
-  "condition": "맑음",
-  "avg_temp": null,
-  "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
-  "updated_at": "2026-06-09T07:43:10.918733",
+  "icon": "⛅",
+  "condition": "구름 많음",
+  "avg_temp": 27,
+  "summary": "이번 주말 구름 많음 · 27°C — 야외 행사 나들이 최적! 🎉",
+  "updated_at": "2026-06-11T04:52:53.351895",
   "saturday": "20260613",
   "sunday": "20260614",
   "region": "울산"

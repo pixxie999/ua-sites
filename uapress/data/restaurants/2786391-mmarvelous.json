@@ -1,0 +1,88 @@
+{
+  "festival_id": "2786391-mmarvelous",
+  "festival_name": "광안리 M(Marvelous) 드론 라이트쇼",
+  "generated_at": "2026-06-11T13:54:30.424225+09:00",
+  "next_refresh_at": "2026-07-11T13:54:30.424245+09:00",
+  "curation_note": "광안리 드론 쇼 관광객을 위해 축제장 주변 도보 거리의 다양한 식사 옵션과 감성적인 카페들을 엄선했습니다.",
+  "restaurants": [
+    {
+      "name": "바로해장",
+      "category": "A05020100",
+      "address": "부산광역시 수영구 광남로94번길 2 (광안동, 광일)",
+      "lat": 35.15014673,
+      "lng": 129.1146787801,
+      "phone": "",
+      "image_url": "http://tong.visitkorea.or.kr/cms/resource/30/2868630_image2_1.jpg",
+      "distance_meters": 537,
+      "distance_minutes": 7,
+      "recommendation": "축제장에서 가장 가까운 해장국 전문점으로, 드론 쇼 관람 전 가볍게 식사하기에 적합합니다.",
+      "best_time": "축제 전 점심",
+      "kakao_map_url": "https://map.kakao.com/?q=바로해장",
+      "source": "tourapi"
+    },
+    {
+      "name": "러브얼스",
+      "category": "A05020900",
+      "address": "부산광역시 수영구 광안로49번길 32-1 (광안동)",
+      "lat": 35.1564683169,
+      "lng": 129.118606043,
+      "phone": "",
+      "image_url": "http://tong.visitkorea.or.kr/cms/resource/15/2795715_image2_1.jpg",
+      "distance_meters": 294,
+      "distance_minutes": 4,
+      "recommendation": "광안동 중심부에 위치한 카페로 축제 관람 중간에 휴식을 취하며 음료를 즐기기 좋습니다.",
+      "best_time": "언제든",
+      "kakao_map_url": "https://map.kakao.com/?q=러브얼스",
+      "source": "tourapi"
+    },
+    {
+      "name": "요이쿠마 본점",
+      "category": "A05020300",
+      "address": "부산광역시 수영구 광안해변로307번길 20",
+      "lat": 35.1580099594,
+      "lng": 129.1266219702,
+      "phone": "",
+      "image_url": "http://tong.visitkorea.or.kr/cms/resource/37/2868937_image2_1.jpg",
+      "distance_meters": 868,
+      "distance_minutes": 11,
+      "recommendation": "광안해변 근처의 일식당으로 드론 쇼 관람 후 특별한 저녁 식사를 즐기기에 안성맞춤입니다.",
+      "best_time": "축제 후 저녁",
+      "kakao_map_url": "https://map.kakao.com/?q=요이쿠마 본점",
+      "source": "tourapi"
+    },
+    {
+      "name": "수영 돼지국밥",
+      "category": "A05020100",
+      "address": "부산광역시 수영구 무학로 6 (광안동)",
+      "lat": 35.1617870895,
+      "lng": 129.1144673681,
+      "phone": "",
+      "image_url": "http://tong.visitkorea.or.kr/cms/resource/56/2869556_image2_1.JPG",
+      "distance_meters": 959,
+      "distance_minutes": 12,
+      "recommendation": "축제장 인근의 돼지국밥 전문점으로 빠르고 편하게 한 끼를 해결할 수 있습니다.",
+      "best_time": "축제 전 점심",
+      "kakao_map_url": "https://map.kakao.com/?q=수영 돼지국밥",
+      "source": "tourapi"
+    },
+    {
+      "name": "아트모이지",
+      "category": "A05020900",
+      "address": "부산광역시 수영구 광안해변로294번길 26 (민락동)",
+      "lat": 35.1553158082,
+      "lng": 129.1261720835,
+      "phone": "",
+      "image_url": "http://tong.visitkorea.or.kr/cms/resource/70/3082370_image2_1.jpg",
+      "distance_meters": 711,
+      "distance_minutes": 9,
+      "recommendation": "민락동 해변 근처의 감성 카페로 해운대 야경과 함께 축제 전후 여유로운 시간을 보내기 적합합니다.",
+      "best_time": "언제든",
+      "kakao_map_url": "https://map.kakao.com/?q=아트모이지",
+      "source": "tourapi"
+    }
+  ],
+  "sources": {
+    "primary": "한국관광공사 TourAPI",
+    "secondary": "카카오 로컬 API (© Kakao)"
+  }
+}
