@@ -53,7 +53,8 @@ def d1(sql: str, params: list | None = None) -> dict:
     if params:
         payload["params"] = params
     r = requests.post(_d1_url(), headers=_cf_headers(), json=payload, timeout=15)
-    r.raise_for_status()
+    if not r.ok:
+        raise RuntimeError(f"D1 HTTP {r.status_code}: {r.text[:500]}")
     result = r.json()
     if not result.get("success"):
         raise RuntimeError(f"D1 오류: {result.get('errors')}")
@@ -841,6 +842,22 @@ def trigger_github_deploy() -> bool:
     except Exception as e:
         app.logger.error(f"GitHub 트리거 실패: {e}")
         return False
+
+
+@app.route("/debug/schema")
+@login_required
+def debug_schema():
+    """D1 테이블 스키마 확인용"""
+    try:
+        tables = d1_rows("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")
+        result = {}
+        for t in tables:
+            tname = t["name"]
+            cols = d1_rows(f"PRAGMA table_info('{tname}')")
+            result[tname] = [c["name"] for c in cols]
+        return {"tables": result}
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 
 @app.route("/curations/")
