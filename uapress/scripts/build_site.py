@@ -229,18 +229,20 @@ def build_all():
     for e in events:
         region_events_map.setdefault(e["region"], []).append(e)
 
-    # 맛집 데이터 로드 (D1 우선, 파일 fallback)
-    restaurants_all = _load_restaurants_from_d1()
+    # 맛집 데이터 로드 (로컬 파일 우선 — D1 rows read 절약)
+    restaurants_all = {}
+    restaurants_dir = PROJECT_ROOT / "data" / "restaurants"
+    if restaurants_dir.exists():
+        for rp in restaurants_dir.glob("*.json"):
+            try:
+                data = json.loads(rp.read_text())
+                if data.get("restaurants"):
+                    restaurants_all[rp.stem] = data
+            except Exception:
+                pass
+    # 로컬 파일 없을 때만 D1 fallback
     if not restaurants_all:
-        restaurants_dir = PROJECT_ROOT / "data" / "restaurants"
-        if restaurants_dir.exists():
-            for rp in restaurants_dir.glob("*.json"):
-                try:
-                    data = json.loads(rp.read_text())
-                    if data.get("restaurants"):
-                        restaurants_all[rp.stem] = data
-                except Exception:
-                    pass
+        restaurants_all = _load_restaurants_from_d1()
     print(f"  맛집 데이터: {len(restaurants_all)}개 행사")
 
     today = datetime.now().strftime("%Y%m%d")

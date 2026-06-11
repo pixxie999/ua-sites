@@ -97,6 +97,7 @@ def logout():
 # ─────────────────────────────────────────
 
 _events_cache = {"data": None, "at": 0}
+_has_restaurants_cache = {"data": None, "at": 0}
 
 def get_events() -> list:
     now = time.time()
@@ -392,16 +393,26 @@ def curate(event, candidates):
 # 라우트
 # ─────────────────────────────────────────
 
+def get_has_restaurants() -> set:
+    """맛집 있는 event_id 세트 — 5분 캐시"""
+    now = time.time()
+    if _has_restaurants_cache["data"] is not None and now - _has_restaurants_cache["at"] < 300:
+        return _has_restaurants_cache["data"]
+    try:
+        rows = d1_rows("SELECT DISTINCT event_id FROM restaurants WHERE is_excluded = 0")
+        result = {r["event_id"] for r in rows}
+        _has_restaurants_cache["data"] = result
+        _has_restaurants_cache["at"] = now
+        return result
+    except Exception:
+        return _has_restaurants_cache["data"] or set()
+
+
 @app.route("/")
 @login_required
 def index():
     events = get_events()
-    # D1에서 맛집 있는 event_id 목록
-    try:
-        rows = d1_rows("SELECT DISTINCT event_id FROM restaurants WHERE is_excluded = 0")
-        has_restaurants = {r["event_id"] for r in rows}
-    except Exception:
-        has_restaurants = set()
+    has_restaurants = get_has_restaurants()
 
     # 좌표 있는 행사만
     items = []

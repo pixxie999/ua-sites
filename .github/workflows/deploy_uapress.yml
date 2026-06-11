@@ -115,9 +115,6 @@ jobs:
           ADSENSE_UNIT_BANNER: ${{ secrets.ADSENSE_UNIT_BANNER }}
           ADSENSE_UNIT_RECTANGLE: ${{ secrets.ADSENSE_UNIT_RECTANGLE }}
           GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
-          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          D1_DATABASE_ID: e1c8f2d7-3cae-41cd-aa5b-3cfe08efe650
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy uapress/dist --project-name=uapress
