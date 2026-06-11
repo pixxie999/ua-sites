@@ -911,8 +911,9 @@ def curation_edit(curation_id):
                                [curation_id, event_id])
             if existing and existing[0]["cnt"] == 0:
                 order_num = len(d1_rows("SELECT id FROM curation_events WHERE curation_id=?", [curation_id]))
-                d1("INSERT INTO curation_events (curation_id, event_id, order_num, note) VALUES (?,?,?,?)",
-                   [curation_id, event_id, order_num, note])
+                ce_id = _make_curation_id()
+                d1("INSERT INTO curation_events (id, curation_id, event_id, order_num, note) VALUES (?,?,?,?,?)",
+                   [ce_id, curation_id, event_id, order_num, note])
             return redirect(url_for("curation_edit", curation_id=curation_id))
 
         elif action == "remove_event":
