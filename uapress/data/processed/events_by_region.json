@@ -16,9 +16,9 @@
       "start_date_fmt": "2026-08-14",
       "end_date_fmt": "2026-08-16",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "국가유산청,강원특별자치도, 강릉시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/77/3317777_image2_1.jpg",
       "homepage": "",
@@ -37,7 +37,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/80/3317780_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangneung-national-heritage-night-walk",
       "summary": "강릉의 문화유산을 밤에 조명으로 물들인 특별한 행사\n국가유산청이 주최하는 역사문화 체험 프로그램\n8월 14~16일 3일간 임영로 일대에서 무료 개최",
       "highlight": "강릉 국가유산을 야간 조명으로 재해석한 특별 경험. 역사와 현대 예술이 어우러진 감동적인 야행 문화축제입니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -55,6 +55,44 @@
         "강원도여행",
         "무료관광"
       ]
+    },
+    {
+      "id": "531391",
+      "content_id": "531391",
+      "title": "강릉단오제",
+      "category": "문화행사",
+      "region": "강원",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "강원특별자치도 강릉시 단오장길 1",
+      "lat": 37.7481582843,
+      "lng": 128.8949883724,
+      "start_date": "20260615",
+      "end_date": "20260622",
+      "start_date_fmt": "2026-06-15",
+      "end_date_fmt": "2026-06-22",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "(사)강릉단오제위원회",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/76/4057376_image2_1.JPG",
+      "homepage": "",
+      "tel": "033-651-1593",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/76/4057376_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/76/4057376_image3_1.JPG"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     },
     {
       "id": "3114721",
@@ -97,14 +135,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/83/4073383_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "gangwon-hanwoo-day-chuncheon",
+      "summary": "강원도 최고의 한우를 한자리에서 만나는 프리미�म 축제\n춘천시청 광장에서 3일간 펼쳐지는 한우 판매, 시식, 문화행사\n무료 입장으로 온 가족이 즐기는 한우 문화 체험의 장",
+      "highlight": "강원한우 대표 브랜드의 직거래 판매장과 무료 시식 코너에서 최상급 한우를 만나고, 한우 문화 공연과 체험으로 가족 모두가 즐길 수 있는 축제",
+      "target_audience": "가족여행|커플|친구모임",
+      "tips": [
+        "주말보다 금요일 오후에 방문하면 붐비지 않고 여유롭게 구경 가능",
+        "신선도를 위해 행사 초반(6월 19일)에 방문하여 구매하는 것 추천",
+        "가족 단위 방문 시 무료 시식 코너와 문화공연을 함께 즐길 수 있으니 충분한 시간 확보"
+      ],
+      "seo_title": "강원한우데이 2026 춘천 - 프리미엄 한우 축제 무료 입장",
+      "meta_description": "2026년 6월 19-21일 춘천시청 광장에서 개최되는 강원한우데이. 최고급 한우를 맛보고, 할인 구매하고, 한우 문화를 즐기는 무료 축제입니다.",
+      "tags": [
+        "강원한우",
+        "춘천축제",
+        "한우축제",
+        "무료축제",
+        "가족축제"
+      ]
     },
     {
       "id": "2766000",
@@ -122,9 +170,9 @@
       "start_date_fmt": "2026-04-25",
       "end_date_fmt": "2026-10-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "원주시설관리공단",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/09/4059609_image2_1.png",
       "homepage": "",
@@ -143,7 +191,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/10/4059610_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangwon-naora-show",
       "summary": "원주 지정면 소금산길에서 개최되는 나오라쇼\n4월 25일부터 10월 31일까지 약 6개월간 운영\n무료 입장으로 모두가 즐길 수 있는 문화행사",
       "highlight": "봄부터 가을까지 장기간 운영되는 원주의 대표 야외 문화공연. 가족 단위 관광객들이 무료로 즐길 수 있는 힐링 스팟입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -223,7 +271,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/43/4071443_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangwon-donggang-raft-festival",
       "summary": "동강의 아름다운 자연 속에서 즐기는 전통 뗏목과 래프팅 체험\n매년 수만 명의 방문객이 찾는 강원 영월의 대표 여름 축제\n가족 단위 방문객을 위한 다채로운 물놀이 프로그램과 공연",
       "highlight": "동강의 맑은 물에서 즐기는 뗏목 타기와 래프팅 체험, 지역 공연과 먹거리가 어우러진 여름 물 축제의 정석",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -295,7 +343,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/47/4067747_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangwon-mulung-lavender-festival",
       "summary": "강원 동해의 무릉별유천지에서 여름 라벤더축제 개최\n6월 13일부터 21일까지 보라색 꽃밭이 만드는 아름다운 경험\n사진명소, 문화공연, 향기테라피 등 다채로운 프로그램 준비",
       "highlight": "넓은 라벤더 꽃밭이 만드는 보라색 물결과 향기로운 공간에서 가족, 커플, 친구들과 함께 즐기는 힐링 축제. 인생샷 명소로 주목받고 있습니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -330,9 +378,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-13",
       "place": "",
-      "fee": "무료(일부 체험프로그램 유료)",
+      "fee": "",
       "is_free": false,
-      "organizer": "속초시",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/81/4069081_image2_1.jpg",
       "homepage": "",
@@ -371,7 +419,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/87/4069087_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangwon-silhyangmin-culture-festival",
       "summary": "2026년 6월 12-13일 속초에서 개최되는 실향민문화축제\n북한음식, 전통공연, 문화체험으로 분단문화를 경험할 수 있는 행사\n통일과 화해의 메시지를 담은 의미있는 문화행사",
       "highlight": "실향민의 삶과 문화를 기억하고 통일을 염원하는 축제. 북한음식 시연, 전통공연, 특색있는 문화체험으로 분단문화를 이해하고 화해와 평화의 메시지 전달",
       "target_audience": "가족여행|친구모임|혼자",
@@ -408,9 +456,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료, 일부체험 유료",
+      "fee": "",
       "is_free": false,
-      "organizer": "고성군",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/22/4070022_image2_1.jpg",
       "homepage": "",
@@ -457,7 +505,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/49/4070049_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangwon-jeodo-octopus-festival",
       "summary": "동해의 신선한 대문어를 주제로 한 고성군 대표 여름 축제\n대문어 음식, 문화공연, 체험프로그램 등 다채로운 콘텐츠 제공\n가족 단위 방문객을 위한 무료 입장 및 다양한 유료 체험활동",
       "highlight": "동해 대진항에서 맛보는 신선한 대문어 요리와 바다 문화의 만남. 가족 모두가 즐기는 무료 축제에서 특색 있는 해양문화 체험까지 가능합니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -528,7 +576,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/15/4069915_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "chuncheon-mini-sul-festa",
       "summary": "춘천시가 개최하는 미니 술페스타는 6월 19-20일 양일간 진행됩니다.\n다양한 주류와 전통 음주 문화를 경험할 수 있는 무료 축제입니다.\n춘천의 특색있는 술문화를 한 자리에서 만나보세요.",
       "highlight": "춘천의 대표 술문화를 체험하는 2일간의 무료 페스타. 다양한 양조장과 전통주를 한 곳에서 맛볼 수 있으며, 가족 단위 방문객을 위한 문화행사가 함께 진행됩니다.",
       "target_audience": "가족여행|친구모임|커플",
@@ -563,9 +611,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "유료",
+      "fee": "",
       "is_free": false,
-      "organizer": "평창더위사냥축제위원회",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/23/4061523_image2_1.JPG",
       "homepage": "",
@@ -600,7 +648,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/88/4070088_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "pyeongchang-heat-hunting-festival",
       "summary": "강원 평창에서 펼쳐지는 여름 시즌 대표 축제입니다.\n더위를 날려주는 다양한 프로그램이 준비되어 있습니다.\n가족 여행객들이 즐길 수 있는 최고의 휴가 목적지입니다.",
       "highlight": "7월 말부터 8월 초까지 10일간 펼쳐지는 평창의 대표 여름 축제로, 지역의 자연 경관을 배경으로 한 다양한 체험과 문화행사가 기다립니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -635,9 +683,9 @@
       "start_date_fmt": "2026-09-04",
       "end_date_fmt": "2026-09-13",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "사단법인 이효석문학선양회",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/28/3523028_image2_1.jpg",
       "homepage": "",
@@ -672,7 +720,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/30/3523030_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "pyeongchang-hyoseok-culture-festival",
       "summary": "평창군 봉평면 이효석길에서 9월 4-13일 개최되는 무료 문화행사\n한국 현대문학의 거장 이효석의 문학세계를 재조명하는 특별한 축제\n문학강좌, 작품 전시, 지역 문화공연 등 다채로운 프로그램 운영",
       "highlight": "『메밀꽃 필 무렵』의 거장 이효석을 기리는 대표 문학축제로, 봉평면의 아름다운 자연 속에서 문학의 감동을 직접 체험할 수 있습니다.",
       "target_audience": "가족여행|친구모임|혼자",
@@ -707,9 +755,9 @@
       "start_date_fmt": "2026-07-25",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "태백시문화재단",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/56/4064656_image2_1.jpg",
       "homepage": "",
@@ -752,7 +800,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/64/4064664_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangwon-hangang-nakdonggang-source-festival",
       "summary": "태백시 황지연못에서 개최되는 한강·낙동강 발원지 축제\n우리나라 주요 강의 탄생지를 테마로 한 문화관광 행사\n2026년 7월 25일부터 8월 2일까지 9일간 무료 개방",
       "highlight": "한강과 낙동강의 발원지를 한자리에서 체험할 수 있는 독특한 축제로, 대한민국 수계를 이해하고 역사문화를 배우는 기회입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -792,9 +840,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-20",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "횡성문화관광재단",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/61/4063761_image2_1.jpg",
       "homepage": "",
@@ -833,14 +881,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/60/4063760_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "hoengseong-summer-night-festa",
+      "summary": "강원 횡성에서 개최되는 여름 음악축제\n6월 19-20일 2일간 무료로 즐기는 다채로운 공연\n가족, 친구와 함께하는 힐링의 여름밤",
+      "highlight": "여름밤의 감성을 담은 횡성의 대표 음악축제. 무료 입장으로 라이브 공연과 문화행사를 동시에 즐길 수 있는 특별한 기회입니다.",
+      "target_audience": "가족여행|커플|친구모임",
+      "tips": [
+        "6월 초 예매 오픈 시 공식 홈페이지 확인 필수",
+        "야외행사이므로 모기 기피제와 간편한 복장 준비",
+        "주차 혼잡 예상, 대중교통 또는 조기 도착 권장"
+      ],
+      "seo_title": "횡성썸머나잇페스타 2026 - 강원 여름 음악축제",
+      "meta_description": "2026년 6월 19-20일 강원 횡성에서 열리는 무료 음악축제 횡성썸머나잇페스타. 여름밤의 감성을 담은 라이브 공연과 문화행사를 즐기세요.",
+      "tags": [
+        "강원여행",
+        "음악축제",
+        "여름축제",
+        "무료공연",
+        "횡성"
+      ]
     },
     {
       "id": "3489648",
@@ -858,9 +916,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "유료 (횡성군민, 장애인, 국가유공자, 경로우대 1,000원, 일반 2,000원)",
+      "fee": "",
       "is_free": false,
-      "organizer": "횡성군",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/4063806_image2_1.jpg",
       "homepage": "",
@@ -895,14 +953,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/08/4063808_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "hoengseong-lake-trail-festival",
+      "summary": "강원 횡성군 구방리 횡성호수를 따라 펼쳐지는 3일간의 축제\n자연 속 호수 트레킹과 다양한 문화 공연이 어우러진 행사\n6월 12-14일 개최, 일반 2,000원의 저렴한 입장료",
+      "highlight": "횡성호 호수길을 따라 펼쳐지는 자연 생태축제로 트레킹, 공연, 먹거리를 한 번에 즐길 수 있는 강원 대표 여름 축제입니다.",
+      "target_audience": "가족여행|친구모임|혼자",
+      "tips": [
+        "편한 등산화와 물을 충분히 준비하세요",
+        "6월 중순 햇빛이 강하니 자외선 차단제 필수",
+        "주말 방문 시 미리 예매하면 할인 받을 수 있습니다"
+      ],
+      "seo_title": "횡성호수길축제 2026 | 강원 여름축제 | 호수 트레킹",
+      "meta_description": "2026년 6월 12-14일 강원 횡성군에서 개최되는 호수길축제. 아름다운 호수 경관과 트레킹을 즐기는 여름 축제. 가족 단위 관광객과 자연 애호가를 위한 필수 코스.",
+      "tags": [
+        "횡성호수길축제",
+        "강원여름축제",
+        "호수트레킹",
+        "횡성군",
+        "자연생태축제"
+      ]
     }
   ],
   "제주": [
@@ -943,7 +1011,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/96/4070696_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeju-gangjung-ecology-festival",
       "summary": "제주 강정마을의 자연생태를 주제로 한 3일간의 축제\n생태체험, 교육프로그램, 지역먹거리 등 다양한 콘텐츠 구성\n가족 단위 방문객을 위한 무료 입장 및 참여형 프로그램 운영",
       "highlight": "제주의 생태문화를 직접 체험하고 배우는 의미 있는 축제. 지역주민과 함께 만드는 정겨운 분위기에서 자연친화적 즐거움을 누릴 수 있습니다.",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -978,9 +1046,9 @@
       "start_date_fmt": "2026-07-04",
       "end_date_fmt": "2026-07-05",
       "place": "",
-      "fee": "[산책&액티비티 1인 1반려견 티켓] - 정가 196,000원 - 할인가 119,500원 [산책&액티비티 동반 1인 티켓] - 정가 75,000원 - 할인가 49,500원 ※ 자세한 요금 및 할인 정보는 문의 요망",
+      "fee": "",
       "is_free": false,
-      "organizer": "㈜모노리스제주파크",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/36/4063736_image2_1.jpg",
       "homepage": "",
@@ -1011,7 +1079,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/74/4062974_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeju-gogbals-puppy-festival",
       "summary": "제주도 애월읍에서 7월 4-5일 개최되는 반려견 맞춤 축제\n산책, 액티비티, 교육 등 다양한 프로그램 운영 중\n반려견 동반 가족을 위한 특별한 놀거리 가득",
       "highlight": "반려견과 함께 즐기는 제주의 첫 대규모 댕댕이 축제! 산책 액티비티부터 반려견 전문 교육까지, 반려견 문화의 중심지를 경험하세요.",
       "target_audience": "가족여행|친구모임",
@@ -1059,7 +1127,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/21/4051821_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeju-saeyeon-show",
       "summary": "제주 서귀포 새연교에서 매주 금토일 펼쳐지는 무료 주말 문화공연\n봄부터 가을까지 6개월간 진행되는 정기 문화행사\n가족 모두가 함께 즐길 수 있는 감성 있는 공연 프로그램",
       "highlight": "제주의 감성을 담은 주말 문화공연으로 금토일 3일간 무료로 즐길 수 있으며, 봄부터 가을의 아름다운 새연교 야경을 배경으로 펼쳐집니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -1094,9 +1162,9 @@
       "start_date_fmt": "2026-07-23",
       "end_date_fmt": "2026-07-26",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "제주특별자치도",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4066710_image2_1.jpg",
       "homepage": "",
@@ -1107,7 +1175,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/10/4066710_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeju-rural-convergence-expo",
       "summary": "제주의 농촌과 산업이 만나는 국제박람회\n7월 23-26일 4일간 중문관광로에서 개최\n농업·관광·기술 융복합 체험 무료로 즐기기",
       "highlight": "제주의 농촌자원과 첨단기술이 결합한 융복합산업을 한 자리에서 경험할 수 있는 대규모 국제박람회로, 가족단위 방문객을 위한 다양한 체험 프로그램 운영",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -1124,58 +1192,6 @@
         "제주국제박람회",
         "무료입장",
         "중문관광"
-      ]
-    },
-    {
-      "id": "3512205-2026",
-      "content_id": "3512205",
-      "title": "2026 서귀포 원도심 문화페스티벌",
-      "category": "축제",
-      "region": "제주",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "제주특별자치도 서귀포시 이중섭로 11 (서귀동)",
-      "lat": 33.24708081676599,
-      "lng": 126.56445889201075,
-      "start_date": "20260411",
-      "end_date": "20261030",
-      "start_date_fmt": "2026-04-11",
-      "end_date_fmt": "2026-10-30",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서귀포시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/17/4044417_image2_1.jpg",
-      "homepage": "",
-      "tel": "064-760-2572",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4044415_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4044415_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4044416_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4044416_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026년 4월부터 10월까지 6개월간 서귀포 원도심에서\n개최되는 대규모 문화페스티벌입니다.\n무료 입장으로 다양한 문화예술 프로그램을 즐길 수 있습니다.",
-      "highlight": "서귀포 원도심 활성화를 위한 장기 문화페스티벌로, 봄부터 가을까지 지속적인 문화행사와 예술 프로그램이 펼쳐집니다.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "4월 개최 시작 전에 정확한 프로그램 일정 확인 추천",
-        "서귀포 원도심 주변 관광지와 함께 일정 계획",
-        "주말과 저녁 시간대 방문으로 더 많은 프로그램 참여 가능"
-      ],
-      "seo_title": "2026 서귀포 원도심 문화페스티벌 - 6개월 무료 문화행사",
-      "meta_description": "2026년 4월~10월 서귀포 원도심에서 펼쳐지는 대규모 문화페스티벌. 이중섭로 일대에서 즐기는 무료 문화행사, 지역 문화 활성화 프로젝트의 중심.",
-      "tags": [
-        "서귀포문화페스티벌",
-        "제주원도심",
-        "무료문화행사",
-        "이중섭로",
-        "봄가을축제"
       ]
     }
   ],
@@ -1233,7 +1249,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/07/4069907_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangju-sunflower-festival",
       "summary": "경남 함안군에서 개최되는 강주해바라기 축제\n황금빛 해바라기 가득한 6월 중순~7월 초 꽃 축제\n온 가족이 즐기는 자연 속 힐링 여행지",
       "highlight": "넓은 해바라기 꽃밭에서 여름 감성을 물씬 느낄 수 있는 경남 최고의 꽃 축제. 가족 사진 명소로도 최적.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -1268,9 +1284,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "거제시문화예술재단",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/48/4066648_image2_1.jpg",
       "homepage": "",
@@ -1317,7 +1333,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/51/4066651_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "geoje-okpo-daecheop-festival",
       "summary": "임진왜란 당시 이순신 장군의 해전승리를 기념하는 거제 옥포대첩 축제\n6월 12-14일 3일간 옥포동에서 개최되는 무료 역사문화행사\n전통문화공연, 체험, 재연 등 역사를 살아나게 하는 프로그램 구성",
       "highlight": "400년 해전승리의 역사를 생생하게 체험할 수 있는 거제만의 특화축제. 이순신 장군의 동환해전 승리를 재현하며 전통 해전 문화를 보존하는 의미있는 행사입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -1354,7 +1370,7 @@
       "place": "",
       "fee": "",
       "is_free": false,
-      "organizer": "남해군",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4071963_image2_1.jpg",
       "homepage": "",
@@ -1385,7 +1401,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/65/4071965_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "namhae-garlic-hanwoo-festival",
       "summary": "남해의 특산물 마늘과 프리미엄 한우를 한자리에서 즐기는 축제\n2026년 6월 11일부터 14일까지 남해군에서 개최\n로컬 먹거리와 문화공연으로 즐거운 추억 만들기",
       "highlight": "남해 마늘의 깊은 맛과 최고급 한우의 부드러운 식감을 동시에 경험할 수 있는 특별한 축제입니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -1420,9 +1436,9 @@
       "start_date_fmt": "2026-08-07",
       "end_date_fmt": "2026-08-09",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "밀양시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/67/4070867_image2_1.JPG",
       "homepage": "",
@@ -1441,7 +1457,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/69/4070869_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "miryang-super-festival",
       "summary": "경남 밀양에서 펼쳐지는 3일간의 대규모 여름 축제\n다양한 공연과 문화활동으로 가족 모두가 즐길 수 있는 행사\n무료 입장으로 누구나 가족, 친구와 함께 참여 가능",
       "highlight": "밀양시에서 주최하는 대표 여름 축제로, 라이브 공연, 맛있는 음식, 가족 문화활동 등 3일간 풍성한 즐거움을 제공합니다.",
       "target_audience": "가족여행|친구모임|커플|어린이동반",
@@ -1476,9 +1492,9 @@
       "start_date_fmt": "2026-06-18",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "진주시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4069649_image2_1.jpg",
       "homepage": "",
@@ -1505,7 +1521,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/50/4069650_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "wola-hydrangea-festival",
       "summary": "월아산의 화려한 수국 만개를 축하하는 6월 여름 축제입니다.\n무료 입장으로 가족 모두가 즐길 수 있는 자연 힐링 공간입니다.\n아름다운 꽃 사진과 함께 추억을 만드는 특별한 경험을 제공합니다.",
       "highlight": "월아산 전역에 피어나는 만개한 수국의 환상적인 풍경과 무료 입장료로 가족 단위 방문객들에게 완벽한 여름 나들이 명소입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -1540,9 +1556,9 @@
       "start_date_fmt": "2026-07-10",
       "end_date_fmt": "2026-07-19",
       "place": "",
-      "fee": "공연별로 상이하므로 공식 홈페이지 참조",
+      "fee": "",
       "is_free": false,
-      "organizer": "통영시, 통영연극예술축제위원회",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/82/4070082_image2_1.jpg",
       "homepage": "",
@@ -1569,7 +1585,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/87/4070087_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "tongyeong-performing-arts-festival",
       "summary": "경남 통영에서 열리는 최대 규모 연극예술 축제입니다.\n2026년 7월 10일부터 19일까지 10일간 개최됩니다.\n국내외 연극단의 수준 높은 공연을 감상할 수 있습니다.",
       "highlight": "통영의 해양 문화와 예술을 대표하는 연극 축제로, 남망공원의 아름다운 해변 경관을 배경으로 펼쳐지는 공연들이 특징입니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -1604,9 +1620,9 @@
       "start_date_fmt": "2026-08-12",
       "end_date_fmt": "2026-08-16",
       "place": "",
-      "fee": "무료(부분유료)",
+      "fee": "",
       "is_free": false,
-      "organizer": "통영문화재단",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/08/4041308_image2_1.jpg",
       "homepage": "",
@@ -1641,7 +1657,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/51/4060551_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "tongyeong-hansandaecheop-festival",
       "summary": "임진왜란 해전 승리를 기념하는 통영의 대표 문화축제\n8월 12-16일 통영해안로에서 개최되는 역사문화 체험 축제\n해전 재현, 문화공연, 체험 프로그램 등 다양한 볼거리 준비",
       "highlight": "임진왜란 해전의 위대한 승리를 생생한 해전 재현과 문화공연으로 기념하는 통영 대표 축제로 역사와 문화를 함께 체험",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -1658,57 +1674,6 @@
         "역사축제",
         "해양문화",
         "경남관광"
-      ]
-    },
-    {
-      "id": "3494070-2026",
-      "content_id": "3494070",
-      "title": "2026 진주 정원박람회",
-      "category": "전시",
-      "region": "경남",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경상남도 진주시 진성면 달음산로 313",
-      "lat": 35.1998941088,
-      "lng": 128.1941147222,
-      "start_date": "20260618",
-      "end_date": "20260621",
-      "start_date_fmt": "2026-06-18",
-      "end_date_fmt": "2026-06-21",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "진주시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/33/4071433_image2_1.jpg",
-      "homepage": "",
-      "tel": "055-749-5355",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/33/4071433_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/33/4071433_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026년 6월 18-21일 경남 진주시 달음산에서 개최되는 대규모 정원 축제\n정원 전시, 조경 문화, 자연생태 체험을 한 자리에서 즐길 수 있는 행사\n무료 입장으로 가족, 연인, 친구들과 함께 즐기기 좋은 야외 문화행사",
-      "highlight": "경남 진주시의 아름다운 자연환경을 배경으로 펼쳐지는 정원박람회. 국내외 조경 문화를 선보이는 프리미엄 정원 축제로 모든 연령층이 즐길 수 있습니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "6월 날씨에 대비해 선크림과 모자를 준비하세요",
-        "편한 신발을 착용하고 방문하면 정원 전시를 편하게 관람할 수 있습니다",
-        "주말에는 혼잡할 수 있으니 평일 방문을 추천합니다"
-      ],
-      "seo_title": "2026 진주 정원박람회 - 경남 진주시 무료 정원 축제",
-      "meta_description": "2026년 6월 18-21일 진주시에서 열리는 정원박람회. 아름다운 정원 전시와 다양한 체험 프로그램을 무료로 즐길 수 있는 문화행사입니다.",
-      "tags": [
-        "정원박람회",
-        "진주",
-        "경남문화행사",
-        "무료관광",
-        "조경문화",
-        "정원축제",
-        "여름행사",
-        "가족나들이"
       ]
     }
   ],
@@ -1729,9 +1694,9 @@
       "start_date_fmt": "2026-06-26",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "강진군",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/28/4071228_image2_1.jpg",
       "homepage": "",
@@ -1774,7 +1739,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/32/4071232_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gangjin-hydrangea-festival",
       "summary": "6월 강진의 명물, 아름다운 수국이 만개하는 고성길에서 펼쳐집니다.\n형형색색 수국 터널을 걷으며 자연의 아름다움을 만끽할 수 있습니다.\n무료 입장으로 모든 가족이 즐길 수 있는 봄 힐링 축제입니다.",
       "highlight": "6월 초여름 감성! 화려한 수국이 터널을 이루는 고성길에서 자연 속 힐링과 함께 아름다운 사진 스팟을 즐길 수 있는 특별한 축제입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -1809,9 +1774,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "10,000원",
+      "fee": "",
       "is_free": false,
-      "organizer": "르무통",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/55/4070355_image2_1.jpg",
       "homepage": "",
@@ -1822,7 +1787,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/54/4070354_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "suncheon-lemouton-walking",
       "summary": "순천 국가정원에서 펼쳐지는 르무통 산책회 행사입니다.\n자연을 만끽하며 힐링하는 야외 문화 산책 프로그램입니다.\n6월 13-14일 2일간 진행되며 관람료는 1만원입니다.",
       "highlight": "순천 국가정원의 아름다운 자연 속에서 펼쳐지는 르무통 산책회로 일상에서 벗어나 여유로운 시간을 경험할 수 있는 특별한 힐링 행사입니다.",
       "target_audience": "가족여행|커플|친구모임|혼자",
@@ -1902,7 +1867,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/91/4071391_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "muan-lotus-festival",
       "summary": "전남 무안의 백련이 만개하는 시즌에 열리는 연꽃축제입니다.\n6월 26일부터 28일까지 3일간 펼쳐지며 다채로운 볼거리와 체험을 제공합니다.\n자연의 순수함과 문화를 함께 즐길 수 있는 힐링 축제입니다.",
       "highlight": "백련의 깨끗한 아름다움이 피어나는 하계절에 열리는 자연 생태 축제. 가족 단위 방문객들이 즐길 수 있는 다채로운 프로그램과 포토존이 가득합니다.",
       "target_audience": "가족여행|친구모임|커플",
@@ -1942,9 +1907,9 @@
       "start_date_fmt": "2026-06-18",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "법성포단오제보존회, 법성포단오제 제전위원회",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/35/4041235_image2_1.JPG",
       "homepage": "",
@@ -1991,7 +1956,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/71/4059971_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "yeonggwang-bupseongpo-dano-festival",
       "summary": "전남 영광의 법성포에서 열리는 전통 단오축제\n6월 18-21일 4일간 개최되는 문화행사\n무료로 즐기는 전통 단오문화와 지역문화체험",
       "highlight": "법성포의 역사와 전통을 담은 지역 특화 단오제. 전통문화 보존과 지역 공동체의 문화유산을 소개하는 의미 있는 축제입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -2026,9 +1991,9 @@
       "start_date_fmt": "2026-07-25",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "무료(일부 프로그램 유료)",
+      "fee": "",
       "is_free": false,
-      "organizer": "전라남도 장흥군",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/77/4071277_image2_1.jpg",
       "homepage": "",
@@ -2059,7 +2024,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/79/4071279_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeongseongjin-jangheung-water-festival",
       "summary": "정남진 장흥 물축제는 매년 여름 장흥군에서 개최되는 대표 물 축제입니다.\n가족 단위 방문객들을 위한 다양한 물놀이 프로그램과 이벤트를 제공합니다.\n무료 입장으로 누구나 즐길 수 있는 여름 휴가 필수 명소입니다.",
       "highlight": "장흥의 정남진 자연환경을 활용한 대규모 물축제로, 여름 더위를 식힐 수 있는 다채로운 물놀이 체험과 가족 친화적 프로그램이 가득합니다.",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -2094,9 +2059,9 @@
       "start_date_fmt": "2026-04-04",
       "end_date_fmt": "2026-10-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "고흥군",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/97/4054497_image2_1.jpg",
       "homepage": "",
@@ -2127,7 +2092,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/96/4054496_image2_1.jpeg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "goheung-neokdong-drone-show",
       "summary": "전라남도 고흥군 녹동항에서 개최되는 대규모 드론쇼\n4월부터 10월까지 장기 개최되며 완전 무료 관람 가능\n밤하늘을 수놓는 드론 라이트쇼의 감동적인 경험",
       "highlight": "대규모 드론이 밤하늘을 수놓으며 펼치는 환상적인 라이트쇼. 4월부터 10월까지 장기간 개최되며 완전 무료로 관람할 수 있어 가족과 친구들과 함께 즐기기 좋습니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -2144,113 +2109,6 @@
         "녹동항",
         "무료관람",
         "야경공연"
-      ]
-    },
-    {
-      "id": "2774275-2026-w",
-      "content_id": "2774275",
-      "title": "2026 목포해상W쇼",
-      "category": "문화행사",
-      "region": "전남",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "전라남도 목포시 평화로 82 (상동)",
-      "lat": 34.79666213605975,
-      "lng": 126.43379088761164,
-      "start_date": "20260509",
-      "end_date": "20260919",
-      "start_date_fmt": "2026-05-09",
-      "end_date_fmt": "2026-09-19",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "목포시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/45/4055545_image2_1.jpg",
-      "homepage": "",
-      "tel": "061-270-8431",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/45/4055545_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/45/4055545_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "목포 평화로에서 5월부터 9월까지 5개월간 진행되는\n해상 문화 축제로 누구나 무료로 즐길 수 있습니다.\n해양 문화와 예술을 만나는 특별한 경험의 장입니다.",
-      "highlight": "목포의 바다에서 펼쳐지는 초대형 해상 문화 쇼. 5개월 장기간 다채로운 프로그램과 함께 즐기는 무료 관광명소입니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "5월 개장부터 9월 말까지 장기간 운영되므로 계절별로 다른 분위기 체험 가능",
-        "평화로 접근성이 좋아 목포 시내 다른 관광지와 연계 방문 추천",
-        "무료 행사이므로 사전 예약 없이 자유로운 시간에 방문 가능"
-      ],
-      "seo_title": "2026 목포해상W쇼 - 5월 목포 해양문화축제",
-      "meta_description": "2026년 5월부터 9월까지 목포에서 열리는 해상W쇼. 무료 관람, 해양문화와 예술을 한눈에 즐기는 특별한 축제. 가족 여행객 필수 방문지!",
-      "tags": [
-        "목포축제",
-        "해상쇼",
-        "해양문화",
-        "무료관람",
-        "가족여행"
-      ]
-    },
-    {
-      "id": "4067214-2026",
-      "content_id": "4067214",
-      "title": "2026 섬 방문의 해",
-      "category": "문화행사",
-      "region": "전남",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "전라남도 여수시 선어시장길 6 (중앙동)",
-      "lat": 34.7395781561546,
-      "lng": 127.736371787128,
-      "start_date": "20260301",
-      "end_date": "20261231",
-      "start_date_fmt": "2026-03-01",
-      "end_date_fmt": "2026-12-31",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "행정안전부",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/13/4067313_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-4337-5058",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/14/4067314_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/14/4067314_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4067315_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4067315_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4067316_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4067316_image2_1.JPG"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026 섬 방문의 해는 전국 섬을 주제로 한 1년간의 대규모 관광 캠페인\n여수시 선어시장길을 중심으로 섬 문화와 자연을 체험하는 프로젝트\n행정안전부 주최로 무료로 즐기는 섬 여행의 황금기",
-      "highlight": "국가 주도의 섬 관광 활성화 프로젝트. 여수의 해양자원과 전통 시장을 연계한 섬 방문 캠페인으로 일 년 내내 다양한 문화·체험 프로그램 기대",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "여수의 다도해 섬들을 체계적으로 방문할 수 있는 특화 프로그램 확인 필수",
-        "선어시장과 함께 지역 해산물과 문화를 경험하는 투어 활용 추천",
-        "월별 테마 행사 일정을 미리 확인하고 계획적으로 방문할 것"
-      ],
-      "seo_title": "2026 섬 방문의 해 여수 | 전라남도 해도 여행 축제",
-      "meta_description": "2026년 3월부터 12월까지 여수에서 열리는 섬 방문의 해. 무료로 즐기는 전라남도 최고의 해도 관광 프로젝트. 선어시장길에서 시작하는 섬 여행의 매력!",
-      "tags": [
-        "섬여행",
-        "여수관광",
-        "2026여행",
-        "전라남도",
-        "해도여행",
-        "무료행사",
-        "문화축제",
-        "체험프로그램"
       ]
     }
   ],
@@ -2284,7 +2142,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/42/4058642_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeonggi-rice-kimbap-festa",
       "summary": "경기도의 우수 쌀 경기미를 활용한 김밥 축제\n6월 13-14일 수원시 영통구 광교중앙로에서 개최\n가족 단위 방문객을 위한 무료 음식문화 체험 행사",
       "highlight": "경기미의 품질을 세계에 알리는 지역 특산물 축제. 신선한 재료로 만든 다양한 김밥 요리와 함께 경기도 식문화를 경험할 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -2324,9 +2182,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "고양특례시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/34/4057034_image2_1.jpg",
       "homepage": "",
@@ -2357,7 +2215,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/40/4057040_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "goyang-haengju-culture-festival",
       "summary": "고양시의 역사와 전통문화를 한자리에서 만나는 축제\n6월 13-14일 행주외동에서 무료로 개최되는 대규모 문화행사\n온 가족이 즐길 수 있는 전통 및 현대 프로그램 준비",
       "highlight": "행주의 역사적 의미와 전통문화를 대표하는 고양시 대표 축제. 무료 입장으로 모든 시민이 즐길 수 있는 감성적인 문화체험의 기회.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -2415,7 +2273,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/64/4070564_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gimpo-aramarine-festival",
       "summary": "경기 김포시에서 개최되는 물 문화 축제\n아라뱃길 테마의 수상 레저 및 체험 프로그램\n가족 단위 관광객을 위한 무료 입장 축제",
       "highlight": "아라뱃길의 독특한 물 문화를 테마로 한 대규모 수상 축제! 수상레저부터 가족 체험까지 다양한 프로그램과 입장료 무료의 매력을 갖춘 경기도 대표 여름 축제입니다.",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -2453,9 +2311,9 @@
       "start_date_fmt": "2026-06-27",
       "end_date_fmt": "2026-06-27",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "재단법인 평택시문화재단",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/53/4067353_image2_1.jpg",
       "homepage": "",
@@ -2478,7 +2336,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/54/4067354_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeonggi-mato-art-festival",
       "summary": "평택시 팽성읍에서 개최되는 문화예술 축제입니다.\n지역 예술인들의 공연과 전시를 관람할 수 있습니다.\n누구나 무료로 참여 가능한 열린 문화행사입니다.",
       "highlight": "평택 지역 예술문화를 대표하는 마토예술제. 팽성읍의 문화적 정체성을 드러내는 무료 축제로 가족 모두가 즐길 수 있습니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -2534,7 +2392,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/31/4039531_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "ansung-goumbaengi-performance",
       "summary": "안성의 전통 풍물문화를 대표하는 남사당바우덕이 풍물단의\n상설공연으로 전통과 현대가 어우러진 무대를 선보입니다.\n4월부터 11월까지 매주 정해진 일정에 만날 수 있습니다.",
       "highlight": "300년 역사의 전통 풍물예술을 현대적으로 재해석한 곰뱅이텄다는 남사당의 정통성과 관객의 감동을 동시에 담아냅니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -2569,9 +2427,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "양평군(관광과, 기후환경과)",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/90/4066290_image2_1.jpg",
       "homepage": "",
@@ -2598,7 +2456,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/91/4066291_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "yangpyeong-mill-festival",
       "summary": "경기도 양평군에서 열리는 밀 테마 축제\n6월 13-14일 2일간 진행되는 무료 행사\n청운면 가현리에서 로컬 문화와 먹거리 즐기기",
       "highlight": "양평의 대표 농산물인 밀을 주제로 한 지역 축제. 밀 관련 식품, 공예품 전시 및 체험, 문화공연 등으로 지역 문화와 관광을 한 번에 즐길 수 있는 특별한 경험!",
       "target_audience": "가족여행|커플|친구모임",
@@ -2638,9 +2496,9 @@
       "start_date_fmt": "2026-07-04",
       "end_date_fmt": "2026-07-05",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "청운면 수박축제추진위원회",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/66/4067566_image2_1.jpg",
       "homepage": "",
@@ -2679,7 +2537,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/67/4067567_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "yangpyeong-watermelon-festival",
       "summary": "경기도 양평군 청운면에서 펼쳐지는 여름 수박 축제입니다.\n무료로 관람 가능한 가족 친화적 행사입니다.\n2026년 7월 4~5일 이틀간 개최됩니다.",
       "highlight": "여름철 양평의 대표 축제로 신선한 수박과 다양한 먹거리를 무료로 즐길 수 있는 가족 중심 행사입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -2699,54 +2557,6 @@
       ]
     },
     {
-      "id": "2976568",
-      "content_id": "2976568",
-      "title": "와인뮤직페스티발",
-      "category": "문화행사",
-      "region": "경기",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경기도 수원시 영통구 광교중앙로 140 (하동)",
-      "lat": 37.2858286646645,
-      "lng": 127.059446949629,
-      "start_date": "20260625",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-25",
-      "end_date_fmt": "2026-06-28",
-      "place": "",
-      "fee": "유료 (15,000원 / 1일, 1인)",
-      "is_free": false,
-      "organizer": "수원컨벤션센터, 비니아시아",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4054263_image2_1.png",
-      "homepage": "",
-      "tel": "02-6015-8254",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4054263_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4054263_image2_1.png"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "와인과 음악이 만나는 특별한 축제\n6월 25-28일 4일간 수원컨벤션센터에서 개최\n프리미엄 와인 시음과 라이브 공연의 이중 즐거움",
-      "highlight": "와인 전문가 세션, 다양한 국내외 와인 시음, 유명 뮤지션 공연이 어우러진 고급 문화 축제로 성인 문화생활의 새로운 경험을 제공합니다.",
-      "target_audience": "커플|친구모임|어른",
-      "tips": [
-        "사전 온라인 예매 시 할인 혜택 확인 후 구매하세요",
-        "와인 시음 시 숙취 주의 - 충분한 수분섭취와 간식 챙기기",
-        "주차장 혼잡 예상, 대중교통(광교역 인근) 이용 추천"
-      ],
-      "seo_title": "수원 와인뮤직페스티발 2026 | 와인과 음악의 완벽한 조화",
-      "meta_description": "6월 25-28일 수원컨벤션센터에서 열리는 와인뮤직페스티발. 와인 시음과 라이브 음악을 함께 즐기는 프리미엄 문화행사. 1일 15,000원.",
-      "tags": [
-        "와인페스티발",
-        "수원문화행사",
-        "음악공연",
-        "와인시음",
-        "2026년6월"
-      ]
-    },
-    {
       "id": "4058556",
       "content_id": "4058556",
       "title": "컬처라운지 경기, 장(場)",
@@ -2762,9 +2572,9 @@
       "start_date_fmt": "2026-04-18",
       "end_date_fmt": "2026-12-15",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "경기도",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/21/4058721_image2_1.png",
       "homepage": "",
@@ -2775,7 +2585,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/21/4058721_image3_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeonggi-culture-lounge",
       "summary": "경기도청 지하36층의 프리미엄 문화공간\n4월부터 12월까지 운영되는 무료 문화전시\n현대미술과 문화를 만나는 감성 라운지",
       "highlight": "경기도청 내 위치한 무료 문화전시 공간. 2026년 장기 운영으로 계획적인 방문 가능. 도시 속 문화예술 오아시스로서의 차별화된 경험을 제공합니다.",
       "target_audience": "가족여행|커플|혼자",
@@ -2814,9 +2624,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "무료 (유료프로그램 있음)",
+      "fee": "",
       "is_free": false,
-      "organizer": "광주시",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/00/4072100_image2_1.jpg",
       "homepage": "",
@@ -2835,14 +2645,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/99/4072099_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "gwangju-toechon-tomato-street-festival",
+      "summary": "신선한 토마토를 만날 수 있는 퇴촌의 대표 축제\n6월 19일부터 21일까지 3일간 개최되는 거리축제\n토마토 판매, 공연, 체험 등 다양한 프로그램 운영",
+      "highlight": "경기 광주의 명물 토마토를 테마로 한 계절 축제로 신선한 농산물 구매부터 공연, 먹거리까지 가족 친화적인 다양한 콘텐츠 제공",
+      "target_audience": "가족여행|친구모임|어린이동반",
+      "tips": [
+        "토마토 시즌 축제이므로 신선한 제철 토마토를 저렴한 가격에 구매할 수 있습니다",
+        "주말 축제라 혼잡할 수 있으니 이른 시간 방문 추천",
+        "유료 프로그램별로 별도 예약이 필요할 수 있으니 사전 확인 필수"
+      ],
+      "seo_title": "2026 퇴촌토마토거리축제 6월 경기 광주 무료축제",
+      "meta_description": "2026년 6월 19-21일 경기 광주시 퇴촌면에서 열리는 퇴촌토마토거리축제. 신선한 토마토와 함께 다양한 공연, 먹거리, 체험프로그램을 즐길 수 있는 무료 축제입니다.",
+      "tags": [
+        "경기도축제",
+        "광주시여행",
+        "토마토축제",
+        "6월축제",
+        "가족나들이"
+      ]
     },
     {
       "id": "3501428-2026-wsl",
@@ -2877,7 +2697,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/12/4067312_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "siheung-korea-open-surfing-championship",
       "summary": "세계 최고 수준의 WSL(World Surf League) 공식 국제 서핑대회\n2026년 7월 3-5일 시흥 거북섬둘레길에서 개최\n입장료 무료로 서핑 팬이라면 놓칠 수 없는 스포츠 축제",
       "highlight": "WSL 공식 국제 서핑대회로 세계 정상급 선수들의 기술을 무료로 감상할 수 있는 드문 기회입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -2915,9 +2735,9 @@
       "start_date_fmt": "2026-03-14",
       "end_date_fmt": "2026-12-26",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "국립극장 무대예술지원센터",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/4068446_image2_1.jpg",
       "homepage": "",
@@ -2948,7 +2768,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/52/4068452_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeonggi-sseok-sseok-theater-festival",
       "summary": "국립극장이 준비한 어린이 중심 무대예술 페스티벌\n파주 헤이리의 예술공간에서 3월부터 12월까지 운영\n창의성과 상상력을 키우는 무료 공연과 체험 기회",
       "highlight": "어린이의 감성과 창의성을 키워주는 특별한 무대예술 콘텐츠. 국립극장이 보장하는 높은 수준의 공연과 체험이 무료로 제공됩니다.",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -2965,262 +2785,6 @@
         "무대예술",
         "파주여행",
         "헤이리예술마을"
-      ]
-    },
-    {
-      "id": "2849025-2026",
-      "content_id": "2849025",
-      "title": "2026 세계유산 남한산성 활용프로그램",
-      "category": "문화행사",
-      "region": "경기",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경기도 광주시 남한산성면 산성리",
-      "lat": 37.4800972389423,
-      "lng": 127.18089864064,
-      "start_date": "20260417",
-      "end_date": "20260619",
-      "start_date_fmt": "2026-04-17",
-      "end_date_fmt": "2026-06-19",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "경기도남한산성세계유산센터",
-      "overview": "",
-      "thumbnail": "",
-      "homepage": "",
-      "tel": "02-737-6444",
-      "images": [],
-      "seo_slug": "",
-      "summary": "유네스코 세계유산 남한산성에서 펼쳐지는 3개월간의\n문화교육 및 체험프로그램입니다.\n입장료 무료로 한국의 역사문화유산을 즐길 수 있습니다.",
-      "highlight": "세계유산 남한산성의 가치를 체험하는 무료 프로그램으로, 역사 교육과 문화활동을 통해 유네스코 세계유산을 깊이 있게 이해할 수 있는 기회입니다.",
-      "target_audience": "가족여행|어린이동반|친구모임|커플",
-      "tips": [
-        "4월 중순부터 6월 중순까지 약 2개월간 운영되므로 일정 확인 후 방문하세요",
-        "무료 행사이므로 경기도남한산성세계유산센터에서 사전 신청 필요 여부 확인 추천",
-        "남한산성의 자연경관을 배경으로 교육프로그램 진행되므로 편한 복장 권장"
-      ],
-      "seo_title": "2026 세계유산 남한산성 활용프로그램 - 광주시 무료 문화행사",
-      "meta_description": "4월~6월 경기도 광주시 남한산성에서 열리는 세계유산 활용프로그램. 역사 문화교육과 체험으로 유네스코 세계유산을 깊이 있게 만나보세요.",
-      "tags": [
-        "세계유산",
-        "남한산성",
-        "광주시",
-        "무료",
-        "문화교육",
-        "역사체험",
-        "경기도문화"
-      ]
-    },
-    {
-      "id": "2812160-2026",
-      "content_id": "2812160",
-      "title": "2026 캠핑요리축제",
-      "category": "축제",
-      "region": "경기",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경기도 파주시 문산읍 마정리 1153-3",
-      "lat": 37.893865,
-      "lng": 126.744269,
-      "start_date": "20260612",
-      "end_date": "20260614",
-      "start_date_fmt": "2026-06-12",
-      "end_date_fmt": "2026-06-14",
-      "place": "",
-      "fee": "※ 사이트 별 이용금액이 상이하므로 자세한 이용요금은 홈페이지 참조",
-      "is_free": false,
-      "organizer": "일간스포츠, 이데일리",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/75/4062075_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-5220-0328",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4062075_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4062075_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "파주 문산에서 열리는 2026 캠핑요리축제입니다.\n캠핑 요리 경연, 체험, 전시가 3일간 진행됩니다.\n가족 단위 야외 활동 및 음식 문화 축제입니다.",
-      "highlight": "캠핑 요리 전문가들의 경연과 일반인 체험을 한 자리에서 즐기는 특별한 야외 축제. 캠핑 문화와 요리 예술의 완벽한 융합입니다.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "방문 전 공식 홈페이지에서 각 사이트별 이용요금을 확인하세요",
-        "야외 행사이므로 날씨에 대비한 복장과 자외선 차단용품을 준비하세요",
-        "주말 개최이므로 미리 예약하고 방문하시면 더 나은 체험을 할 수 있습니다"
-      ],
-      "seo_title": "2026 캠핑요리축제 파주 - 야외 캠핑 요리 경연 및 체험",
-      "meta_description": "2026년 6월 12-14일 파주시 문산읍에서 열리는 캠핑요리축제. 캠핑 요리 경연, 음식 체험, 캠핑 용품 전시 등 가족 친화적 야외 축제입니다.",
-      "tags": [
-        "캠핑축제",
-        "요리경연",
-        "파주여행",
-        "6월행사",
-        "가족체험"
-      ]
-    },
-    {
-      "id": "3113265-apap",
-      "content_id": "3113265",
-      "title": "APAP 작품투어 (안양공공예술프로젝트)",
-      "category": "문화행사",
-      "region": "경기",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경기도 안양시 만안구 예술공원로 180 (안양동)",
-      "lat": 37.41945269174406,
-      "lng": 126.92561681569023,
-      "start_date": "20260310",
-      "end_date": "20261130",
-      "start_date_fmt": "2026-03-10",
-      "end_date_fmt": "2026-11-30",
-      "place": "",
-      "fee": "- 일반 3,000원- 청소년(만 19세 이하) 1,000원※ 스페셜 투어 금액 별도",
-      "is_free": false,
-      "organizer": "안양시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/69/4054469_image2_1.jpg",
-      "homepage": "",
-      "tel": "031-687-0548",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/69/4054469_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/69/4054469_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "안양시의 대표 공공미술 프로젝트인 APAP 작품투어를 즐길 수 있습니다.\n예술공원에서 다양한 현대미술 작품을 감상하며 문화소양을 높일 수 있습니다.\n가족, 친구, 커플 모두 함께 즐길 수 있는 의미 있는 문화경험을 제공합니다.",
-      "highlight": "국내 대표 공공미술 프로젝트로 세계 수준의 현대미술 작품을 저렴하게 감상. 9개월간 운영되는 장기 문화행사로 언제든 방문 가능.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "예술공원 내 넓은 부지이므로 편한 신발 착용 권장",
-        "스페셜 투어는 별도 요금이므로 사전 확인 및 예약 필수",
-        "계절별로 다른 감상 포인트가 있으므로 여러 번 방문 추천"
-      ],
-      "seo_title": "안양공공예술프로젝트 APAP 작품투어 - 경기도 안양 예술공원",
-      "meta_description": "2026년 3월~11월 안양공공예술프로젝트(APAP) 작품투어 개최. 안양예술공원에서 즐기는 공공미술, 일반 3,000원·청소년 1,000원. 가족 문화활동의 최적지.",
-      "tags": [
-        "공공미술",
-        "현대미술",
-        "안양",
-        "예술공원",
-        "가족문화활동"
-      ]
-    },
-    {
-      "id": "3099365-colorful-garden",
-      "content_id": "3099365",
-      "title": "Colorful Garden 자라섬 꽃 페스타",
-      "category": "문화행사",
-      "region": "경기",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경기도 가평군 가평읍 자라섬로 60",
-      "lat": 37.82076649272824,
-      "lng": 127.52092288691405,
-      "start_date": "20260523",
-      "end_date": "20260614",
-      "start_date_fmt": "2026-05-23",
-      "end_date_fmt": "2026-06-14",
-      "place": "",
-      "fee": "유료 : 7천원 (5천원 가평사랑상품권 환급) * 가평군민, 만5세 이하 무료 입장",
-      "is_free": false,
-      "organizer": "가평군",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/28/4068028_image2_1.jpg",
-      "homepage": "",
-      "tel": "031-580-2098",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/27/4068027_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/27/4068027_image2_1.png"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/29/4068029_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/29/4068029_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/30/4068030_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/30/4068030_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/31/4068031_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/31/4068031_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/32/4068032_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/32/4068032_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "가평 자라섬에서 펼쳐지는 화려한 봄꽃 축제\n5월 23일부터 6월 14일까지 3주간 운영\n7천원 입장료에 5천원 상품권 환급으로 실질 2천원",
-      "highlight": "자라섬 전역을 물드는 봄꽃들의 향연. 가평사랑상품권 5천원 환급으로 현장에서 바로 쇼핑 가능한 경제적인 축제",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "5천원 가평사랑상품권 환급받아 현장 상점에서 기념품 구매 추천",
-        "만5세 이하 자녀 동반 시 무료 입장으로 가족 비용 절감",
-        "주말보다 평일 방문으로 혼잡 피하고 꽃 감상에 집중"
-      ],
-      "seo_title": "가평 자라섬 꽃 페스타 2026 - 컬러풀 가든 5월 개최",
-      "meta_description": "2026년 5월 23일~6월 14일 경기도 가평 자라섬에서 열리는 Colorful Garden 꽃 페스타. 봄꽃 축제, 7천원 입장료(5천원 환급), 가평군민 무료 입장",
-      "tags": [
-        "가평꽃축제",
-        "자라섬",
-        "봄꽃페스타",
-        "경기도축제",
-        "가족나들이"
-      ]
-    },
-    {
-      "id": "3488940-myk-festa",
-      "content_id": "3488940",
-      "title": "MyK FESTA(마이케이 페스타)",
-      "category": "문화행사",
-      "region": "경기",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경기도 고양시 일산서구 킨텍스로 217-60 (대화동)",
-      "lat": 37.668933476214,
-      "lng": 126.745802827238,
-      "start_date": "20260625",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-25",
-      "end_date_fmt": "2026-06-28",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "문화체육관광부",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/17/4063217_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-4288-4097",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/17/4063217_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/17/4063217_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "K-문화의 미래를 담은 최대 규모 페스티벌\n고양 킨텍스에서 4일간 펼쳐지는 문화 축제\n한류 콘텐츠와 전통문화를 아우르는 특별한 경험",
-      "highlight": "문화체육관광부 주최의 공식 K-문화 페스타로, 한국의 다양한 문화예술을 국내외 관광객과 공유하는 대규모 무료 이벤트입니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "킨텍스는 대중교통 접근성이 좋으므로 미리 주차 계획을 세우거나 지하철 3호선 이용 추천",
-        "4일간의 행사이므로 사전에 무료 티켓 예약 및 주요 공연 일정 확인 필수",
-        "대규모 행사인 만큼 주말보다 평일 방문으로 쾌적한 관람 경험 추천"
-      ],
-      "seo_title": "2026 MyK FESTA 고양 킨텍스 K-문화 페스티벌 일정",
-      "meta_description": "2026년 6월 25-28일 고양시 킨텍스에서 열리는 MyK FESTA. 한국 문화예술의 최신 트렌드를 한자리에서 만나는 무료 국제 페스티벌입니다.",
-      "tags": [
-        "MyK FESTA",
-        "고양시",
-        "킨텍스",
-        "K-문화",
-        "한류페스티벌",
-        "무료행사",
-        "문화축제",
-        "2026년"
       ]
     }
   ],
@@ -3241,9 +2805,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "(사)경산자인단오제보존회",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/93/4063893_image2_1.JPG",
       "homepage": "",
@@ -3270,7 +2834,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/36/4064536_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeongsan-jaein-dano-festival",
       "summary": "경산자인단오제는 전통 단오 문화를 재현하는 경북의 주요 축제입니다.\n6월 19-21일 3일간 자인면에서 무료로 개최되는 문화행사입니다.\n세시풍속과 전통 문화를 체험할 수 있는 기회입니다.",
       "highlight": "경산의 대표 전통축제로 단오 문화를 온온히 체험하는 3일 무료 축제. 가족 단위 관광객과 전통문화 애호가들에게 최고의 선택입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -3334,7 +2898,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/07/4068207_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeongsan-cafe-festival",
       "summary": "경산의 감성 카페 문화를 한자리에서 경험하는 특별한 축제입니다.\n6월 27일부터 7월 1일까지 강변서로에서 개최되며 무료 입장합니다.\n로컬 카페, 푸드트럭, 라이브 공연 등 다양한 프로그램이 준비됩니다.",
       "highlight": "경산 지역 카페 문화의 매력을 선보이는 유일한 축제로, 독립 카페들의 협력과 지역 아티스트 공연, 특별 메뉴 시연 등으로 감성 넘치는 경험을 제공합니다.",
       "target_audience": "커플|친구모임|혼자|가족여행",
@@ -3418,7 +2982,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/66/4060566_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gimcheon-grape-festival",
       "summary": "경상북도 김천시의 여름 대표 축제인 김천포도축제가 돌아옵니다.\n8월 14-16일 3일간 김천종합스포츠타운에서 무료로 개최됩니다.\n포도 시식, 문화공연, 다양한 체험으로 즐거운 추억을 만들어보세요.",
       "highlight": "포도의 고장 김천에서 새콤달콤한 포도를 즉석에서 맛보고 구매할 수 있으며, 가족 단위 체험행사와 문화공연으로 여름 휴가를 알차게 보낼 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -3458,9 +3022,9 @@
       "start_date_fmt": "2026-07-10",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "(사)한국마이스진흥재단",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/48/4065648_image2_1.jpg",
       "homepage": "",
@@ -3487,7 +3051,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/53/4065653_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeongbuk-korea-pet-cans",
       "summary": "2026년 7월 10~12일 구미에서 개최되는 대규모 펫 축제입니다.\n반려동물 문화 체험, 제품 전시, 공연 등 다양한 프로그램이 준비되어 있습니다.\n무료 입장으로 전 국민이 즐길 수 있는 특별한 행사입니다.",
       "highlight": "전국 최대 규모의 반려동물 축제로 펫 문화 콘텐츠를 총망라한 뜨거운 여름 축제",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -3522,9 +3086,9 @@
       "start_date_fmt": "2026-08-28",
       "end_date_fmt": "2026-10-25",
       "place": "",
-      "fee": "무료 (개최지별 유료 프로그램 있을 수 있음)",
+      "fee": "",
       "is_free": false,
-      "organizer": "국가유산청",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/34/4055834_image2_1.jpg",
       "homepage": "",
@@ -3555,7 +3119,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/38/4055838_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeongbuk-world-heritage-festival",
       "summary": "안동 하회마을에서 개최되는 국가 규모의 세계유산축전\n전통문화와 역사를 체험하는 2개월간의 무료 문화행사\n한국의 대표 세계유산지에서 펼쳐지는 특별한 축제의 장",
       "highlight": "유네스코 세계문화유산 하회마을을 무대로 한 국가급 축전. 전통과 현대가 어우러진 다채로운 프로그램으로 한국 문화유산의 가치를 만나볼 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -3593,9 +3157,9 @@
       "start_date_fmt": "2026-03-21",
       "end_date_fmt": "2026-08-17",
       "place": "",
-      "fee": "[전시]- 성인(19~64세) 8,000원- 소인(4세~18세) 5,000원- 경로우대자(65세 이상) 5,000원[전시 연계 프로그램]- 전시관람(도슨트)/미술관요가/차담 75,000원- 전시관람(도슨트)/미술관요가/사찰음식런치박스 125,000원",
+      "fee": "",
       "is_free": false,
-      "organizer": "오아르미술관",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/4062226_image2_1.jpg",
       "homepage": "",
@@ -3630,7 +3194,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/33/4062233_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gyeongbuk-comma-festival",
       "summary": "경주 오아르미술관의 감성 전시 '쉼표'는 비움·머무름·채움의\n철학을 담은 6개월 장기 전시입니다.\n도슨트·요가·차담·사찰음식 등 다양한 연계 프로그램 운영.",
       "highlight": "명상·휴식 테마의 감성 전시에 요가, 차담, 사찰음식 등 웰니스 프로그램 결합. 바쁜 일상 속 진정한 쉼표를 찾는 경험.",
       "target_audience": "가족여행|커플|혼자",
@@ -3668,9 +3232,9 @@
       "start_date_fmt": "2026-07-31",
       "end_date_fmt": "2026-08-09",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "국가유산청, 경상북도, 안동시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/44/4071944_image2_1.jpg",
       "homepage": "",
@@ -3697,7 +3261,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/47/4071947_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "andong-woryeong-night-heritage",
       "summary": "안동의 전통 국가유산을 주제로 하는 무료 야행 축제\n2026년 7월31일부터 8월9일까지 10일간 개최\n야간 조명과 현대적 연출로 재탄생한 역사 문화 체험",
       "highlight": "국가유산청 주최의 공식 야행 프로젝트로 전통문화를 현대적으로 재해석하며, 완전 무료로 즐기는 안동의 특별한 야경 축제",
       "target_audience": "가족여행|커플|친구모임",
@@ -3737,9 +3301,9 @@
       "start_date_fmt": "2026-07-11",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "무료(판매 및 일부 체험 유료)",
+      "fee": "",
       "is_free": false,
-      "organizer": "칠곡문화관광재단",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/4061206_image2_1.jpg",
       "homepage": "",
@@ -3766,7 +3330,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/90/4070690_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "chilgok-honey-makgeolli-festival",
       "summary": "경북 칠곡군 왜관읍에서 펼쳐지는 여름 맥주 축제\n7월 11-12일 2일간 무료로 즐기는 다양한 맥주 체험\n지역 특산물과 맛있는 먹거리까지 한 자리에서",
       "highlight": "칠곡의 숨은 매력을 담은 꿀맥 페스티벌! 신선한 맥주와 지역 특산품을 무료로 만나고, 가족 모두가 즐길 수 있는 다채로운 체험 프로그램까지 준비되어 있습니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -3783,54 +3347,6 @@
         "꿀맥페스티벌",
         "여름축제",
         "왜관읍"
-      ]
-    },
-    {
-      "id": "4069159-stay-night",
-      "content_id": "4069159",
-      "title": "stay night, 별빛따라 걷는 영덕의 밤",
-      "category": "문화행사",
-      "region": "경북",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "경상북도 영덕군 영덕읍 해맞이길 254-20",
-      "lat": 36.4226711214339,
-      "lng": 129.419714112622,
-      "start_date": "20260613",
-      "end_date": "20260613",
-      "start_date_fmt": "2026-06-13",
-      "end_date_fmt": "2026-06-13",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "영덕군",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/02/4069202_image2_1.jpg",
-      "homepage": "",
-      "tel": "054-730-5852",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4069202_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4069202_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "영덕 해맞이길에서 펼쳐지는 특별한 야간 문화행사입니다.\n별빛을 따라 걸으며 자연과 하나 되는 경험을 선사합니다.\n누구나 무료로 즐길 수 있는 감성적인 밤의 산책입니다.",
-      "highlight": "영덕의 청정한 밤하늘 아래 별을 감상하며 여유로운 야간 산책을 즐기는 특별한 문화경험. 가족 모두가 함께할 수 있는 무료 행사입니다.",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "충분한 방한용품을 준비하세요. 여름밤도 해변 지역은 쌀쌀할 수 있습니다.",
-        "손전등이나 헤드랜턴을 준비하면 안전한 야간 산책이 가능합니다.",
-        "별 관찰에 최적의 맑은 날씨를 선택해 방문하시기 바랍니다."
-      ],
-      "seo_title": "영덕 stay night 별빛따라 걷는 영덕의 밤 6월 무료 야간 행사",
-      "meta_description": "2026년 6월 13일 영덕 해맞이길에서 열리는 'stay night, 별빛따라 걷는 영덕의 밤'. 별 관찰과 야간 산책을 즐기는 무료 문화행사. 가족과 함께 특별한 밤을 경험하세요.",
-      "tags": [
-        "영덕문화행사",
-        "별보기",
-        "야간산책",
-        "해맞이길",
-        "무료행사"
       ]
     }
   ],
@@ -3884,7 +3400,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/80/4063480_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-dobong-oldway-cultural-festival",
       "summary": "서울 도봉구의 역사 깊은 옛길을 테마로 한 전통문화제입니다.\n경흥대로 도봉옛길에서 펼쳐지는 다양한 문화프로그램을 무료로 즐길 수 있습니다.\n도봉문화원이 주최하는 지역 문화행사로 가족 단위 방문객에게 추천합니다.",
       "highlight": "도봉의 역사와 전통을 한 자리에서 경험할 수 있는 특별한 문화제. 옛길 따라 이어지는 문화프로그램으로 지역 정체성을 재발견하는 기회입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -3919,9 +3435,9 @@
       "start_date_fmt": "2026-01-01",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "- 일반 65,000원- 장애인 50% 할인※ 무료 : 24개월 미만",
+      "fee": "",
       "is_free": false,
-      "organizer": "더 크리에이터스 주식회사",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/35/4060435_image2_1.jpg",
       "homepage": "",
@@ -3964,7 +3480,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/73/4060473_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-gugak-performance",
       "summary": "인사동 전통문화의 중심에서 국악의 정수를 경험하는 상시 공연\n2026년 1월부터 12월까지 연중 진행되는 고품격 국악공연\n전통음악의 매력을 현대적으로 재해석한 특별한 공연 무대",
       "highlight": "인사동의 정취 속에서 감상하는 정통 국악공연. 연중 상시 운영으로 언제든 전통음악의 깊이와 아름다움을 경험할 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임|혼자",
@@ -3999,9 +3515,9 @@
       "start_date_fmt": "2026-07-11",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "관악구",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/42/4071342_image2_1.jpg",
       "homepage": "",
@@ -4044,7 +3560,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/43/4071343_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-groove-in-gwanak",
       "summary": "서울 관악구 신림동에서 개최되는 대규모 음악축제입니다.\n7월 11-12일 이틀간 다채로운 음악 공연을 무료로 즐길 수 있습니다.\n가족, 친구, 연인 모두가 함께할 수 있는 여름 문화행사입니다.",
       "highlight": "관악구가 주최하는 그루브 인 관악은 매년 여름 음악 팬들을 위한 특별한 축제로, 다양한 장르의 공연과 무료 입장이 특징입니다.",
       "target_audience": "가족여행|친구모임|커플",
@@ -4096,7 +3612,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/72/4001672_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-namsan-bongsue-ceremony",
       "summary": "서울 남산에서 펼쳐지는 전통 봉수의식 재현\n2026년 연중 진행되는 무료 문화행사\n조선시대 군사통신 체계를 생생히 경험",
       "highlight": "400년 전 조선시대 긴급통신 시스템인 봉수의식을 직접 체험하고, 우리 역사문화의 가치를 깨우칠 수 있는 교육적 전통행사입니다.",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -4131,9 +3647,9 @@
       "start_date_fmt": "2026-05-06",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울시 문화정책과",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/68/4059668_image2_1.jpg",
       "homepage": "",
@@ -4144,7 +3660,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/68/4059668_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-plaza-cultural-flow",
       "summary": "서울 을지로 서울광장에서 5월부터 12월까지 개최되는 대규모 문화행사\n음악, 공연, 전시 등 다양한 문화콘텐츠를 무료로 즐길 수 있는 기회\n서울시민 누구나 참여 가능한 문화민주주의 프로젝트",
       "highlight": "서울 중심부 을지로 서울광장에서 8개월간 계속되는 무료 문화축제. 계절별 다양한 공연과 전시로 도시에 문화를 더하는 특별한 경험을 제공합니다.",
       "target_audience": "가족여행|친구모임|혼자|커플",
@@ -4179,9 +3695,9 @@
       "start_date_fmt": "2026-01-01",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울특별시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/79/4039379_image2_1.jpg",
       "homepage": "",
@@ -4224,7 +3740,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/27/4003327_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-royal-guard-ceremony",
       "summary": "조선시대 왕궁 수문장의 교대의식을 재현한 전통문화 공연\n정동 세종대로에서 무료로 감상할 수 있는 역사 체험\n연중 운영되는 서울의 대표 문화 관광 프로그램",
       "highlight": "조선시대 궁중 전통의식을 현대에 재현한 생생한 역사 체험. 무료 입장으로 한국 전통 문화의 정통성을 만날 수 있는 특별한 기회입니다.",
       "target_audience": "가족여행|어린이동반|혼자|친구모임",
@@ -4259,9 +3775,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-19",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울특별시 문화예술과",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/47/4061947_image2_1.jpg",
       "homepage": "",
@@ -4304,14 +3820,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/08/4063508_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "seoul-gugak-festival-seocho",
+      "summary": "서울의 전통음악 문화를 대표하는 국악축제\n서초구 반포동에서 펼쳐지는 무료 공연 및 체험\n전통과 현대가 어우러진 국악의 감동을 경험하세요",
+      "highlight": "서울시가 주최하는 대표 국악축제로, 전통음악의 정수를 느낄 수 있는 무료 관람 기회. 국악 공연부터 체험까지 온가족이 즐길 수 있는 문화행사입니다.",
+      "target_audience": "가족여행|커플|친구모임",
+      "tips": [
+        "무료 입장이므로 미리 예매 확인 후 방문하세요",
+        "대중교통 이용을 추천하며 충분한 시간을 두고 방문하세요",
+        "국악 공연 일정을 미리 확인하여 관심 공연을 놓치지 마세요"
+      ],
+      "seo_title": "2026 서울국악축제 - 서초구 전통음악 공연 무료 관람",
+      "meta_description": "2026년 6월 19일 서울 서초구에서 열리는 서울국악축제. 전통국악의 매력을 느낄 수 있는 무료 공연과 다양한 문화행사를 즐겨보세요.",
+      "tags": [
+        "서울국악축제",
+        "전통음악",
+        "국악공연",
+        "서초구",
+        "무료문화행사"
+      ]
     },
     {
       "id": "2718984-v21",
@@ -4329,9 +3855,9 @@
       "start_date_fmt": "2026-07-30",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "- 성인 얼리버드 13,000원- 성인 15,000원- 청소년(8~19세) 9,000원※ 무료 아동(~7세)",
+      "fee": "",
       "is_free": false,
-      "organizer": "오씨메이커스",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/78/4062778_image2_1.png",
       "homepage": "",
@@ -4342,7 +3868,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/78/4062778_image3_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-illustration-fair",
       "summary": "국내 최대 규모 일러스트 창작 문화 축제\n7월 30일부터 8월 2일까지 강남 삼성동에서 개최\n성인 얼리버드 13,000원 특가 관람",
       "highlight": "일러스트 창작자와 팬이 함께하는 한여름 문화행사. 최신 일러스트 트렌드 확인 및 작가 만남 기회 제공",
       "target_audience": "가족여행|친구모임|혼자",
@@ -4377,9 +3903,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울시 서초구",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/62/4069862_image2_1.jpg",
       "homepage": "",
@@ -4406,7 +3932,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/61/4069861_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seocho-classic-theme-park",
       "summary": "서울 서초구에서 개최되는 클래식 테마파크 행사.\n6월 12-14일 3일간 무료로 즐기는 클래식 음악 축제.\n가족 단위 방문객을 위한 다양한 공연과 체험 프로그램 제공.",
       "highlight": "클래식 음악을 테마로 한 대규모 문화행사로, 전문가 공연부터 체험 프로그램까지 모두 무료입장. 서초구 중심부에 위치해 접근성도 탁월합니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -4441,9 +3967,9 @@
       "start_date_fmt": "2026-07-01",
       "end_date_fmt": "2026-08-05",
       "place": "",
-      "fee": "- 성인 8,000원 (1,2부 개별가)- 통합 15,000원 (1,2부 통합가)- 학생(초,중,고등학생) 5,000원- 단체(10인 이상) 5,000원- 얼리버드 4,000원(1,2부 개별가)- 얼리버드 통합 7,500원 (1,2부 통합가)",
+      "fee": "",
       "is_free": false,
-      "organizer": "조선일보",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4057349_image2_1.jpg",
       "homepage": "",
@@ -4454,7 +3980,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/49/4057349_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-asiaf-100",
       "summary": "아시아 현대미술의 미래를 담은 국제 규모 미술 축제입니다.\n서울 태평로 세종문화회관에서 2개월간 개최되는 아시아프 100입니다.\n신진작가부터 거장까지, 아시아 미술의 모든 것을 만나세요.",
       "highlight": "아시아 최대 규모 현대미술 축제로 신진작가의 발굴, 미술경매, 국제전시를 한 자리에서 경험하는 문화행사입니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -4489,9 +4015,9 @@
       "start_date_fmt": "2026-04-11",
       "end_date_fmt": "2026-10-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/13/4056513_image2_1.jpg",
       "homepage": "",
@@ -4502,7 +4028,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/13/4056513_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-uijeongbu-traditional-culture",
       "summary": "종로 의정부지에서 매년 봄부터 가을까지 펼쳐지는 전통문화 상설행사\n한복, 전통공예, 국악 등 다양한 한국문화를 무료로 체험할 수 있는 기회\n서울의 중심에서 옛 정취를 느끼며 한국 전통을 배우고 즐기는 문화광장",
       "highlight": "서울 도심 한가운데서 전통문화를 생생하게 경험할 수 있는 무료 상설전시. 매주 다양한 공연과 체험프로그램으로 한국의 멋과 정취를 깊이 있게 즐길 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -4537,9 +4063,9 @@
       "start_date_fmt": "2026-04-26",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료(체험 프로그램 유료 5,000~10,000원)",
+      "fee": "",
       "is_free": false,
-      "organizer": "서울특별시 미래한강본부",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/24/4063024_image2_1.jpg",
       "homepage": "",
@@ -4570,7 +4096,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/22/4063022_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-jamsu-ttubeok-festival",
       "summary": "서초구 반포동 잠수교를 전면 차단하고 진행하는 무료 축제\n문화공연, 플리마켓, 체험프로그램 등 다양한 볼거리 제공\n4월 26일부터 6월 14일까지 약 7주간 계속",
       "highlight": "도시 한복판에서 자동차 없는 거리의 자유로움을 경험하고, 한강변의 자연과 문화를 함께 누릴 수 있는 특별한 축제입니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -4605,9 +4131,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-13",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울특별시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/83/4069183_image2_1.jpg",
       "homepage": "",
@@ -4618,7 +4144,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/83/4069183_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-river-concert-2026",
       "summary": "서울시향이 창립 65주년을 맞아 한강변에서 펼치는 특별 음악회\n한강남자전거길에서 자연과 클래식의 완벽한 조화를 경험하세요\n누구나 무료로 입장 가능한 대규모 야외 오케스트라 공연",
       "highlight": "한강의 아름다운 경관 속에서 감상하는 정통 클래식. 창립 65주년 기념 서울시향의 특별한 공연으로 가족 모두가 무료로 즐길 수 있는 문화행사입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -4689,7 +4215,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/07/4060307_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-painters",
       "summary": "서울 정동길에서 펼쳐지는 감성 뮤지컬 페인터즈\nVIP·R·S석 다양한 좌석으로 모두를 위한 선택\n2022년부터 장기 공연 중인 인기 무대 작품",
       "highlight": "정동 중심 극장에서 감상하는 예술적 뮤지컬. 3가지 좌석 등급으로 예산에 맞춘 관람이 가능하며, 장기 공연으로 검증된 작품입니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -4724,9 +4250,9 @@
       "start_date_fmt": "2026-05-01",
       "end_date_fmt": "2026-09-19",
       "place": "",
-      "fee": "무료 (추첨제)",
-      "is_free": true,
-      "organizer": "서울시 미래한강본부",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/4060146_image2_1.jpg",
       "homepage": "",
@@ -4741,7 +4267,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/48/4060148_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-hangang-night-tour",
       "summary": "5월부터 9월까지 여의도에서 운영되는 무료 한강야경투어\n한강의 야경을 감상하며 서울의 밤을 만끽할 수 있는 특별한 경험\n무료 추첨제로 참여 가능한 서울시 대표 야외관광 프로그램",
       "highlight": "여의도 한강공원에서 즐기는 완벽한 야경! 무료 추첨제 참여로 한강의 야경 명소를 전문가와 함께 탐방하는 특별한 기회입니다.",
       "target_audience": "가족여행|커플|친구모임|혼자",
@@ -4781,9 +4307,9 @@
       "start_date_fmt": "2026-04-20",
       "end_date_fmt": "2026-11-15",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울시 미래한강본부",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4058449_image2_1.png",
       "homepage": "",
@@ -4802,7 +4328,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/48/4058448_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-hangang-history-tour",
       "summary": "서울 한강의 역사와 발전을 배우는 무료 탐방 프로그램입니다.\n여의도 한강공원을 중심으로 4월부터 11월까지 운영됩니다.\n서울시 미래한강본부에서 주최하는 문화교육 활동입니다.",
       "highlight": "한강의 과거와 현재를 함께 경험하는 특별한 투어! 연중 상시 운영되는 무료 문화탐방으로 역사 교육과 여가를 한번에 즐길 수 있습니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -4837,9 +4363,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-07-11",
       "place": "",
-      "fee": "60,000원",
+      "fee": "",
       "is_free": false,
-      "organizer": "CJ푸드빌",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/53/4065953_image2_1.png",
       "homepage": "",
@@ -4882,7 +4408,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/58/4065958_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "seoul-n-tower-global-night-walk",
       "summary": "N서울타워에서 개최되는 글로벌 나이트워크 축제\n세계 다양한 문화를 테마로 한 야간 전시 및 공연\n6월 13일부터 7월 11일까지 약 한 달간 진행",
       "highlight": "서울의 야경을 배경으로 세계 문화를 경험하는 감각적 축제. 타워 곳곳에서 만나는 글로벌 공연, 전시, 푸드 체험으로 하나의 완성된 나이트라이프 프로그램",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -4899,619 +4425,6 @@
         "글로벌문화",
         "서울나이트라이프",
         "여름축제"
-      ]
-    },
-    {
-      "id": "3377038-2026",
-      "content_id": "3377038",
-      "title": "2026 국제선명상대회",
-      "category": "스포츠",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 강남구 봉은사로 531 (삼성동)",
-      "lat": 37.5158257049833,
-      "lng": 127.057734484281,
-      "start_date": "20260403",
-      "end_date": "20261112",
-      "start_date_fmt": "2026-04-03",
-      "end_date_fmt": "2026-11-12",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "대한불교조계종",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/90/4054090_image2_1.jpg",
-      "homepage": "",
-      "tel": "010-8441-2371",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/91/4054091_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/91/4054091_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "대한불교조계종 주최 국제선명상대회가 올해 4월부터 11월까지\n 서울 삼성동 봉은사에서 펼쳐집니다.\n 명상 실천과 불교문화 공유, 국제 교류의 기회를 무료로 제공합니다.",
-      "highlight": "명상 전문가와 국제 참가자가 함께하는 8개월 장기 명상축제. 일상의 스트레스에서 벗어나 마음의 평온함을 찾을 수 있는 무료 체험 기회입니다.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "봉은사는 도시 속 조용한 명상 공간으로 마음을 정리하기 좋습니다",
-        "장기 행사이므로 자신의 일정에 맞춰 유연하게 참가 가능합니다",
-        "국제 참가자와의 교류로 다양한 문화 체험을 할 수 있습니다"
-      ],
-      "seo_title": "2026 국제선명상대회, 서울 삼성동에서 열리는 불교 명상 축제",
-      "meta_description": "2026년 4월~11월 서울 강남구 삼성동 봉은사에서 개최되는 국제선명상대회. 무료 참가로 즐기는 명상과 불교문화 체험, 국제 교류의 장을 만나보세요.",
-      "tags": [
-        "국제선명상대회",
-        "서울명상",
-        "강남구문화행사",
-        "봉은사",
-        "불교문화"
-      ]
-    },
-    {
-      "id": "4070216-2026",
-      "content_id": "4070216",
-      "title": "2026 글로벌 크리에이터 아트페어",
-      "category": "전시",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 마포구 동교동",
-      "lat": 37.556896,
-      "lng": 126.924142,
-      "start_date": "20260613",
-      "end_date": "20260613",
-      "start_date_fmt": "2026-06-13",
-      "end_date_fmt": "2026-06-13",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "넥스트컬처랩",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/48/4070348_image2_1.jpg",
-      "homepage": "",
-      "tel": "010-7621-3714",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/48/4070348_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/48/4070348_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "서울 마포구 동교동에서 6월 13일 개최되는 글로벌 크리에이터 아트페어입니다.\n전 세계 크리에이터들의 현대미술작품을 한눈에 감상할 수 있습니다.\n무료 입장으로 누구나 참여 가능한 국제 미술 축제입니다.",
-      "highlight": "전 세계 크리에이터들의 다양한 현대미술작품을 선보이는 국제 규모 아트페어. 무료 입장으로 글로벌 미술 트렌드를 경험할 수 있는 기회입니다.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "미리 온라인에서 행사 정보와 참여 크리에이터 작품을 확인하고 방문하세요.",
-        "편한 복장으로 여유 있게 관람하며 다양한 현대미술 작품을 감상하세요.",
-        "주변 카페나 갤러리와 함께 동교동 문화 거리를 탐방하는 것을 추천합니다."
-      ],
-      "seo_title": "서울 글로벌 크리에이터 아트페어 2026 - 동교동",
-      "meta_description": "2026년 6월 13일 서울 마포구 동교동에서 열리는 글로벌 크리에이터 아트페어. 국제 현대미술 전시회 무료 관람. 창의적인 작품 세계 만나보세요.",
-      "tags": [
-        "글로벌아트페어",
-        "현대미술전시",
-        "크리에이터",
-        "서울문화행사",
-        "무료관람"
-      ]
-    },
-    {
-      "id": "4071535-2026-14",
-      "content_id": "4071535",
-      "title": "2026 농촌여행 페스티벌 (제14회 도농교류의 날 기념)",
-      "category": "축제",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 중구 을지로 지하12 (을지로1가)",
-      "lat": 37.565567165,
-      "lng": 126.9783328596,
-      "start_date": "20260616",
-      "end_date": "20260616",
-      "start_date_fmt": "2026-06-16",
-      "end_date_fmt": "2026-06-16",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "농림축산식품부",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/19/4071619_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-550-2557",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/19/4071619_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/19/4071619_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
-    },
-    {
-      "id": "2387785-2026",
-      "content_id": "2387785",
-      "title": "2026 보드게임콘",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 강남구 영동대로 513 (삼성동)",
-      "lat": 37.51186515083277,
-      "lng": 127.05920358462161,
-      "start_date": "20260716",
-      "end_date": "20260719",
-      "start_date_fmt": "2026-07-16",
-      "end_date_fmt": "2026-07-19",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "문화체육관광부, 한국콘텐츠진흥원",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/36/4067236_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-8611-9803",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/33/4067233_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/33/4067233_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/34/4067234_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/34/4067234_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/35/4067235_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/35/4067235_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026 보드게임콘이 7월 16-19일 서울 강남에서 개최됩니다.\n보드게임 체험, 신작 전시, 토너먼트 등 다양한 프로그램이 준비됩니다.\n무료 입장으로 가족, 친구, 혼자서도 즐길 수 있습니다.",
-      "highlight": "문화체육관광부 주최 공식 보드게임 축제로 국내 최고 규모. 신작 체험, 프로 토너먼트, 보드게이머 커뮤니티 만남의 장",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "먼저 공식 홈페이지에서 행사 일정 및 특별 이벤트 확인 후 방문",
-        "주말(17-18일)은 혼잡하므로 평일 오전 시간대 방문 추천",
-        "주차가 제한될 수 있으니 대중교통(지하철 2호선 강남역) 이용 권장"
-      ],
-      "seo_title": "2026 보드게임콘 서울 강남 삼성동 무료 관람",
-      "meta_description": "2026년 7월 16-19일 강남 삼성동에서 열리는 보드게임콘. 문화체육관광부 주최 국내 최대 보드게임 축제로 무료 입장. 게임 체험, 토너먼트, 신작 전시 등 즐거움 가득",
-      "tags": [
-        "보드게임",
-        "서울축제",
-        "강남",
-        "무료행사",
-        "2026"
-      ]
-    },
-    {
-      "id": "2720203-2026",
-      "content_id": "2720203",
-      "title": "2026 서울거리공연 구석구석라이브",
-      "category": "공연",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 종로구 세종대로 지하172 (세종로)",
-      "lat": 37.5716228232824,
-      "lng": 126.976787992565,
-      "start_date": "20260501",
-      "end_date": "20261231",
-      "start_date_fmt": "2026-05-01",
-      "end_date_fmt": "2026-12-31",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서울특별시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/74/4060474_image2_1.png",
-      "homepage": "",
-      "tel": "02-2088-7218",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4060474_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4060474_image3_1.png"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "서울 도심 여러 장소에서 펼쳐지는 무료 거리공연\n매주 다양한 장르의 예술공연으로 시민들을 만남\n5월부터 12월까지 약 8개월간 지속되는 대규모 문화축제",
-      "highlight": "서울 구석구석 다양한 장소에서 펼쳐지는 무료 거리공연. 5월~12월 8개월간 계속되며 매주 새로운 공연으로 도시 문화생활을 풍요롭게 만듭니다.",
-      "target_audience": "가족여행|친구모임|혼자|어린이동반",
-      "tips": [
-        "매주 일정이 변동되므로 서울시 공식 웹사이트에서 주간 공연 스케줄 사전 확인 필수",
-        "야외공연이므로 날씨 대비용품(우산, 방석 등) 준비하고 충분한 시간 여유 두기",
-        "도시 여러 장소에서 개최되므로 대중교통을 이용하면 편리함"
-      ],
-      "seo_title": "2026 서울거리공연 구석구석라이브 - 무료 거리공연 매주 개최",
-      "meta_description": "서울 종로구 세종로에서 5월부터 12월까지 매주 펼쳐지는 무료 거리공연. 다양한 장르의 공연을 도심 곳곳에서 만나보세요. 서울시 주최 문화행사",
-      "tags": [
-        "무료공연",
-        "서울거리공연",
-        "문화행사",
-        "야외공연",
-        "종로"
-      ]
-    },
-    {
-      "id": "228985-2026",
-      "content_id": "228985",
-      "title": "2026 서울국제도서전",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 강남구 영동대로 513 (삼성동)",
-      "lat": 37.51186515083277,
-      "lng": 127.05920358462161,
-      "start_date": "20260624",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-24",
-      "end_date_fmt": "2026-06-28",
-      "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "대한출판문화협회, 서울국제도서전",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/95/4013395_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-702-0670",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/93/4013393_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/93/4013393_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/94/4013394_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/94/4013394_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "매년 여름 강남에서 펼쳐지는 한국 최대 규모 도서 축제\n국내외 출판사 참가, 신간 도서 할인 판매, 저자 만남 행사\n책 읽는 문화 확산과 출판산업 발전을 위한 대표 행사",
-      "highlight": "국내외 수천 종 도서 전시, 저자 사인회 및 강연, 특별 할인 판매로 책 문화를 한 자리에서 즐길 수 있는 최고의 도서 축제입니다.",
-      "target_audience": "가족여행|친구모임|커플",
-      "tips": [
-        "사전 관람 시간대 확인 후 방문하면 붐비지 않게 즐길 수 있습니다",
-        "인기 저자 사인회는 사전 등록이나 조기 방문을 권장합니다",
-        "대중교통 이용 시 삼성동 인근 버스·지하철 역으로 접근이 편리합니다"
-      ],
-      "seo_title": "2026 서울국제도서전 6월 강남 삼성동 개최",
-      "meta_description": "2026년 6월 24-28일 강남 삼성동에서 열리는 서울국제도서전. 국내외 출판사 참가, 저자 사인회, 도서 할인 판매 등 책 문화 축제를 즐겨보세요.",
-      "tags": [
-        "서울국제도서전",
-        "도서전",
-        "책 축제",
-        "강남 행사",
-        "2026년 6월"
-      ]
-    },
-    {
-      "id": "3491755-2026-k",
-      "content_id": "3491755",
-      "title": "2026 서울식품유통대전(K푸드쇼)",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 서초구 강남대로 27 (양재동)",
-      "lat": 37.4682787075426,
-      "lng": 127.039136433366,
-      "start_date": "20260616",
-      "end_date": "20260616",
-      "start_date_fmt": "2026-06-16",
-      "end_date_fmt": "2026-06-16",
-      "place": "",
-      "fee": "무료※ 부분 유료로 자세한 이용요금은 공식 홈페이지 참조",
-      "is_free": false,
-      "organizer": "파이낸셜뉴스",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4058663_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-6965-0014",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4058663_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4058663_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "국내 식품 및 유통 전문가를 위한 최대 규모 행사\n신상 식품, 유통 솔루션, 비즈니스 기회를 한곳에서 만남\n무료 입장으로 K-푸드 산업의 미래를 경험할 수 있음",
-      "highlight": "K-푸드 산업의 최신 트렌드와 신제품을 한 자리에서 발견하고, 식품업계 전문가와의 비즈니스 네트워킹 기회를 가질 수 있는 국가 대표 행사입니다.",
-      "target_audience": "친구모임|비즈니스|가족여행",
-      "tips": [
-        "사전 등록 또는 현장 등록으로 무료 입장 가능하니 공식 홈페이지 확인 필수",
-        "신제품 체험과 샘플링이 많으니 여유 있는 시간 계획 추천",
-        "명함과 포트폴리오 준비하면 비즈니스 네트워킹에 유리함"
-      ],
-      "seo_title": "2026 서울식품유통대전 K푸드쇼, 6월 양재동 개최",
-      "meta_description": "2026년 6월 16일 서초구 양재동에서 개최되는 서울식품유통대전 K푸드쇼. 국내 식품 및 유통업계 최대 규모 행사로 신제품 체험, 비즈니스 상담, 식품 트렌드를 한눈에 볼 수 있습니다.",
-      "tags": [
-        "K푸드쇼",
-        "식품유통대전",
-        "서울식품박람회",
-        "강남행사",
-        "비즈니스박람회"
-      ]
-    },
-    {
-      "id": "3107059-2026",
-      "content_id": "3107059",
-      "title": "2026 숭례문 파수의식",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 중구 세종대로 40 (남대문로4가)",
-      "lat": 37.55992837962214,
-      "lng": 126.97536090852309,
-      "start_date": "20260101",
-      "end_date": "20261231",
-      "start_date_fmt": "2026-01-01",
-      "end_date_fmt": "2026-12-31",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/99/4001599_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-3789-7402",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/00/4001600_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/00/4001600_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4001601_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4001601_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "숭례문의 전통 파수 의례를 재현하는 특별한 문화행사입니다.\n2026년 연중 개최되는 무료 관람 프로그램입니다.\n조선시대 수위 문화를 생생하게 체험할 수 있습니다.",
-      "highlight": "숭례문에서 재현되는 전통 파수의식은 조선시대 궁문 수위 문화를 생생하게 체험할 수 있는 특별한 기회입니다. 무료로 관람 가능합니다.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "사계절 내내 진행되므로 계절별로 다른 분위기를 경험해보세요",
-        "서울 도심 중심의 숭례문이므로 주변 관광지와 함께 둘러보기 좋습니다",
-        "전통의복 체험 등 참여형 프로그램이 있는지 미리 확인하세요"
-      ],
-      "seo_title": "2026 숭례문 파수의식 서울 - 무료 전통문화 체험",
-      "meta_description": "서울 중구 숭례문에서 펼쳐지는 2026 파수의식. 전통 수위 의례를 재현하는 무료 문화행사로 한국의 역사와 전통을 경험하세요.",
-      "tags": [
-        "숭례문",
-        "전통문화",
-        "파수의식",
-        "서울관광",
-        "무료행사",
-        "한국 전통",
-        "역사체험",
-        "중구관광"
-      ]
-    },
-    {
-      "id": "2497537-2026-42k",
-      "content_id": "2497537",
-      "title": "2026 한강나이트워크42K",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 영등포구 여의공원로 68 (여의도동)",
-      "lat": 37.524979,
-      "lng": 126.937696,
-      "start_date": "20260801",
-      "end_date": "20260802",
-      "start_date_fmt": "2026-08-01",
-      "end_date_fmt": "2026-08-02",
-      "place": "",
-      "fee": "- 14K 46,000원- 22K 54,000원- 42K 62,000원",
-      "is_free": false,
-      "organizer": "㈜블렌트",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4071363_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-4705-2008",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4071363_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4071363_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "서울 여의도에서 펼쳐지는 야간 워킹 축제\n2026년 8월 1-2일, 한강을 따라 걷는 특별한 경험\n14K·22K·42K 다양한 거리 코스로 누구나 즐길 수 있음",
-      "highlight": "한강의 야경을 감상하며 즐기는 야간 워킹 축제. 자신의 체력에 맞는 3가지 코스(14K·22K·42K)로 건강한 여름밤을 보낼 수 있습니다.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "여름 야간이므로 가벼운 옷차림과 운동화 필수, 수분 섭취 준비하기",
-        "사전 등록으로 참가 인원을 파악하고 여유 있게 준비하기",
-        "여의공원 주변 주차장이 혼잡할 수 있으니 대중교통 이용 권장"
-      ],
-      "seo_title": "2026 한강나이트워크42K 서울 여의도 야간워킹 축제",
-      "meta_description": "2026년 8월 1-2일 서울 여의도 여의공원에서 열리는 한강나이트워크42K. 14K·22K·42K 코스로 야간 워킹의 즐거움을 경험하세요. 46,000원부터 참가 가능.",
-      "tags": [
-        "한강나이트워크",
-        "야간워킹",
-        "여의도",
-        "서울축제",
-        "건강운동"
-      ]
-    },
-    {
-      "id": "3498398-2026",
-      "content_id": "3498398",
-      "title": "2026년 강제동원 희생자를 기리는 유족·시민 어울림행사",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 중구 태평로1가 1",
-      "lat": 37.569249,
-      "lng": 126.978013,
-      "start_date": "20260613",
-      "end_date": "20260613",
-      "start_date_fmt": "2026-06-13",
-      "end_date_fmt": "2026-06-13",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "일제강제동원피해자지원재단",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/80/4069880_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-4624-2816",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/81/4069881_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/81/4069881_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/82/4069882_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/82/4069882_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/83/4069883_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/83/4069883_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "일제강제동원 희생자들을 추모하는 유족과 시민 어울림행사\n2026년 6월 13일 서울 태평로에서 개최되는 무료 행사\n역사 교육과 추모의 의미를 담은 의미 있는 모임",
-      "highlight": "일제강제동원의 아픈 역사를 함께 기억하고, 희생자들의 명복을 빕니다. 유족과 시민이 함께 나누는 추모와 위로의 시간입니다.",
-      "target_audience": "가족여행|혼자|친구모임",
-      "tips": [
-        "무료 행사이므로 사전 예약 여부 확인 후 방문하세요",
-        "서울 중구 태평로 위치로 대중교통 이용이 편리합니다",
-        "추모 행사의 성격이므로 경건한 마음가짐으로 참석하세요"
-      ],
-      "seo_title": "2026 강제동원 희생자 추도식, 서울 시민 어울림행사 무료 참석",
-      "meta_description": "6월 13일 서울에서 열리는 강제동원 희생자 추도 어울림행사. 유족과 시민이 함께하는 무료 행사로 일제강점기 역사를 기억하고 추모합니다.",
-      "tags": [
-        "강제동원희생자",
-        "추도식",
-        "서울",
-        "역사추모",
-        "무료행사"
-      ]
-    },
-    {
-      "id": "3473295-ddp",
-      "content_id": "3473295",
-      "title": "DDP 건축투어",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 중구 을지로 281 (을지로7가)",
-      "lat": 37.56605397262908,
-      "lng": 127.00955476908904,
-      "start_date": "20260101",
-      "end_date": "20261231",
-      "start_date_fmt": "2026-01-01",
-      "end_date_fmt": "2026-12-31",
-      "place": "",
-      "fee": "- 일반 10,000원- 국가유공자 / 군인 / 장애인 / 청소년 단체 8,000원- 어린이 5,000원",
-      "is_free": false,
-      "organizer": "서울특별시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/09/4046009_image2_1.png",
-      "homepage": "",
-      "tel": "02-2153-0310, 0311 (12:00~13:00 점심시간)",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/46/4007346_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/46/4007346_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/47/4007347_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/47/4007347_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/48/4007348_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/48/4007348_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/49/4007349_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/49/4007349_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "자하 하디드 설계의 건축 명작 DDP를 전문가와 함께 탐방합니다.\n서울 중구 을지로7가에서 연중 진행되는 특별한 건축 투어입니다.\n건축 애호가부터 일반인까지 누구나 참여 가능합니다.",
-      "highlight": "동대문디자인플라자의 유려한 곡선 건축미와 설계 의도를 깊이 있게 이해할 수 있는 전문 가이드 투어 프로그램",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "편한 신발 착용 추천 - 건물 내부 곳곳을 이동하며 관람합니다",
-        "사전 예약 확인 필수 - 투어 일정 및 인원 제한 등 자세한 사항은 방문 전 확인하세요",
-        "카메라 준비 - 건축 미학을 담을 수 있는 포토 스팟이 많습니다"
-      ],
-      "seo_title": "서울 DDP 건축투어 2026 - 동대문디자인플라자 건축 투어",
-      "meta_description": "서울 중구 DDP(동대문디자인플라자)에서 진행되는 건축투어. 자하 하디드의 명작 건축물을 전문가와 함께 탐방하세요. 2026년 연중 운영, 일반 10,000원",
-      "tags": [
-        "건축투어",
-        "DDP",
-        "동대문디자인플라자",
-        "문화생활",
-        "서울여행"
-      ]
-    },
-    {
-      "id": "3351451-k-2026",
-      "content_id": "3351451",
-      "title": "K-일러스트레이션페어 마곡 2026",
-      "category": "문화행사",
-      "region": "서울",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "서울특별시 강서구 마곡중앙로 143 (마곡동)",
-      "lat": 37.566727291186524,
-      "lng": 126.82539429651213,
-      "start_date": "20260820",
-      "end_date": "20260823",
-      "start_date_fmt": "2026-08-20",
-      "end_date_fmt": "2026-08-23",
-      "place": "",
-      "fee": "- 현장 구매 10,000원- 1차 사전 예매 시 5,000원- 2차 사전 예매 시 7,000원",
-      "is_free": false,
-      "organizer": "㈜한국국제전시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/75/4059475_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-761-2512",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/72/4059472_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/72/4059472_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4059473_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4059473_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4059474_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4059474_image2_1.JPG"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "서울 강서구 마곡에서 8월 20-23일 개최되는\n국내 최대 규모 K-일러스트레이션 전문 페어\n초대형 일러스트 작품과 아티스트 만남의 장",
-      "highlight": "한국 일러스트레이션 문화를 대표하는 대규모 페어로, 국내외 아티스트 작품 전시와 워크숍, 포토존 등 다양한 프로그램을 통해 창의적 영감을 얻을 수 있습니다.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "1차 사전 예매(5,000원)로 최대 50% 할인 받을 수 있으니 미리 예매하세요",
-        "마곡중앙로 근처 주차시설과 대중교통(공항철도, 지하철)을 활용하면 편리합니다",
-        "아티스트 사인회와 워크숍은 사전 등록이 필요할 수 있으니 확인 후 방문하세요"
-      ],
-      "seo_title": "K-일러스트레이션페어 마곡 2026 | 서울 강서구 8월 행사",
-      "meta_description": "2026년 8월 20-23일 서울 강서구 마곡에서 열리는 K-일러스트레이션페어. 국내 최대 규모 일러스트 전시회로 예매 5,000원부터 관람 가능합니다.",
-      "tags": [
-        "K-일러스트레이션",
-        "서울 전시회",
-        "마곡",
-        "강서구",
-        "미술 문화행사"
       ]
     }
   ],
@@ -5532,9 +4445,9 @@
       "start_date_fmt": "2026-06-26",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "공주시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/4069606_image2_1.jpg",
       "homepage": "",
@@ -5561,7 +4474,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/05/4069605_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gongju-yuggu-hydrangea-festival",
       "summary": "충남 공주시 유구읍 색동수국정원에서 6월 26-28일 개최\n다채로운 색상의 수국이 만드는 환상적인 봄 꽃 축제\n가족 단위 방문객을 위한 무료 입장 및 다양한 볼거리 제공",
       "highlight": "형형색색 수국이 물드는 유구의 명소, 무료 입장으로 즐기는 초여름 꽃 축제. 사진 명소와 가족 친화적 환경이 갖춰진 추천 나들이 코스입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -5596,9 +4509,9 @@
       "start_date_fmt": "2026-07-10",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "무료 (부분 유료)",
+      "fee": "",
       "is_free": false,
-      "organizer": "(재)금산문화관광축제재단",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/42/4064242_image2_1.jpg",
       "homepage": "",
@@ -5633,7 +4546,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/81/4069581_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "geumsan-samgyetang-festival",
       "summary": "금산의 인삼과 삼계탕 문화를 축하하는 여름 축제\n보양식 시식, 인삼 제품 구매, 전통 문화 체험 프로그램 운영\n가족과 함께 즐기는 건강한 로컬 푸드 페스티벌",
       "highlight": "인삼 산지의 정통 삼계탕을 맛보고 인삼 제품을 구매할 수 있는 특별한 축제. 여름 보양식 문화를 즐기며 지역 특산품을 만날 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임",
@@ -5668,9 +4581,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-08-09",
       "place": "",
-      "fee": "일반존 (성인 [월-목]12,000 [금-일] 16,000)패밀리존 (어린이 [월-목] 11,000 [금-일] 13,000)",
+      "fee": "",
       "is_free": false,
-      "organizer": "보령시",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/79/3534979_image2_1.jpg",
       "homepage": "",
@@ -5717,7 +4630,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/05/4031705_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "boryeong-mud-festival",
       "summary": "보령의 유명한 머드를 활용한 여름 축제\n신흑동 펄 머드의 효능을 직접 체험할 수 있는 기회\n물놀이, 공연, 체험 등 다양한 프로그램 운영",
       "highlight": "천연 게르마늄 함유 보령 펄 머드를 직접 체험하고 즐기는 국내 대표 여름축제. 가족 단위 방문객을 위한 전용 존 운영으로 안전하고 편리한 축제 환경 제공.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -5752,9 +4665,9 @@
       "start_date_fmt": "2026-07-03",
       "end_date_fmt": "2026-07-05",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "부여군",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/74/4067074_image2_1.jpg",
       "homepage": "",
@@ -5793,7 +4706,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/76/4067076_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "buyeo-seodong-lotus-festival",
       "summary": "충남 부여군 동남리에서 개최되는 전통 연꽃 축제\n7월 3일부터 5일까지 3일간 무료로 즐기는 행사\n서동의 흔적이 남아있는 부여의 역사와 자연을 함께 감상",
       "highlight": "천년 고도 부여의 설화를 담은 연꽃축제. 청정한 연못의 연꽃과 전통문화가 어우러진 여름 힐링 축제",
       "target_audience": "가족여행|커플|친구모임",
@@ -5828,9 +4741,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "서천군",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/00/4044300_image2_1.jpg",
       "homepage": "",
@@ -5877,7 +4790,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/07/4044307_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "hansan-mosi-culture-festival",
       "summary": "서천군 한산면에서 매년 열리는 전통 한산모시 문화축제\n6월 12-14일 3일간 전통 모시 제조 체험 및 공연 개최\n무료 입장으로 전통 문화를 경험하고 즐길 수 있는 기회",
       "highlight": "국내 유일의 전통 모시 문화축제! 손으로 직접 모시 짜기 체험부터 전통공연까지 한산 모시의 모든 것을 느낄 수 있습니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -5912,9 +4825,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "운영처 별로 상이함※ 자세한 이용요금은 홈페이지 참조",
+      "fee": "",
       "is_free": false,
-      "organizer": "문화체육관광부",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4071410_image2_1.jpg",
       "homepage": "",
@@ -5945,7 +4858,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/03/4072403_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "chungnam-craft-week",
       "summary": "전국 최고의 공예 문화축제 2026 공예주간이 6월 부여에서 개최됩니다.\n전통공예 전시·체험·판매 등 다양한 프로그램으로 공예의 매력을 느껴보세요.\n운영처별로 관람료가 다르니 홈페이지에서 확인 후 방문하시기 바랍니다.",
       "highlight": "문화체육관광부 주최의 공식 공예주간으로 전통공예 전시·체험·판매를 한 곳에서 즐길 수 있는 대한민국 대표 공예 문화축제입니다.",
       "target_audience": "가족여행|친구모임|커플|어린이동반",
@@ -5968,58 +4881,6 @@
         "충청남도",
         "가족여행"
       ]
-    },
-    {
-      "id": "2996478-2026-k",
-      "content_id": "2996478",
-      "title": "2026 천안 K-컬처박람회",
-      "category": "전시",
-      "region": "충남",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "충청남도 천안시 동남구 목천읍 독립기념관로 1",
-      "lat": 36.7773487289308,
-      "lng": 127.2325927550662,
-      "start_date": "20260902",
-      "end_date": "20260906",
-      "start_date_fmt": "2026-09-02",
-      "end_date_fmt": "2026-09-06",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "문화체육관광부, 충청남도, 천안시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4020710_image2_1.jpg",
-      "homepage": "",
-      "tel": "041-521-3411041-521-3405",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/49/4012449_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/49/4012449_image2_1.png"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/13/4020713_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/13/4020713_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026년 9월 2-6일 천안 독립기념관에서 개최되는 국내 최대 규모 K-컬처박람회\n한류음악·전통문화·현대미술·공연 등 다양한 콘텐츠 무료 감상\n가족 단위 방문객을 위한 체험 프로그램 및 인터랙티브 존 운영",
-      "highlight": "문화체육관광부 주최의 공식 K-컬처박람회로 한국의 문화 우수성을 세계에 알리는 대규모 문화축제. 무료입장으로 누구나 참여 가능한 국민문화행사입니다.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "9월 초 날씨가 쾌적하므로 편한 복장과 편한 신발 준비",
-        "5일간 행사이므로 사전에 주요 공연·전시 일정 확인 추천",
-        "독립기념관 주차장 혼잡 예상, 대중교통 이용 권장"
-      ],
-      "seo_title": "2026 천안 K-컬처박람회 | 무료 한류문화 축제 9월 개최",
-      "meta_description": "2026년 9월 2-6일 충남 천안 독립기념관에서 열리는 K-컬처박람회. 한국 문화·예술·음악을 한자리에서 경험하는 무료 문화행사입니다.",
-      "tags": [
-        "K-컬처",
-        "천안",
-        "무료문화행사",
-        "한류",
-        "박람회"
-      ]
     }
   ],
   "부산": [
@@ -6039,9 +4900,9 @@
       "start_date_fmt": "2026-01-01",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "부산광역시 수영구",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "http://tong.visitkorea.or.kr/cms/resource/12/3518612_image2_1.jpeg",
       "homepage": "",
@@ -6068,7 +4929,7 @@
           "small": "http://tong.visitkorea.or.kr/cms/resource/11/3518611_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-gwangan-drone-light-show",
       "summary": "부산 광안리 해변을 무대로 펼쳐지는 신개념 드론 라이트쇼\n수백 대의 드론이 만드는 화려한 야경과 영상미의 콜라보\n2026년 통년 상시 운영으로 언제든 방문 가능한 명소",
       "highlight": "드론 기술과 빛의 예술이 결합된 광안리만의 특별한 경험. 수천 개 LED가 장착된 드론들이 밤하늘을 수놓으며 생성하는 초현실적 스펙터클!",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -6103,9 +4964,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "수영구",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4066810_image2_1.JPG",
       "homepage": "",
@@ -6140,7 +5001,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/12/4066812_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-gwanganri-eobang-festival",
       "summary": "부산 광안동의 광안해변을 무대로 펼쳐지는 해양문화축제\n어방과 어촌의 전통을 경험하는 특별한 6월 축제\n온 가족이 즐길 수 있는 무료 관광지로 해변 데이트 최적지",
       "highlight": "광안해변의 아름다운 경치 속에서 펼쳐지는 어방 문화축제. 전통 어촌 문화를 현대적으로 재해석한 해양문화 체험으로 부산 여름 축제의 명물입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -6175,9 +5036,9 @@
       "start_date_fmt": "2026-06-18",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "영화 예매 5,000원",
+      "fee": "",
       "is_free": false,
-      "organizer": "부산광역시, 한국해양진흥공사",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/84/4057984_image2_1.png",
       "homepage": "",
@@ -6188,7 +5049,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/85/4057985_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-international-maritime-film-fest",
       "summary": "6월 18-21일 부산 해운대 수영강변에서 개최되는 국제해양영화제\n세계 해양영화와 문화콘텐츠를 5,000원대로 저가 감상 가능\n해양 생태·문화·역사를 주제로 한 다양한 프로그램 운영",
       "highlight": "해양문화 전문 국제영화제로 세계적 해양영화를 저가로 감상하고, 바다의 아름다움과 중요성을 배우는 특별한 경험",
       "target_audience": "가족여행|친구모임|혼자",
@@ -6223,9 +5084,9 @@
       "start_date_fmt": "2026-06-26",
       "end_date_fmt": "2026-06-26",
       "place": "",
-      "fee": "프로그램별 상이",
+      "fee": "",
       "is_free": false,
-      "organizer": "(사)부산국제매직페스티벌 조직위원회",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/20/4064420_image2_1.jpg",
       "homepage": "",
@@ -6248,7 +5109,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/18/4064418_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-international-magic-festival",
       "summary": "세계적 수준의 마술사들이 펼치는 다채로운 공연\n매직 경연과 인터랙티브 쇼로 즐거움 가득\n부산 해운대 수영강변에서 열리는 국제 매직 축제",
       "highlight": "세계 최고의 마술사 공연과 국제 매직 경연이 한 자리에서 펼쳐지는 부산의 대표 문화행사. 온 가족이 함께 즐길 수 있는 신비로운 경험.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -6286,9 +5147,9 @@
       "start_date_fmt": "2026-06-27",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "유료(BIG 콘서트), 무료(파크 콘서트)",
+      "fee": "",
       "is_free": false,
-      "organizer": "부산광역시",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/56/4040656_image2_1.jpg",
       "homepage": "",
@@ -6307,7 +5168,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/58/4040658_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-one-asia-festival",
       "summary": "부산 연제구에서 6월 27-28일 개최되는 핫한 뮤직페스티벌\nBIG 콘서트와 무료 파크 콘서트로 다양한 공연 즐기기\n가족, 친구들과 함께할 수 있는 대규모 음악 축제",
       "highlight": "BIG 콘서트의 유명 아티스트 공연과 무료 파크 콘서트를 동시에 즐길 수 있는 부산 대표 음악 페스티벌",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -6355,7 +5216,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/26/4055726_image3_1.jpeg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-k-heritage-house",
       "summary": "세계유산위원회 개최 시 한국의 세계문화유산을 소개하는 특별전시입니다.\nAPEC로에서 펼쳐지는 국가유산청의 공식 한국관입니다.\n우리나라 문화유산의 가치를 세계에 홍보하는 문화행사입니다.",
       "highlight": "세계유산위원회 개최에 맞춰 한국의 문화유산을 세계에 알리는 공식 대표관. 무료 입장으로 우리의 문화적 자긍심을 느낄 수 있습니다.",
       "target_audience": "가족여행|혼자|어린이동반",
@@ -6390,9 +5251,9 @@
       "start_date_fmt": "2026-06-04",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "㈜푸드트래블, 부산관광공사",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/81/4065381_image2_1.jpg",
       "homepage": "",
@@ -6427,7 +5288,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/80/4065380_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "busan-portvillage",
       "summary": "부산 중앙동에서 6월 개최되는 포트빌리지 부산 2026\n무료 입장으로 누구나 즐길 수 있는 문화행사\n도시 중심부에서 만나는 특색 있는 경험",
       "highlight": "부산 중앙동 도심 속에서 펼쳐지는 18일간의 무료 문화축제. 가족, 친구, 연인 모두 함께 즐길 수 있는 특별한 경험을 제공합니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -6444,351 +5305,6 @@
         "중앙동문화행사",
         "부산6월행사",
         "가족나들이"
-      ]
-    },
-    {
-      "id": "3498395-2026",
-      "content_id": "3498395",
-      "title": "2026 나이트레이스 인 부산",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 수영구 광안해변로 219 (광안동)",
-      "lat": 35.1537727886,
-      "lng": 129.1185199367,
-      "start_date": "20260801",
-      "end_date": "20260801",
-      "start_date_fmt": "2026-08-01",
-      "end_date_fmt": "2026-08-01",
-      "place": "",
-      "fee": "- S(special) Lounge Pass 130,000원- S(special)그룹 80,000원- A~F (일반)그룹 60,000원",
-      "is_free": false,
-      "organizer": "KNN",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/41/4065341_image2_1.jpg",
-      "homepage": "",
-      "tel": "051-740-4116",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/41/4065341_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/41/4065341_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "부산 광안해변을 무대로 펼쳐지는 나이트레이스 인 부산\n화려한 야간 조명 속에서 즐기는 자동차경주의 진정한 매력\n2026년 8월 1일, 가족과 친구들과 함께 경험할 수 있는 특별한 행사",
-      "highlight": "야간 조명과 함께 선사되는 독특한 레이싱 경험, 광안해변의 아름다운 야경을 배경으로 한 스포츠 이벤트의 진수를 느낄 수 있습니다.",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "일찍 도착하여 주차장을 확보하고 최고의 관람석을 선택하세요",
-        "야간 행사이므로 얇은 겹겹이 옷을 준비하여 쾌적한 관람 환경을 조성하세요",
-        "광안해변 카페나 식당에서 식사 후 관람하면 더욱 즐거운 경험이 됩니다"
-      ],
-      "seo_title": "2026 나이트레이스 인 부산 광안해변 야간 자동차경주 8월",
-      "meta_description": "2026년 8월 1일 부산 광안해변에서 열리는 나이트레이스. 야간 자동차경주의 스릴 넘치는 경험을 즐기세요. S석 80,000원, 일반석 60,000원.",
-      "tags": [
-        "나이트레이스",
-        "자동차경주",
-        "부산이벤트",
-        "광안해변",
-        "야간스포츠"
-      ]
-    },
-    {
-      "id": "2991394-2026-42k",
-      "content_id": "2991394",
-      "title": "2026 부산나이트워크42K",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 해운대구 수영강변대로 85 (우동)",
-      "lat": 35.16790821788159,
-      "lng": 129.1273173184388,
-      "start_date": "20260829",
-      "end_date": "20260830",
-      "start_date_fmt": "2026-08-29",
-      "end_date_fmt": "2026-08-30",
-      "place": "",
-      "fee": "- 8K 38,000원- 16K 42,000원- 24K 49,000원- 42K 59,000원",
-      "is_free": false,
-      "organizer": "부산일보사, 어반씨앤에스",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/37/4069137_image2_1.jpg",
-      "homepage": "",
-      "tel": "070-4705-2008",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/37/4069137_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/37/4069137_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "부산 수영강변에서 펼쳐지는 독특한 야간 워킹 마라톤\n8K, 16K, 24K, 42K 4가지 거리로 모든 수준 참가자 환영\n2026년 8월 29~30일 2박 3일 특별한 건강 축제",
-      "highlight": "야간 강변 조명 속 독특한 워킹 마라톤 경험. 초보자부터 마라톤 애호가까지 자신의 체력에 맞는 거리 선택 가능.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "밤 시간 운동이므로 반사 조끼나 라이트 착용으로 안전성 확보하세요",
-        "수영강변 경로이므로 여름 날씨 대비해 수분 섭취 계획 미리 세우세요",
-        "42K 참가 시 체력 소모가 크므로 사전 훈련 및 스트레칭 필수입니다"
-      ],
-      "seo_title": "2026 부산나이트워크42K 수영강변 야간 워킹 마라톤",
-      "meta_description": "8월 29~30일 부산 해운대구 수영강변에서 열리는 나이트워크42K. 8K부터 42K까지 다양한 거리, 야간 워킹 마라톤의 새로운 경험을 만나세요.",
-      "tags": [
-        "나이트워크",
-        "마라톤",
-        "부산행사",
-        "야간운동",
-        "수영강변",
-        "건강축제",
-        "워킹대회",
-        "여름행사"
-      ]
-    },
-    {
-      "id": "3497353-2026",
-      "content_id": "3497353",
-      "title": "2026 부산바다도서관",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 수영구 민락동 110-19",
-      "lat": 35.154689,
-      "lng": 129.132986,
-      "start_date": "20260613",
-      "end_date": "20260705",
-      "start_date_fmt": "2026-06-13",
-      "end_date_fmt": "2026-07-05",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "부산광역시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/73/4070173_image2_1.jpg",
-      "homepage": "",
-      "tel": "051-745-7288",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/4069078_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/78/4069078_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "바다를 배경으로 펼쳐지는 특별한 도서관 문화행사\n2026년 6월-7월 부산 수영구에서 개최\n모든 시민을 위한 무료 문화체험 공간",
-      "highlight": "해변과 도서관의 완벽한 결합으로 독서의 즐거움을 새로운 차원으로 경험하는 특별한 문화행사입니다.",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "여름 자외선 대비로 선글라스와 모자를 챙기세요",
-        "편한 복장과 신발로 방문하면 더욱 편리합니다",
-        "미리 관심 있는 도서를 확인하고 방문하세요"
-      ],
-      "seo_title": "2026 부산바다도서관 - 수영구 무료 문화행사",
-      "meta_description": "2026년 6월 13일부터 7월 5일까지 부산 수영구에서 열리는 부산바다도서관. 바다와 책이 만나는 특별한 문화행사를 무료로 즐겨보세요.",
-      "tags": [
-        "부산도서관",
-        "여름문화행사",
-        "수영구",
-        "해변문화",
-        "가족나들이"
-      ]
-    },
-    {
-      "id": "2719122-2026",
-      "content_id": "2719122",
-      "title": "2026 부산푸드필름페스타",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 해운대구 수영강변대로 120 (우동)",
-      "lat": 35.170963130477155,
-      "lng": 129.12704224730075,
-      "start_date": "20260626",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-26",
-      "end_date_fmt": "2026-06-28",
-      "place": "",
-      "fee": "무료 (일부 프로그램 유료)",
-      "is_free": false,
-      "organizer": "부산푸드필름페스타 운영위원회, (재)영화의전당",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/90/4065290_image2_1.jpg",
-      "homepage": "",
-      "tel": "051-710-6948",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/90/4065290_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/90/4065290_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "음식 문화와 영화 예술을 결합한 특별한 축제\n6월 26-28일 해운대 수영강변에서 개최\n푸드트럭, 영화상영, 전시 등 다양한 프로그램 무료 체험",
-      "highlight": "부산에서 처음 선보이는 푸드필름페스타! 맛있는 음식을 즐기며 영화를 감상하는 색다른 경험을 해운대에서 만나보세요.",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "주말 오후 시간대에 혼잡하니 오전이나 저녁 시간 방문 추천",
-        "인기 푸드트럭은 예상 외 빨리 품절되니 조기 방문 권장",
-        "수영강변의 쾌적한 환경에서 관람하므로 편한 신발 착용"
-      ],
-      "seo_title": "2026 부산푸드필름페스타 | 음식과 영화의 만남 해운대",
-      "meta_description": "6월 26-28일 해운대 수영강변에서 열리는 부산푸드필름페스타! 음식 문화와 영화를 결합한 독특한 축제. 무료 입장, 푸드트럭, 영화상영 등 다양한 프로그램 참여",
-      "tags": [
-        "부산축제",
-        "푸드페스티벌",
-        "영화제",
-        "해운대",
-        "푸드필름페스타",
-        "무료행사",
-        "6월이벤트",
-        "강변축제"
-      ]
-    },
-    {
-      "id": "2952109-2026",
-      "content_id": "2952109",
-      "title": "2026 용골 댄스 페스타",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 중구 용두산길 37-55 (광복동2가)",
-      "lat": 35.100929432638,
-      "lng": 129.032442805252,
-      "start_date": "20260620",
-      "end_date": "20260620",
-      "start_date_fmt": "2026-06-20",
-      "end_date_fmt": "2026-06-20",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "부산광역시 중구",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/73/4067473_image2_1.jpg",
-      "homepage": "",
-      "tel": "051-714-4674",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4067473_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4067473_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026년 6월 20일 부산 중구 용두산에서 펼쳐지는 댄스 페스타\n다양한 장르의 댄스 공연과 공연자들의 화려한 무대 기대\n무료로 즐기는 부산의 최고 문화 축제 경험",
-      "highlight": "용두산의 명소에서 펼쳐지는 역동적인 댄스 공연! 세계 수준의 댄서들의 화려한 무대와 함께 부산의 문화를 만끽하세요.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "용두산 광복동 인근 주차장 이용 권장(행사 당일 혼잡 예상)",
-        "무료 입장이지만 사전에 행사 일정 확인 필수",
-        "날씨 대비 우산/선글라스 등 준비하고 방문하세요"
-      ],
-      "seo_title": "2026 용골 댄스 페스타 부산 중구 무료 댄스 축제",
-      "meta_description": "2026년 6월 20일 부산 중구 용두산길에서 열리는 용골 댄스 페스타. 다양한 댄스 공연과 문화행사를 무료로 즐기세요. 가족과 친구들과 함께 즐기기 좋은 댄스 페스타입니다.",
-      "tags": [
-        "부산댄스페스타",
-        "무료문화행사",
-        "용두산축제",
-        "2026년6월",
-        "중구문화행사"
-      ]
-    },
-    {
-      "id": "2704473-k-2026",
-      "content_id": "2704473",
-      "title": "K-일러스트레이션페어 부산 2026",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 해운대구 APEC로 30 (우동)",
-      "lat": 35.1657825586672,
-      "lng": 129.135026643506,
-      "start_date": "20260724",
-      "end_date": "20260726",
-      "start_date_fmt": "2026-07-24",
-      "end_date_fmt": "2026-07-26",
-      "place": "",
-      "fee": "- 현장 구매 : 7,000원- 사전 예매 시 : 성인 기준 5,000원",
-      "is_free": false,
-      "organizer": "㈜한국국제전시",
-      "overview": "",
-      "thumbnail": "",
-      "homepage": "",
-      "tel": "02-761-2512",
-      "images": [],
-      "seo_slug": "",
-      "summary": "부산 해운대에서 열리는 K-일러스트레이션페어 2026\n7월 24~26일, 한국 일러스트레이션 작가들의 작품 전시 및 판매\n사전예매 5,000원으로 국내 최대 규모의 일러스트레이션 축제 즐기기",
-      "highlight": "K-콘텐츠의 핵심, 일러스트레이션 작가들과의 직접 만남. 작품 구입부터 워크숍까지 창의성 넘치는 3일간의 문화 축제",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "사전예매로 2,000원 절약 - 온라인 미리 구입하고 방문하기",
-        "주말 오전 시간대 방문 추천 - 한산한 분위기에서 작품 감상",
-        "작가와의 상담 시간 확인 - 원하는 작가 사인회 참여 계획"
-      ],
-      "seo_title": "K-일러스트레이션페어 부산 2026 | 해운대 일러스트 전시회",
-      "meta_description": "2026년 7월 24-26일 부산 해운대에서 열리는 K-일러스트레이션페어. 한국 일러스트레이션 작가들의 창작물 전시, 작품 판매, 워크숍까지. 예매 5,000원.",
-      "tags": [
-        "부산전시회",
-        "일러스트레이션",
-        "K-콘텐츠",
-        "해운대문화",
-        "2026여름축제"
-      ]
-    },
-    {
-      "id": "2523149-k-2026",
-      "content_id": "2523149",
-      "title": "K-핸드메이드페어 부산 2026",
-      "category": "문화행사",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 해운대구 APEC로 30 (우동)",
-      "lat": 35.16576593920963,
-      "lng": 129.13494793474206,
-      "start_date": "20260724",
-      "end_date": "20260726",
-      "start_date_fmt": "2026-07-24",
-      "end_date_fmt": "2026-07-26",
-      "place": "",
-      "fee": "현장구매 시 7,000원 사전예매 시 5,000원 * 사전예매 : 홈페이지 - 관람안내에서 확인 * 성인 기준 요금",
-      "is_free": false,
-      "organizer": "㈜한국국제전시",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/66/4059066_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-761-2512",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4059063_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4059063_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/64/4059064_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/64/4059064_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/65/4059065_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/65/4059065_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "부산 해운대에서 개최되는 K-핸드메이드페어 2026\n국내 핸드메이드 작가들의 창작물을 한자리에서 만날 수 있는 문화행사\n7월 24일부터 26일까지 3일간 개최, 사전예매가 저렴합니다",
-      "highlight": "전국의 핸드메이드 작가가 참여하는 대규모 창작물 시장. 직접 제작한 공예품과 미술작품을 합리적인 가격에 구매하고 작가와 소통할 수 있는 특별한 기회입니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "사전예매로 2,000원 할인받으세요. 홈페이지 관람안내에서 미리 예매하는 것이 경제적입니다.",
-        "주말(26일)은 관람객이 많을 수 있으니 평일 오전 방문을 추천합니다.",
-        "작가들과 직거래로 구매하면 원하는 주문제작도 가능할 수 있으니 관심 작품을 미리 찾아보세요."
-      ],
-      "seo_title": "부산 K-핸드메이드페어 2026 | 7월 해운대 핸드메이드 축제",
-      "meta_description": "2026년 7월 24-26일 부산 해운대에서 열리는 K-핸드메이드페어. 수공예 작가의 창작물을 직접 만나고 구매할 수 있는 핸드메이드 축제. 사전예매 5,000원.",
-      "tags": [
-        "핸드메이드페어",
-        "부산행사",
-        "해운대",
-        "창작물시장",
-        "수공예축제"
       ]
     }
   ],
@@ -6809,9 +5325,9 @@
       "start_date_fmt": "2026-08-14",
       "end_date_fmt": "2026-10-18",
       "place": "",
-      "fee": "무료 (개최지별 유료 프로그램 있을 수 있음)",
+      "fee": "",
       "is_free": false,
-      "organizer": "국가유산청",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/40/4055040_image2_1.jpg",
       "homepage": "",
@@ -6838,7 +5354,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/43/4055043_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "incheon-national-heritage-media-art",
       "summary": "강화 북문길에서 펼쳐지는 국가유산 미디어아트\n문화유산을 최첨단 기술로 재해석한 디지털 체험전\n8월부터 10월까지 무료로 즐기는 예술과 역사의 만남",
       "highlight": "국가유산청이 선사하는 문화유산×디지털 융합 전시. 강화의 역사적 가치를 최신 미디어아트 기술로 새롭게 경험하는 기회",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -6873,9 +5389,9 @@
       "start_date_fmt": "2026-01-05",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "국가유산청",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/76/4029576_image2_1.jpg",
       "homepage": "",
@@ -6902,7 +5418,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/75/4029575_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "incheon-royal-walk",
       "summary": "인천 공항로 인근 왕실 문화유산을 체험하는 무료 산책 프로그램\n2026년 연중 개방되는 국가유산청 주최 행사\n가족 단위 방문객을 위한 교육적 관광 콘텐츠 제공",
       "highlight": "국가유산청에서 운영하는 무료 왕실 문화 체험 프로그램으로, 인천의 역사 문화유산을 가족과 함께 둘러볼 수 있습니다.",
       "target_audience": "가족여행|혼자|친구모임",
@@ -6986,7 +5502,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/74/4070174_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "incheon-pentaport-rock-festival",
       "summary": "인천 펜타포트에서 펼쳐지는 3일간의 국제급 록 뮤직페스티벌\n여름밤을 수놓는 국내외 유명 아티스트 라이브 무대\n야외 음악축제의 감동을 느끼는 특별한 경험",
       "highlight": "펜타포트만의 독특한 야외 공간에서 즐기는 국제적 수준의 록 페스티벌로, 여름밤의 울림이 있는 음악 경험을 선사합니다.",
       "target_audience": "친구모임|커플",
@@ -7003,54 +5519,6 @@
         "여름축제",
         "라이브공연",
         "야외음악회"
-      ]
-    },
-    {
-      "id": "3492276-2026",
-      "content_id": "3492276",
-      "title": "2026 문화가 있는 날",
-      "category": "문화행사",
-      "region": "인천",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "인천광역시 동구 송현동",
-      "lat": 37.476334,
-      "lng": 126.632619,
-      "start_date": "20260401",
-      "end_date": "20261129",
-      "start_date_fmt": "2026-04-01",
-      "end_date_fmt": "2026-11-29",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "문화체육관광부",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/82/4055582_image2_1.png",
-      "homepage": "",
-      "tel": "032-575-2526, 070-5001-0265",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/22/4058422_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/22/4058422_image2_1.png"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "2026년 4월부터 11월까지 8개월간 개최되는 정부 주최 무료 문화행사.\n인천 동구 송현동에서 펼쳐지는 다양한 공연·전시·체험 프로그램.\n국민 모두가 참여할 수 있는 생활 문화 축제로 문화 접근성 강화.",
-      "highlight": "문화체육관광부가 주최하는 장기 무료 문화행사로, 일상 속에서 국민 누구나 부담 없이 참여 가능한 생활 문화의 기회를 제공합니다.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "4월부터 11월까지 장기 개최되므로 원하는 월에 미리 계획하고 방문하세요",
-        "무료 행사이므로 사전 예약 또는 현장 확인 후 참여하는 것이 좋습니다",
-        "인천 송현동 위치를 확인하고 대중교통 이용으로 방문하시기 바랍니다"
-      ],
-      "seo_title": "2026 문화가 있는 날 인천 - 무료 문화행사 8개월 개최",
-      "meta_description": "2026년 4월~11월 인천 송현동에서 열리는 문화가 있는 날. 문화체육관광부 주최 무료 문화행사로 다양한 공연과 전시를 즐길 수 있습니다.",
-      "tags": [
-        "문화가있는날",
-        "무료문화행사",
-        "인천문화",
-        "공연전시",
-        "가족나들이"
       ]
     }
   ],
@@ -7071,9 +5539,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "유료(6,000원-지역상품권 5천원 지급)",
+      "fee": "",
       "is_free": false,
-      "organizer": "군산시",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/51/4062851_image2_1.jpg",
       "homepage": "",
@@ -7084,7 +5552,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/51/4062851_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gunsan-craft-beer-blues-festival",
       "summary": "군산의 해망로에서 3일간 펼쳐지는 수제맥주와 블루스 음악의 축제\n지역 수제맥주 양조장과 블루스 뮤지션들이 한자리에 모이는 행사\n관람료 6천원으로 지역상품권 5천원을 받으며 합리적인 가격대",
       "highlight": "군산만의 수제맥주 문화와 감성적인 블루스 라이브가 만나는 독특한 페스티벌. 지역상품권 할인으로 현지 경제 지원까지 가능한 특별한 경험",
       "target_audience": "친구모임|커플|어른취향",
@@ -7119,9 +5587,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "김제시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/09/4066709_image2_1.jpg",
       "homepage": "",
@@ -7148,7 +5616,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/26/4069926_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gimje-moaksan-music-festival",
       "summary": "모악산의 자연 속에서 펼쳐지는 여름 음악축제\n국내 유명 뮤지션들의 공연과 라이브 무대\n가족 모두 즐길 수 있는 무료 문화행사",
       "highlight": "모악산의 자연 경관 속에서 감상하는 라이브 음악, 진입료 없이 즐기는 전북 대표 음악축제의 재탄생",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -7183,9 +5651,9 @@
       "start_date_fmt": "2026-09-04",
       "end_date_fmt": "2026-09-12",
       "place": "",
-      "fee": "무료 (일부유료)",
+      "fee": "",
       "is_free": false,
-      "organizer": "무주군",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/69/3520569_image2_1.jpg",
       "homepage": "",
@@ -7224,7 +5692,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/81/4064781_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "muju-firefly-festival",
       "summary": "신비로운 반딧불이의 빛을 감상하는 전국 최고의 생태축제\n여름밤 자연과 하나되는 특별한 경험을 선사합니다\n가족, 커플 모두 즐길 수 있는 문화예술 프로그램 풍성",
       "highlight": "천연기념물 반딧불이가 만드는 신비로운 빛의 향연을 감상할 수 있는 전국 유일의 생태축제. 자연 보전과 문화체험을 동시에 즐기는 9월 최고의 명물행사입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -7245,6 +5713,44 @@
         "자연체험",
         "9월축제"
       ]
+    },
+    {
+      "id": "2989580",
+      "content_id": "2989580",
+      "title": "장수 쿨밸리 페스티벌",
+      "category": "축제",
+      "region": "전북",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "전북특별자치도 장수군 번암면 방화동로 778",
+      "lat": 35.5896080738,
+      "lng": 127.5292776915,
+      "start_date": "20260717",
+      "end_date": "20260719",
+      "start_date_fmt": "2026-07-17",
+      "end_date_fmt": "2026-07-19",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "장수계곡축제추진위원회",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/12/4073812_image2_1.jpg",
+      "homepage": "",
+      "tel": "063-350-2357",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/12/4073812_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/12/4073812_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     },
     {
       "id": "2547013",
@@ -7275,7 +5781,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/57/4067257_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeonju-hanok-village-traditional-parade",
       "summary": "전주한옥마을에서 펼쳐지는 전통연희 퍼레이드 축제\n4월부터 10월까지 매주 펼쳐지는 노상놀이 공연\n무료 관람으로 즐기는 한국 전통문화의 매력",
       "highlight": "한옥마을 거리 곳곳에서 펼쳐지는 살아있는 전통공연! 국악·탈춤·사물놀이 등 다양한 전통연희를 무료로 감상할 수 있는 특별한 경험",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -7314,7 +5820,7 @@
       "place": "",
       "fee": "",
       "is_free": false,
-      "organizer": "군위문화원",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/57/4072257_image2_1.JPG",
       "homepage": "",
@@ -7345,14 +5851,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/62/4072262_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "gunwi-janggun-dano-festival",
+      "summary": "단오의 전통을 이어가는 군위 지역 대표 축제\n장군단오축제는 전통문화 보존과 지역 공동체 형성\n2026년 6월 20일 효령면 장군당에서 개최",
+      "highlight": "군위의 역사와 전통을 담은 단오축제로 전통놀이, 문화공연, 지역 먹거리 등 가족 모두가 즐길 수 있는 축제",
+      "target_audience": "가족여행|친구모임|어린이동반",
+      "tips": [
+        "단오 당일(음력 5월 5일)에 개최되므로 미리 일정 확인 후 방문",
+        "전통 놀이와 공연이 준비되어 있으니 편한 복장으로 준비",
+        "지역 특산물과 전통 음식을 체험할 수 있는 기회"
+      ],
+      "seo_title": "군위 장군단오축제 2026 | 전통문화 명절 축제",
+      "meta_description": "2026년 6월 20일 대구 군위군에서 개최되는 장군단오축제. 단오의 전통문화를 체험하고 즐기는 지역 대표 축제. 가족과 함께 즐길 수 있는 문화행사입니다.",
+      "tags": [
+        "단오축제",
+        "전통문화",
+        "군위",
+        "가족축제",
+        "지역행사"
+      ]
     },
     {
       "id": "1801011",
@@ -7419,7 +5935,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/12/4072112_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "daegu-chimaek-festival",
       "summary": "대구를 대표하는 치맥페스티벌이 두류공원에서 5일간 개최됩니다.\n전국 유명 치킨과 맥주 브랜드가 한자리에 모여 다양한 음식을 선보입니다.\n무료 입장하며 특별 경험을 원하면 사전예약존을 이용할 수 있습니다.",
       "highlight": "대구 여름의 대표 축제로 치킨과 맥주의 황홀한 조합을 경험할 수 있으며, 가족 단위 방문객을 위한 다양한 프로그램과 무료 입장으로 누구나 즐길 수 있습니다.",
       "target_audience": "가족여행|친구모임|커플",
@@ -7436,54 +5952,6 @@
         "2026여름축제",
         "무료행사",
         "두류공원"
-      ]
-    },
-    {
-      "id": "2807078-2026",
-      "content_id": "2807078",
-      "title": "2026 대한민국불교문화엑스포",
-      "category": "전시",
-      "region": "대구",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "대구광역시 북구 엑스코로 10 (산격동)",
-      "lat": 35.90706961238413,
-      "lng": 128.6130738582469,
-      "start_date": "20260611",
-      "end_date": "20260614",
-      "start_date_fmt": "2026-06-11",
-      "end_date_fmt": "2026-06-14",
-      "place": "",
-      "fee": "10,000원(할인 예매 진행 시 5,000원으로 구매 가능)",
-      "is_free": false,
-      "organizer": "불교신문, BBS불교방송",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/4066726_image2_1.jpg",
-      "homepage": "",
-      "tel": "02-2231-2013",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/27/4066727_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/27/4066727_image2_1.JPG"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "6월 11-14일 대구 EXCO에서 열리는 불교문화 대형 행사\n한국 불교의 전통과 현대문화를 함께 체험하는 종합 엑스포\n불교신문·BBS불교방송 주최 대규모 문화행사",
-      "highlight": "불교 전통 예술부터 현대 불교문화까지 한국 불교의 다양한 모습을 만나는 최대 규모 문화 엑스포",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "사전 예매로 5,000원 할인 구매 가능 (정가 10,000원)",
-        "4일 연속 개최되므로 일정에 맞춰 방문 계획 추천",
-        "불교 전시와 문화 체험을 함께 즐길 수 있으니 여유있게 관람하기"
-      ],
-      "seo_title": "2026 대한민국불교문화엑스포 대구 EXCO 6월 개최",
-      "meta_description": "2026년 6월 11-14일 대구 EXCO에서 개최되는 대한민국불교문화엑스포. 불교 전통문화와 현대 불교문화를 한 자리에서 만나보세요. 예매 5,000원",
-      "tags": [
-        "불교문화",
-        "엑스포",
-        "대구 EXCO",
-        "6월행사",
-        "전통문화"
       ]
     }
   ],
@@ -7504,9 +5972,9 @@
       "start_date_fmt": "2026-06-11",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "영동군",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/17/4065817_image2_1.jpg",
       "homepage": "",
@@ -7545,7 +6013,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/25/4065825_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "chungbuk-korea-wine-festival",
       "summary": "2026년 6월 11일부터 14일까지 충청북도 영동군에서 개최됩니다.\n대한민국 와인축제로 무료 입장이며 와인 시음과 문화공연을 즐길 수 있습니다.\n와인 애호가와 가족 모두를 위한 다채로운 프로그램이 준비됩니다.",
       "highlight": "영동의 와인 문화를 대표하는 대규모 축제로 무료 입장 가능. 와인 시음, 공연, 전시 등 다양한 프로그램으로 와인 문화를 체험할 수 있는 특별한 기회입니다.",
       "target_audience": "가족여행|커플|친구모임|어린이동반",
@@ -7605,7 +6073,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/19/4070519_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "chungbuk-firefly-insect-festival",
       "summary": "청주에서 열리는 반딧불이 곤충축제로 신비로운 불빛 체험을 즐겨보세요.\n곤충전시관과 다양한 축제 부스에서 자연 학습의 시간을 가질 수 있습니다.\n어린이 세미나와 체험 프로그램으로 교육과 재미를 함께 누릴 수 있습니다.",
       "highlight": "신비로운 반딧불이 불빛 체험이 무료로 제공되며, 곤충에 대한 다양한 학습 기회와 가족이 함께 즐길 수 있는 체험 프로그램이 준비되어 있습니다.",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -7640,9 +6108,9 @@
       "start_date_fmt": "2026-06-10",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "음성군 축제 추진위원회, 음성예총",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/55/4039855_image2_1.JPG",
       "homepage": "",
@@ -7689,7 +6157,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/68/4062968_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "eumseong-pumba-festival",
       "summary": "2026년 6월 10-14일 충청북도 음성읍 설성공원에서 개최됩니다.\n음성의 전통문화와 품바공연을 주제로 한 지역 대표축제입니다.\n가족 모두가 즐길 수 있는 무료 관람 축제입니다.",
       "highlight": "음성군의 전통문화 '품바'를 중심으로 한 전통공연과 지역문화 체험의 장. 입장료 무료로 누구나 부담 없이 즐길 수 있는 로컬 축제입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -7753,7 +6221,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/04/4066704_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "jeungpyeong-jangttul-nore-festival",
       "summary": "증평의 전통 농요 문화를 알리는 지역 대표 축제입니다.\n전문 보존회가 선보이는 정통 들노래와 문화공연을 무료로 감상할 수 있습니다.\n6월 중순 여름의 정취 속에서 향수와 예술을 동시에 경험하세요.",
       "highlight": "전통 농요 보존회가 직접 선보이는 정통 들노래 공연. 우리 문화 체험과 지역 공동체의 음악 문화를 한 자리에서 만나는 독특한 축제 경험",
       "target_audience": "가족여행|친구모임|혼자",
@@ -7801,7 +6269,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/07/4063007_image3_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "goesan-space-exploration-festival",
       "summary": "2026년 4월부터 12월까지 괴산에서 개최되는 우주 테마 특별시\n별과 우주를 주제로 한 체험형 탐사 프로그램\n충청북도와 괴산군이 함께 선사하는 무료 문화행사",
       "highlight": "우주를 배경으로 한 8개월 간의 장기 체험 행사. 별별탐사대만의 독특한 미션을 완수하며 우주 과학을 재미있게 배우는 기회!",
       "target_audience": "가족여행|어린이동반|친구모임",
@@ -7884,7 +6352,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/34/4059434_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "gwangju-mudeungsan-humanities-festival",
       "summary": "광주 동구 무등산에서 펼쳐지는 인문학 테마 문화축제\n무료 입장으로 강연, 전시, 공연 등 다양한 프로그램 즐기기\n6월 13-14일 이틀간 진행되는 특별한 문화행사",
       "highlight": "무등산의 역사와 문화를 주제로 한 인문학 축제. 강연, 전시, 공연 등 다양한 장르의 문화프로그램을 무료로 즐길 수 있는 특별한 기회입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -7901,173 +6369,6 @@
         "인문학행사",
         "문화행사",
         "무료입장"
-      ]
-    },
-    {
-      "id": "3478890-2026",
-      "content_id": "3478890",
-      "title": "2026 금남로 차 없는 거리 ‘걷자잉’",
-      "category": "문화행사",
-      "region": "광주",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "광주광역시 동구 금남로 245 (금남로1가)",
-      "lat": 35.14836487617714,
-      "lng": 126.91873155733187,
-      "start_date": "20260404",
-      "end_date": "20261107",
-      "start_date_fmt": "2026-04-04",
-      "end_date_fmt": "2026-11-07",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "광주광역시 동구",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/37/4040737_image2_1.jpg",
-      "homepage": "",
-      "tel": "062-413-2535",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4040615_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4040615_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4040616_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4040616_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/17/4040617_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/17/4040617_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/18/4040618_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/18/4040618_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "광주 금남로에서 8개월간 펼쳐지는 '차 없는 거리' 문화축제\n매주말 가족과 함께 즐기는 무료 문화 프로그램과 공연\n도심 속 여유를 찾는 시민들을 위한 휴식 공간",
-      "highlight": "차량 통행이 제한된 금남로에서 안전하게 걷고 즐기는 8개월간의 도시 문화축제. 지역 예술가와 문화공간으로 가득한 특별한 경험",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "4월~11월 전 기간 무료로 운영되므로 날씨 좋은 날씨 선택해 방문하기",
-        "주말과 저녁 시간에 인구가 많으므로 여유로운 시간대 추천",
-        "금남로 주변 카페와 식당을 함께 방문하여 휴식과 문화를 동시에 즐기기"
-      ],
-      "seo_title": "2026 금남로 차 없는 거리 걷자잉 - 광주 무료 문화축제",
-      "meta_description": "2026년 4월~11월 광주 동구 금남로에서 열리는 '걷자잉' 문화행사. 차 없는 거리에서 즐기는 무료 축제, 가족과 함께 산책하며 문화를 느껴보세요.",
-      "tags": [
-        "광주문화축제",
-        "차없는거리",
-        "무료축제",
-        "금남로",
-        "가족나들이",
-        "도시문화",
-        "봄여름가을",
-        "광주관광"
-      ]
-    },
-    {
-      "id": "2865136-2026",
-      "content_id": "2865136",
-      "title": "2026 라온페스타",
-      "category": "문화행사",
-      "region": "광주",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "광주광역시 동구 충장로 94 (충장로2가)",
-      "lat": 35.1474235264676,
-      "lng": 126.91694835998,
-      "start_date": "20260404",
-      "end_date": "20261107",
-      "start_date_fmt": "2026-04-04",
-      "end_date_fmt": "2026-11-07",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "광주광역시 동구, 충장상권활성화 추진단",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/01/4067301_image2_1.jpg",
-      "homepage": "",
-      "tel": "062-413-1274",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4067301_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4067301_image3_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "광주 충장로 중심의 장기 문화페스티벌\n4월부터 11월까지 8개월간 진행되는 무료행사\n지역상권 활성화와 시민 문화교류를 위한 특별 프로젝트",
-      "highlight": "광주 충장로에서 8개월간 펼쳐지는 대규모 무료 문화행사로, 지역 상권 활성화와 함께 다양한 문화를 경험할 수 있는 기회입니다.",
-      "target_audience": "가족여행|커플|친구모임|혼자",
-      "tips": [
-        "충장로 근처 주차장을 미리 확인하고 방문하세요",
-        "봄부터 가을까지 계절별로 다양한 프로그램이 있으니 공식 일정을 확인하세요",
-        "지역 상점과 맛집도 함께 즐길 수 있는 기회입니다"
-      ],
-      "seo_title": "2026 라온페스타 광주 충장로 무료 문화행사",
-      "meta_description": "2026년 4월부터 11월까지 광주 충장로에서 열리는 라온페스타! 무료로 즐기는 문화행사로 지역상권 활성화와 시민 문화생활을 함께합니다.",
-      "tags": [
-        "광주문화행사",
-        "충장로",
-        "라온페스타",
-        "무료행사",
-        "지역축제"
-      ]
-    },
-    {
-      "id": "3488655-2026",
-      "content_id": "3488655",
-      "title": "2026 문화가 있는 날 청춘마이크",
-      "category": "문화행사",
-      "region": "광주",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "광주광역시 북구 하서로 50 (운암동)",
-      "lat": 35.1814560887758,
-      "lng": 126.884278856104,
-      "start_date": "20260312",
-      "end_date": "20261211",
-      "start_date_fmt": "2026-03-12",
-      "end_date_fmt": "2026-12-11",
-      "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "문화체육관광부",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/85/4039885_image2_1.jpg",
-      "homepage": "",
-      "tel": "062-412-1197",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/86/4039886_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/86/4039886_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/87/4039887_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/87/4039887_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/88/4039888_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/88/4039888_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "",
-      "summary": "청년 뮤지션들이 주인공인 '청춘마이크' 무대.\n2026년 3월부터 12월까지 매달 펼쳐지는 라이브 공연.\n세종·광주 지역민 누구나 무료로 감상할 수 있습니다.",
-      "highlight": "신진 뮤지션 발굴 무대에서 생생한 감성과 에너지를 경험하세요. 문화체육관광부가 주최하는 정통 문화 공연으로, 지역 청년 음악가들의 재능을 응원하는 기회입니다.",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "매월 문화가 있는 날(매월 마지막 수요일) 공연 일정 확인 필수",
-        "무료 입장이지만 좌석 제한이 있을 수 있으니 조기 도착 추천",
-        "세종과 광주 두 지역에서 번갈아 개최되므로 사전에 개최지 확인"
-      ],
-      "seo_title": "2026 문화가 있는 날 청춘마이크 세종·광주 무료 공연",
-      "meta_description": "3월부터 12월까지 세종·광주에서 펼쳐지는 '2026 문화가 있는 날 청춘마이크'. 청년 뮤지션들의 생생한 무대를 무료로 즐기세요. 매월 문화의 날 특별 공연 행사입니다.",
-      "tags": [
-        "청춘마이크",
-        "무료공연",
-        "세종광주",
-        "신진뮤지션",
-        "라이브뮤직"
       ]
     }
   ],
@@ -8088,9 +6389,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-07-26",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "세종특별자치시",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4062949_image2_1.png",
       "homepage": "",
@@ -8121,7 +6422,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/00/4070700_image2_1.png"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "sejong-jochiwon-peach-festival",
       "summary": "세종 조치원의 대표 축제 복숭아 축제가 7월 24-26일 개최됩니다.\n신선한 로컬 복숭아 판매와 다양한 문화공연, 가족 체험행사가 준비됩니다.\n전국에서 많은 방문객들이 찾는 여름 대표 축제입니다.",
       "highlight": "조치원의 천혜 자연에서 자란 신선한 복숭아를 직접 구매할 수 있고, 가족 모두가 즐길 수 있는 다채로운 공연과 체험 프로그램이 준비되어 있습니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -8156,9 +6457,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-13",
       "place": "",
-      "fee": "무료",
-      "is_free": true,
-      "organizer": "세종문화원",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/62/4066962_image2_1.jpg",
       "homepage": "",
@@ -8193,7 +6494,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/68/4066968_image2_1.JPG"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "sejong-dano-festival",
       "summary": "세종특별자치시의 대표 전통문화축제 세종단오제가 개최됩니다.\n6월 13~14일 2일간 세종동에서 무료로 즐길 수 있습니다.\n전통 단오 민속놀이와 공연으로 한여름의 시원함을 느껴보세요.",
       "highlight": "세종문화원 주최의 정통 단오제로 전통 민속놀이, 공연, 체험을 한 자리에서 즐길 수 있는 무료 문화축제입니다.",
       "target_audience": "가족여행|친구모임|어린이동반",
@@ -8230,9 +6531,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-07-26",
       "place": "",
-      "fee": "입장료 무료(부분 유료 - 나이트런 일산 참가비 20,000원 / 기발한 배 콘테스트 참가비 50,000원, 선상유람투어)",
+      "fee": "",
       "is_free": false,
-      "organizer": "울산조선해양축제 추진위원회",
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/50/4072450_image2_1.jpg",
       "homepage": "",
@@ -8259,14 +6560,24 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/52/4072452_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "ulsan-shipbuilding-marine-festival",
+      "summary": "울산의 조선해양산업을 주제로 하는 대표 축제입니다.\n해수욕장에서 해양문화 체험과 다양한 공연을 즐길 수 있습니다.\n가족 관광객을 위한 무료 입장과 선택형 프로그램을 준비했습니다.",
+      "highlight": "울산의 조선해양 산업 자산을 활용한 독특한 축제로, 선상유람투어와 기발한 배 콘테스트 등 차별화된 해양문화 체험 프로그램을 제공합니다.",
+      "target_audience": "가족여행|커플|친구모임|어린이동반",
+      "tips": [
+        "나이트런 참가를 원한다면 사전에 20,000원 참가비 확인 후 등록하세요",
+        "기발한 배 콘테스트(50,000원)는 사전 접수 여부 확인 필수입니다",
+        "여름 해수욕장 축제이므로 자외선 차단제와 모자 준비를 추천합니다"
+      ],
+      "seo_title": "울산조선해양축제 2026 - 해양문화의 중심 울산",
+      "meta_description": "2026년 7월 24-26일 울산 동구 해수욕장에서 열리는 울산조선해양축제. 해양문화 체험, 선상유람투어, 나이트런 등 다채로운 프로그램이 있습니다.",
+      "tags": [
+        "울산축제",
+        "해양문화",
+        "조선산업",
+        "여름축제",
+        "가족나들이"
+      ]
     },
     {
       "id": "3104107",
@@ -8284,9 +6595,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "무료(참가비, 입장료)",
-      "is_free": true,
-      "organizer": "태화강마두희축제추진위원회",
+      "fee": "",
+      "is_free": false,
+      "organizer": "",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/87/4067387_image2_1.jpg",
       "homepage": "",
@@ -8321,7 +6632,7 @@
           "small": "https://tong.visitkorea.or.kr/cms/resource/92/4067392_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
+      "seo_slug": "ulsan-taehwagangmadu-festival",
       "summary": "울산 태화강에서 펼쳐지는 전통문화축제\n자전거길 따라 즐기는 마두희 공연과 다채로운 문화행사\n가족 모두가 무료로 즐길 수 있는 여름 축제",
       "highlight": "태화강의 자연경관과 함께 즐기는 전통 마두희 공연, 자전거길 산책로에서 펼쳐지는 3일간의 무료 문화축제",
       "target_audience": "가족여행|친구모임|커플",
