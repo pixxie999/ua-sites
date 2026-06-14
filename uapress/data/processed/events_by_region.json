@@ -16,9 +16,9 @@
       "start_date_fmt": "2026-08-14",
       "end_date_fmt": "2026-08-16",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "국가유산청,강원특별자치도, 강릉시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/77/3317777_image2_1.jpg",
       "homepage": "",
@@ -81,18 +81,56 @@
       "tel": "033-651-1593",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/76/4057376_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/76/4057376_image3_1.JPG"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4057373_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4057373_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4057374_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4057374_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4057375_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4057375_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/77/4057377_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/77/4057377_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/4057378_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/78/4057378_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/79/4057379_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/79/4057379_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/80/4057380_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/80/4057380_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/10/4057410_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/10/4057410_image2_1.jpg"
         }
       ],
-      "seo_slug": "",
-      "summary": "",
-      "highlight": "",
-      "target_audience": "",
-      "tips": [],
-      "seo_title": "",
-      "meta_description": "",
-      "tags": []
+      "seo_slug": "gangneung-dano-festival",
+      "summary": "강릉단오제는 6월 15-22일 강릉단오장길에서 열리는 전통문화축제입니다.\n1400년 역사를 자랑하는 국가무형문화재로 한국 고유의 단오 문화를 대표합니다.\n전통 의식, 공연, 체험 프로그램이 무료로 운영됩니다.",
+      "highlight": "1400년 전통을 이어온 강릉단오제는 국가무형문화재 제13호로 지정된 한반도 대표 단오축제입니다. 단오 기간 전통의식, 강릉지역의 민속공연과 문화체험이 집중 개최됩니다.",
+      "target_audience": "가족여행|친구모임|혼자",
+      "tips": [
+        "축제 기간 중 주말이 가장 혼잡하므로 평일 방문을 추천합니다",
+        "강릉단오장길 근처 주차공간이 제한적이므로 대중교통 이용을 권장합니다",
+        "전통의식 시간을 확인하고 방문하면 더 풍성한 관광 경험이 가능합니다"
+      ],
+      "seo_title": "강릉단오제 2026 | 강원 전통문화축제 무료 관광",
+      "meta_description": "2026년 6월 15-22일 강릉에서 열리는 단오제. 1400년 전통의 국가무형문화재 축제로 강릉단오장길에서 펼쳐지는 전통 의식, 공연, 체험을 무료로 즐기세요.",
+      "tags": [
+        "강릉단오제",
+        "전통문화축제",
+        "국가무형문화재",
+        "강원도여행",
+        "단오축제"
+      ]
     },
     {
       "id": "3114721",
@@ -170,9 +208,9 @@
       "start_date_fmt": "2026-04-25",
       "end_date_fmt": "2026-10-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "원주시설관리공단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/09/4059609_image2_1.png",
       "homepage": "",
@@ -363,84 +401,6 @@
       ]
     },
     {
-      "id": "2495286",
-      "content_id": "2495286",
-      "title": "실향민문화축제",
-      "category": "축제",
-      "region": "강원",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "강원특별자치도 속초시 조양동",
-      "lat": 38.190662,
-      "lng": 128.5844785,
-      "start_date": "20260612",
-      "end_date": "20260613",
-      "start_date_fmt": "2026-06-12",
-      "end_date_fmt": "2026-06-13",
-      "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/81/4069081_image2_1.jpg",
-      "homepage": "",
-      "tel": "033-636-0664",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/79/4069079_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/79/4069079_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/80/4069080_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/80/4069080_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/82/4069082_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/82/4069082_image2_1.png"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/83/4069083_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/83/4069083_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/84/4069084_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/84/4069084_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/85/4069085_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/85/4069085_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/86/4069086_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/86/4069086_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/87/4069087_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/87/4069087_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "gangwon-silhyangmin-culture-festival",
-      "summary": "2026년 6월 12-13일 속초에서 개최되는 실향민문화축제\n북한음식, 전통공연, 문화체험으로 분단문화를 경험할 수 있는 행사\n통일과 화해의 메시지를 담은 의미있는 문화행사",
-      "highlight": "실향민의 삶과 문화를 기억하고 통일을 염원하는 축제. 북한음식 시연, 전통공연, 특색있는 문화체험으로 분단문화를 이해하고 화해와 평화의 메시지 전달",
-      "target_audience": "가족여행|친구모임|혼자",
-      "tips": [
-        "북한음식 시식 코너는 인기가 높으니 오전 일찍 방문 권장",
-        "문화체험프로그램은 사전 예약이 필요할 수 있으니 확인 후 방문",
-        "통일 관련 역사자료관도 함께 둘러보면 더욱 의미있는 경험 가능"
-      ],
-      "seo_title": "속초 실향민문화축제 2026 - 북한음식·전통공연",
-      "meta_description": "2026년 6월 12-13일 속초에서 열리는 실향민문화축제. 북한음식, 전통공연, 문화체험으로 분단의 아픔을 나누고 통일을 염원하는 의미있는 행사입니다.",
-      "tags": [
-        "속초",
-        "실향민문화축제",
-        "북한음식",
-        "통일",
-        "문화체험",
-        "전통공연",
-        "무료행사"
-      ]
-    },
-    {
       "id": "2488259",
       "content_id": "2488259",
       "title": "저도 대문어축제",
@@ -456,9 +416,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
+      "fee": "무료, 일부체험 유료",
       "is_free": false,
-      "organizer": "",
+      "organizer": "고성군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/22/4070022_image2_1.jpg",
       "homepage": "",
@@ -611,9 +571,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "",
+      "fee": "유료",
       "is_free": false,
-      "organizer": "",
+      "organizer": "평창더위사냥축제위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/23/4061523_image2_1.JPG",
       "homepage": "",
@@ -683,9 +643,9 @@
       "start_date_fmt": "2026-09-04",
       "end_date_fmt": "2026-09-13",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "사단법인 이효석문학선양회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/28/3523028_image2_1.jpg",
       "homepage": "",
@@ -755,9 +715,9 @@
       "start_date_fmt": "2026-07-25",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "태백시문화재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/56/4064656_image2_1.jpg",
       "homepage": "",
@@ -840,9 +800,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-20",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "횡성문화관광재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/61/4063761_image2_1.jpg",
       "homepage": "",
@@ -916,9 +876,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
+      "fee": "유료 (횡성군민, 장애인, 국가유공자, 경로우대 1,000원, 일반 2,000원)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "횡성군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/4063806_image2_1.jpg",
       "homepage": "",
@@ -1046,9 +1006,9 @@
       "start_date_fmt": "2026-07-04",
       "end_date_fmt": "2026-07-05",
       "place": "",
-      "fee": "",
+      "fee": "[산책&액티비티 1인 1반려견 티켓] - 정가 196,000원 - 할인가 119,500원 [산책&액티비티 동반 1인 티켓] - 정가 75,000원 - 할인가 49,500원 ※ 자세한 요금 및 할인 정보는 문의 요망",
       "is_free": false,
-      "organizer": "",
+      "organizer": "㈜모노리스제주파크",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/36/4063736_image2_1.jpg",
       "homepage": "",
@@ -1147,6 +1107,44 @@
       ]
     },
     {
+      "id": "3495841",
+      "content_id": "3495841",
+      "title": "숲으로 오라",
+      "category": "문화행사",
+      "region": "제주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "제주특별자치도 제주시 연삼로 286 (도남동)",
+      "lat": 33.4918468474,
+      "lng": 126.5238513705,
+      "start_date": "20260627",
+      "end_date": "20260628",
+      "start_date_fmt": "2026-06-27",
+      "end_date_fmt": "2026-06-28",
+      "place": "",
+      "fee": "입장료 무료 (환경수호대 참가비 10,000원)",
+      "is_free": false,
+      "organizer": "제주특별자치도",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/66/4074666_image2_1.jpg",
+      "homepage": "",
+      "tel": "010-6461-0759",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/66/4074666_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/66/4074666_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
       "id": "3318880-8",
       "content_id": "3318880",
       "title": "제8회 농촌융복합산업 제주국제박람회",
@@ -1155,16 +1153,16 @@
       "area_code": "0",
       "sigungu_code": "",
       "address": "제주특별자치도 서귀포시 중문관광로 191 (중문동)",
-      "lat": 33.2440353493138,
-      "lng": 126.420771890656,
+      "lat": 33.2440353493,
+      "lng": 126.4207718907,
       "start_date": "20260723",
       "end_date": "20260726",
       "start_date_fmt": "2026-07-23",
       "end_date_fmt": "2026-07-26",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "제주특별자치도",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4066710_image2_1.jpg",
       "homepage": "",
@@ -1193,6 +1191,86 @@
         "무료입장",
         "중문관광"
       ]
+    },
+    {
+      "id": "3512205-2026",
+      "content_id": "3512205",
+      "title": "2026 서귀포 원도심 문화페스티벌",
+      "category": "축제",
+      "region": "제주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "제주특별자치도 서귀포시 이중섭로 11 (서귀동)",
+      "lat": 33.24708081676599,
+      "lng": 126.56445889201075,
+      "start_date": "20260411",
+      "end_date": "20261030",
+      "start_date_fmt": "2026-04-11",
+      "end_date_fmt": "2026-10-30",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서귀포시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/17/4044417_image2_1.jpg",
+      "homepage": "",
+      "tel": "064-760-2572",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4044415_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4044415_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4044416_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4044416_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3399432-2026-5",
+      "content_id": "3399432",
+      "title": "2026 제5회 제주비엔날레 허끄곡 모닥치곡 이야홍 : 변용의 기술",
+      "category": "문화행사",
+      "region": "제주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "제주특별자치도 제주시 1100로 2894-78 (연동)",
+      "lat": 33.4525500193,
+      "lng": 126.489686091,
+      "start_date": "20260825",
+      "end_date": "20261115",
+      "start_date_fmt": "2026-08-25",
+      "end_date_fmt": "2026-11-15",
+      "place": "",
+      "fee": "[제주도립미술관]- 성인 8,000원- 청소년 4,000원- 소인 2,000원[제주돌문화공원 오백장군갤러리]- 제주비엔날레 티켓 소지 시 무료[제주아트플랫폼/예술공간 이아/갤러리 레미콘]- 무료",
+      "is_free": false,
+      "organizer": "제주특별자치도",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/77/4073777_image2_1.jpg",
+      "homepage": "",
+      "tel": "064-710-4300",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/77/4073777_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/77/4073777_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "경남": [
@@ -1284,9 +1362,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "거제시문화예술재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/48/4066648_image2_1.jpg",
       "homepage": "",
@@ -1368,9 +1446,9 @@
       "start_date_fmt": "2026-06-11",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "남해군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4071963_image2_1.jpg",
       "homepage": "",
@@ -1436,9 +1514,9 @@
       "start_date_fmt": "2026-08-07",
       "end_date_fmt": "2026-08-09",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "밀양시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/67/4070867_image2_1.JPG",
       "homepage": "",
@@ -1492,9 +1570,9 @@
       "start_date_fmt": "2026-06-18",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "진주시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4069649_image2_1.jpg",
       "homepage": "",
@@ -1556,9 +1634,9 @@
       "start_date_fmt": "2026-07-10",
       "end_date_fmt": "2026-07-19",
       "place": "",
-      "fee": "",
+      "fee": "공연별로 상이하므로 공식 홈페이지 참조",
       "is_free": false,
-      "organizer": "",
+      "organizer": "통영시, 통영연극예술축제위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/82/4070082_image2_1.jpg",
       "homepage": "",
@@ -1620,9 +1698,9 @@
       "start_date_fmt": "2026-08-12",
       "end_date_fmt": "2026-08-16",
       "place": "",
-      "fee": "",
+      "fee": "무료(부분유료)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "통영문화재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/08/4041308_image2_1.jpg",
       "homepage": "",
@@ -1675,6 +1753,44 @@
         "해양문화",
         "경남관광"
       ]
+    },
+    {
+      "id": "3494070-2026",
+      "content_id": "3494070",
+      "title": "2026 진주 정원박람회",
+      "category": "전시",
+      "region": "경남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경상남도 진주시 진성면 달음산로 313",
+      "lat": 35.1998941088,
+      "lng": 128.1941147222,
+      "start_date": "20260618",
+      "end_date": "20260621",
+      "start_date_fmt": "2026-06-18",
+      "end_date_fmt": "2026-06-21",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "진주시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/33/4071433_image2_1.jpg",
+      "homepage": "",
+      "tel": "055-749-5355",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/33/4071433_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/33/4071433_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "전남": [
@@ -1694,9 +1810,9 @@
       "start_date_fmt": "2026-06-26",
       "end_date_fmt": "2026-06-28",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "강진군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/28/4071228_image2_1.jpg",
       "homepage": "",
@@ -1774,9 +1890,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
+      "fee": "10,000원",
       "is_free": false,
-      "organizer": "",
+      "organizer": "르무통",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/55/4070355_image2_1.jpg",
       "homepage": "",
@@ -1907,9 +2023,9 @@
       "start_date_fmt": "2026-06-18",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "법성포단오제보존회, 법성포단오제 제전위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/35/4041235_image2_1.JPG",
       "homepage": "",
@@ -1991,9 +2107,9 @@
       "start_date_fmt": "2026-07-25",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "",
+      "fee": "무료(일부 프로그램 유료)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "전라남도 장흥군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/77/4071277_image2_1.jpg",
       "homepage": "",
@@ -2059,9 +2175,9 @@
       "start_date_fmt": "2026-04-04",
       "end_date_fmt": "2026-10-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "고흥군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/97/4054497_image2_1.jpg",
       "homepage": "",
@@ -2110,6 +2226,90 @@
         "무료관람",
         "야경공연"
       ]
+    },
+    {
+      "id": "2774275-2026-w",
+      "content_id": "2774275",
+      "title": "2026 목포해상W쇼",
+      "category": "문화행사",
+      "region": "전남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "전라남도 목포시 평화로 82 (상동)",
+      "lat": 34.79666213605975,
+      "lng": 126.43379088761164,
+      "start_date": "20260509",
+      "end_date": "20260919",
+      "start_date_fmt": "2026-05-09",
+      "end_date_fmt": "2026-09-19",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "목포시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/45/4055545_image2_1.jpg",
+      "homepage": "",
+      "tel": "061-270-8431",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/45/4055545_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/45/4055545_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "4067214-2026",
+      "content_id": "4067214",
+      "title": "2026 섬 방문의 해",
+      "category": "문화행사",
+      "region": "전남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "전라남도 여수시 선어시장길 6 (중앙동)",
+      "lat": 34.7395781561546,
+      "lng": 127.736371787128,
+      "start_date": "20260301",
+      "end_date": "20261231",
+      "start_date_fmt": "2026-03-01",
+      "end_date_fmt": "2026-12-31",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "행정안전부",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/13/4067313_image2_1.jpg",
+      "homepage": "",
+      "tel": "070-4337-5058",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/14/4067314_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/14/4067314_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4067315_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4067315_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4067316_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4067316_image2_1.JPG"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "경기": [
@@ -2182,9 +2382,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "고양특례시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/34/4057034_image2_1.jpg",
       "homepage": "",
@@ -2311,9 +2511,9 @@
       "start_date_fmt": "2026-06-27",
       "end_date_fmt": "2026-06-27",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "재단법인 평택시문화재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/53/4067353_image2_1.jpg",
       "homepage": "",
@@ -2427,9 +2627,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "양평군(관광과, 기후환경과)",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/90/4066290_image2_1.jpg",
       "homepage": "",
@@ -2496,9 +2696,9 @@
       "start_date_fmt": "2026-07-04",
       "end_date_fmt": "2026-07-05",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "청운면 수박축제추진위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/66/4067566_image2_1.jpg",
       "homepage": "",
@@ -2572,9 +2772,9 @@
       "start_date_fmt": "2026-04-18",
       "end_date_fmt": "2026-12-15",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "경기도",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/21/4058721_image2_1.png",
       "homepage": "",
@@ -2624,9 +2824,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
+      "fee": "무료 (유료프로그램 있음)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "광주시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/00/4072100_image2_1.jpg",
       "homepage": "",
@@ -2735,9 +2935,9 @@
       "start_date_fmt": "2026-03-14",
       "end_date_fmt": "2026-12-26",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "국립극장 무대예술지원센터",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/4068446_image2_1.jpg",
       "homepage": "",
@@ -2786,6 +2986,245 @@
         "파주여행",
         "헤이리예술마을"
       ]
+    },
+    {
+      "id": "2849025-2026",
+      "content_id": "2849025",
+      "title": "2026 세계유산 남한산성 활용프로그램",
+      "category": "문화행사",
+      "region": "경기",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경기도 광주시 남한산성면 산성리",
+      "lat": 37.4800972389423,
+      "lng": 127.18089864064,
+      "start_date": "20260417",
+      "end_date": "20260619",
+      "start_date_fmt": "2026-04-17",
+      "end_date_fmt": "2026-06-19",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "경기도남한산성세계유산센터",
+      "overview": "",
+      "thumbnail": "",
+      "homepage": "",
+      "tel": "02-737-6444",
+      "images": [],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2812160-2026",
+      "content_id": "2812160",
+      "title": "2026 캠핑요리축제",
+      "category": "축제",
+      "region": "경기",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경기도 파주시 문산읍 마정리 1153-3",
+      "lat": 37.893865,
+      "lng": 126.744269,
+      "start_date": "20260612",
+      "end_date": "20260614",
+      "start_date_fmt": "2026-06-12",
+      "end_date_fmt": "2026-06-14",
+      "place": "",
+      "fee": "※ 사이트 별 이용금액이 상이하므로 자세한 이용요금은 홈페이지 참조",
+      "is_free": false,
+      "organizer": "일간스포츠, 이데일리",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/75/4062075_image2_1.jpg",
+      "homepage": "",
+      "tel": "070-5220-0328",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4062075_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4062075_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3113265-apap",
+      "content_id": "3113265",
+      "title": "APAP 작품투어 (안양공공예술프로젝트)",
+      "category": "문화행사",
+      "region": "경기",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경기도 안양시 만안구 예술공원로 180 (안양동)",
+      "lat": 37.41945269174406,
+      "lng": 126.92561681569023,
+      "start_date": "20260310",
+      "end_date": "20261130",
+      "start_date_fmt": "2026-03-10",
+      "end_date_fmt": "2026-11-30",
+      "place": "",
+      "fee": "- 일반 3,000원- 청소년(만 19세 이하) 1,000원※ 스페셜 투어 금액 별도",
+      "is_free": false,
+      "organizer": "안양시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/69/4054469_image2_1.jpg",
+      "homepage": "",
+      "tel": "031-687-0548",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/69/4054469_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/69/4054469_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3099365-colorful-garden",
+      "content_id": "3099365",
+      "title": "Colorful Garden 자라섬 꽃 페스타",
+      "category": "문화행사",
+      "region": "경기",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경기도 가평군 가평읍 자라섬로 60",
+      "lat": 37.82076649272824,
+      "lng": 127.52092288691405,
+      "start_date": "20260523",
+      "end_date": "20260614",
+      "start_date_fmt": "2026-05-23",
+      "end_date_fmt": "2026-06-14",
+      "place": "",
+      "fee": "유료 : 7천원 (5천원 가평사랑상품권 환급) * 가평군민, 만5세 이하 무료 입장",
+      "is_free": false,
+      "organizer": "가평군",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/28/4068028_image2_1.jpg",
+      "homepage": "",
+      "tel": "031-580-2098",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/27/4068027_image2_1.png",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/27/4068027_image2_1.png"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/29/4068029_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/29/4068029_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/30/4068030_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/30/4068030_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/31/4068031_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/31/4068031_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/32/4068032_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/32/4068032_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3499401-gxg-2026",
+      "content_id": "3499401",
+      "title": "GXG 2026",
+      "category": "문화행사",
+      "region": "경기",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경기도 성남시 분당구 분당내곡로 121 (백현동)",
+      "lat": 37.3948838875698,
+      "lng": 127.110963766859,
+      "start_date": "20260911",
+      "end_date": "20260912",
+      "start_date_fmt": "2026-09-11",
+      "end_date_fmt": "2026-09-12",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "성남시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/36/4065636_image2_1.jpg",
+      "homepage": "",
+      "tel": "031-717-4990",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/36/4065636_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/36/4065636_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3488940-myk-festa",
+      "content_id": "3488940",
+      "title": "MyK FESTA(마이케이 페스타)",
+      "category": "문화행사",
+      "region": "경기",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "경기도 고양시 일산서구 킨텍스로 217-60 (대화동)",
+      "lat": 37.668933476214,
+      "lng": 126.745802827238,
+      "start_date": "20260625",
+      "end_date": "20260628",
+      "start_date_fmt": "2026-06-25",
+      "end_date_fmt": "2026-06-28",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "문화체육관광부",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/17/4063217_image2_1.jpg",
+      "homepage": "",
+      "tel": "070-4288-4097",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/17/4063217_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/17/4063217_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "경북": [
@@ -2805,9 +3244,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "(사)경산자인단오제보존회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/93/4063893_image2_1.JPG",
       "homepage": "",
@@ -3022,9 +3461,9 @@
       "start_date_fmt": "2026-07-10",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "(사)한국마이스진흥재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/48/4065648_image2_1.jpg",
       "homepage": "",
@@ -3086,9 +3525,9 @@
       "start_date_fmt": "2026-08-28",
       "end_date_fmt": "2026-10-25",
       "place": "",
-      "fee": "",
+      "fee": "무료 (개최지별 유료 프로그램 있을 수 있음)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "국가유산청",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/34/4055834_image2_1.jpg",
       "homepage": "",
@@ -3157,9 +3596,9 @@
       "start_date_fmt": "2026-03-21",
       "end_date_fmt": "2026-08-17",
       "place": "",
-      "fee": "",
+      "fee": "[전시]- 성인(19~64세) 8,000원- 소인(4세~18세) 5,000원- 경로우대자(65세 이상) 5,000원[전시 연계 프로그램]- 전시관람(도슨트)/미술관요가/차담 75,000원- 전시관람(도슨트)/미술관요가/사찰음식런치박스 125,000원",
       "is_free": false,
-      "organizer": "",
+      "organizer": "오아르미술관",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/4062226_image2_1.jpg",
       "homepage": "",
@@ -3232,9 +3671,9 @@
       "start_date_fmt": "2026-07-31",
       "end_date_fmt": "2026-08-09",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "국가유산청, 경상북도, 안동시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/44/4071944_image2_1.jpg",
       "homepage": "",
@@ -3301,9 +3740,9 @@
       "start_date_fmt": "2026-07-11",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "",
+      "fee": "무료(판매 및 일부 체험 유료)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "칠곡문화관광재단",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/4061206_image2_1.jpg",
       "homepage": "",
@@ -3435,9 +3874,9 @@
       "start_date_fmt": "2026-01-01",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "",
+      "fee": "- 일반 65,000원- 장애인 50% 할인※ 무료 : 24개월 미만",
       "is_free": false,
-      "organizer": "",
+      "organizer": "더 크리에이터스 주식회사",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/35/4060435_image2_1.jpg",
       "homepage": "",
@@ -3515,9 +3954,9 @@
       "start_date_fmt": "2026-07-11",
       "end_date_fmt": "2026-07-12",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "관악구",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/42/4071342_image2_1.jpg",
       "homepage": "",
@@ -3647,9 +4086,9 @@
       "start_date_fmt": "2026-05-06",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울시 문화정책과",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/68/4059668_image2_1.jpg",
       "homepage": "",
@@ -3695,9 +4134,9 @@
       "start_date_fmt": "2026-01-01",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울특별시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/79/4039379_image2_1.jpg",
       "homepage": "",
@@ -3775,9 +4214,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-19",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울특별시 문화예술과",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/47/4061947_image2_1.jpg",
       "homepage": "",
@@ -3840,6 +4279,60 @@
       ]
     },
     {
+      "id": "1018469",
+      "content_id": "1018469",
+      "title": "서울국제작가축제",
+      "category": "축제",
+      "region": "서울",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "서울특별시 종로구 인사동9길 26 (견지동)",
+      "lat": 37.5734199329,
+      "lng": 126.9836265705,
+      "start_date": "20260911",
+      "end_date": "20260916",
+      "start_date_fmt": "2026-09-11",
+      "end_date_fmt": "2026-09-16",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "한국문학번역원",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/69/4073769_image2_1.jpg",
+      "homepage": "",
+      "tel": "02-6339-1232",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/70/4073770_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/70/4073770_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/71/4073771_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/71/4073771_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/72/4073772_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/72/4073772_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4073773_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4073773_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4073774_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4073774_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
       "id": "2718984-v21",
       "content_id": "2718984",
       "title": "서울일러스트레이션페어V.21",
@@ -3855,9 +4348,9 @@
       "start_date_fmt": "2026-07-30",
       "end_date_fmt": "2026-08-02",
       "place": "",
-      "fee": "",
+      "fee": "- 성인 얼리버드 13,000원- 성인 15,000원- 청소년(8~19세) 9,000원※ 무료 아동(~7세)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "오씨메이커스",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/78/4062778_image2_1.png",
       "homepage": "",
@@ -3903,9 +4396,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울시 서초구",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/62/4069862_image2_1.jpg",
       "homepage": "",
@@ -3967,9 +4460,9 @@
       "start_date_fmt": "2026-07-01",
       "end_date_fmt": "2026-08-05",
       "place": "",
-      "fee": "",
+      "fee": "- 성인 8,000원 (1,2부 개별가)- 통합 15,000원 (1,2부 통합가)- 학생(초,중,고등학생) 5,000원- 단체(10인 이상) 5,000원- 얼리버드 4,000원(1,2부 개별가)- 얼리버드 통합 7,500원 (1,2부 통합가)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "조선일보",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4057349_image2_1.jpg",
       "homepage": "",
@@ -4015,9 +4508,9 @@
       "start_date_fmt": "2026-04-11",
       "end_date_fmt": "2026-10-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/13/4056513_image2_1.jpg",
       "homepage": "",
@@ -4063,9 +4556,9 @@
       "start_date_fmt": "2026-04-26",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
+      "fee": "무료(체험 프로그램 유료 5,000~10,000원)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "서울특별시 미래한강본부",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/24/4063024_image2_1.jpg",
       "homepage": "",
@@ -4116,55 +4609,50 @@
       ]
     },
     {
-      "id": "1817328-65-2026",
-      "content_id": "1817328",
-      "title": "창립 65주년 기념 한국경제인협회와 함께하는 2026 서울시향 강변음악회",
-      "category": "문화행사",
+      "id": "4074598",
+      "content_id": "4074598",
+      "title": "초안산 수국축제",
+      "category": "축제",
       "region": "서울",
       "area_code": "0",
       "sigungu_code": "",
-      "address": "서울특별시 영등포구 한강남자전거길 1451 (여의도동)",
-      "lat": 37.5308485071395,
-      "lng": 126.927745696174,
-      "start_date": "20260613",
-      "end_date": "20260613",
-      "start_date_fmt": "2026-06-13",
-      "end_date_fmt": "2026-06-13",
+      "address": "서울특별시 노원구 월계동 산46-3",
+      "lat": 37.6294432,
+      "lng": 127.047566,
+      "start_date": "20260620",
+      "end_date": "20260621",
+      "start_date_fmt": "2026-06-20",
+      "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "노원구",
       "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/83/4069183_image2_1.jpg",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/00/4074600_image2_1.jpg",
       "homepage": "",
-      "tel": "1588-1210",
+      "tel": "02-2116-7142",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/83/4069183_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/83/4069183_image3_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/99/4074599_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/99/4074599_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4074601_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4074601_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4074602_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4074602_image2_1.jpg"
         }
       ],
-      "seo_slug": "seoul-river-concert-2026",
-      "summary": "서울시향이 창립 65주년을 맞아 한강변에서 펼치는 특별 음악회\n한강남자전거길에서 자연과 클래식의 완벽한 조화를 경험하세요\n누구나 무료로 입장 가능한 대규모 야외 오케스트라 공연",
-      "highlight": "한강의 아름다운 경관 속에서 감상하는 정통 클래식. 창립 65주년 기념 서울시향의 특별한 공연으로 가족 모두가 무료로 즐길 수 있는 문화행사입니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "돗자리나 야외 의자를 준비해 편하게 감상하세요",
-        "일몰 시간을 고려해 미리 자리를 잡고 한강 야경과 함께 공연을 즐기세요",
-        "여의도 자전거길 주변 편의점과 카페에서 음료와 간식을 구매할 수 있습니다"
-      ],
-      "seo_title": "2026 서울시향 강변음악회 - 한강에서 즐기는 무료 클래식 공연",
-      "meta_description": "6월 13일 여의도 한강에서 열리는 서울시향 강변음악회. 창립 65주년 기념 특별 공연, 무료 입장으로 누구나 즐길 수 있는 야외 클래식 음악회입니다.",
-      "tags": [
-        "서울시향",
-        "강변음악회",
-        "클래식공연",
-        "한강",
-        "여의도",
-        "무료공연",
-        "야외공연",
-        "문화행사"
-      ]
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     },
     {
       "id": "3481597",
@@ -4250,9 +4738,9 @@
       "start_date_fmt": "2026-05-01",
       "end_date_fmt": "2026-09-19",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료 (추첨제)",
+      "is_free": true,
+      "organizer": "서울시 미래한강본부",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/4060146_image2_1.jpg",
       "homepage": "",
@@ -4307,9 +4795,9 @@
       "start_date_fmt": "2026-04-20",
       "end_date_fmt": "2026-11-15",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울시 미래한강본부",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4058449_image2_1.png",
       "homepage": "",
@@ -4363,9 +4851,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-07-11",
       "place": "",
-      "fee": "",
+      "fee": "60,000원",
       "is_free": false,
-      "organizer": "",
+      "organizer": "CJ푸드빌",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/53/4065953_image2_1.png",
       "homepage": "",
@@ -4426,461 +4914,380 @@
         "서울나이트라이프",
         "여름축제"
       ]
-    }
-  ],
-  "충남": [
-    {
-      "id": "2821437",
-      "content_id": "2821437",
-      "title": "공주 유구 색동수국정원 꽃 축제",
-      "category": "축제",
-      "region": "충남",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "충청남도 공주시 유구읍 창말길 44",
-      "lat": 36.55440457686059,
-      "lng": 126.95626070155299,
-      "start_date": "20260626",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-26",
-      "end_date_fmt": "2026-06-28",
-      "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/4069606_image2_1.jpg",
-      "homepage": "",
-      "tel": "041-840-2406",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4069601_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4069601_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4069602_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4069602_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/03/4069603_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/03/4069603_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/04/4069604_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/04/4069604_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/05/4069605_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/05/4069605_image2_1.JPG"
-        }
-      ],
-      "seo_slug": "gongju-yuggu-hydrangea-festival",
-      "summary": "충남 공주시 유구읍 색동수국정원에서 6월 26-28일 개최\n다채로운 색상의 수국이 만드는 환상적인 봄 꽃 축제\n가족 단위 방문객을 위한 무료 입장 및 다양한 볼거리 제공",
-      "highlight": "형형색색 수국이 물드는 유구의 명소, 무료 입장으로 즐기는 초여름 꽃 축제. 사진 명소와 가족 친화적 환경이 갖춰진 추천 나들이 코스입니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "카메라/휴대폰으로 수국 꽃밭의 다양한 각도 사진 촬영 추천",
-        "오전 10시-12시 방문으로 햇빛 좋은 시간대 꽃 감상",
-        "편한 산책화 착용하여 정원 전체 산책 즐기기"
-      ],
-      "seo_title": "공주 유구 색동수국정원 꽃 축제 2026 - 무료 입장",
-      "meta_description": "6월 26-28일 충남 공주시 유구읍에서 열리는 색동수국정원 꽃 축제. 무료 입장으로 즐기는 형형색색 수국 꽃밭과 볼거리 풍성한 여름 가족 나들이 명소.",
-      "tags": [
-        "공주꽃축제",
-        "수국",
-        "무료행사",
-        "여름나들이",
-        "가족여행"
-      ]
     },
     {
-      "id": "2719507",
-      "content_id": "2719507",
-      "title": "금산 삼계탕축제",
-      "category": "축제",
-      "region": "충남",
+      "id": "3377038-2026",
+      "content_id": "3377038",
+      "title": "2026 국제선명상대회",
+      "category": "스포츠",
+      "region": "서울",
       "area_code": "0",
       "sigungu_code": "",
-      "address": "충청남도 금산군 금산읍 인삼광장로 30",
-      "lat": 36.1001640876596,
-      "lng": 127.501197965095,
-      "start_date": "20260710",
-      "end_date": "20260712",
-      "start_date_fmt": "2026-07-10",
-      "end_date_fmt": "2026-07-12",
+      "address": "서울특별시 강남구 봉은사로 531 (삼성동)",
+      "lat": 37.5158257049833,
+      "lng": 127.057734484281,
+      "start_date": "20260403",
+      "end_date": "20261112",
+      "start_date_fmt": "2026-04-03",
+      "end_date_fmt": "2026-11-12",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "대한불교조계종",
       "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/42/4064242_image2_1.jpg",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/90/4054090_image2_1.jpg",
       "homepage": "",
-      "tel": "041-750-2319",
+      "tel": "010-8441-2371",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/39/4064239_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/39/4064239_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4069575_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4069575_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/76/4069576_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/76/4069576_image2_1.png"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/4069578_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/78/4069578_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/79/4069579_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/79/4069579_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/80/4069580_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/80/4069580_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/81/4069581_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/81/4069581_image2_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/91/4054091_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/91/4054091_image2_1.jpg"
         }
       ],
-      "seo_slug": "geumsan-samgyetang-festival",
-      "summary": "금산의 인삼과 삼계탕 문화를 축하하는 여름 축제\n보양식 시식, 인삼 제품 구매, 전통 문화 체험 프로그램 운영\n가족과 함께 즐기는 건강한 로컬 푸드 페스티벌",
-      "highlight": "인삼 산지의 정통 삼계탕을 맛보고 인삼 제품을 구매할 수 있는 특별한 축제. 여름 보양식 문화를 즐기며 지역 특산품을 만날 수 있습니다.",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "삼계탕과 인삼 관련 제품을 미리 예약하면 대기 시간을 줄일 수 있습니다",
-        "오후 시간대 방문보다 오전에 가면 신선한 음식을 즐길 수 있습니다",
-        "금산의 유명한 인삼 재배지도 함께 둘러보면 좋습니다"
-      ],
-      "seo_title": "금산 삼계탕축제 2026 - 여름 보양식 축제 인삼광장",
-      "meta_description": "7월 10~12일 금산읍 인삼광장에서 열리는 삼계탕축제. 보양식 문화 체험, 인삼 제품 판매, 다양한 공연과 먹거리가 어우러진 여름 축제. 무료 입장!",
-      "tags": [
-        "금산축제",
-        "삼계탕",
-        "인삼",
-        "여름축제",
-        "보양식"
-      ]
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     },
     {
-      "id": "506534",
-      "content_id": "506534",
-      "title": "보령머드축제",
+      "id": "4071535-2026-14",
+      "content_id": "4071535",
+      "title": "2026 농촌여행 페스티벌 (제14회 도농교류의 날 기념)",
       "category": "축제",
-      "region": "충남",
+      "region": "서울",
       "area_code": "0",
       "sigungu_code": "",
-      "address": "충청남도 보령시 신흑동",
-      "lat": 36.314822,
-      "lng": 126.515029,
-      "start_date": "20260724",
-      "end_date": "20260809",
-      "start_date_fmt": "2026-07-24",
-      "end_date_fmt": "2026-08-09",
+      "address": "서울특별시 중구 을지로 지하12 (을지로1가)",
+      "lat": 37.565567165,
+      "lng": 126.9783328596,
+      "start_date": "20260616",
+      "end_date": "20260616",
+      "start_date_fmt": "2026-06-16",
+      "end_date_fmt": "2026-06-16",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "농림축산식품부",
       "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/79/3534979_image2_1.jpg",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/19/4071619_image2_1.jpg",
       "homepage": "",
-      "tel": "041-930-0891",
+      "tel": "1577-1417",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/3534978_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/78/3534978_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/80/3534980_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/80/3534980_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/81/3534981_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/81/3534981_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/82/3534982_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/82/3534982_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/83/3534983_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/83/3534983_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/84/3534984_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/84/3534984_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/85/3534985_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/85/3534985_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/86/3534986_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/86/3534986_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/87/3534987_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/87/3534987_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/05/4031705_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/05/4031705_image2_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/19/4071619_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/19/4071619_image3_1.jpg"
         }
       ],
-      "seo_slug": "boryeong-mud-festival",
-      "summary": "보령의 유명한 머드를 활용한 여름 축제\n신흑동 펄 머드의 효능을 직접 체험할 수 있는 기회\n물놀이, 공연, 체험 등 다양한 프로그램 운영",
-      "highlight": "천연 게르마늄 함유 보령 펄 머드를 직접 체험하고 즐기는 국내 대표 여름축제. 가족 단위 방문객을 위한 전용 존 운영으로 안전하고 편리한 축제 환경 제공.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "금-일요일이 성수기이므로 평일(월-목) 방문 시 입장료 할인 및 한산함 활용",
-        "머드 체험 시 수건과 여벌 옷 준비 필수, 자외선 차단제 충분히 준비",
-        "패밀리존은 어린이 보호 및 안전을 위해 별도 운영되므로 가족 단위 방문 시 활용"
-      ],
-      "seo_title": "보령머드축제 2026 일정·요금·볼거리 완벽가이드",
-      "meta_description": "2026년 7월 24일~8월 9일 보령시에서 열리는 머드축제! 천연 게르마늄 함유 신흑동 펄 머드에서 즐기는 최고의 여름 축제. 가족과 함께 즐겨보세요.",
-      "tags": [
-        "보령머드축제",
-        "여름축제",
-        "머드체험",
-        "충청남도",
-        "가족여행"
-      ]
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     },
     {
-      "id": "574047",
-      "content_id": "574047",
-      "title": "부여서동연꽃축제",
-      "category": "축제",
-      "region": "충남",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "충청남도 부여군 부여읍 동남리",
-      "lat": 36.27204,
-      "lng": 126.910626,
-      "start_date": "20260703",
-      "end_date": "20260705",
-      "start_date_fmt": "2026-07-03",
-      "end_date_fmt": "2026-07-05",
-      "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/74/4067074_image2_1.jpg",
-      "homepage": "",
-      "tel": "041-837-2518",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/65/4067065_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/65/4067065_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/66/4067066_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/66/4067066_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/68/4067068_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/68/4067068_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/71/4067071_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/71/4067071_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/72/4067072_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/72/4067072_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4067073_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4067073_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4067075_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4067075_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/76/4067076_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/76/4067076_image2_1.jpg"
-        }
-      ],
-      "seo_slug": "buyeo-seodong-lotus-festival",
-      "summary": "충남 부여군 동남리에서 개최되는 전통 연꽃 축제\n7월 3일부터 5일까지 3일간 무료로 즐기는 행사\n서동의 흔적이 남아있는 부여의 역사와 자연을 함께 감상",
-      "highlight": "천년 고도 부여의 설화를 담은 연꽃축제. 청정한 연못의 연꽃과 전통문화가 어우러진 여름 힐링 축제",
-      "target_audience": "가족여행|커플|친구모임",
-      "tips": [
-        "7월 연꽃은 이른 아침에 피므로 새벽 방문 추천",
-        "편한 복장과 모자, 선크림 필수 - 햇빛이 강한 계절",
-        "무료 관람이므로 미리 대중교통 일정 확인하고 방문"
-      ],
-      "seo_title": "부여서동연꽃축제 2026 - 충남 부여 여름 연꽃 축제",
-      "meta_description": "2026년 7월 3-5일 충남 부여군에서 열리는 서동연꽃축제. 아름다운 연꽃과 함께하는 여름 축제, 무료 관람으로 가족 나들이 추천",
-      "tags": [
-        "부여축제",
-        "연꽃축제",
-        "충남여행",
-        "여름축제",
-        "무료행사"
-      ]
-    },
-    {
-      "id": "507480",
-      "content_id": "507480",
-      "title": "한산모시문화제",
+      "id": "2387785-2026",
+      "content_id": "2387785",
+      "title": "2026 보드게임콘",
       "category": "문화행사",
-      "region": "충남",
+      "region": "서울",
       "area_code": "0",
       "sigungu_code": "",
-      "address": "충청남도 서천군 한산면 충절로 1089",
-      "lat": 36.0798791495506,
-      "lng": 126.798690663497,
-      "start_date": "20260612",
-      "end_date": "20260614",
-      "start_date_fmt": "2026-06-12",
-      "end_date_fmt": "2026-06-14",
+      "address": "서울특별시 강남구 영동대로 513 (삼성동)",
+      "lat": 37.51186515083277,
+      "lng": 127.05920358462161,
+      "start_date": "20260716",
+      "end_date": "20260719",
+      "start_date_fmt": "2026-07-16",
+      "end_date_fmt": "2026-07-19",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "문화체육관광부, 한국콘텐츠진흥원",
       "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/00/4044300_image2_1.jpg",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/36/4067236_image2_1.jpg",
       "homepage": "",
-      "tel": "041-957-9045",
+      "tel": "070-8611-9803",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/97/4044297_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/97/4044297_image2_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/33/4067233_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/33/4067233_image2_1.jpg"
         },
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/98/4044298_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/98/4044298_image2_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/34/4067234_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/34/4067234_image2_1.jpg"
         },
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/99/4044299_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/99/4044299_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4044301_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4044301_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4044302_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4044302_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/03/4044303_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/03/4044303_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/04/4044304_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/04/4044304_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/05/4044305_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/05/4044305_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/06/4044306_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/06/4044306_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/07/4044307_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/07/4044307_image2_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/35/4067235_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/35/4067235_image2_1.jpg"
         }
       ],
-      "seo_slug": "hansan-mosi-culture-festival",
-      "summary": "서천군 한산면에서 매년 열리는 전통 한산모시 문화축제\n6월 12-14일 3일간 전통 모시 제조 체험 및 공연 개최\n무료 입장으로 전통 문화를 경험하고 즐길 수 있는 기회",
-      "highlight": "국내 유일의 전통 모시 문화축제! 손으로 직접 모시 짜기 체험부터 전통공연까지 한산 모시의 모든 것을 느낄 수 있습니다.",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "주차장이 제한적이므로 대중교통 이용 권장",
-        "모시 제작 체험은 사전 예약 필수일 수 있으니 확인 후 방문",
-        "여름 야외행사이므로 자외선 차단제와 모자, 물 준비 필수"
-      ],
-      "seo_title": "한산모시문화제 2026 | 서천군 전통 모시 문화 축제",
-      "meta_description": "6월 12-14일 서천군 한산면에서 열리는 한산모시문화제. 전통 모시 제조 체험, 문화공연, 먹거리까지 즐길 수 있는 무료 축제입니다.",
-      "tags": [
-        "한산모시문화제",
-        "서천군",
-        "전통문화축제",
-        "모시체험",
-        "무료축제"
-      ]
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     },
     {
-      "id": "3113022-2026",
-      "content_id": "3113022",
-      "title": "2026 공예주간",
-      "category": "문화행사",
-      "region": "충남",
+      "id": "2720203-2026",
+      "content_id": "2720203",
+      "title": "2026 서울거리공연 구석구석라이브",
+      "category": "공연",
+      "region": "서울",
       "area_code": "0",
       "sigungu_code": "",
-      "address": "충청남도 부여군 규암면 수북로41번길 11-21",
-      "lat": 36.2721854896,
-      "lng": 126.8880743426,
-      "start_date": "20260619",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-19",
-      "end_date_fmt": "2026-06-28",
+      "address": "서울특별시 종로구 세종대로 지하172 (세종로)",
+      "lat": 37.5716228232824,
+      "lng": 126.976787992565,
+      "start_date": "20260501",
+      "end_date": "20261231",
+      "start_date_fmt": "2026-05-01",
+      "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서울특별시",
       "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4071410_image2_1.jpg",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/74/4060474_image2_1.png",
       "homepage": "",
-      "tel": "- 부여 041-830-6865-  세종·공주 044-850-0531- 전주·고창 063-281-1613- 칠곡·구미 0507-1409-6809- 울산·부산 052-289-1881- 제주·서귀포 0507-1333-2123",
+      "tel": "02-2088-7218",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/98/4072398_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/98/4072398_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/99/4072399_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/99/4072399_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/00/4072400_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/00/4072400_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4072401_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4072401_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4072402_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4072402_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/03/4072403_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/03/4072403_image2_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4060474_image2_1.png",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4060474_image3_1.png"
         }
       ],
-      "seo_slug": "chungnam-craft-week",
-      "summary": "전국 최고의 공예 문화축제 2026 공예주간이 6월 부여에서 개최됩니다.\n전통공예 전시·체험·판매 등 다양한 프로그램으로 공예의 매력을 느껴보세요.\n운영처별로 관람료가 다르니 홈페이지에서 확인 후 방문하시기 바랍니다.",
-      "highlight": "문화체육관광부 주최의 공식 공예주간으로 전통공예 전시·체험·판매를 한 곳에서 즐길 수 있는 대한민국 대표 공예 문화축제입니다.",
-      "target_audience": "가족여행|친구모임|커플|어린이동반",
-      "tips": [
-        "홈페이지에서 운영처별 관람료와 프로그램을 미리 확인하고 방문하세요.",
-        "공예 체험은 별도 비용이 필요할 수 있으니 예약 여부를 사전에 확인하세요.",
-        "부여의 역사문화지구와 함께 둘러보면 더욱 풍요로운 여행이 됩니다."
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3491755-2026-k",
+      "content_id": "3491755",
+      "title": "2026 서울식품유통대전(K푸드쇼)",
+      "category": "문화행사",
+      "region": "서울",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "서울특별시 서초구 강남대로 27 (양재동)",
+      "lat": 37.4682787075426,
+      "lng": 127.039136433366,
+      "start_date": "20260616",
+      "end_date": "20260616",
+      "start_date_fmt": "2026-06-16",
+      "end_date_fmt": "2026-06-16",
+      "place": "",
+      "fee": "무료※ 부분 유료로 자세한 이용요금은 공식 홈페이지 참조",
+      "is_free": false,
+      "organizer": "파이낸셜뉴스",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4058663_image2_1.jpg",
+      "homepage": "",
+      "tel": "02-6965-0014",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4058663_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4058663_image3_1.jpg"
+        }
       ],
-      "seo_title": "2026 공예주간 부여 - 전통공예 문화행사 6월 개최",
-      "meta_description": "6월 19~28일 충남 부여에서 열리는 2026 공예주간. 전통공예 전시·체험·판매로 우리 공예문화를 만나는 특별한 10일간의 축제입니다.",
-      "tags": [
-        "공예주간",
-        "전통공예",
-        "공예체험",
-        "부여",
-        "문화축제",
-        "공예전시",
-        "한국공예",
-        "6월행사",
-        "충청남도",
-        "가족여행"
-      ]
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3107059-2026",
+      "content_id": "3107059",
+      "title": "2026 숭례문 파수의식",
+      "category": "문화행사",
+      "region": "서울",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "서울특별시 중구 세종대로 40 (남대문로4가)",
+      "lat": 37.55992837962214,
+      "lng": 126.97536090852309,
+      "start_date": "20260101",
+      "end_date": "20261231",
+      "start_date_fmt": "2026-01-01",
+      "end_date_fmt": "2026-12-31",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/99/4001599_image2_1.jpg",
+      "homepage": "",
+      "tel": "02-3789-7402",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/00/4001600_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/00/4001600_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4001601_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4001601_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2497537-2026-42k",
+      "content_id": "2497537",
+      "title": "2026 한강나이트워크42K",
+      "category": "문화행사",
+      "region": "서울",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "서울특별시 영등포구 여의공원로 68 (여의도동)",
+      "lat": 37.524979,
+      "lng": 126.937696,
+      "start_date": "20260801",
+      "end_date": "20260802",
+      "start_date_fmt": "2026-08-01",
+      "end_date_fmt": "2026-08-02",
+      "place": "",
+      "fee": "- 14K 46,000원- 22K 54,000원- 42K 62,000원",
+      "is_free": false,
+      "organizer": "㈜블렌트",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/63/4071363_image2_1.jpg",
+      "homepage": "",
+      "tel": "070-4705-2008",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4071363_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4071363_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3473295-ddp",
+      "content_id": "3473295",
+      "title": "DDP 건축투어",
+      "category": "문화행사",
+      "region": "서울",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "서울특별시 중구 을지로 281 (을지로7가)",
+      "lat": 37.56605397262908,
+      "lng": 127.00955476908904,
+      "start_date": "20260101",
+      "end_date": "20261231",
+      "start_date_fmt": "2026-01-01",
+      "end_date_fmt": "2026-12-31",
+      "place": "",
+      "fee": "- 일반 10,000원- 국가유공자 / 군인 / 장애인 / 청소년 단체 8,000원- 어린이 5,000원",
+      "is_free": false,
+      "organizer": "서울특별시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/09/4046009_image2_1.png",
+      "homepage": "",
+      "tel": "02-2153-0310, 0311 (12:00~13:00 점심시간)",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/46/4007346_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/46/4007346_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/47/4007347_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/47/4007347_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/48/4007348_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/48/4007348_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/49/4007349_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/49/4007349_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3351451-k-2026",
+      "content_id": "3351451",
+      "title": "K-일러스트레이션페어 마곡 2026",
+      "category": "문화행사",
+      "region": "서울",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "서울특별시 강서구 마곡중앙로 143 (마곡동)",
+      "lat": 37.566727291186524,
+      "lng": 126.82539429651213,
+      "start_date": "20260820",
+      "end_date": "20260823",
+      "start_date_fmt": "2026-08-20",
+      "end_date_fmt": "2026-08-23",
+      "place": "",
+      "fee": "- 현장 구매 10,000원- 1차 사전 예매 시 5,000원- 2차 사전 예매 시 7,000원",
+      "is_free": false,
+      "organizer": "㈜한국국제전시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/75/4059475_image2_1.jpg",
+      "homepage": "",
+      "tel": "02-761-2512",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/72/4059472_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/72/4059472_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4059473_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4059473_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4059474_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4059474_image2_1.JPG"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "부산": [
@@ -4900,9 +5307,9 @@
       "start_date_fmt": "2026-01-01",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "부산광역시 수영구",
       "overview": "",
       "thumbnail": "http://tong.visitkorea.or.kr/cms/resource/12/3518612_image2_1.jpeg",
       "homepage": "",
@@ -4957,16 +5364,16 @@
       "area_code": "0",
       "sigungu_code": "",
       "address": "부산광역시 수영구 광안해변로 219 (광안동)",
-      "lat": 35.153772788647494,
-      "lng": 129.1185199367098,
+      "lat": 35.1537727886,
+      "lng": 129.1185199367,
       "start_date": "20260612",
       "end_date": "20260614",
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "수영구",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4066810_image2_1.JPG",
       "homepage": "",
@@ -5036,9 +5443,9 @@
       "start_date_fmt": "2026-06-18",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
+      "fee": "영화 예매 5,000원",
       "is_free": false,
-      "organizer": "",
+      "organizer": "부산광역시, 한국해양진흥공사",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/84/4057984_image2_1.png",
       "homepage": "",
@@ -5084,9 +5491,9 @@
       "start_date_fmt": "2026-06-26",
       "end_date_fmt": "2026-06-26",
       "place": "",
-      "fee": "",
+      "fee": "프로그램별 상이",
       "is_free": false,
-      "organizer": "",
+      "organizer": "(사)부산국제매직페스티벌 조직위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/20/4064420_image2_1.jpg",
       "homepage": "",
@@ -5129,62 +5536,6 @@
         "국제행사",
         "문화행사",
         "여름축제"
-      ]
-    },
-    {
-      "id": "2390168-bof-with-nol",
-      "content_id": "2390168",
-      "title": "부산원아시아페스티벌(BOF) with NOL",
-      "category": "축제",
-      "region": "부산",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "부산광역시 연제구 월드컵대로 344 (거제동)",
-      "lat": 35.1900874394895,
-      "lng": 129.058356000232,
-      "start_date": "20260627",
-      "end_date": "20260628",
-      "start_date_fmt": "2026-06-27",
-      "end_date_fmt": "2026-06-28",
-      "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/56/4040656_image2_1.jpg",
-      "homepage": "",
-      "tel": "051-780-4159",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/55/4040655_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/55/4040655_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/57/4040657_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/57/4040657_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/58/4040658_image2_1.png",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/58/4040658_image2_1.png"
-        }
-      ],
-      "seo_slug": "busan-one-asia-festival",
-      "summary": "부산 연제구에서 6월 27-28일 개최되는 핫한 뮤직페스티벌\nBIG 콘서트와 무료 파크 콘서트로 다양한 공연 즐기기\n가족, 친구들과 함께할 수 있는 대규모 음악 축제",
-      "highlight": "BIG 콘서트의 유명 아티스트 공연과 무료 파크 콘서트를 동시에 즐길 수 있는 부산 대표 음악 페스티벌",
-      "target_audience": "가족여행|커플|친구모임|어린이동반",
-      "tips": [
-        "미리 티켓을 예매해 유명 아티스트 공연을 놓치지 말기",
-        "무료 파크 콘서트는 선착순이니 일찍 방문 추천",
-        "주말 양일간 개최되니 일정 확인 후 방문"
-      ],
-      "seo_title": "부산원아시아페스티벌 2026 BOF with NOL 부산 뮤직페스티벌",
-      "meta_description": "2026년 6월 27-28일 부산 연제구에서 개최되는 부산원아시아페스티벌. 유명 아티스트 콘서트와 무료 파크 공연이 함께하는 대규모 음악축제입니다.",
-      "tags": [
-        "부산음악축제",
-        "뮤직페스티벌",
-        "여름축제",
-        "부산행사",
-        "6월공연"
       ]
     },
     {
@@ -5251,9 +5602,9 @@
       "start_date_fmt": "2026-06-04",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "㈜푸드트래블, 부산관광공사",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/81/4065381_image2_1.jpg",
       "homepage": "",
@@ -5306,6 +5657,275 @@
         "부산6월행사",
         "가족나들이"
       ]
+    },
+    {
+      "id": "3498395-2026",
+      "content_id": "3498395",
+      "title": "2026 나이트레이스 인 부산",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 수영구 광안해변로 219 (광안동)",
+      "lat": 35.1537727886,
+      "lng": 129.1185199367,
+      "start_date": "20260801",
+      "end_date": "20260801",
+      "start_date_fmt": "2026-08-01",
+      "end_date_fmt": "2026-08-01",
+      "place": "",
+      "fee": "- S(special) Plus 130,000원- S(special)그룹 80,000원- A~F (일반)그룹 60,000원",
+      "is_free": false,
+      "organizer": "KNN",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/41/4065341_image2_1.jpg",
+      "homepage": "",
+      "tel": "051-740-4116",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/41/4065341_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/41/4065341_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2991394-2026-42k",
+      "content_id": "2991394",
+      "title": "2026 부산나이트워크42K",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 해운대구 수영강변대로 85 (우동)",
+      "lat": 35.16790821788159,
+      "lng": 129.1273173184388,
+      "start_date": "20260829",
+      "end_date": "20260830",
+      "start_date_fmt": "2026-08-29",
+      "end_date_fmt": "2026-08-30",
+      "place": "",
+      "fee": "- 8K 38,000원- 16K 42,000원- 24K 49,000원- 42K 59,000원",
+      "is_free": false,
+      "organizer": "부산일보사, 어반씨앤에스",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/37/4069137_image2_1.jpg",
+      "homepage": "",
+      "tel": "070-4705-2008",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/37/4069137_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/37/4069137_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3497353-2026",
+      "content_id": "3497353",
+      "title": "2026 부산바다도서관",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 수영구 민락동 110-19",
+      "lat": 35.154689,
+      "lng": 129.132986,
+      "start_date": "20260613",
+      "end_date": "20260705",
+      "start_date_fmt": "2026-06-13",
+      "end_date_fmt": "2026-07-05",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "부산광역시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/73/4070173_image2_1.jpg",
+      "homepage": "",
+      "tel": "051-745-7288",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/4069078_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/78/4069078_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2719122-2026",
+      "content_id": "2719122",
+      "title": "2026 부산푸드필름페스타",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 해운대구 수영강변대로 120 (우동)",
+      "lat": 35.170963130477155,
+      "lng": 129.12704224730075,
+      "start_date": "20260626",
+      "end_date": "20260628",
+      "start_date_fmt": "2026-06-26",
+      "end_date_fmt": "2026-06-28",
+      "place": "",
+      "fee": "무료 (일부 프로그램 유료)",
+      "is_free": false,
+      "organizer": "부산푸드필름페스타 운영위원회, (재)영화의전당",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/90/4065290_image2_1.jpg",
+      "homepage": "",
+      "tel": "051-710-6948",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/90/4065290_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/90/4065290_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2952109-2026",
+      "content_id": "2952109",
+      "title": "2026 용골 댄스 페스타",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 중구 용두산길 37-55 (광복동2가)",
+      "lat": 35.100929432638,
+      "lng": 129.032442805252,
+      "start_date": "20260620",
+      "end_date": "20260620",
+      "start_date_fmt": "2026-06-20",
+      "end_date_fmt": "2026-06-20",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "부산광역시 중구",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/73/4067473_image2_1.jpg",
+      "homepage": "",
+      "tel": "051-714-4674",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4067473_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4067473_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2704473-k-2026",
+      "content_id": "2704473",
+      "title": "K-일러스트레이션페어 부산 2026",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 해운대구 APEC로 30 (우동)",
+      "lat": 35.1657825586672,
+      "lng": 129.135026643506,
+      "start_date": "20260724",
+      "end_date": "20260726",
+      "start_date_fmt": "2026-07-24",
+      "end_date_fmt": "2026-07-26",
+      "place": "",
+      "fee": "- 현장 구매 : 7,000원- 사전 예매 시 : 성인 기준 5,000원",
+      "is_free": false,
+      "organizer": "㈜한국국제전시",
+      "overview": "",
+      "thumbnail": "",
+      "homepage": "",
+      "tel": "02-761-2512",
+      "images": [],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2523149-k-2026",
+      "content_id": "2523149",
+      "title": "K-핸드메이드페어 부산 2026",
+      "category": "문화행사",
+      "region": "부산",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "부산광역시 해운대구 APEC로 30 (우동)",
+      "lat": 35.16576593920963,
+      "lng": 129.13494793474206,
+      "start_date": "20260724",
+      "end_date": "20260726",
+      "start_date_fmt": "2026-07-24",
+      "end_date_fmt": "2026-07-26",
+      "place": "",
+      "fee": "현장구매 시 7,000원 사전예매 시 5,000원 * 사전예매 : 홈페이지 - 관람안내에서 확인 * 성인 기준 요금",
+      "is_free": false,
+      "organizer": "㈜한국국제전시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/66/4059066_image2_1.jpg",
+      "homepage": "",
+      "tel": "02-761-2512",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4059063_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4059063_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/64/4059064_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/64/4059064_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/65/4059065_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/65/4059065_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "인천": [
@@ -5325,9 +5945,9 @@
       "start_date_fmt": "2026-08-14",
       "end_date_fmt": "2026-10-18",
       "place": "",
-      "fee": "",
+      "fee": "무료 (개최지별 유료 프로그램 있을 수 있음)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "국가유산청",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/40/4055040_image2_1.jpg",
       "homepage": "",
@@ -5389,9 +6009,9 @@
       "start_date_fmt": "2026-01-05",
       "end_date_fmt": "2026-12-31",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "국가유산청",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/76/4029576_image2_1.jpg",
       "homepage": "",
@@ -5520,6 +6140,44 @@
         "라이브공연",
         "야외음악회"
       ]
+    },
+    {
+      "id": "3492276-2026",
+      "content_id": "3492276",
+      "title": "2026 문화가 있는 날",
+      "category": "문화행사",
+      "region": "인천",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "인천광역시 동구 송현동",
+      "lat": 37.476334,
+      "lng": 126.632619,
+      "start_date": "20260401",
+      "end_date": "20261129",
+      "start_date_fmt": "2026-04-01",
+      "end_date_fmt": "2026-11-29",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "문화체육관광부",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/82/4055582_image2_1.png",
+      "homepage": "",
+      "tel": "032-575-2526, 070-5001-0265",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/22/4058422_image2_1.png",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/22/4058422_image2_1.png"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "전북": [
@@ -5539,9 +6197,9 @@
       "start_date_fmt": "2026-06-12",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
+      "fee": "유료(6,000원-지역상품권 5천원 지급)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "군산시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/51/4062851_image2_1.jpg",
       "homepage": "",
@@ -5587,9 +6245,9 @@
       "start_date_fmt": "2026-06-13",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "김제시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/09/4066709_image2_1.jpg",
       "homepage": "",
@@ -5651,9 +6309,9 @@
       "start_date_fmt": "2026-09-04",
       "end_date_fmt": "2026-09-12",
       "place": "",
-      "fee": "",
+      "fee": "무료 (일부유료)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "무주군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/69/3520569_image2_1.jpg",
       "homepage": "",
@@ -5739,8 +6397,174 @@
       "tel": "063-350-2357",
       "images": [
         {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/12/4073812_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/12/4073812_image3_1.jpg"
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/13/4073813_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/13/4073813_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/14/4073814_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/14/4073814_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4073815_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4073815_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4073816_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4073816_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "jangsu-coolvalley-festival",
+      "summary": "전북 장수군 번암면에서 펼쳐지는 여름 축제\n7월 17일부터 19일까지 3일간 계속되는 이벤트\n무료 입장으로 즐기는 쿨밸리 페스티벌",
+      "highlight": "장수의 자연 계곡을 활용한 여름 쿨링 페스티벌로, 무료 입장이 가능하며 가족 단위 피서객들이 찾는 인기 있는 지역축제입니다.",
+      "target_audience": "가족여행|커플|친구모임|어린이동반",
+      "tips": [
+        "7월 중순 여름 성수기이므로 미리 방문 계획을 세우고 교통편 확인 필수",
+        "계곡 인근이므로 물놀이용품과 편한 복장, 선크림 준비 권장",
+        "무료 입장이므로 주차장 혼잡이 예상되며 조기 방문이 좋습니다"
+      ],
+      "seo_title": "장수 쿨밸리 페스티벌 2026 여름 계곡축제",
+      "meta_description": "2026년 7월 17-19일 전북 장수군에서 열리는 쿨밸리 페스티벌. 시원한 계곡과 함께 즐기는 여름축제, 무료 입장. 가족과 함께 즐기는 피서지로 추천.",
+      "tags": [
+        "장수축제",
+        "여름축제",
+        "계곡축제",
+        "가족피서",
+        "전북여행"
+      ]
+    },
+    {
+      "id": "763974",
+      "content_id": "763974",
+      "title": "장수한우랑사과랑축제",
+      "category": "축제",
+      "region": "전북",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "전북특별자치도 장수군 장수읍 한누리로 378",
+      "lat": 35.64021652250558,
+      "lng": 127.5190644518293,
+      "start_date": "20260910",
+      "end_date": "20260913",
+      "start_date_fmt": "2026-09-10",
+      "end_date_fmt": "2026-09-13",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "사단법인 장수한우랑사과랑축제추진위원회",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/91/3519591_image2_1.jpg",
+      "homepage": "",
+      "tel": "063-350-2356",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/85/3519585_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/85/3519585_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/86/3519586_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/86/3519586_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/87/3519587_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/87/3519587_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/88/3519588_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/88/3519588_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/89/3519589_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/89/3519589_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/90/3519590_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/90/3519590_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/92/3519592_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/92/3519592_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/93/3519593_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/93/3519593_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/94/3519594_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/94/3519594_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "1945450",
+      "content_id": "1945450",
+      "title": "전주독서대전",
+      "category": "문화행사",
+      "region": "전북",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "전북특별자치도 전주시 완산구 전주천동로 20 (교동)",
+      "lat": 35.81227650714569,
+      "lng": 127.15958408130633,
+      "start_date": "20260911",
+      "end_date": "20260913",
+      "start_date_fmt": "2026-09-11",
+      "end_date_fmt": "2026-09-13",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "전주시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/69/4060669_image2_1.jpg",
+      "homepage": "",
+      "tel": "063-230-1858",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/65/4060665_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/65/4060665_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/66/4060666_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/66/4060666_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/67/4060667_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/67/4060667_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/68/4060668_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/68/4060668_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/70/4060670_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/70/4060670_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/71/4060671_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/71/4060671_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/72/4060672_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/72/4060672_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4060673_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4060673_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/74/4060674_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/74/4060674_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4060675_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4060675_image2_1.jpg"
         }
       ],
       "seo_slug": "",
@@ -5818,9 +6642,9 @@
       "start_date_fmt": "2026-06-20",
       "end_date_fmt": "2026-06-20",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "군위문화원",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/57/4072257_image2_1.JPG",
       "homepage": "",
@@ -5953,6 +6777,477 @@
         "무료행사",
         "두류공원"
       ]
+    },
+    {
+      "id": "2807078-2026",
+      "content_id": "2807078",
+      "title": "2026 대한민국불교문화엑스포",
+      "category": "전시",
+      "region": "대구",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "대구광역시 북구 엑스코로 10 (산격동)",
+      "lat": 35.90706961238413,
+      "lng": 128.6130738582469,
+      "start_date": "20260611",
+      "end_date": "20260614",
+      "start_date_fmt": "2026-06-11",
+      "end_date_fmt": "2026-06-14",
+      "place": "",
+      "fee": "10,000원(할인 예매 진행 시 5,000원으로 구매 가능)",
+      "is_free": false,
+      "organizer": "불교신문, BBS불교방송",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/4066726_image2_1.jpg",
+      "homepage": "",
+      "tel": "02-2231-2013",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/27/4066727_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/27/4066727_image2_1.JPG"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    }
+  ],
+  "충남": [
+    {
+      "id": "2719507",
+      "content_id": "2719507",
+      "title": "금산 삼계탕축제",
+      "category": "축제",
+      "region": "충남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "충청남도 금산군 금산읍 인삼광장로 30",
+      "lat": 36.1001640876596,
+      "lng": 127.501197965095,
+      "start_date": "20260710",
+      "end_date": "20260712",
+      "start_date_fmt": "2026-07-10",
+      "end_date_fmt": "2026-07-12",
+      "place": "",
+      "fee": "무료 (부분 유료)",
+      "is_free": false,
+      "organizer": "(재)금산문화관광축제재단",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/42/4064242_image2_1.jpg",
+      "homepage": "",
+      "tel": "041-750-2319",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/39/4064239_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/39/4064239_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4069575_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4069575_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/76/4069576_image2_1.png",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/76/4069576_image2_1.png"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/4069578_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/78/4069578_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/79/4069579_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/79/4069579_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/80/4069580_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/80/4069580_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/81/4069581_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/81/4069581_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "geumsan-samgyetang-festival",
+      "summary": "금산의 인삼과 삼계탕 문화를 축하하는 여름 축제\n보양식 시식, 인삼 제품 구매, 전통 문화 체험 프로그램 운영\n가족과 함께 즐기는 건강한 로컬 푸드 페스티벌",
+      "highlight": "인삼 산지의 정통 삼계탕을 맛보고 인삼 제품을 구매할 수 있는 특별한 축제. 여름 보양식 문화를 즐기며 지역 특산품을 만날 수 있습니다.",
+      "target_audience": "가족여행|커플|친구모임",
+      "tips": [
+        "삼계탕과 인삼 관련 제품을 미리 예약하면 대기 시간을 줄일 수 있습니다",
+        "오후 시간대 방문보다 오전에 가면 신선한 음식을 즐길 수 있습니다",
+        "금산의 유명한 인삼 재배지도 함께 둘러보면 좋습니다"
+      ],
+      "seo_title": "금산 삼계탕축제 2026 - 여름 보양식 축제 인삼광장",
+      "meta_description": "7월 10~12일 금산읍 인삼광장에서 열리는 삼계탕축제. 보양식 문화 체험, 인삼 제품 판매, 다양한 공연과 먹거리가 어우러진 여름 축제. 무료 입장!",
+      "tags": [
+        "금산축제",
+        "삼계탕",
+        "인삼",
+        "여름축제",
+        "보양식"
+      ]
+    },
+    {
+      "id": "506534",
+      "content_id": "506534",
+      "title": "보령머드축제",
+      "category": "축제",
+      "region": "충남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "충청남도 보령시 신흑동",
+      "lat": 36.314822,
+      "lng": 126.515029,
+      "start_date": "20260724",
+      "end_date": "20260809",
+      "start_date_fmt": "2026-07-24",
+      "end_date_fmt": "2026-08-09",
+      "place": "",
+      "fee": "일반존 (성인 [월-목]12,000 [금-일] 16,000)패밀리존 (어린이 [월-목] 11,000 [금-일] 13,000)",
+      "is_free": false,
+      "organizer": "보령시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/79/3534979_image2_1.jpg",
+      "homepage": "",
+      "tel": "041-930-0891",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/78/3534978_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/78/3534978_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/80/3534980_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/80/3534980_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/81/3534981_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/81/3534981_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/82/3534982_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/82/3534982_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/83/3534983_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/83/3534983_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/84/3534984_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/84/3534984_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/85/3534985_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/85/3534985_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/86/3534986_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/86/3534986_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/87/3534987_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/87/3534987_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/05/4031705_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/05/4031705_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "boryeong-mud-festival",
+      "summary": "보령의 유명한 머드를 활용한 여름 축제\n신흑동 펄 머드의 효능을 직접 체험할 수 있는 기회\n물놀이, 공연, 체험 등 다양한 프로그램 운영",
+      "highlight": "천연 게르마늄 함유 보령 펄 머드를 직접 체험하고 즐기는 국내 대표 여름축제. 가족 단위 방문객을 위한 전용 존 운영으로 안전하고 편리한 축제 환경 제공.",
+      "target_audience": "가족여행|커플|친구모임|어린이동반",
+      "tips": [
+        "금-일요일이 성수기이므로 평일(월-목) 방문 시 입장료 할인 및 한산함 활용",
+        "머드 체험 시 수건과 여벌 옷 준비 필수, 자외선 차단제 충분히 준비",
+        "패밀리존은 어린이 보호 및 안전을 위해 별도 운영되므로 가족 단위 방문 시 활용"
+      ],
+      "seo_title": "보령머드축제 2026 일정·요금·볼거리 완벽가이드",
+      "meta_description": "2026년 7월 24일~8월 9일 보령시에서 열리는 머드축제! 천연 게르마늄 함유 신흑동 펄 머드에서 즐기는 최고의 여름 축제. 가족과 함께 즐겨보세요.",
+      "tags": [
+        "보령머드축제",
+        "여름축제",
+        "머드체험",
+        "충청남도",
+        "가족여행"
+      ]
+    },
+    {
+      "id": "574047",
+      "content_id": "574047",
+      "title": "부여서동연꽃축제",
+      "category": "축제",
+      "region": "충남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "충청남도 부여군 부여읍 동남리",
+      "lat": 36.27204,
+      "lng": 126.910626,
+      "start_date": "20260703",
+      "end_date": "20260705",
+      "start_date_fmt": "2026-07-03",
+      "end_date_fmt": "2026-07-05",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "부여군",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/74/4067074_image2_1.jpg",
+      "homepage": "",
+      "tel": "041-837-2518",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/65/4067065_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/65/4067065_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/66/4067066_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/66/4067066_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/68/4067068_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/68/4067068_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/71/4067071_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/71/4067071_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/72/4067072_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/72/4067072_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/73/4067073_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/73/4067073_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/75/4067075_image2_1.JPG",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/75/4067075_image2_1.JPG"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/76/4067076_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/76/4067076_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "buyeo-seodong-lotus-festival",
+      "summary": "충남 부여군 동남리에서 개최되는 전통 연꽃 축제\n7월 3일부터 5일까지 3일간 무료로 즐기는 행사\n서동의 흔적이 남아있는 부여의 역사와 자연을 함께 감상",
+      "highlight": "천년 고도 부여의 설화를 담은 연꽃축제. 청정한 연못의 연꽃과 전통문화가 어우러진 여름 힐링 축제",
+      "target_audience": "가족여행|커플|친구모임",
+      "tips": [
+        "7월 연꽃은 이른 아침에 피므로 새벽 방문 추천",
+        "편한 복장과 모자, 선크림 필수 - 햇빛이 강한 계절",
+        "무료 관람이므로 미리 대중교통 일정 확인하고 방문"
+      ],
+      "seo_title": "부여서동연꽃축제 2026 - 충남 부여 여름 연꽃 축제",
+      "meta_description": "2026년 7월 3-5일 충남 부여군에서 열리는 서동연꽃축제. 아름다운 연꽃과 함께하는 여름 축제, 무료 관람으로 가족 나들이 추천",
+      "tags": [
+        "부여축제",
+        "연꽃축제",
+        "충남여행",
+        "여름축제",
+        "무료행사"
+      ]
+    },
+    {
+      "id": "507480",
+      "content_id": "507480",
+      "title": "한산모시문화제",
+      "category": "문화행사",
+      "region": "충남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "충청남도 서천군 한산면 충절로 1089",
+      "lat": 36.0798791496,
+      "lng": 126.7986906635,
+      "start_date": "20260612",
+      "end_date": "20260614",
+      "start_date_fmt": "2026-06-12",
+      "end_date_fmt": "2026-06-14",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "서천군",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/00/4044300_image2_1.jpg",
+      "homepage": "",
+      "tel": "041-957-9045",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/97/4044297_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/97/4044297_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/98/4044298_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/98/4044298_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/99/4044299_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/99/4044299_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4044301_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4044301_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4044302_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4044302_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/03/4044303_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/03/4044303_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/04/4044304_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/04/4044304_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/05/4044305_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/05/4044305_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/06/4044306_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/06/4044306_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/07/4044307_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/07/4044307_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "hansan-mosi-culture-festival",
+      "summary": "서천군 한산면에서 매년 열리는 전통 한산모시 문화축제\n6월 12-14일 3일간 전통 모시 제조 체험 및 공연 개최\n무료 입장으로 전통 문화를 경험하고 즐길 수 있는 기회",
+      "highlight": "국내 유일의 전통 모시 문화축제! 손으로 직접 모시 짜기 체험부터 전통공연까지 한산 모시의 모든 것을 느낄 수 있습니다.",
+      "target_audience": "가족여행|커플|친구모임|어린이동반",
+      "tips": [
+        "주차장이 제한적이므로 대중교통 이용 권장",
+        "모시 제작 체험은 사전 예약 필수일 수 있으니 확인 후 방문",
+        "여름 야외행사이므로 자외선 차단제와 모자, 물 준비 필수"
+      ],
+      "seo_title": "한산모시문화제 2026 | 서천군 전통 모시 문화 축제",
+      "meta_description": "6월 12-14일 서천군 한산면에서 열리는 한산모시문화제. 전통 모시 제조 체험, 문화공연, 먹거리까지 즐길 수 있는 무료 축제입니다.",
+      "tags": [
+        "한산모시문화제",
+        "서천군",
+        "전통문화축제",
+        "모시체험",
+        "무료축제"
+      ]
+    },
+    {
+      "id": "3113022-2026",
+      "content_id": "3113022",
+      "title": "2026 공예주간",
+      "category": "문화행사",
+      "region": "충남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "충청남도 부여군 규암면 수북로41번길 11-21",
+      "lat": 36.2721854896,
+      "lng": 126.8880743426,
+      "start_date": "20260619",
+      "end_date": "20260628",
+      "start_date_fmt": "2026-06-19",
+      "end_date_fmt": "2026-06-28",
+      "place": "",
+      "fee": "운영처 별로 상이함※ 자세한 이용요금은 홈페이지 참조",
+      "is_free": false,
+      "organizer": "문화체육관광부",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4071410_image2_1.jpg",
+      "homepage": "",
+      "tel": "- 부여 041-830-6865-  세종·공주 044-850-0531- 전주·고창 063-281-1613- 칠곡·구미 0507-1409-6809- 울산·부산 052-289-1881- 제주·서귀포 0507-1333-2123",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/98/4072398_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/98/4072398_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4072401_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4072401_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/02/4072402_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/02/4072402_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/66/4073766_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/66/4073766_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/67/4073767_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/67/4073767_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/68/4073768_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/68/4073768_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "chungnam-craft-week",
+      "summary": "전국 최고의 공예 문화축제 2026 공예주간이 6월 부여에서 개최됩니다.\n전통공예 전시·체험·판매 등 다양한 프로그램으로 공예의 매력을 느껴보세요.\n운영처별로 관람료가 다르니 홈페이지에서 확인 후 방문하시기 바랍니다.",
+      "highlight": "문화체육관광부 주최의 공식 공예주간으로 전통공예 전시·체험·판매를 한 곳에서 즐길 수 있는 대한민국 대표 공예 문화축제입니다.",
+      "target_audience": "가족여행|친구모임|커플|어린이동반",
+      "tips": [
+        "홈페이지에서 운영처별 관람료와 프로그램을 미리 확인하고 방문하세요.",
+        "공예 체험은 별도 비용이 필요할 수 있으니 예약 여부를 사전에 확인하세요.",
+        "부여의 역사문화지구와 함께 둘러보면 더욱 풍요로운 여행이 됩니다."
+      ],
+      "seo_title": "2026 공예주간 부여 - 전통공예 문화행사 6월 개최",
+      "meta_description": "6월 19~28일 충남 부여에서 열리는 2026 공예주간. 전통공예 전시·체험·판매로 우리 공예문화를 만나는 특별한 10일간의 축제입니다.",
+      "tags": [
+        "공예주간",
+        "전통공예",
+        "공예체험",
+        "부여",
+        "문화축제",
+        "공예전시",
+        "한국공예",
+        "6월행사",
+        "충청남도",
+        "가족여행"
+      ]
+    },
+    {
+      "id": "2996478-2026-k",
+      "content_id": "2996478",
+      "title": "2026 천안 K-컬처박람회",
+      "category": "전시",
+      "region": "충남",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "충청남도 천안시 동남구 목천읍 독립기념관로 1",
+      "lat": 36.7773487289308,
+      "lng": 127.2325927550662,
+      "start_date": "20260902",
+      "end_date": "20260906",
+      "start_date_fmt": "2026-09-02",
+      "end_date_fmt": "2026-09-06",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "문화체육관광부, 충청남도, 천안시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/10/4020710_image2_1.jpg",
+      "homepage": "",
+      "tel": "041-521-3411041-521-3405",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/49/4012449_image2_1.png",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/49/4012449_image2_1.png"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/13/4020713_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/13/4020713_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "충북": [
@@ -5972,9 +7267,9 @@
       "start_date_fmt": "2026-06-11",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "영동군",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/17/4065817_image2_1.jpg",
       "homepage": "",
@@ -6108,9 +7403,9 @@
       "start_date_fmt": "2026-06-10",
       "end_date_fmt": "2026-06-14",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "음성군 축제 추진위원회, 음성예총",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/55/4039855_image2_1.JPG",
       "homepage": "",
@@ -6370,6 +7665,182 @@
         "문화행사",
         "무료입장"
       ]
+    },
+    {
+      "id": "2614198-2026-ace-fair",
+      "content_id": "2614198",
+      "title": "2026 광주 ACE Fair",
+      "category": "문화행사",
+      "region": "광주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "광주광역시 서구 상무누리로 30",
+      "lat": 35.1468884463881,
+      "lng": 126.840521782296,
+      "start_date": "20260910",
+      "end_date": "20260910",
+      "start_date_fmt": "2026-09-10",
+      "end_date_fmt": "2026-09-10",
+      "place": "",
+      "fee": "온라인 사전 등록시 무료※ 자세한 사항은 홈페이지 참고",
+      "is_free": true,
+      "organizer": "문화체육관광부, 광주광역시",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/4001646_image2_1.jpg",
+      "homepage": "",
+      "tel": "062-611-2242",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/44/4001644_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/44/4001644_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/45/4001645_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/45/4001645_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3478890-2026",
+      "content_id": "3478890",
+      "title": "2026 금남로 차 없는 거리 ‘걷자잉’",
+      "category": "문화행사",
+      "region": "광주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "광주광역시 동구 금남로 245 (금남로1가)",
+      "lat": 35.14836487617714,
+      "lng": 126.91873155733187,
+      "start_date": "20260404",
+      "end_date": "20261107",
+      "start_date_fmt": "2026-04-04",
+      "end_date_fmt": "2026-11-07",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "광주광역시 동구",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/37/4040737_image2_1.jpg",
+      "homepage": "",
+      "tel": "062-413-2535",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/15/4040615_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/15/4040615_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/16/4040616_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/16/4040616_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/17/4040617_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/17/4040617_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/18/4040618_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/18/4040618_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "2865136-2026",
+      "content_id": "2865136",
+      "title": "2026 라온페스타",
+      "category": "문화행사",
+      "region": "광주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "광주광역시 동구 충장로 94 (충장로2가)",
+      "lat": 35.1474235264676,
+      "lng": 126.91694835998,
+      "start_date": "20260404",
+      "end_date": "20261107",
+      "start_date_fmt": "2026-04-04",
+      "end_date_fmt": "2026-11-07",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "광주광역시 동구, 충장상권활성화 추진단",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/01/4067301_image2_1.jpg",
+      "homepage": "",
+      "tel": "062-413-1274",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/01/4067301_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/01/4067301_image3_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
+    },
+    {
+      "id": "3488655-2026",
+      "content_id": "3488655",
+      "title": "2026 문화가 있는 날 청춘마이크",
+      "category": "문화행사",
+      "region": "광주",
+      "area_code": "0",
+      "sigungu_code": "",
+      "address": "광주광역시 북구 하서로 50 (운암동)",
+      "lat": 35.1814560887758,
+      "lng": 126.884278856104,
+      "start_date": "20260312",
+      "end_date": "20261211",
+      "start_date_fmt": "2026-03-12",
+      "end_date_fmt": "2026-12-11",
+      "place": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "문화체육관광부",
+      "overview": "",
+      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/85/4039885_image2_1.jpg",
+      "homepage": "",
+      "tel": "062-412-1197",
+      "images": [
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/86/4039886_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/86/4039886_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/87/4039887_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/87/4039887_image2_1.jpg"
+        },
+        {
+          "origin": "https://tong.visitkorea.or.kr/cms/resource/88/4039888_image2_1.jpg",
+          "small": "https://tong.visitkorea.or.kr/cms/resource/88/4039888_image2_1.jpg"
+        }
+      ],
+      "seo_slug": "",
+      "summary": "",
+      "highlight": "",
+      "target_audience": "",
+      "tips": [],
+      "seo_title": "",
+      "meta_description": "",
+      "tags": []
     }
   ],
   "세종": [
@@ -6389,9 +7860,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-07-26",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료",
+      "is_free": true,
+      "organizer": "세종특별자치시",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/49/4062949_image2_1.png",
       "homepage": "",
@@ -6440,78 +7911,6 @@
         "여름축제",
         "가족나들이"
       ]
-    },
-    {
-      "id": "3305155",
-      "content_id": "3305155",
-      "title": "세종단오제",
-      "category": "문화행사",
-      "region": "세종",
-      "area_code": "0",
-      "sigungu_code": "",
-      "address": "세종특별자치시 다솜로 216 (세종동)",
-      "lat": 36.498953453,
-      "lng": 127.2701840594,
-      "start_date": "20260613",
-      "end_date": "20260613",
-      "start_date_fmt": "2026-06-13",
-      "end_date_fmt": "2026-06-13",
-      "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
-      "overview": "",
-      "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/62/4066962_image2_1.jpg",
-      "homepage": "",
-      "tel": "044-865-2411",
-      "images": [
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/61/4066961_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/61/4066961_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/63/4066963_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/63/4066963_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/64/4066964_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/64/4066964_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/65/4066965_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/65/4066965_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/66/4066966_image2_1.jpg",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/66/4066966_image2_1.jpg"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/67/4066967_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/67/4066967_image2_1.JPG"
-        },
-        {
-          "origin": "https://tong.visitkorea.or.kr/cms/resource/68/4066968_image2_1.JPG",
-          "small": "https://tong.visitkorea.or.kr/cms/resource/68/4066968_image2_1.JPG"
-        }
-      ],
-      "seo_slug": "sejong-dano-festival",
-      "summary": "세종특별자치시의 대표 전통문화축제 세종단오제가 개최됩니다.\n6월 13~14일 2일간 세종동에서 무료로 즐길 수 있습니다.\n전통 단오 민속놀이와 공연으로 한여름의 시원함을 느껴보세요.",
-      "highlight": "세종문화원 주최의 정통 단오제로 전통 민속놀이, 공연, 체험을 한 자리에서 즐길 수 있는 무료 문화축제입니다.",
-      "target_audience": "가족여행|친구모임|어린이동반",
-      "tips": [
-        "6월의 날씨를 고려해 가벼운 복장과 모자, 선글라스를 준비하세요",
-        "주말 개최이므로 오전 시간대 방문으로 혼잡을 피할 수 있습니다",
-        "전통 민속놀이 체험은 미리 일정을 확인하고 방문하세요"
-      ],
-      "seo_title": "세종단오제 2026 | 세종특별자치시 전통문화 축제",
-      "meta_description": "6월 13~14일 세종동에서 열리는 세종단오제! 전통 단오문화 체험, 민속공연, 무료 관람. 가족과 함께 즐기는 세종의 대표 문화행사입니다.",
-      "tags": [
-        "세종단오제",
-        "단오축제",
-        "전통문화",
-        "세종특별자치시",
-        "가족축제"
-      ]
     }
   ],
   "울산": [
@@ -6531,9 +7930,9 @@
       "start_date_fmt": "2026-07-24",
       "end_date_fmt": "2026-07-26",
       "place": "",
-      "fee": "",
+      "fee": "입장료 무료(부분 유료 - 나이트런 일산 참가비 20,000원 / 기발한 배 콘테스트 참가비 50,000원, 선상유람투어)",
       "is_free": false,
-      "organizer": "",
+      "organizer": "울산조선해양축제 추진위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/50/4072450_image2_1.jpg",
       "homepage": "",
@@ -6595,9 +7994,9 @@
       "start_date_fmt": "2026-06-19",
       "end_date_fmt": "2026-06-21",
       "place": "",
-      "fee": "",
-      "is_free": false,
-      "organizer": "",
+      "fee": "무료(참가비, 입장료)",
+      "is_free": true,
+      "organizer": "태화강마두희축제추진위원회",
       "overview": "",
       "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/87/4067387_image2_1.jpg",
       "homepage": "",

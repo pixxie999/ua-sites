@@ -1,10 +1,10 @@
 {
-  "icon": "☁️",
-  "condition": "흐림",
-  "avg_temp": 28,
-  "summary": "이번 주말 흐림 · 28°C — 야외 행사 나들이 최적! 🎉",
-  "updated_at": "2026-06-11T21:31:58.846164",
-  "saturday": "20260613",
-  "sunday": "20260614",
+  "icon": "☀️",
+  "condition": "맑음",
+  "avg_temp": null,
+  "summary": "이번 주말 맑음 — 야외 행사 나들이 최적! 🎉",
+  "updated_at": "2026-06-14T20:25:41.371535",
+  "saturday": "20260620",
+  "sunday": "20260621",
   "region": "경북"
 }
